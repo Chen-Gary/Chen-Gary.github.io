@@ -1,1 +1,1 @@
-Hello world!
+😃View my blog here https://chen-gary.github.io/
