@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Gary&#39;s Tech Station</title>
+    <link>https://chen-gary.github.io/tags/</link>
+    <description>Recent content in Tags on Gary&#39;s Tech Station</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 09 Feb 2021 16:09:54 +0800</lastBuildDate><atom:link href="https://chen-gary.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>R</title>
+      <link>https://chen-gary.github.io/tags/r/</link>
+      <pubDate>Tue, 09 Feb 2021 16:09:54 +0800</pubDate>
+      
+      <guid>https://chen-gary.github.io/tags/r/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Gary的博客</title>
+        <link>https://chen-gary.github.io/zh-cn/</link>
+        <description>Recent content on Gary的博客</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Tue, 09 Feb 2021 21:35:59 +0800</lastBuildDate><atom:link href="https://chen-gary.github.io/zh-cn/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>抱歉，请移步英文模式查看所有博文</title>
+        <link>https://chen-gary.github.io/zh-cn/p/%E6%8A%B1%E6%AD%89%E8%AF%B7%E7%A7%BB%E6%AD%A5%E8%8B%B1%E6%96%87%E6%A8%A1%E5%BC%8F%E6%9F%A5%E7%9C%8B%E6%89%80%E6%9C%89%E5%8D%9A%E6%96%87/</link>
+        <pubDate>Tue, 09 Feb 2021 21:35:59 +0800</pubDate>
+        
+        <guid>https://chen-gary.github.io/zh-cn/p/%E6%8A%B1%E6%AD%89%E8%AF%B7%E7%A7%BB%E6%AD%A5%E8%8B%B1%E6%96%87%E6%A8%A1%E5%BC%8F%E6%9F%A5%E7%9C%8B%E6%89%80%E6%9C%89%E5%8D%9A%E6%96%87/</guid>
+        <description>&lt;p&gt;抱歉，受精力所限，我暂时无法为所有博文提供双语翻译，请移步&lt;strong&gt;英文模式&lt;/strong&gt;查看所有博文（包括中英文博文）。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Sorry, I am not able to provide blog articles for both languages currently, due to the limited time. Please switch to &lt;strong&gt;English mode&lt;/strong&gt; for all articles (including both Chinese and English articles).&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
