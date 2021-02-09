@@ -32,7 +32,7 @@ params:
 
     sidebar:
         emoji: 🌠
-        subtitle: "Computer language design is just like a stroll in the park. Jurassic Park, that is." --Larry Wall
+        subtitle: Computer language design is just like a stroll in the park. Jurassic Park, that is. --Larry Wall
         avatar:
             local: true
             src: img/avatar_1.jpg
