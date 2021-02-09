@@ -35,7 +35,7 @@ params:
         subtitle: Hello World!
         avatar:
             local: true
-            src: img/avatar.png
+            src: img/avatar_1.jpg
 
     article:
         math: false
