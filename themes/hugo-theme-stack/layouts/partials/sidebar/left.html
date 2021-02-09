@@ -53,5 +53,12 @@
                 <span>{{ T "darkMode" }}</span>
             </li>
         {{ end }}
+
+        <!-- multilingual support -->
+        <!-- add by me -->
+        {{ range $.Site.Home.Translations }}
+        <li><a href="{{ .Permalink }}"> {{ partial "helper/icon" "translator" }} {{ .Language.LanguageName }}</a></li>
+        {{ end }}
+
     </ol>
 </aside>

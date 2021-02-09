@@ -1,6 +1,6 @@
 ---
-title: Repo
-description: View my github repositories and play with me!
+title: "Repo"
+description: View my github repos and play with me!
 date: 2021-02-09
 author: Gary Chen
 lastmod: 2021-02-09
