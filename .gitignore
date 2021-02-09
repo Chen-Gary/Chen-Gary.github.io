@@ -25,3 +25,5 @@ _testmain.go
 /public
 
 .DS_Store
+
+resources/_gen
