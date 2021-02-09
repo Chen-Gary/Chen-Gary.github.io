@@ -6,18 +6,6 @@
         <description>Recent content on Gary&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Tue, 09 Feb 2021 15:22:09 +0800</lastBuildDate><atom:link href="https://chen-gary.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Test 1st Post</title>
-        <link>https://chen-gary.github.io/p/test-1st-post/</link>
-        <pubDate>Tue, 09 Feb 2021 15:22:09 +0800</pubDate>
-        
-        <guid>https://chen-gary.github.io/p/test-1st-post/</guid>
-        <description>&lt;p&gt;hello world&lt;/p&gt;
-&lt;p&gt;test&lt;/p&gt;
-&lt;p&gt;test&lt;/p&gt;
-&lt;p&gt;test&lt;/p&gt;
-</description>
-        </item>
-        
+        <lastBuildDate>Tue, 09 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://chen-gary.github.io/index.xml" rel="self" type="application/rss+xml" />
     </channel>
 </rss>
