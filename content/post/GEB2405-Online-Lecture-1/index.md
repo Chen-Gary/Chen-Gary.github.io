@@ -1,6 +1,5 @@
 ---
 title: "GEB2405 Online Lecture 1"
-description: "Page description"
 date: 2021-02-09T16:09:54+08:00
 categories:
     - GEB2405

@@ -137,3 +137,55 @@ related:
 markup:
     highlight:
         noClasses: false
+
+
+## multilingual support
+## added by me
+#defaultContentLanguageInSubdir: true
+#enableMissingTranslationPlaceholders: true
+languages:
+    en:
+        LanguageName: English
+        weight: 1
+        
+    zh-cn:
+        LanguageName: 中文
+        title: Gary的博客
+        sidebar:
+            emoji: 🌠
+            subtitle: 你好，世界！
+            avatar:
+                local: true
+                src: img/avatar_1.jpg
+        weight: 2
+        menu:
+            main:
+                - identifier: home
+                  name: 主页
+                  url: zh-cn/
+                  weight: -100
+                  pre: home
+
+                - identifier: about
+                  name: 关于
+                  url: zh-cn/about
+                  weight: -90
+                  pre: user
+
+                - identifier: archives
+                  name: 归档
+                  url: zh-cn/archives
+                  weight: -80
+                  pre: archives
+
+                - identifier: repo
+                  name: 仓库
+                  url: zh-cn/repo
+                  weight: -70
+                  pre: git-fork
+
+                - identifier: search
+                  name: 搜索
+                  url: zh-cn/search
+                  weight: -60
+                  pre: search
