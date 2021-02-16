@@ -1,18 +1,64 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
-  <sitemap>
-    <loc>https://chen-gary.github.io/en/sitemap.xml</loc>
-    
-      <lastmod>2021-02-09T16:09:54+08:00</lastmod>
-    
-  </sitemap>
+  <url>
+    <loc>https://chen-gary.github.io/categories/</loc>
+    <lastmod>2021-02-09T16:09:54+08:00</lastmod>
+  </url>
   
-  <sitemap>
-    <loc>https://chen-gary.github.io/zh-cn/sitemap.xml</loc>
-    
-      <lastmod>2021-02-09T21:35:59+08:00</lastmod>
-    
-  </sitemap>
+  <url>
+    <loc>https://chen-gary.github.io/</loc>
+    <lastmod>2021-02-16T00:00:00+00:00</lastmod>
+  </url>
   
-</sitemapindex>
+  <url>
+    <loc>https://chen-gary.github.io/categories/geb2405/</loc>
+    <lastmod>2021-02-09T16:09:54+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chen-gary.github.io/p/geb2405-online-lecture-1/</loc>
+    <lastmod>2021-02-09T16:09:54+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chen-gary.github.io/post/</loc>
+    <lastmod>2021-02-09T16:09:54+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chen-gary.github.io/tags/r/</loc>
+    <lastmod>2021-02-09T16:09:54+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chen-gary.github.io/tags/</loc>
+    <lastmod>2021-02-09T16:09:54+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chen-gary.github.io/about/</loc>
+    <lastmod>2021-02-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chen-gary.github.io/archives/</loc>
+    <lastmod>2021-02-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chen-gary.github.io/page/</loc>
+    <lastmod>2021-02-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chen-gary.github.io/repo/</loc>
+    <lastmod>2021-02-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chen-gary.github.io/search/</loc>
+  </url>
+  
+</urlset>
