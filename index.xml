@@ -6,7 +6,120 @@
         <description>Recent content on Gary&#39;s Tech Station</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Tue, 09 Feb 2021 16:09:54 +0800</lastBuildDate><atom:link href="https://chen-gary.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 18 Feb 2021 20:28:18 +0800</lastBuildDate><atom:link href="https://chen-gary.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Blender: UV Coloring Method</title>
+        <link>https://chen-gary.github.io/p/blender-uv-coloring-method/</link>
+        <pubDate>Thu, 18 Feb 2021 20:28:18 +0800</pubDate>
+        
+        <guid>https://chen-gary.github.io/p/blender-uv-coloring-method/</guid>
+        <description>&lt;p&gt;&lt;strong&gt;The palette style UV coloring method&lt;/strong&gt; 是一个使用&lt;strong&gt;调色板图片(palette)&lt;/strong&gt; 对模型涂色的方法&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;优点：涂色非常简单快速，可以边建模边涂色（辅助建模）&lt;/li&gt;
+&lt;li&gt;缺点：有的时候不好找想要的颜色；多人合作时不方便后期统一颜色；导入unity时需要更改几个默认设置&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;为解决这些问题，我找到了一个快速对 UV coloring 的模型&lt;strong&gt;用标准 material 重新上色&lt;/strong&gt;的方法。总的效率可能比建完整个模型再上色更高。&lt;/p&gt;
+&lt;h2 id=&#34;the-palette-style-uv-coloring-method&#34;&gt;The palette style UV coloring method&lt;/h2&gt;
+&lt;p&gt;这个方法来自于一名油管大佬 &lt;a class=&#34;link&#34; href=&#34;https://www.youtube.com/watch?v=1jHUY3qoBu8&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.youtube.com/watch?v=1jHUY3qoBu8&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;他在这个视频的 02:12 - 4:42 介绍了这个涂色方法&lt;/p&gt;
+&lt;p&gt;这个视频的简介里，他给了两个 palette 的图片：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.youtube.com/redirect?v=1jHUY3qoBu8&amp;amp;event=video_description&amp;amp;redir_token=QUFFLUhqblZ6eF9xZ094cFJEaUJXX1VvbHgzVllTdTI5Z3xBQ3Jtc0tseU9hX1phWUtTUl90cWNNREs5elpITkZSUE96RGhwUTNKNFFmZlJSRThIX1JjZHl2eVhrMm05Z1BNcDl0LTl0WW5vUWFvVXdlQzNqb1VuVWRYeUNLSGJ4blI2Rlp4U0FyQlFTWDdSWTlVWkZFZnBVYw%3D%3D&amp;amp;q=https%3A%2F%2Fwww.dropbox.com%2Fs%2Fc5olic38j8fopet%2FImphenziaPalette01.png%3Fdl%3D0&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;图一&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.youtube.com/redirect?v=1jHUY3qoBu8&amp;amp;event=video_description&amp;amp;redir_token=QUFFLUhqbmtxSGEza1hSYmp6OEk2VTZvOFRtTjR0bWNjd3xBQ3Jtc0tubXVMSGsybFBKR2NwWklHNHRVM1BBM0ZaZXFpS0dEU3k5VU5aR3RVbmY1WXpQbnBPLVdqeEpQWFI4ejVjOVpjcUtFbHJjWnktMk5ma2o2d3hKSU1SVHNtbnd5Q2pTLUxNd3pCRUhxWjF0SDktQkc3Yw%3D%3D&amp;amp;q=https%3A%2F%2Fwww.dropbox.com%2Fs%2F1w98xiksiwaywqx%2FImphenziaPalette01-256-Gradient.png%3Fdl%3D0&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;图二&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以及一个我觉得蛮不错的blender setting视频（这个很短的视频里也介绍了 The palette style UV coloring method 的方法）：&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.youtube.com/watch?v=BlxiCd0Upg4&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.youtube.com/watch?v=BlxiCd0Upg4&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;用标准-material-重新上色&#34;&gt;用标准 material 重新上色&lt;/h2&gt;
+&lt;p&gt;假设在建模的时候，我把墙面涂成了诡异的蓝色，而右边material栏中的 &lt;code&gt;Material_final&lt;/code&gt; 是最终统一的墙面颜色。&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 188; flex-basis: 453px&#34;&gt;
+		&lt;a href=&#34;https://chen-gary.github.io/p/blender-uv-coloring-method/1.png&#34; data-size=&#34;1920x1017&#34;&gt;&lt;img src=&#34;https://chen-gary.github.io/p/blender-uv-coloring-method/1.png&#34;
+				srcset=&#34;https://chen-gary.github.io/p/blender-uv-coloring-method/1_hub89c3d175f779c7894920edbdb7a7efa_845456_480x0_resize_box_2.png 480w, https://chen-gary.github.io/p/blender-uv-coloring-method/1_hub89c3d175f779c7894920edbdb7a7efa_845456_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;1920&#34;
+				height=&#34;1017&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;pic1&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;pic1&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;tab&lt;/code&gt; 进入编辑模式&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;鼠标放在中间的编辑窗口，按 &lt;code&gt;A&lt;/code&gt; 全选&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;点亮左侧 UV editor 窗口的这个icon (红色框框)&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 29; flex-basis: 70px&#34;&gt;
+		&lt;a href=&#34;https://chen-gary.github.io/p/blender-uv-coloring-method/icon.png&#34; data-size=&#34;274x929&#34;&gt;&lt;img src=&#34;https://chen-gary.github.io/p/blender-uv-coloring-method/icon.png&#34;
+				srcset=&#34;https://chen-gary.github.io/p/blender-uv-coloring-method/icon_hu9d9b46e61bcd9c70c28bc52bccb2725e_29781_480x0_resize_box_2.png 480w, https://chen-gary.github.io/p/blender-uv-coloring-method/icon_hu9d9b46e61bcd9c70c28bc52bccb2725e_29781_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;274&#34;
+				height=&#34;929&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;pic2&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;pic2&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;左键框选诡异的蓝色，这样中间窗口中所有使用这种蓝色的面就被选中了&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 188; flex-basis: 453px&#34;&gt;
+		&lt;a href=&#34;https://chen-gary.github.io/p/blender-uv-coloring-method/2.png&#34; data-size=&#34;1920x1017&#34;&gt;&lt;img src=&#34;https://chen-gary.github.io/p/blender-uv-coloring-method/2.png&#34;
+				srcset=&#34;https://chen-gary.github.io/p/blender-uv-coloring-method/2_hu858b9284fc3023648efa0d79292c40d6_970629_480x0_resize_box_2.png 480w, https://chen-gary.github.io/p/blender-uv-coloring-method/2_hu858b9284fc3023648efa0d79292c40d6_970629_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;1920&#34;
+				height=&#34;1017&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;pic3&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;pic3&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;这时候在右侧material栏更换material，并点击&lt;code&gt;Assign&lt;/code&gt;，墙面就重新上色完成&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 188; flex-basis: 453px&#34;&gt;
+		&lt;a href=&#34;https://chen-gary.github.io/p/blender-uv-coloring-method/3.png&#34; data-size=&#34;1920x1017&#34;&gt;&lt;img src=&#34;https://chen-gary.github.io/p/blender-uv-coloring-method/3.png&#34;
+				srcset=&#34;https://chen-gary.github.io/p/blender-uv-coloring-method/3_hu858b9284fc3023648efa0d79292c40d6_963003_480x0_resize_box_2.png 480w, https://chen-gary.github.io/p/blender-uv-coloring-method/3_hu858b9284fc3023648efa0d79292c40d6_963003_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;1920&#34;
+				height=&#34;1017&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;pic4&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;pic4&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;同理，我们也可以对其他面重新上色&lt;/p&gt;
+&lt;p&gt;这样直接把&lt;code&gt;.blend&lt;/code&gt; 文件拖入unity 也可以保持所有颜色，无需任何设置。&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 240; flex-basis: 577px&#34;&gt;
+		&lt;a href=&#34;https://chen-gary.github.io/p/blender-uv-coloring-method/4.png&#34; data-size=&#34;1920x798&#34;&gt;&lt;img src=&#34;https://chen-gary.github.io/p/blender-uv-coloring-method/4.png&#34;
+				srcset=&#34;https://chen-gary.github.io/p/blender-uv-coloring-method/4_hua455ee9780054692b1349ee11d4f44dc_279209_480x0_resize_box_2.png 480w, https://chen-gary.github.io/p/blender-uv-coloring-method/4_hua455ee9780054692b1349ee11d4f44dc_279209_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;1920&#34;
+				height=&#34;798&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;pic5&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;pic5&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>GEB2405 Online Lecture 1</title>
         <link>https://chen-gary.github.io/p/geb2405-online-lecture-1/</link>
         <pubDate>Tue, 09 Feb 2021 16:09:54 +0800</pubDate>
