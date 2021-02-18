@@ -6,7 +6,47 @@
         <description>Recent content on Gary&#39;s Tech Station</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Thu, 18 Feb 2021 20:28:18 +0800</lastBuildDate><atom:link href="https://chen-gary.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 18 Feb 2021 20:57:29 +0800</lastBuildDate><atom:link href="https://chen-gary.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Blender: Import Material and Setup Material Library</title>
+        <link>https://chen-gary.github.io/p/blender-import-material-and-setup-material-library/</link>
+        <pubDate>Thu, 18 Feb 2021 20:57:29 +0800</pubDate>
+        
+        <guid>https://chen-gary.github.io/p/blender-import-material-and-setup-material-library/</guid>
+        <description>&lt;h2 id=&#34;使用material-library的原因&#34;&gt;使用material library的原因&lt;/h2&gt;
+&lt;p&gt;多人合作时，方便颜色统一（尤其针对统一玻璃之类的复杂材质）&lt;/p&gt;
+&lt;h2 id=&#34;如何导入material&#34;&gt;如何导入material&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;打开想要导入material的 blender file&lt;/li&gt;
+&lt;li&gt;导航栏选择 File &amp;gt; Append&lt;/li&gt;
+&lt;li&gt;找到&lt;code&gt;material_template_lib.blend&lt;/code&gt;，并双击进入&lt;/li&gt;
+&lt;li&gt;进入&lt;code&gt;Material&lt;/code&gt;文件夹，并双击选择想导入的material&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://camo.githubusercontent.com/548ea9bd6677b3840b98c2b3ef078787dfec0306e47559ad475b4419735de6bc/68747470733a2f2f692e737461636b2e696d6775722e636f6d2f6141584f772e676966&#34; alt=&#34;gif&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 110; flex-basis: 265px&#34;&gt;
+		&lt;a href=&#34;https://chen-gary.github.io/p/blender-import-material-and-setup-material-library/img_1.png&#34; data-size=&#34;402x364&#34;&gt;&lt;img src=&#34;https://chen-gary.github.io/p/blender-import-material-and-setup-material-library/img_1.png&#34;
+				srcset=&#34;https://chen-gary.github.io/p/blender-import-material-and-setup-material-library/img_1_hu763381cffcdc03b384473bdcb971a8bb_44806_480x0_resize_box_2.png 480w, https://chen-gary.github.io/p/blender-import-material-and-setup-material-library/img_1_hu763381cffcdc03b384473bdcb971a8bb_44806_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;402&#34;
+				height=&#34;364&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;pic&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;pic&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;这样在Material selector中应该就能找到刚刚导入的material&lt;/p&gt;
+&lt;p&gt;（注意&lt;strong&gt;重命名&lt;/strong&gt;导入的material）&lt;/p&gt;
+&lt;p&gt;（ref &lt;a href=&#34;https://blender.stackexchange.com/questions/63018/how-to-import-downloaded-materials-files/63055&#34;&gt;https://blender.stackexchange.com/questions/63018/how-to-import-downloaded-materials-files/63055&lt;/a&gt;）&lt;/p&gt;
+&lt;h2 id=&#34;合作方式&#34;&gt;*合作方式&lt;/h2&gt;
+&lt;p&gt;比如我负责选定玻璃的材质，那么我就&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;下载最新的&lt;code&gt;material_template_lib.blend&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;新建一个cube，后新建并附上调好的玻璃材质&lt;/li&gt;
+&lt;li&gt;commit回GitHub，更新&lt;code&gt;material_template_lib.blend&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>Blender: UV Coloring Method</title>
         <link>https://chen-gary.github.io/p/blender-uv-coloring-method/</link>
         <pubDate>Thu, 18 Feb 2021 20:28:18 +0800</pubDate>

@@ -6,7 +6,22 @@
     <description>Recent content in Blender on Gary&#39;s Tech Station</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 18 Feb 2021 20:28:18 +0800</lastBuildDate><atom:link href="https://chen-gary.github.io/categories/blender/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 18 Feb 2021 20:57:29 +0800</lastBuildDate><atom:link href="https://chen-gary.github.io/categories/blender/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blender: Import Material and Setup Material Library</title>
+      <link>https://chen-gary.github.io/p/blender-import-material-and-setup-material-library/</link>
+      <pubDate>Thu, 18 Feb 2021 20:57:29 +0800</pubDate>
+      
+      <guid>https://chen-gary.github.io/p/blender-import-material-and-setup-material-library/</guid>
+      <description>使用material library的原因 多人合作时，方便颜色统一（尤其针对统一玻璃之类的复杂材质）
+如何导入material  打开想要导入material的 blender file 导航栏选择 File &amp;gt; Append 找到material_template_lib.blend，并双击进入 进入Material文件夹，并双击选择想导入的material  pic
+这样在Material selector中应该就能找到刚刚导入的material
+（注意重命名导入的material）
+（ref https://blender.stackexchange.com/questions/63018/how-to-import-downloaded-materials-files/63055）
+*合作方式 比如我负责选定玻璃的材质，那么我就
+ 下载最新的material_template_lib.blend 新建一个cube，后新建并附上调好的玻璃材质 commit回GitHub，更新material_template_lib.blend  </description>
+    </item>
+    
     <item>
       <title>Blender: UV Coloring Method</title>
       <link>https://chen-gary.github.io/p/blender-uv-coloring-method/</link>

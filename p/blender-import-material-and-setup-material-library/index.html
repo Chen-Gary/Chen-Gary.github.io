@@ -1,53 +1,35 @@
 <!DOCTYPE html>
 <html lang="en-us">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='The palette style UV coloring method 是一个使用调色板图片(palette) 对模型涂色的方法
- 优点：涂色非常简单快速，可以边建模边涂色（辅助建模） 缺点：有的时候不好找想要的颜色；多人合作时不方便后期统一颜色；导入unity时需要更改几个默认设置  为解决这些问题，我找到了一个快速对 UV coloring 的模型用标准 material 重新上色的方法。总的效率可能比建完整个模型再上色更高。
-The palette style UV coloring method 这个方法来自于一名油管大佬 https://www.youtube.com/watch?v=1jHUY3qoBu8
-他在这个视频的 02:12 - 4:42 介绍了这个涂色方法
-这个视频的简介里，他给了两个 palette 的图片：
-  图一
-  图二
-  以及一个我觉得蛮不错的blender setting视频（这个很短的视频里也介绍了 The palette style UV coloring method 的方法）：
-https://www.youtube.com/watch?v=BlxiCd0Upg4
-用标准 material 重新上色 假设在建模的时候，我把墙面涂成了诡异的蓝色，而右边material栏中的 Material_final 是最终统一的墙面颜色。
-pic1
-  tab 进入编辑模式
-  鼠标放在中间的编辑窗口，按 A 全选'><title>Blender: UV Coloring Method</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='使用material library的原因 多人合作时，方便颜色统一（尤其针对统一玻璃之类的复杂材质）
+如何导入material  打开想要导入material的 blender file 导航栏选择 File &amp;gt; Append 找到material_template_lib.blend，并双击进入 进入Material文件夹，并双击选择想导入的material  pic
+这样在Material selector中应该就能找到刚刚导入的material
+（注意重命名导入的material）
+（ref https://blender.stackexchange.com/questions/63018/how-to-import-downloaded-materials-files/63055）
+*合作方式 比如我负责选定玻璃的材质，那么我就
+ 下载最新的material_template_lib.blend 新建一个cube，后新建并附上调好的玻璃材质 commit回GitHub，更新material_template_lib.blend  '><title>Blender: Import Material and Setup Material Library</title>
 
-<link rel='canonical' href='https://chen-gary.github.io/p/blender-uv-coloring-method/'>
+<link rel='canonical' href='https://chen-gary.github.io/p/blender-import-material-and-setup-material-library/'>
 
-<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Blender: UV Coloring Method'>
-<meta property='og:description' content='The palette style UV coloring method 是一个使用调色板图片(palette) 对模型涂色的方法
- 优点：涂色非常简单快速，可以边建模边涂色（辅助建模） 缺点：有的时候不好找想要的颜色；多人合作时不方便后期统一颜色；导入unity时需要更改几个默认设置  为解决这些问题，我找到了一个快速对 UV coloring 的模型用标准 material 重新上色的方法。总的效率可能比建完整个模型再上色更高。
-The palette style UV coloring method 这个方法来自于一名油管大佬 https://www.youtube.com/watch?v=1jHUY3qoBu8
-他在这个视频的 02:12 - 4:42 介绍了这个涂色方法
-这个视频的简介里，他给了两个 palette 的图片：
-  图一
-  图二
-  以及一个我觉得蛮不错的blender setting视频（这个很短的视频里也介绍了 The palette style UV coloring method 的方法）：
-https://www.youtube.com/watch?v=BlxiCd0Upg4
-用标准 material 重新上色 假设在建模的时候，我把墙面涂成了诡异的蓝色，而右边material栏中的 Material_final 是最终统一的墙面颜色。
-pic1
-  tab 进入编辑模式
-  鼠标放在中间的编辑窗口，按 A 全选'>
-<meta property='og:url' content='https://chen-gary.github.io/p/blender-uv-coloring-method/'>
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Blender: Import Material and Setup Material Library'>
+<meta property='og:description' content='使用material library的原因 多人合作时，方便颜色统一（尤其针对统一玻璃之类的复杂材质）
+如何导入material  打开想要导入material的 blender file 导航栏选择 File &amp;gt; Append 找到material_template_lib.blend，并双击进入 进入Material文件夹，并双击选择想导入的material  pic
+这样在Material selector中应该就能找到刚刚导入的material
+（注意重命名导入的material）
+（ref https://blender.stackexchange.com/questions/63018/how-to-import-downloaded-materials-files/63055）
+*合作方式 比如我负责选定玻璃的材质，那么我就
+ 下载最新的material_template_lib.blend 新建一个cube，后新建并附上调好的玻璃材质 commit回GitHub，更新material_template_lib.blend  '>
+<meta property='og:url' content='https://chen-gary.github.io/p/blender-import-material-and-setup-material-library/'>
 <meta property='og:site_name' content='Gary&#39;s Tech Station'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Blender' /><meta property='article:published_time' content='2021-02-18T20:28:18&#43;08:00'/><meta property='article:modified_time' content='2021-02-18T20:28:18&#43;08:00'/>
-<meta name="twitter:title" content="Blender: UV Coloring Method">
-<meta name="twitter:description" content="The palette style UV coloring method 是一个使用调色板图片(palette) 对模型涂色的方法
- 优点：涂色非常简单快速，可以边建模边涂色（辅助建模） 缺点：有的时候不好找想要的颜色；多人合作时不方便后期统一颜色；导入unity时需要更改几个默认设置  为解决这些问题，我找到了一个快速对 UV coloring 的模型用标准 material 重新上色的方法。总的效率可能比建完整个模型再上色更高。
-The palette style UV coloring method 这个方法来自于一名油管大佬 https://www.youtube.com/watch?v=1jHUY3qoBu8
-他在这个视频的 02:12 - 4:42 介绍了这个涂色方法
-这个视频的简介里，他给了两个 palette 的图片：
-  图一
-  图二
-  以及一个我觉得蛮不错的blender setting视频（这个很短的视频里也介绍了 The palette style UV coloring method 的方法）：
-https://www.youtube.com/watch?v=BlxiCd0Upg4
-用标准 material 重新上色 假设在建模的时候，我把墙面涂成了诡异的蓝色，而右边material栏中的 Material_final 是最终统一的墙面颜色。
-pic1
-  tab 进入编辑模式
-  鼠标放在中间的编辑窗口，按 A 全选">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Blender' /><meta property='article:published_time' content='2021-02-18T20:57:29&#43;08:00'/><meta property='article:modified_time' content='2021-02-18T20:57:29&#43;08:00'/>
+<meta name="twitter:title" content="Blender: Import Material and Setup Material Library">
+<meta name="twitter:description" content="使用material library的原因 多人合作时，方便颜色统一（尤其针对统一玻璃之类的复杂材质）
+如何导入material  打开想要导入material的 blender file 导航栏选择 File &amp;gt; Append 找到material_template_lib.blend，并双击进入 进入Material文件夹，并双击选择想导入的material  pic
+这样在Material selector中应该就能找到刚刚导入的material
+（注意重命名导入的material）
+（ref https://blender.stackexchange.com/questions/63018/how-to-import-downloaded-materials-files/63055）
+*合作方式 比如我负责选定玻璃的材质，那么我就
+ 下载最新的material_template_lib.blend 新建一个cube，后新建并附上调好的玻璃材质 commit回GitHub，更新material_template_lib.blend  ">
     </head>
     <body class="">
     <script>
@@ -255,7 +237,7 @@ https://www.youtube.com/watch?v=BlxiCd0Upg4
     
 
     <h2 class="article-title">
-        <a href="/p/blender-uv-coloring-method/">Blender: UV Coloring Method</a>
+        <a href="/p/blender-import-material-and-setup-material-library/">Blender: Import Material and Setup Material Library</a>
     </h2>
 
     <footer class="article-time">
@@ -272,111 +254,38 @@ https://www.youtube.com/watch?v=BlxiCd0Upg4
 </header>
 
     <section class="article-content">
-    <p><strong>The palette style UV coloring method</strong> 是一个使用<strong>调色板图片(palette)</strong> 对模型涂色的方法</p>
-<ul>
-<li>优点：涂色非常简单快速，可以边建模边涂色（辅助建模）</li>
-<li>缺点：有的时候不好找想要的颜色；多人合作时不方便后期统一颜色；导入unity时需要更改几个默认设置</li>
-</ul>
-<p>为解决这些问题，我找到了一个快速对 UV coloring 的模型<strong>用标准 material 重新上色</strong>的方法。总的效率可能比建完整个模型再上色更高。</p>
-<h2 id="the-palette-style-uv-coloring-method">The palette style UV coloring method</h2>
-<p>这个方法来自于一名油管大佬 <a class="link" href="https://www.youtube.com/watch?v=1jHUY3qoBu8"  target="_blank" rel="noopener"
-    >https://www.youtube.com/watch?v=1jHUY3qoBu8</a></p>
-<p>他在这个视频的 02:12 - 4:42 介绍了这个涂色方法</p>
-<p>这个视频的简介里，他给了两个 palette 的图片：</p>
-<ul>
-<li>
-<p><a class="link" href="https://www.youtube.com/redirect?v=1jHUY3qoBu8&amp;event=video_description&amp;redir_token=QUFFLUhqblZ6eF9xZ094cFJEaUJXX1VvbHgzVllTdTI5Z3xBQ3Jtc0tseU9hX1phWUtTUl90cWNNREs5elpITkZSUE96RGhwUTNKNFFmZlJSRThIX1JjZHl2eVhrMm05Z1BNcDl0LTl0WW5vUWFvVXdlQzNqb1VuVWRYeUNLSGJ4blI2Rlp4U0FyQlFTWDdSWTlVWkZFZnBVYw%3D%3D&amp;q=https%3A%2F%2Fwww.dropbox.com%2Fs%2Fc5olic38j8fopet%2FImphenziaPalette01.png%3Fdl%3D0"  target="_blank" rel="noopener"
-    >图一</a></p>
-</li>
-<li>
-<p><a class="link" href="https://www.youtube.com/redirect?v=1jHUY3qoBu8&amp;event=video_description&amp;redir_token=QUFFLUhqbmtxSGEza1hSYmp6OEk2VTZvOFRtTjR0bWNjd3xBQ3Jtc0tubXVMSGsybFBKR2NwWklHNHRVM1BBM0ZaZXFpS0dEU3k5VU5aR3RVbmY1WXpQbnBPLVdqeEpQWFI4ejVjOVpjcUtFbHJjWnktMk5ma2o2d3hKSU1SVHNtbnd5Q2pTLUxNd3pCRUhxWjF0SDktQkc3Yw%3D%3D&amp;q=https%3A%2F%2Fwww.dropbox.com%2Fs%2F1w98xiksiwaywqx%2FImphenziaPalette01-256-Gradient.png%3Fdl%3D0"  target="_blank" rel="noopener"
-    >图二</a></p>
-</li>
-</ul>
-<p>以及一个我觉得蛮不错的blender setting视频（这个很短的视频里也介绍了 The palette style UV coloring method 的方法）：</p>
-<p><a class="link" href="https://www.youtube.com/watch?v=BlxiCd0Upg4"  target="_blank" rel="noopener"
-    >https://www.youtube.com/watch?v=BlxiCd0Upg4</a></p>
-<h2 id="用标准-material-重新上色">用标准 material 重新上色</h2>
-<p>假设在建模的时候，我把墙面涂成了诡异的蓝色，而右边material栏中的 <code>Material_final</code> 是最终统一的墙面颜色。</p>
-<p><figure style="flex-grow: 188; flex-basis: 453px">
-		<a href="/p/blender-uv-coloring-method/1.png" data-size="1920x1017"><img src="/p/blender-uv-coloring-method/1.png"
-				srcset="/p/blender-uv-coloring-method/1_hub89c3d175f779c7894920edbdb7a7efa_845456_480x0_resize_box_2.png 480w, /p/blender-uv-coloring-method/1_hub89c3d175f779c7894920edbdb7a7efa_845456_1024x0_resize_box_2.png 1024w"
-				width="1920"
-				height="1017"
-				loading="lazy"
-				alt="pic1">
-		</a>
-		
-		<figcaption>pic1</figcaption>
-		
-	</figure></p>
+    <h2 id="使用material-library的原因">使用material library的原因</h2>
+<p>多人合作时，方便颜色统一（尤其针对统一玻璃之类的复杂材质）</p>
+<h2 id="如何导入material">如何导入material</h2>
 <ol>
-<li>
-<p><code>tab</code> 进入编辑模式</p>
-</li>
-<li>
-<p>鼠标放在中间的编辑窗口，按 <code>A</code> 全选</p>
-</li>
-<li>
-<p>点亮左侧 UV editor 窗口的这个icon (红色框框)</p>
-<p><figure style="flex-grow: 29; flex-basis: 70px">
-		<a href="/p/blender-uv-coloring-method/icon.png" data-size="274x929"><img src="/p/blender-uv-coloring-method/icon.png"
-				srcset="/p/blender-uv-coloring-method/icon_hu9d9b46e61bcd9c70c28bc52bccb2725e_29781_480x0_resize_box_2.png 480w, /p/blender-uv-coloring-method/icon_hu9d9b46e61bcd9c70c28bc52bccb2725e_29781_1024x0_resize_box_2.png 1024w"
-				width="274"
-				height="929"
-				loading="lazy"
-				alt="pic2">
-		</a>
-		
-		<figcaption>pic2</figcaption>
-		
-	</figure></p>
-</li>
-<li>
-<p>左键框选诡异的蓝色，这样中间窗口中所有使用这种蓝色的面就被选中了</p>
-<p><figure style="flex-grow: 188; flex-basis: 453px">
-		<a href="/p/blender-uv-coloring-method/2.png" data-size="1920x1017"><img src="/p/blender-uv-coloring-method/2.png"
-				srcset="/p/blender-uv-coloring-method/2_hu858b9284fc3023648efa0d79292c40d6_970629_480x0_resize_box_2.png 480w, /p/blender-uv-coloring-method/2_hu858b9284fc3023648efa0d79292c40d6_970629_1024x0_resize_box_2.png 1024w"
-				width="1920"
-				height="1017"
-				loading="lazy"
-				alt="pic3">
-		</a>
-		
-		<figcaption>pic3</figcaption>
-		
-	</figure></p>
-</li>
-<li>
-<p>这时候在右侧material栏更换material，并点击<code>Assign</code>，墙面就重新上色完成</p>
-<p><figure style="flex-grow: 188; flex-basis: 453px">
-		<a href="/p/blender-uv-coloring-method/3.png" data-size="1920x1017"><img src="/p/blender-uv-coloring-method/3.png"
-				srcset="/p/blender-uv-coloring-method/3_hu858b9284fc3023648efa0d79292c40d6_963003_480x0_resize_box_2.png 480w, /p/blender-uv-coloring-method/3_hu858b9284fc3023648efa0d79292c40d6_963003_1024x0_resize_box_2.png 1024w"
-				width="1920"
-				height="1017"
-				loading="lazy"
-				alt="pic4">
-		</a>
-		
-		<figcaption>pic4</figcaption>
-		
-	</figure></p>
-</li>
+<li>打开想要导入material的 blender file</li>
+<li>导航栏选择 File &gt; Append</li>
+<li>找到<code>material_template_lib.blend</code>，并双击进入</li>
+<li>进入<code>Material</code>文件夹，并双击选择想导入的material</li>
 </ol>
-<p>同理，我们也可以对其他面重新上色</p>
-<p>这样直接把<code>.blend</code> 文件拖入unity 也可以保持所有颜色，无需任何设置。</p>
-<p><figure style="flex-grow: 240; flex-basis: 577px">
-		<a href="/p/blender-uv-coloring-method/4.png" data-size="1920x798"><img src="/p/blender-uv-coloring-method/4.png"
-				srcset="/p/blender-uv-coloring-method/4_hua455ee9780054692b1349ee11d4f44dc_279209_480x0_resize_box_2.png 480w, /p/blender-uv-coloring-method/4_hua455ee9780054692b1349ee11d4f44dc_279209_1024x0_resize_box_2.png 1024w"
-				width="1920"
-				height="798"
+<p><img src="https://camo.githubusercontent.com/548ea9bd6677b3840b98c2b3ef078787dfec0306e47559ad475b4419735de6bc/68747470733a2f2f692e737461636b2e696d6775722e636f6d2f6141584f772e676966" alt="gif"  /></p>
+<p><figure style="flex-grow: 110; flex-basis: 265px">
+		<a href="/p/blender-import-material-and-setup-material-library/img_1.png" data-size="402x364"><img src="/p/blender-import-material-and-setup-material-library/img_1.png"
+				srcset="/p/blender-import-material-and-setup-material-library/img_1_hu763381cffcdc03b384473bdcb971a8bb_44806_480x0_resize_box_2.png 480w, /p/blender-import-material-and-setup-material-library/img_1_hu763381cffcdc03b384473bdcb971a8bb_44806_1024x0_resize_box_2.png 1024w"
+				width="402"
+				height="364"
 				loading="lazy"
-				alt="pic5">
+				alt="pic">
 		</a>
 		
-		<figcaption>pic5</figcaption>
+		<figcaption>pic</figcaption>
 		
 	</figure></p>
+<p>这样在Material selector中应该就能找到刚刚导入的material</p>
+<p>（注意<strong>重命名</strong>导入的material）</p>
+<p>（ref <a href="https://blender.stackexchange.com/questions/63018/how-to-import-downloaded-materials-files/63055">https://blender.stackexchange.com/questions/63018/how-to-import-downloaded-materials-files/63055</a>）</p>
+<h2 id="合作方式">*合作方式</h2>
+<p>比如我负责选定玻璃的材质，那么我就</p>
+<ul>
+<li>下载最新的<code>material_template_lib.blend</code></li>
+<li>新建一个cube，后新建并附上调好的玻璃材质</li>
+<li>commit回GitHub，更新<code>material_template_lib.blend</code></li>
+</ul>
 
 </section>
 
@@ -416,12 +325,12 @@ https://www.youtube.com/watch?v=BlxiCd0Upg4
                 
                     
 <article class="">
-    <a href="/p/blender-import-material-and-setup-material-library/">
+    <a href="/p/blender-uv-coloring-method/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Blender: Import Material and Setup Material Library</h2>
+            <h2 class="article-title">Blender: UV Coloring Method</h2>
         </div>
     </a>
 </article>
