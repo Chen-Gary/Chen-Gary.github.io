@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CSC3050 on Gary&#39;s Tech Station</title>
+    <link>https://chen-gary.github.io/categories/csc3050/</link>
+    <description>Recent content in CSC3050 on Gary&#39;s Tech Station</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 20 Feb 2021 22:59:49 +0800</lastBuildDate><atom:link href="https://chen-gary.github.io/categories/csc3050/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CSC3050 Tips</title>
+      <link>https://chen-gary.github.io/p/csc3050-tips/</link>
+      <pubDate>Sat, 20 Feb 2021 22:59:49 +0800</pubDate>
+      
+      <guid>https://chen-gary.github.io/p/csc3050-tips/</guid>
+      <description>1_Virtual Machine Setup.pdf http://127.0.0.1:3050/login
+password: csc3050
+You will see a vscode running in your browser
+ openssh server
+open terminal
+ssh -p5678 csc3050@127.0.0.1 password: csc3050
+Then you will login the machine
+ Transfer files to VM Simply drag files in the vscode&amp;hellip;
+(Use Git or SCP. See the pdf file.)</description>
+    </item>
+    
+  </channel>
+</rss>

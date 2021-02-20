@@ -6,7 +6,29 @@
         <description>Recent content on Gary&#39;s Tech Station</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Sat, 20 Feb 2021 12:09:09 +0800</lastBuildDate><atom:link href="https://chen-gary.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 20 Feb 2021 22:59:49 +0800</lastBuildDate><atom:link href="https://chen-gary.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>CSC3050 Tips</title>
+        <link>https://chen-gary.github.io/p/csc3050-tips/</link>
+        <pubDate>Sat, 20 Feb 2021 22:59:49 +0800</pubDate>
+        
+        <guid>https://chen-gary.github.io/p/csc3050-tips/</guid>
+        <description>&lt;h2 id=&#34;1_virtual-machine-setuppdf&#34;&gt;1_Virtual Machine Setup.pdf&lt;/h2&gt;
+&lt;p&gt;http://127.0.0.1:3050/login&lt;/p&gt;
+&lt;p&gt;password: csc3050&lt;/p&gt;
+&lt;p&gt;You will see a vscode running in your browser&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;code&gt;openssh&lt;/code&gt; server&lt;/p&gt;
+&lt;p&gt;open terminal&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;ssh -p5678 csc3050@127.0.0.1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;password: csc3050&lt;/p&gt;
+&lt;p&gt;Then you will login the machine&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;transfer-files-to-vm&#34;&gt;Transfer files to VM&lt;/h3&gt;
+&lt;p&gt;Simply drag files in the vscode&amp;hellip;&lt;/p&gt;
+&lt;p&gt;(Use Git or SCP. See the pdf file.)&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>GEB2405 Online Lecture 3 - Clean the data before analysis</title>
         <link>https://chen-gary.github.io/p/geb2405-online-lecture-3-clean-the-data-before-analysis/</link>
         <pubDate>Sat, 20 Feb 2021 12:09:09 +0800</pubDate>
