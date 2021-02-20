@@ -6,7 +6,181 @@
         <description>Recent content on Gary&#39;s Tech Station</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Thu, 18 Feb 2021 20:57:29 +0800</lastBuildDate><atom:link href="https://chen-gary.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 20 Feb 2021 12:09:09 +0800</lastBuildDate><atom:link href="https://chen-gary.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>GEB2405 Online Lecture 3 - Clean the data before analysis</title>
+        <link>https://chen-gary.github.io/p/geb2405-online-lecture-3-clean-the-data-before-analysis/</link>
+        <pubDate>Sat, 20 Feb 2021 12:09:09 +0800</pubDate>
+        
+        <guid>https://chen-gary.github.io/p/geb2405-online-lecture-3-clean-the-data-before-analysis/</guid>
+        <description>&lt;p&gt;Problems:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;var in wrong format, e.g. numeric, char, factor (transform data type)&lt;/li&gt;
+&lt;li&gt;not properly coded &lt;code&gt;NA&lt;/code&gt;, e.g. Non answer is coded as &amp;ldquo;-1&amp;rdquo; or &amp;ldquo;a.&amp;rdquo; instead of &lt;code&gt;NA&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;levels are not correctly &lt;strong&gt;ordered&lt;/strong&gt;, e.g. income levels not organized in a progressive order&lt;/li&gt;
+&lt;li&gt;some levels need to be &lt;strong&gt;merged&lt;/strong&gt;. e.g. only 0.2% of respondents are in a given income category&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The levels are not correctly &lt;strong&gt;ordered&lt;/strong&gt;. e.g. income levels are not organized in a progressive order, we want&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;lowest
+middle
+highest
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;but the data are organized&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;middle
+highest
+lowest
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;packages used: &lt;code&gt;psych&lt;/code&gt;, &lt;code&gt;Hmisc&lt;/code&gt;, &lt;code&gt;dplyr&lt;/code&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;var-in-the-wrong-format&#34;&gt;var in the wrong format&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span class=&#34;nf&#34;&gt;load&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;C:/Users/86188/Desktop/GEB2405/Week3/online3/Golf_trainer_short.RData&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;# load .RData file&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;str&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;CGA_golf_train_short&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span class=&#34;nf&#34;&gt;library&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;dplyr&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;modified_obj&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;as.factor&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;original_obj&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;modified_obj&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;as.numeric&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;original_obj&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;modified_obj&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;as.character&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;original_obj&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# example&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;CGA_golf_train_short&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;operation_worker&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;as.factor&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;CGA_golf_train_short&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;operation_worker&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;# do not modify the original var!!&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;CGA&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;year_birth_factor&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;as.factor&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;CGA&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Year_birth&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;# see an example in the video 17:45 about transform factor to numeric!!&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;code-the-non-answer-properly&#34;&gt;Code the non answer properly&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span class=&#34;nf&#34;&gt;library&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;dplyr&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;# the var we want to modify is numerical&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;modified&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;object&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;na_if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;original&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;object&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;specific&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;value&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;to&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;be&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;replaced&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;CGA&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Year_birth&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;na_if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;CGA&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Year_birth&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;-1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;# the var we want to modify is a factor (or categorical)&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;modified&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;object&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;na_if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;original&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;object&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;specific value to be replaced&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;# see an example of `droplevels`, `table`, `na_if`&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;# in the video 24:53&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;# note that we need `droplevels` only when we are dealing with factor var!!&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;object&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;droplevels&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;object&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;reordering-levels-of-a-factor-var&#34;&gt;Reordering levels of a factor var&lt;/h2&gt;
+&lt;p&gt;(Note that we can use &lt;code&gt;levels&lt;/code&gt; and &lt;code&gt;table&lt;/code&gt; to see the info of factor var, example in video 26:23)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span class=&#34;n&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;object&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;factor&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;old&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;object&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;levels&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;first level&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;second level&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;nth level&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;CGA&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;diploma2&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;factor&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;CGA&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;diploma&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;levels&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;PhD&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Master&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Bachelor&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;high-school and below&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;recode-a-var-merge-levels-of-a-factor-var&#34;&gt;Recode a var (merge levels of a factor var)&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span class=&#34;nf&#34;&gt;library&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;dplyr&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;object&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;recode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;old&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;object&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;level1 to recode&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;new level&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;# example 1&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;CGA&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;trainer_exp_5cat&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;recode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;CGA&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;trainer_exp_5cat&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;21 years or more&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;11 years or more&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;11 to 20 years&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;11 years or more&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;# example 2&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;CGA_golf_train_short&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;earning_3cat&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;CGA_golf_train_short&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;annual_earning&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;CGA_golf_train_short&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;earning_3cat&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;recode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;CGA_golf_train_short&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;earning_3cat&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;20 000 to 30 000&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;20 000 or more&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;30 000 to 50 000&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;20 000 or more&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;up to 50 000&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;20 000 or more&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;table&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;CGA_golf_train_short&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;earning_3cat&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;CGA_golf_train_short&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;earning_3cat&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;factor&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;CGA_golf_train_short&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;earning_3cat&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;levels&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Less than 10 000&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;10 000 to 20 000&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;20 000 or more&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;tutorial-3&#34;&gt;Tutorial 3&lt;/h2&gt;
+&lt;p&gt;Import excel/Stata file to R environment:&lt;/p&gt;
+&lt;p&gt;File &amp;gt; import data set &amp;gt; from excel&lt;/p&gt;
+&lt;hr&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#Exercise 3 Question 5&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;#many step are necessary for this question&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;#Step 1 creat the variabale year of birth (date of the survey - age of respondent at the time of the survey)&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;gfk_cleaned_eul&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;year_birth&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;2014&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;gfk_cleaned_eul&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;age&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;#step 2 create a new categorical variable&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;gfk_cleaned_eul&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;year_birth_cat&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;gfk_cleaned_eul&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;year_birth&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;#recode the categories using the cut function&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;#run describe to know the min and max value&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;describe&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;gfk_cleaned_eul&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;year_birth_cat&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;# for the cut function cut(object, breaks=c(min, val1, val2,valn, max))&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;gfk_cleaned_eul&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;year_birth_cat&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;cut&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;gfk_cleaned_eul&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;year_birth_cat&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;breaks&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1929&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1945&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1964&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1984&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1996&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1997&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;table&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;gfk_cleaned_eul&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;year_birth_cat&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;gfk_cleaned_eul&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;year_birth_cat&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;recode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;gfk_cleaned_eul&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;year_birth_cat&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;(1929,1945]&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Born before 1945&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;(1945,1964]&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Boomers&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;(1964,1984]&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;GenerationX&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;(1984,1996]&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Millenium&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;(1996,1997]&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;GenerationZ&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;table&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;gfk_cleaned_eul&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;year_birth_cat&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>GEB2405 Online Lecture 2</title>
+        <link>https://chen-gary.github.io/p/geb2405-online-lecture-2/</link>
+        <pubDate>Sat, 20 Feb 2021 12:08:00 +0800</pubDate>
+        
+        <guid>https://chen-gary.github.io/p/geb2405-online-lecture-2/</guid>
+        <description>&lt;h2 id=&#34;on-line-lecture-2&#34;&gt;On-line Lecture 2&lt;/h2&gt;
+&lt;p&gt;explore some data depositories&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;UK Data Service &lt;a href=&#34;https://www.ukdataservice.ac.uk/&#34;&gt;https://www.ukdataservice.ac.uk/&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I have an account for it.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;GBCS (Great British Class Survey)&lt;/li&gt;
+&lt;li&gt;CCSE (Cultural Capital and Social Exclusion)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;CNSDA 中国国家调查数据库 ~~&lt;a href=&#34;http://cnsda.edu.cn/index.php~~&#34;&gt;http://cnsda.edu.cn/index.php~~&lt;/a&gt; / &lt;a href=&#34;http://cnsda.ruc.edu.cn/&#34;&gt;http://cnsda.ruc.edu.cn/&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I have an account for it.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;CGSS (China General Social Survey) 中国综合社会调查&lt;/li&gt;
+&lt;li&gt;CRS (The Chinese Religion Survey)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;北京大学开放研究数据平台 &lt;a href=&#34;https://opendata.pku.edu.cn/&#34;&gt;https://opendata.pku.edu.cn/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;tutorial-2&#34;&gt;Tutorial 2&lt;/h2&gt;
+&lt;p&gt;Some definitions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&amp;ldquo;Levels&amp;rdquo;&lt;/strong&gt; are the &lt;strong&gt;different attributes&lt;/strong&gt; that a &lt;strong&gt;==factor/categorical variable==&lt;/strong&gt; ==(only for these two types of data)== can have. For example: The variable &lt;em&gt;gender&lt;/em&gt; has usually two levels, &lt;em&gt;male&lt;/em&gt; and &lt;em&gt;female&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;ldquo;Not well ordered variable&amp;rdquo;&lt;/strong&gt; is a variable whose levels &lt;strong&gt;should be rearranged&lt;/strong&gt; in increasing order or decreasing order. For example, you have a question: Do you like coffee? The levels are in the following order: Like a lot, dislike a lot, Like, neither, Dislike. This is not very rational and need to be reordered from Dislike a lot to like a lot&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span class=&#34;nf&#34;&gt;library&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;psych&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;describe&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;USArrests&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Murder&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;		&lt;span class=&#34;c1&#34;&gt;# improved version of summary(USArrests$Murder)&lt;/span&gt;
+								&lt;span class=&#34;c1&#34;&gt;# with `sd` (standard dev.) included&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Other commands to see info of data&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;summary&lt;/code&gt;: knowing &lt;strong&gt;basic information&lt;/strong&gt; about the distribution of &lt;strong&gt;continuous variable&lt;/strong&gt; which are named &lt;strong&gt;numeric&lt;/strong&gt; in R. However this command ==does not work for factor and character variable==. Different command are necessary to explore different type of variable&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;str(object)&lt;/code&gt;: When the variable is &lt;strong&gt;numeric&lt;/strong&gt;, &lt;strong&gt;integer&lt;/strong&gt;, &lt;strong&gt;factor&lt;/strong&gt; or &lt;strong&gt;character&lt;/strong&gt; the command &lt;code&gt;str&lt;/code&gt; can be use&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;describe(object)&lt;/code&gt;: When you have a &lt;strong&gt;numeric&lt;/strong&gt; or &lt;strong&gt;integer&lt;/strong&gt; the command &lt;code&gt;describe&lt;/code&gt; can be used&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;levels(object)&lt;/code&gt;: When the variable is &lt;strong&gt;factor&lt;/strong&gt;, I can know the possible “label” of the answers using the command &lt;code&gt;levels(object)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;table(object)&lt;/code&gt;: When the variable is &lt;strong&gt;factor&lt;/strong&gt;, you can use the command &lt;code&gt;table&lt;/code&gt; to explore the variable (see example of &lt;code&gt;table&lt;/code&gt; and &lt;code&gt;levels&lt;/code&gt; in online lec 3 video 26:23)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;tutorial-2---data-type&#34;&gt;Tutorial 2 - Data type&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;Data Types and Structures-v2.docx&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;data-types&#34;&gt;Data types:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;character&lt;/li&gt;
+&lt;li&gt;numeric (real or decimal)&lt;/li&gt;
+&lt;li&gt;integer&lt;/li&gt;
+&lt;li&gt;factor (has a certain number of possible answers &amp;mdash;- see details in the &lt;code&gt;docx&lt;/code&gt; file)&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;logical (TRUE, FALSE)&lt;/del&gt; (not covered in this course)&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;complex&lt;/del&gt; (not covered in this course)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;see examples in the &lt;code&gt;docx&lt;/code&gt; file&lt;/p&gt;
+&lt;h3 id=&#34;commands-to-check-the-data-type&#34;&gt;Commands to check the data type:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;class (object)&lt;/li&gt;
+&lt;li&gt;str(object) &amp;mdash;&amp;mdash;&amp;ndash; covered in tut2&lt;/li&gt;
+&lt;li&gt;mode(object)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;data-structures&#34;&gt;Data structures&lt;/h3&gt;
+&lt;p&gt;During the first tutorial, we create &lt;strong&gt;individual vectors (or variables)&lt;/strong&gt;. Those vectors can be combined together into a &lt;strong&gt;data frame&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;(see more details in the &lt;code&gt;docx&lt;/code&gt; file)&lt;/p&gt;
+&lt;p&gt;Data structures:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;data frame&lt;/li&gt;
+&lt;li&gt;matrix&lt;/li&gt;
+&lt;li&gt;list&lt;/li&gt;
+&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>Blender: Import Material and Setup Material Library</title>
         <link>https://chen-gary.github.io/p/blender-import-material-and-setup-material-library/</link>
         <pubDate>Thu, 18 Feb 2021 20:57:29 +0800</pubDate>
@@ -166,7 +340,7 @@
         
         <guid>https://chen-gary.github.io/p/geb2405-online-lecture-1/</guid>
         <description>&lt;h2 id=&#34;on-line-lecture-1&#34;&gt;On-line Lecture 1&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span class=&#34;nf&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;mtcars&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;# data(name of the dataset)&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span class=&#34;nf&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;mtcars&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;# data(name of the dataset)&lt;/span&gt;
 
 &lt;span class=&#34;nf&#34;&gt;head&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;mtcars&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 
@@ -189,12 +363,15 @@
 &lt;span class=&#34;nf&#34;&gt;library&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;forcats&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;				&lt;span class=&#34;c1&#34;&gt;# load the package installed&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Deal with NA (Non-answer)&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span class=&#34;nf&#34;&gt;mean&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;mtcars&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cyl&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;na.rm&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;TRUE&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;# remove NA when encountering it&lt;/span&gt;
+								&lt;span class=&#34;c1&#34;&gt;# mean for average value&lt;/span&gt;
 &lt;span class=&#34;nf&#34;&gt;sd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;gss_cat&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tvhours&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;na.rm&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;TRUE&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Using &amp;ldquo;Plots&amp;rdquo; menu in R studio&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;demo(&amp;quot;graphics&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;About working directory&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span class=&#34;nf&#34;&gt;getwd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; 	&lt;span class=&#34;c1&#34;&gt;# get the working directory&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Set working directory:&lt;/p&gt;
+&lt;p&gt;Navigation bar &lt;code&gt;Session&lt;/code&gt; &amp;gt; Set working directory &amp;gt; Choose directory &amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
 &lt;h2 id=&#34;tutorial-1&#34;&gt;Tutorial 1&lt;/h2&gt;
 &lt;p&gt;Create a vector&lt;/p&gt;
 &lt;ul&gt;

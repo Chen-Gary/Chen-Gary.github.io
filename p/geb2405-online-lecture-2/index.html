@@ -1,29 +1,35 @@
 <!DOCTYPE html>
 <html lang="en-us">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='On-line Lecture 1 data(&amp;#34;mtcars&amp;#34;)	# data(name of the dataset) head(mtcars) View(mtcars) # capital V Summarize
-summary(data frame name$variable name) summary(mtcars$cyl) # summary of all the variable summary(data frame name) summary(mtcars) Standard Deviation
-sd(object) sd(mtcars$cyl) Display all the information for a given object
-&amp;gt; object &amp;gt; mtcars$cyl install.packages(&amp;#34;forcats&amp;#34;)	# install the package library(&amp;#34;forcats&amp;#34;)	# load the package installed Deal with NA (Non-answer)
-mean(mtcars$cyl, na.rm=TRUE)	# remove NA when encountering it # mean for average value sd(gss_cat$tvhours, na.'><title>GEB2405 Online Lecture 1</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='On-line Lecture 2 explore some data depositories
+  UK Data Service https://www.ukdataservice.ac.uk/
+ I have an account for it.
+  GBCS (Great British Class Survey) CCSE (Cultural Capital and Social Exclusion)    CNSDA 中国国家调查数据库 ~~http://cnsda.edu.cn/index.php~~ / http://cnsda.ruc.edu.cn/
+ I have an account for it.
+  CGSS (China General Social Survey) 中国综合社会调查 CRS (The Chinese Religion Survey)    北京大学开放研究数据平台 https://opendata.pku.edu.cn/
+   Tutorial 2 Some definitions:'><title>GEB2405 Online Lecture 2</title>
 
-<link rel='canonical' href='https://chen-gary.github.io/p/geb2405-online-lecture-1/'>
+<link rel='canonical' href='https://chen-gary.github.io/p/geb2405-online-lecture-2/'>
 
-<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='GEB2405 Online Lecture 1'>
-<meta property='og:description' content='On-line Lecture 1 data(&amp;#34;mtcars&amp;#34;)	# data(name of the dataset) head(mtcars) View(mtcars) # capital V Summarize
-summary(data frame name$variable name) summary(mtcars$cyl) # summary of all the variable summary(data frame name) summary(mtcars) Standard Deviation
-sd(object) sd(mtcars$cyl) Display all the information for a given object
-&amp;gt; object &amp;gt; mtcars$cyl install.packages(&amp;#34;forcats&amp;#34;)	# install the package library(&amp;#34;forcats&amp;#34;)	# load the package installed Deal with NA (Non-answer)
-mean(mtcars$cyl, na.rm=TRUE)	# remove NA when encountering it # mean for average value sd(gss_cat$tvhours, na.'>
-<meta property='og:url' content='https://chen-gary.github.io/p/geb2405-online-lecture-1/'>
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='GEB2405 Online Lecture 2'>
+<meta property='og:description' content='On-line Lecture 2 explore some data depositories
+  UK Data Service https://www.ukdataservice.ac.uk/
+ I have an account for it.
+  GBCS (Great British Class Survey) CCSE (Cultural Capital and Social Exclusion)    CNSDA 中国国家调查数据库 ~~http://cnsda.edu.cn/index.php~~ / http://cnsda.ruc.edu.cn/
+ I have an account for it.
+  CGSS (China General Social Survey) 中国综合社会调查 CRS (The Chinese Religion Survey)    北京大学开放研究数据平台 https://opendata.pku.edu.cn/
+   Tutorial 2 Some definitions:'>
+<meta property='og:url' content='https://chen-gary.github.io/p/geb2405-online-lecture-2/'>
 <meta property='og:site_name' content='Gary&#39;s Tech Station'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='R' /><meta property='article:published_time' content='2021-02-09T16:09:54&#43;08:00'/><meta property='article:modified_time' content='2021-02-09T16:09:54&#43;08:00'/>
-<meta name="twitter:title" content="GEB2405 Online Lecture 1">
-<meta name="twitter:description" content="On-line Lecture 1 data(&amp;#34;mtcars&amp;#34;)	# data(name of the dataset) head(mtcars) View(mtcars) # capital V Summarize
-summary(data frame name$variable name) summary(mtcars$cyl) # summary of all the variable summary(data frame name) summary(mtcars) Standard Deviation
-sd(object) sd(mtcars$cyl) Display all the information for a given object
-&amp;gt; object &amp;gt; mtcars$cyl install.packages(&amp;#34;forcats&amp;#34;)	# install the package library(&amp;#34;forcats&amp;#34;)	# load the package installed Deal with NA (Non-answer)
-mean(mtcars$cyl, na.rm=TRUE)	# remove NA when encountering it # mean for average value sd(gss_cat$tvhours, na.">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='R' /><meta property='article:published_time' content='2021-02-20T12:08:00&#43;08:00'/><meta property='article:modified_time' content='2021-02-20T12:08:00&#43;08:00'/>
+<meta name="twitter:title" content="GEB2405 Online Lecture 2">
+<meta name="twitter:description" content="On-line Lecture 2 explore some data depositories
+  UK Data Service https://www.ukdataservice.ac.uk/
+ I have an account for it.
+  GBCS (Great British Class Survey) CCSE (Cultural Capital and Social Exclusion)    CNSDA 中国国家调查数据库 ~~http://cnsda.edu.cn/index.php~~ / http://cnsda.ruc.edu.cn/
+ I have an account for it.
+  CGSS (China General Social Survey) 中国综合社会调查 CRS (The Chinese Religion Survey)    北京大学开放研究数据平台 https://opendata.pku.edu.cn/
+   Tutorial 2 Some definitions:">
     </head>
     <body class="">
     <script>
@@ -231,7 +237,7 @@ mean(mtcars$cyl, na.rm=TRUE)	# remove NA when encountering it # mean for average
     
 
     <h2 class="article-title">
-        <a href="/p/geb2405-online-lecture-1/">GEB2405 Online Lecture 1</a>
+        <a href="/p/geb2405-online-lecture-2/">GEB2405 Online Lecture 2</a>
     </h2>
 
     <footer class="article-time">
@@ -243,75 +249,84 @@ mean(mtcars$cyl, na.rm=TRUE)	# remove NA when encountering it # mean for average
 
 
 
-        <time class="article-time--published">Feb 09, 2021</time>
+        <time class="article-time--published">Feb 20, 2021</time>
     </footer></div>
 </header>
 
     <section class="article-content">
-    <h2 id="on-line-lecture-1">On-line Lecture 1</h2>
-<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">data</span><span class="p">(</span><span class="s">&#34;mtcars&#34;</span><span class="p">)</span>	<span class="c1"># data(name of the dataset)</span>
-
-<span class="nf">head</span><span class="p">(</span><span class="n">mtcars</span><span class="p">)</span>
-
-<span class="nf">View</span><span class="p">(</span><span class="n">mtcars</span><span class="p">)</span>    <span class="c1"># capital V</span>
-</code></pre></div><p>Summarize</p>
-<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">summary</span><span class="p">(</span><span class="n">data</span> <span class="n">frame</span> <span class="n">name</span><span class="o">$</span><span class="n">variable</span> <span class="n">name</span><span class="p">)</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">mtcars</span><span class="o">$</span><span class="n">cyl</span><span class="p">)</span>
-
-<span class="c1"># summary of all the variable</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">data</span> <span class="n">frame</span> <span class="n">name</span><span class="p">)</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">mtcars</span><span class="p">)</span>
-</code></pre></div><p>Standard Deviation</p>
-<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">sd</span><span class="p">(</span><span class="n">object</span><span class="p">)</span>
-<span class="nf">sd</span><span class="p">(</span><span class="n">mtcars</span><span class="o">$</span><span class="n">cyl</span><span class="p">)</span>
-</code></pre></div><p>Display all the information for a given object</p>
-<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="o">&gt;</span> <span class="n">object</span>
-<span class="o">&gt;</span> <span class="n">mtcars</span><span class="o">$</span><span class="n">cyl</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">install.packages</span><span class="p">(</span><span class="s">&#34;forcats&#34;</span><span class="p">)</span>		<span class="c1"># install the package</span>
-
-<span class="nf">library</span><span class="p">(</span><span class="s">&#34;forcats&#34;</span><span class="p">)</span>				<span class="c1"># load the package installed</span>
-</code></pre></div><p>Deal with NA (Non-answer)</p>
-<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">mean</span><span class="p">(</span><span class="n">mtcars</span><span class="o">$</span><span class="n">cyl</span><span class="p">,</span> <span class="n">na.rm</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>	<span class="c1"># remove NA when encountering it</span>
-								<span class="c1"># mean for average value</span>
-<span class="nf">sd</span><span class="p">(</span><span class="n">gss_cat</span><span class="o">$</span><span class="n">tvhours</span><span class="p">,</span> <span class="n">na.rm</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-</code></pre></div><p>Using &ldquo;Plots&rdquo; menu in R studio</p>
-<pre><code>demo(&quot;graphics&quot;)
-</code></pre><p>About working directory</p>
-<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">getwd</span><span class="p">()</span> 	<span class="c1"># get the working directory</span>
-</code></pre></div><p>Set working directory:</p>
-<p>Navigation bar <code>Session</code> &gt; Set working directory &gt; Choose directory &hellip;</p>
-<hr>
-<h2 id="tutorial-1">Tutorial 1</h2>
-<p>Create a vector</p>
+    <h2 id="on-line-lecture-2">On-line Lecture 2</h2>
+<p>explore some data depositories</p>
 <ul>
 <li>
-<p>numerical</p>
-<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="n">Name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">vector</span><span class="o">/</span><span class="n">variable</span> <span class="o">&lt;-</span> <span class="nf">c </span><span class="p">(</span><span class="n">component1</span><span class="p">,</span> <span class="n">component2</span><span class="p">,</span> <span class="n">component3</span><span class="p">)</span> 
-  
-<span class="n">ID</span><span class="o">&lt;-</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">7</span><span class="p">,</span><span class="m">8</span><span class="p">,</span><span class="m">9</span><span class="p">,</span><span class="m">10</span><span class="p">)</span>
-</code></pre></div></li>
+<p>UK Data Service <a href="https://www.ukdataservice.ac.uk/">https://www.ukdataservice.ac.uk/</a></p>
+<blockquote>
+<p>I have an account for it.</p>
+</blockquote>
+<ul>
+<li>GBCS (Great British Class Survey)</li>
+<li>CCSE (Cultural Capital and Social Exclusion)</li>
+</ul>
+</li>
 <li>
-<p>categorical</p>
-<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="n">Name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">vector</span><span class="o">/</span><span class="n">variable</span> <span class="o">&lt;-</span> <span class="nf">c </span><span class="p">(</span>“<span class="n">component1</span>”<span class="p">,</span> “<span class="n">component2</span>”<span class="p">,</span> “<span class="n">component3</span>”<span class="p">)</span> 
-</code></pre></div><p>(quotation mark)</p>
+<p>CNSDA 中国国家调查数据库 ~~<a href="http://cnsda.edu.cn/index.php~~">http://cnsda.edu.cn/index.php~~</a> / <a href="http://cnsda.ruc.edu.cn/">http://cnsda.ruc.edu.cn/</a></p>
+<blockquote>
+<p>I have an account for it.</p>
+</blockquote>
+<ul>
+<li>CGSS (China General Social Survey) 中国综合社会调查</li>
+<li>CRS (The Chinese Religion Survey)</li>
+</ul>
+</li>
+<li>
+<p>北京大学开放研究数据平台 <a href="https://opendata.pku.edu.cn/">https://opendata.pku.edu.cn/</a></p>
 </li>
 </ul>
-<p>remove an object</p>
-<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">rm </span><span class="p">(</span><span class="n">vector</span> <span class="n">name</span><span class="p">)</span>
-</code></pre></div><p>Arithmetic transformation (tut1_ppt_page_5)</p>
-<p>e.g. Create a new vector from two existing vectors</p>
-<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="c1"># `weight`, `height` are vectors</span>
-<span class="n">BMI</span><span class="o">&lt;-</span><span class="nf">c</span><span class="p">(</span><span class="n">weight</span><span class="o">/</span><span class="p">(</span><span class="n">height</span><span class="o">*</span><span class="n">height</span><span class="p">))</span>
-</code></pre></div><hr>
-<p>Clear the Console: <code>Ctrl</code> + <code>L</code></p>
 <hr>
-<p>Some required packages</p>
+<h2 id="tutorial-2">Tutorial 2</h2>
+<p>Some definitions:</p>
 <ul>
-<li>tidyverse</li>
-<li>dplyr</li>
-<li>Hmisc</li>
-<li>psych</li>
-<li>forcats</li>
+<li><strong>&ldquo;Levels&rdquo;</strong> are the <strong>different attributes</strong> that a <strong>==factor/categorical variable==</strong> ==(only for these two types of data)== can have. For example: The variable <em>gender</em> has usually two levels, <em>male</em> and <em>female</em></li>
+<li><strong>&ldquo;Not well ordered variable&rdquo;</strong> is a variable whose levels <strong>should be rearranged</strong> in increasing order or decreasing order. For example, you have a question: Do you like coffee? The levels are in the following order: Like a lot, dislike a lot, Like, neither, Dislike. This is not very rational and need to be reordered from Dislike a lot to like a lot</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">library</span><span class="p">(</span><span class="n">psych</span><span class="p">)</span>
+<span class="nf">describe</span><span class="p">(</span><span class="n">USArrests</span><span class="o">$</span><span class="n">Murder</span><span class="p">)</span>		<span class="c1"># improved version of summary(USArrests$Murder)</span>
+								<span class="c1"># with `sd` (standard dev.) included</span>
+</code></pre></div><p>Other commands to see info of data</p>
+<ul>
+<li><code>summary</code>: knowing <strong>basic information</strong> about the distribution of <strong>continuous variable</strong> which are named <strong>numeric</strong> in R. However this command ==does not work for factor and character variable==. Different command are necessary to explore different type of variable</li>
+<li><code>str(object)</code>: When the variable is <strong>numeric</strong>, <strong>integer</strong>, <strong>factor</strong> or <strong>character</strong> the command <code>str</code> can be use</li>
+<li><code>describe(object)</code>: When you have a <strong>numeric</strong> or <strong>integer</strong> the command <code>describe</code> can be used</li>
+<li><code>levels(object)</code>: When the variable is <strong>factor</strong>, I can know the possible “label” of the answers using the command <code>levels(object)</code></li>
+<li><code>table(object)</code>: When the variable is <strong>factor</strong>, you can use the command <code>table</code> to explore the variable (see example of <code>table</code> and <code>levels</code> in online lec 3 video 26:23)</li>
+</ul>
+<hr>
+<h2 id="tutorial-2---data-type">Tutorial 2 - Data type</h2>
+<p><code>Data Types and Structures-v2.docx</code></p>
+<h3 id="data-types">Data types:</h3>
+<ul>
+<li>character</li>
+<li>numeric (real or decimal)</li>
+<li>integer</li>
+<li>factor (has a certain number of possible answers &mdash;- see details in the <code>docx</code> file)</li>
+<li><del>logical (TRUE, FALSE)</del> (not covered in this course)</li>
+<li><del>complex</del> (not covered in this course)</li>
+</ul>
+<p>see examples in the <code>docx</code> file</p>
+<h3 id="commands-to-check-the-data-type">Commands to check the data type:</h3>
+<ul>
+<li>class (object)</li>
+<li>str(object) &mdash;&mdash;&ndash; covered in tut2</li>
+<li>mode(object)</li>
+</ul>
+<h3 id="data-structures">Data structures</h3>
+<p>During the first tutorial, we create <strong>individual vectors (or variables)</strong>. Those vectors can be combined together into a <strong>data frame</strong>.</p>
+<p>(see more details in the <code>docx</code> file)</p>
+<p>Data structures:</p>
+<ul>
+<li>data frame</li>
+<li>matrix</li>
+<li>list</li>
+<li>&hellip;</li>
 </ul>
 
 </section>
@@ -364,12 +379,12 @@ mean(mtcars$cyl, na.rm=TRUE)	# remove NA when encountering it # mean for average
                 
                     
 <article class="">
-    <a href="/p/geb2405-online-lecture-2/">
+    <a href="/p/geb2405-online-lecture-1/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">GEB2405 Online Lecture 2</h2>
+            <h2 class="article-title">GEB2405 Online Lecture 1</h2>
         </div>
     </a>
 </article>

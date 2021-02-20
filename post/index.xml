@@ -6,7 +6,32 @@
     <description>Recent content in Posts on Gary&#39;s Tech Station</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 18 Feb 2021 20:57:29 +0800</lastBuildDate><atom:link href="https://chen-gary.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 20 Feb 2021 12:09:09 +0800</lastBuildDate><atom:link href="https://chen-gary.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GEB2405 Online Lecture 3 - Clean the data before analysis</title>
+      <link>https://chen-gary.github.io/p/geb2405-online-lecture-3-clean-the-data-before-analysis/</link>
+      <pubDate>Sat, 20 Feb 2021 12:09:09 +0800</pubDate>
+      
+      <guid>https://chen-gary.github.io/p/geb2405-online-lecture-3-clean-the-data-before-analysis/</guid>
+      <description>Problems:
+ var in wrong format, e.g. numeric, char, factor (transform data type) not properly coded NA, e.g. Non answer is coded as &amp;ldquo;-1&amp;rdquo; or &amp;ldquo;a.&amp;rdquo; instead of NA levels are not correctly ordered, e.g. income levels not organized in a progressive order some levels need to be merged. e.g. only 0.2% of respondents are in a given income category  The levels are not correctly ordered. e.g. income levels are not organized in a progressive order, we want</description>
+    </item>
+    
+    <item>
+      <title>GEB2405 Online Lecture 2</title>
+      <link>https://chen-gary.github.io/p/geb2405-online-lecture-2/</link>
+      <pubDate>Sat, 20 Feb 2021 12:08:00 +0800</pubDate>
+      
+      <guid>https://chen-gary.github.io/p/geb2405-online-lecture-2/</guid>
+      <description>On-line Lecture 2 explore some data depositories
+  UK Data Service https://www.ukdataservice.ac.uk/
+ I have an account for it.
+  GBCS (Great British Class Survey) CCSE (Cultural Capital and Social Exclusion)    CNSDA 中国国家调查数据库 ~~http://cnsda.edu.cn/index.php~~ / http://cnsda.ruc.edu.cn/
+ I have an account for it.
+  CGSS (China General Social Survey) 中国综合社会调查 CRS (The Chinese Religion Survey)    北京大学开放研究数据平台 https://opendata.pku.edu.cn/
+   Tutorial 2 Some definitions:</description>
+    </item>
+    
     <item>
       <title>Blender: Import Material and Setup Material Library</title>
       <link>https://chen-gary.github.io/p/blender-import-material-and-setup-material-library/</link>
@@ -49,11 +74,11 @@ https://www.youtube.com/watch?v=BlxiCd0Upg4
       <pubDate>Tue, 09 Feb 2021 16:09:54 +0800</pubDate>
       
       <guid>https://chen-gary.github.io/p/geb2405-online-lecture-1/</guid>
-      <description>On-line Lecture 1 data(mtcars)	# data(name of the dataset) head(mtcars) View(mtcars) # capital V Summarize
+      <description>On-line Lecture 1 data(&amp;#34;mtcars&amp;#34;)	# data(name of the dataset) head(mtcars) View(mtcars) # capital V Summarize
 summary(data frame name$variable name) summary(mtcars$cyl) # summary of all the variable summary(data frame name) summary(mtcars) Standard Deviation
 sd(object) sd(mtcars$cyl) Display all the information for a given object
 &amp;gt; object &amp;gt; mtcars$cyl install.packages(&amp;#34;forcats&amp;#34;)	# install the package library(&amp;#34;forcats&amp;#34;)	# load the package installed Deal with NA (Non-answer)
-mean(mtcars$cyl, na.rm=TRUE)	# remove NA when encountering it sd(gss_cat$tvhours, na.</description>
+mean(mtcars$cyl, na.rm=TRUE)	# remove NA when encountering it # mean for average value sd(gss_cat$tvhours, na.</description>
     </item>
     
   </channel>
