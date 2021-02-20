@@ -7,10 +7,11 @@ tags:
     - R
 ---
 
+
 ## On-line Lecture 1
 
 ```R
-data(mtcars)	# data(name of the dataset)
+data("mtcars")	# data(name of the dataset)
 
 head(mtcars)
 
@@ -62,6 +63,7 @@ Deal with NA (Non-answer)
 
 ```R
 mean(mtcars$cyl, na.rm=TRUE)	# remove NA when encountering it
+								# mean for average value
 sd(gss_cat$tvhours, na.rm = TRUE)
 ```
 
@@ -80,6 +82,10 @@ About working directory
 ```R
 getwd() 	# get the working directory
 ```
+
+Set working directory:
+
+Navigation bar `Session` > Set working directory > Choose directory ...
 
 ---
 
