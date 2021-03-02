@@ -6,7 +6,16 @@
     <description>Recent content in GEB2405 on Gary&#39;s Tech Station</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 20 Feb 2021 12:09:09 +0800</lastBuildDate><atom:link href="https://chen-gary.github.io/categories/geb2405/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 02 Mar 2021 14:11:04 +0800</lastBuildDate><atom:link href="https://chen-gary.github.io/categories/geb2405/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GEB2405 Online Lecture 4 - Merge data collected by different interviewers</title>
+      <link>https://chen-gary.github.io/p/geb2405-online-lecture-4-merge-data-collected-by-different-interviewers/</link>
+      <pubDate>Tue, 02 Mar 2021 14:11:04 +0800</pubDate>
+      
+      <guid>https://chen-gary.github.io/p/geb2405-online-lecture-4-merge-data-collected-by-different-interviewers/</guid>
+      <description>how to merge answer collected by different coders (merge rows) how to add new variables in a dataset by matching the ID (add/merge columns) how to manually add observation (one single respondent) in an existing dataframe (add a row)  1. merge Before import the excel data files, make sure the name of the variables are exactly the same in all data files, e.g. one var named Rank in file A, while the corresponding var in file B is named Ranking.</description>
+    </item>
+    
     <item>
       <title>GEB2405 Online Lecture 3 - Clean the data before analysis</title>
       <link>https://chen-gary.github.io/p/geb2405-online-lecture-3-clean-the-data-before-analysis/</link>

@@ -1,29 +1,17 @@
 <!DOCTYPE html>
 <html lang="en-us">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='On-line Lecture 1 data(&amp;#34;mtcars&amp;#34;)	# data(name of the dataset) head(mtcars) View(mtcars) # capital V Summarize
-summary(data frame name$variable name) summary(mtcars$cyl) # summary of all the variable summary(data frame name) summary(mtcars) Standard Deviation
-sd(object) sd(mtcars$cyl) Display all the information for a given object
-&amp;gt; object &amp;gt; mtcars$cyl install.packages(&amp;#34;forcats&amp;#34;)	# install the package library(&amp;#34;forcats&amp;#34;)	# load the package installed Deal with NA (Non-answer)
-mean(mtcars$cyl, na.rm=TRUE)	# remove NA when encountering it # mean for average value sd(gss_cat$tvhours, na.'><title>GEB2405 Online Lecture 1</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='how to merge answer collected by different coders (merge rows) how to add new variables in a dataset by matching the ID (add/merge columns) how to manually add observation (one single respondent) in an existing dataframe (add a row)  1. merge Before import the excel data files, make sure the name of the variables are exactly the same in all data files, e.g. one var named Rank in file A, while the corresponding var in file B is named Ranking.'><title>GEB2405 Online Lecture 4 - Merge data collected by different interviewers</title>
 
-<link rel='canonical' href='https://chen-gary.github.io/p/geb2405-online-lecture-1/'>
+<link rel='canonical' href='https://chen-gary.github.io/p/geb2405-online-lecture-4-merge-data-collected-by-different-interviewers/'>
 
-<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='GEB2405 Online Lecture 1'>
-<meta property='og:description' content='On-line Lecture 1 data(&amp;#34;mtcars&amp;#34;)	# data(name of the dataset) head(mtcars) View(mtcars) # capital V Summarize
-summary(data frame name$variable name) summary(mtcars$cyl) # summary of all the variable summary(data frame name) summary(mtcars) Standard Deviation
-sd(object) sd(mtcars$cyl) Display all the information for a given object
-&amp;gt; object &amp;gt; mtcars$cyl install.packages(&amp;#34;forcats&amp;#34;)	# install the package library(&amp;#34;forcats&amp;#34;)	# load the package installed Deal with NA (Non-answer)
-mean(mtcars$cyl, na.rm=TRUE)	# remove NA when encountering it # mean for average value sd(gss_cat$tvhours, na.'>
-<meta property='og:url' content='https://chen-gary.github.io/p/geb2405-online-lecture-1/'>
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='GEB2405 Online Lecture 4 - Merge data collected by different interviewers'>
+<meta property='og:description' content='how to merge answer collected by different coders (merge rows) how to add new variables in a dataset by matching the ID (add/merge columns) how to manually add observation (one single respondent) in an existing dataframe (add a row)  1. merge Before import the excel data files, make sure the name of the variables are exactly the same in all data files, e.g. one var named Rank in file A, while the corresponding var in file B is named Ranking.'>
+<meta property='og:url' content='https://chen-gary.github.io/p/geb2405-online-lecture-4-merge-data-collected-by-different-interviewers/'>
 <meta property='og:site_name' content='Gary&#39;s Tech Station'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='R' /><meta property='article:published_time' content='2021-02-09T16:09:54&#43;08:00'/><meta property='article:modified_time' content='2021-02-09T16:09:54&#43;08:00'/>
-<meta name="twitter:title" content="GEB2405 Online Lecture 1">
-<meta name="twitter:description" content="On-line Lecture 1 data(&amp;#34;mtcars&amp;#34;)	# data(name of the dataset) head(mtcars) View(mtcars) # capital V Summarize
-summary(data frame name$variable name) summary(mtcars$cyl) # summary of all the variable summary(data frame name) summary(mtcars) Standard Deviation
-sd(object) sd(mtcars$cyl) Display all the information for a given object
-&amp;gt; object &amp;gt; mtcars$cyl install.packages(&amp;#34;forcats&amp;#34;)	# install the package library(&amp;#34;forcats&amp;#34;)	# load the package installed Deal with NA (Non-answer)
-mean(mtcars$cyl, na.rm=TRUE)	# remove NA when encountering it # mean for average value sd(gss_cat$tvhours, na.">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='R' /><meta property='article:published_time' content='2021-03-02T14:11:04&#43;08:00'/><meta property='article:modified_time' content='2021-03-02T14:11:04&#43;08:00'/>
+<meta name="twitter:title" content="GEB2405 Online Lecture 4 - Merge data collected by different interviewers">
+<meta name="twitter:description" content="how to merge answer collected by different coders (merge rows) how to add new variables in a dataset by matching the ID (add/merge columns) how to manually add observation (one single respondent) in an existing dataframe (add a row)  1. merge Before import the excel data files, make sure the name of the variables are exactly the same in all data files, e.g. one var named Rank in file A, while the corresponding var in file B is named Ranking.">
     </head>
     <body class="">
     <script>
@@ -231,7 +219,7 @@ mean(mtcars$cyl, na.rm=TRUE)	# remove NA when encountering it # mean for average
     
 
     <h2 class="article-title">
-        <a href="/p/geb2405-online-lecture-1/">GEB2405 Online Lecture 1</a>
+        <a href="/p/geb2405-online-lecture-4-merge-data-collected-by-different-interviewers/">GEB2405 Online Lecture 4 - Merge data collected by different interviewers</a>
     </h2>
 
     <footer class="article-time">
@@ -243,77 +231,59 @@ mean(mtcars$cyl, na.rm=TRUE)	# remove NA when encountering it # mean for average
 
 
 
-        <time class="article-time--published">Feb 09, 2021</time>
+        <time class="article-time--published">Mar 02, 2021</time>
     </footer></div>
 </header>
 
     <section class="article-content">
-    <h2 id="on-line-lecture-1">On-line Lecture 1</h2>
-<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">data</span><span class="p">(</span><span class="s">&#34;mtcars&#34;</span><span class="p">)</span>	<span class="c1"># data(name of the dataset)</span>
+    <ul>
+<li>how to merge answer collected by different coders <strong>(merge rows)</strong></li>
+<li>how to add new variables in a dataset by matching the ID <strong>(add/merge columns)</strong></li>
+<li>how to manually add observation (one single respondent) in an existing dataframe <strong>(add a row)</strong></li>
+</ul>
+<h2 id="1-merge">1. merge</h2>
+<p>Before import the excel data files, make sure the name of the variables are exactly the same in all data files, e.g. one var named <code>Rank</code> in file A, while the corresponding var in file B is named <code>Ranking</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="c1"># solution 1</span>
 
-<span class="nf">head</span><span class="p">(</span><span class="n">mtcars</span><span class="p">)</span>
-
-<span class="nf">View</span><span class="p">(</span><span class="n">mtcars</span><span class="p">)</span>    <span class="c1"># capital V</span>
-</code></pre></div><p>Summarize</p>
-<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">summary</span><span class="p">(</span><span class="n">data</span> <span class="n">frame</span> <span class="n">name</span><span class="o">$</span><span class="n">variable</span> <span class="n">name</span><span class="p">)</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">mtcars</span><span class="o">$</span><span class="n">cyl</span><span class="p">)</span>
-
-<span class="c1"># summary of all the variable</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">data</span> <span class="n">frame</span> <span class="n">name</span><span class="p">)</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">mtcars</span><span class="p">)</span>
-</code></pre></div><p>Standard Deviation</p>
-<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">sd</span><span class="p">(</span><span class="n">object</span><span class="p">)</span>
-<span class="nf">sd</span><span class="p">(</span><span class="n">mtcars</span><span class="o">$</span><span class="n">cyl</span><span class="p">)</span>
-</code></pre></div><p>Display all the information for a given object</p>
-<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="o">&gt;</span> <span class="n">object</span>
-<span class="o">&gt;</span> <span class="n">mtcars</span><span class="o">$</span><span class="n">cyl</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">install.packages</span><span class="p">(</span><span class="s">&#34;forcats&#34;</span><span class="p">)</span>		<span class="c1"># install the package</span>
-
-<span class="nf">library</span><span class="p">(</span><span class="s">&#34;forcats&#34;</span><span class="p">)</span>				<span class="c1"># load the package installed</span>
-</code></pre></div><p>Deal with NA (Non-answer)</p>
-<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">mean</span><span class="p">(</span><span class="n">mtcars</span><span class="o">$</span><span class="n">cyl</span><span class="p">,</span> <span class="n">na.rm</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>	<span class="c1"># remove NA when encountering it</span>
-								<span class="c1"># mean for average value</span>
-<span class="nf">sd</span><span class="p">(</span><span class="n">gss_cat</span><span class="o">$</span><span class="n">tvhours</span><span class="p">,</span> <span class="n">na.rm</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-</code></pre></div><p>Using &ldquo;Plots&rdquo; menu in R studio</p>
-<pre><code>demo(&quot;graphics&quot;)
-</code></pre><p>About working directory</p>
-<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">getwd</span><span class="p">()</span> 	<span class="c1"># get the working directory</span>
-</code></pre></div><p>Set working directory:</p>
-<p>Navigation bar <code>Session</code> &gt; Set working directory &gt; Choose directory &hellip;</p>
-<hr>
-<h2 id="tutorial-1">Tutorial 1</h2>
-<p>Create a vector</p>
+<span class="c1"># create new var</span>
+<span class="n">Survey_GE_class_choice_2</span><span class="o">$</span><span class="n">Rank</span> <span class="o">&lt;-</span> <span class="n">Survey_GE_class_choice_2</span><span class="o">$</span><span class="n">Ranking</span>
+<span class="c1"># delete the improperly named variable</span>
+<span class="n">Survey_GE_class_choice_2</span> <span class="o">&lt;-</span> <span class="n">Survey_GE_class_choice_2</span> <span class="n">[</span><span class="p">,</span><span class="m">-7</span><span class="n">]</span>
+<span class="c1"># bind the two dataset</span>
+<span class="n">cuhksz_GE_choice</span> <span class="o">&lt;-</span> <span class="nf">rbind</span><span class="p">(</span><span class="n">Survey_GE_class_choice_1</span><span class="p">,</span> <span class="n">Survey_GE_class_choice_2</span><span class="p">)</span>
+</code></pre></div><p><code>rbind</code>:</p>
+<p>the two dataframe should have the same variables, but they do not have to be in the same order</p>
+<p>&mdash;&ndash;&gt; if it is not the case:</p>
 <ul>
 <li>
-<p>numerical</p>
-<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="n">Name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">vector</span><span class="o">/</span><span class="n">variable</span> <span class="o">&lt;-</span> <span class="nf">c </span><span class="p">(</span><span class="n">component1</span><span class="p">,</span> <span class="n">component2</span><span class="p">,</span> <span class="n">component3</span><span class="p">)</span> 
-  
-<span class="n">ID</span><span class="o">&lt;-</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">7</span><span class="p">,</span><span class="m">8</span><span class="p">,</span><span class="m">9</span><span class="p">,</span><span class="m">10</span><span class="p">)</span>
-</code></pre></div></li>
-<li>
-<p>categorical</p>
-<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="n">Name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">vector</span><span class="o">/</span><span class="n">variable</span> <span class="o">&lt;-</span> <span class="nf">c </span><span class="p">(</span>“<span class="n">component1</span>”<span class="p">,</span> “<span class="n">component2</span>”<span class="p">,</span> “<span class="n">component3</span>”<span class="p">)</span> 
-</code></pre></div><p>(quotation mark)</p>
+<p>delete the extra var in one dataframe</p>
 </li>
+<li>
+<p>add the extra var in another dataframe with <code>NA</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="n">df</span><span class="o">$</span><span class="n">new_var</span> <span class="o">&lt;-</span> <span class="kc">NA</span>
+</code></pre></div></li>
 </ul>
-<p>remove an object</p>
-<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">rm </span><span class="p">(</span><span class="n">vector</span> <span class="n">name</span><span class="p">)</span>
-</code></pre></div><p>Arithmetic transformation (tut1_ppt_page_5)</p>
-<p>e.g. Create a new vector from two existing vectors</p>
-<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="c1"># `weight`, `height` are vectors</span>
-<span class="n">BMI</span><span class="o">&lt;-</span><span class="nf">c</span><span class="p">(</span><span class="n">weight</span><span class="o">/</span><span class="p">(</span><span class="n">height</span><span class="o">*</span><span class="n">height</span><span class="p">))</span>
-</code></pre></div><hr>
-<p>Clear the Console: <code>Ctrl</code> + <code>L</code></p>
-<hr>
-<p>Some required packages</p>
-<ul>
-<li>tidyverse</li>
-<li>dplyr</li>
-<li>Hmisc</li>
-<li>psych</li>
-<li>forcats</li>
-</ul>
+<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="n">name_of_the_new_dataframe</span> <span class="o">&lt;-</span> <span class="nf">rbind</span><span class="p">(</span><span class="n">dataframeA</span><span class="p">,</span> <span class="n">dataframeB</span><span class="p">)</span>
 
+<span class="n">cuhksz_student_health</span><span class="o">&lt;-</span><span class="nf">rbind</span><span class="p">(</span><span class="n">SSE_students_data</span><span class="p">,</span><span class="n">SME_students_data</span><span class="p">)</span>
+</code></pre></div><h2 id="2-add-new-variables-addmerge-a-column">2. add new variables (add/merge a column)</h2>
+<p>Before merging we need to make sure we can find a way to match the information correctly.</p>
+<p>In <code>CUHKSZ_employment_survey-1.xls</code> and <code>CUHKSZ_employment_survey-1b.xls</code>, the <code>ID</code> is unique to each respondent and correspond in the two dataframe.</p>
+<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="n">name_of_the_new_dataframe</span> <span class="o">&lt;-</span> <span class="nf">merge</span><span class="p">(</span><span class="n">dataframeA</span><span class="p">,</span> <span class="n">dataframeB</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s">&#34;variable to identify respondent&#34;</span><span class="p">)</span>
+
+<span class="n">CUHK_employement_1</span><span class="o">&lt;-</span><span class="nf">merge</span><span class="p">(</span><span class="n">CUHKSZ_employment_survey_1</span><span class="p">,</span><span class="n">CUHKSZ_employment_survey_1b</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s">&#34;ID&#34;</span><span class="p">)</span>
+</code></pre></div><h2 id="3-add-observation-one-single-respondent-in-an-existing-dataframe-add-a-row">3. add observation (one single respondent) in an existing dataframe (add a row)</h2>
+<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">fix</span><span class="p">(</span><span class="n">dataframe_name</span><span class="p">)</span>
+</code></pre></div><p>click + arrow</p>
+<p>double click &mdash;-&gt; access already input data</p>
+<hr>
+<h1 id="tutorial-4">Tutorial 4</h1>
+<p>Exercise3 Q3: Create a new variable displaying how many kinds of coffee each student drink during the week</p>
+<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="c1"># Arithmetic transformation in Tutorial 1!!!</span>
+<span class="n">test</span><span class="o">$</span><span class="n">total</span> <span class="o">&lt;-</span> <span class="n">test</span><span class="o">$</span><span class="n">Cappuccin</span> <span class="o">+</span> <span class="n">test</span><span class="o">$</span><span class="n">CafeLatte</span> <span class="o">+</span> <span class="n">test</span><span class="o">$</span><span class="n">Americano</span> <span class="o">+</span> <span class="n">test</span><span class="o">$</span><span class="n">Expresso</span>
+</code></pre></div><p>Exercise3 Q4: Create a new variable indicating the different combination of coffee drunk by the students (ex: Americano only, Americano and Capuccino….etc)</p>
+<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="n">df</span><span class="o">$</span><span class="n">newFactor</span> <span class="o">&lt;-</span> <span class="nf">with</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="nf">interaction</span><span class="p">(</span><span class="n">df</span><span class="o">$</span><span class="n">factorA</span><span class="p">,</span> <span class="n">df</span><span class="o">$</span><span class="n">factorB</span><span class="p">,</span> <span class="n">df</span><span class="o">$</span><span class="n">factorC</span><span class="p">))</span>
+</code></pre></div>
 </section>
 
 
@@ -352,18 +322,6 @@ mean(mtcars$cyl, na.rm=TRUE)	# remove NA when encountering it # mean for average
                 
                     
 <article class="">
-    <a href="/p/geb2405-online-lecture-4-merge-data-collected-by-different-interviewers/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">GEB2405 Online Lecture 4 - Merge data collected by different interviewers</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
     <a href="/p/geb2405-online-lecture-3-clean-the-data-before-analysis/">
         
         
@@ -382,6 +340,18 @@ mean(mtcars$cyl, na.rm=TRUE)	# remove NA when encountering it # mean for average
 
         <div class="article-details">
             <h2 class="article-title">GEB2405 Online Lecture 2</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/geb2405-online-lecture-1/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">GEB2405 Online Lecture 1</h2>
         </div>
     </a>
 </article>
