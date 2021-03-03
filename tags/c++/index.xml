@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C&#43;&#43; on Gary&#39;s Tech Station</title>
+    <link>https://chen-gary.github.io/tags/c&#43;&#43;/</link>
+    <description>Recent content in C&#43;&#43; on Gary&#39;s Tech Station</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 03 Mar 2021 15:54:26 +0800</lastBuildDate><atom:link href="https://chen-gary.github.io/tags/c++/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何使用CMake编译</title>
+      <link>https://chen-gary.github.io/p/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8cmake%E7%BC%96%E8%AF%91/</link>
+      <pubDate>Wed, 03 Mar 2021 15:54:26 +0800</pubDate>
+      
+      <guid>https://chen-gary.github.io/p/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8cmake%E7%BC%96%E8%AF%91/</guid>
+      <description>在使用CLion编写C++项目后，IDE会自动生成CMakeLists.txt文件。那么如何手动编译我们写的代码呢？
+步骤如下
+  将项目中的所有源文件 + 自动生成的CMakeLists.txt 传入Linux虚拟机（的同一目录下）
+  mkdir build cd build cmake ..	# 用cmake命令将CMakeLists.txt文件转化为make所需要的makefile文件 make	# 用make命令编译源码生成可执行程序   运行
+./name_of_executable   (ref: https://www.cnblogs.com/cv-pr/p/6206921.html)</description>
+    </item>
+    
+  </channel>
+</rss>

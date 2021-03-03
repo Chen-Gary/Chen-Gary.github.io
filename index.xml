@@ -6,7 +6,33 @@
         <description>Recent content on Gary&#39;s Tech Station</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Tue, 02 Mar 2021 14:11:04 +0800</lastBuildDate><atom:link href="https://chen-gary.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 03 Mar 2021 15:54:26 +0800</lastBuildDate><atom:link href="https://chen-gary.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>如何使用CMake编译</title>
+        <link>https://chen-gary.github.io/p/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8cmake%E7%BC%96%E8%AF%91/</link>
+        <pubDate>Wed, 03 Mar 2021 15:54:26 +0800</pubDate>
+        
+        <guid>https://chen-gary.github.io/p/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8cmake%E7%BC%96%E8%AF%91/</guid>
+        <description>&lt;p&gt;在使用CLion编写C++项目后，IDE会自动生成CMakeLists.txt文件。那么如何手动编译我们写的代码呢？&lt;/p&gt;
+&lt;p&gt;步骤如下&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;将项目中的所有源文件 + 自动生成的CMakeLists.txt 传入Linux虚拟机（的同一目录下）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;mkdir build
+&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; build
+cmake ..		&lt;span class=&#34;c1&#34;&gt;# 用cmake命令将CMakeLists.txt文件转化为make所需要的makefile文件&lt;/span&gt;
+make			&lt;span class=&#34;c1&#34;&gt;# 用make命令编译源码生成可执行程序&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;运行&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;./name_of_executable
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;(ref: &lt;a href=&#34;https://www.cnblogs.com/cv-pr/p/6206921.html&#34;&gt;https://www.cnblogs.com/cv-pr/p/6206921.html&lt;/a&gt;)&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>GEB2405 Online Lecture 4 - Merge data collected by different interviewers</title>
         <link>https://chen-gary.github.io/p/geb2405-online-lecture-4-merge-data-collected-by-different-interviewers/</link>
         <pubDate>Tue, 02 Mar 2021 14:11:04 +0800</pubDate>
