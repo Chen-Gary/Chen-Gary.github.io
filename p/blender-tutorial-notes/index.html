@@ -1,29 +1,17 @@
 <!DOCTYPE html>
 <html lang="en-us">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='在使用CLion编写C&#43;&#43;项目后，IDE会自动生成CMakeLists.txt文件。那么如何手动编译我们写的代码呢？
-步骤如下
-  将项目中的所有源文件 &#43; 自动生成的CMakeLists.txt 传入Linux虚拟机（的同一目录下）
-  mkdir build cd build cmake ..	# 用cmake命令将CMakeLists.txt文件转化为make所需要的makefile文件 make	# 用make命令编译源码生成可执行程序   运行
-./name_of_executable   (ref: https://www.cnblogs.com/cv-pr/p/6206921.html)'><title>如何使用CMake编译</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Tutorial Link: https://www.youtube.com/watch?v=1jHUY3qoBu8'><title>Blender Tutorial Notes</title>
 
-<link rel='canonical' href='https://chen-gary.github.io/p/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8cmake%E7%BC%96%E8%AF%91/'>
+<link rel='canonical' href='https://chen-gary.github.io/p/blender-tutorial-notes/'>
 
-<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='如何使用CMake编译'>
-<meta property='og:description' content='在使用CLion编写C&#43;&#43;项目后，IDE会自动生成CMakeLists.txt文件。那么如何手动编译我们写的代码呢？
-步骤如下
-  将项目中的所有源文件 &#43; 自动生成的CMakeLists.txt 传入Linux虚拟机（的同一目录下）
-  mkdir build cd build cmake ..	# 用cmake命令将CMakeLists.txt文件转化为make所需要的makefile文件 make	# 用make命令编译源码生成可执行程序   运行
-./name_of_executable   (ref: https://www.cnblogs.com/cv-pr/p/6206921.html)'>
-<meta property='og:url' content='https://chen-gary.github.io/p/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8cmake%E7%BC%96%E8%AF%91/'>
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Blender Tutorial Notes'>
+<meta property='og:description' content='Tutorial Link: https://www.youtube.com/watch?v=1jHUY3qoBu8'>
+<meta property='og:url' content='https://chen-gary.github.io/p/blender-tutorial-notes/'>
 <meta property='og:site_name' content='Gary&#39;s Tech Station'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='CMake' /><meta property='article:tag' content='C&#43;&#43;' /><meta property='article:published_time' content='2021-03-03T15:54:26&#43;08:00'/><meta property='article:modified_time' content='2021-03-03T15:54:26&#43;08:00'/>
-<meta name="twitter:title" content="如何使用CMake编译">
-<meta name="twitter:description" content="在使用CLion编写C&#43;&#43;项目后，IDE会自动生成CMakeLists.txt文件。那么如何手动编译我们写的代码呢？
-步骤如下
-  将项目中的所有源文件 &#43; 自动生成的CMakeLists.txt 传入Linux虚拟机（的同一目录下）
-  mkdir build cd build cmake ..	# 用cmake命令将CMakeLists.txt文件转化为make所需要的makefile文件 make	# 用make命令编译源码生成可执行程序   运行
-./name_of_executable   (ref: https://www.cnblogs.com/cv-pr/p/6206921.html)">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Blender' /><meta property='article:published_time' content='2021-03-03T16:48:34&#43;08:00'/><meta property='article:modified_time' content='2021-03-03T16:48:34&#43;08:00'/>
+<meta name="twitter:title" content="Blender Tutorial Notes">
+<meta name="twitter:description" content="Tutorial Link: https://www.youtube.com/watch?v=1jHUY3qoBu8">
     </head>
     <body class="">
     <script>
@@ -223,17 +211,21 @@
     
     <header class="article-category">
         
-            <a href="/categories/csc3050/" >
-                CSC3050
+            <a href="/categories/blender/" style="background-color: #2a9d8f; color: #fff;">
+                Blender
             </a>
         
     </header>
     
 
     <h2 class="article-title">
-        <a href="/p/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8cmake%E7%BC%96%E8%AF%91/">如何使用CMake编译</a>
+        <a href="/p/blender-tutorial-notes/">Blender Tutorial Notes</a>
     </h2>
 
+    
+    <h3 class="article-subtitle">
+        Tutorial Link: https://www.youtube.com/watch?v=1jHUY3qoBu8
+    </h3>
     <footer class="article-time">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -248,24 +240,108 @@
 </header>
 
     <section class="article-content">
-    <p>在使用CLion编写C++项目后，IDE会自动生成CMakeLists.txt文件。那么如何手动编译我们写的代码呢？</p>
-<p>步骤如下</p>
-<ul>
-<li>
-<p>将项目中的所有源文件 + 自动生成的CMakeLists.txt 传入Linux虚拟机（的同一目录下）</p>
-</li>
-<li>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">mkdir build
-<span class="nb">cd</span> build
-cmake ..		<span class="c1"># 用cmake命令将CMakeLists.txt文件转化为make所需要的makefile文件</span>
-make			<span class="c1"># 用make命令编译源码生成可执行程序</span>
-</code></pre></div></li>
-<li>
-<p>运行</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">./name_of_executable
-</code></pre></div></li>
-</ul>
-<p>(ref: <a href="https://www.cnblogs.com/cv-pr/p/6206921.html">https://www.cnblogs.com/cv-pr/p/6206921.html</a>)</p>
+    <p>View: Numpad 1 / 3 / 7, or <code>ctrl</code> + Numpad 1 / 3 / 7</p>
+<p><code>E</code> to extrude</p>
+<blockquote>
+<p><code>alt</code> + <code>E </code> face normal</p>
+</blockquote>
+<p><code>I</code> to insert</p>
+<blockquote>
+<p>double lick <code>I</code></p>
+<p><code>B</code> while doing insert (if <code>B</code> does not work, press <code>I</code> again to disable <strong>individual faces</strong>) (e.g. car window)</p>
+</blockquote>
+<p><code>G</code></p>
+<p><code>S</code></p>
+<p><code>R</code></p>
+<p><code>O</code> proportional editing (when modeling the tree)</p>
+<p><code>ctrl</code> + <code>B</code> Bevel</p>
+<p><code>alt</code> + <code>S</code> shrink / flatten</p>
+<p><code>shift</code> + <code>right click</code> place 3D curser</p>
+<blockquote>
+<p><code>shift</code> + <code>S</code> &gt; Cursor to selected</p>
+<p><code>shift</code> + <code>C</code> re-center 3D curser</p>
+</blockquote>
+<p><code>L</code> select linked (in edit mode)</p>
+<blockquote>
+<p><code>shift</code> + <code>L</code> to deselect linked</p>
+</blockquote>
+<h2 id="selection-method">Selection Method</h2>
+<p><code>L</code></p>
+<p>Loop select: <code>alt</code> + click on edge (in <strong>face selection mode</strong>)</p>
+<p>circle select: <code>C</code></p>
+<blockquote>
+<p>deselect: middle mouse</p>
+</blockquote>
+<p>ring select: <code>alt</code> + <code>ctrl</code> (in <strong>edge select mode</strong>)</p>
+<p>Loop select: <code>alt</code> + click on edge (in <strong>edge selection mode</strong>)</p>
+<p>select shortest path: <code>ctrl</code> (in <strong>edge select mode</strong>)</p>
+<p>box select: <code>B</code> (in <strong>vertex select mode</strong>)</p>
+<p><code>alt</code> + <code>Z</code> enable/disable X-ray (to select the back vertices)</p>
+<p>Lasso select (套索): <code>ctrl</code> + right mouse button</p>
+<p>Grow selection (select all faces neighboring to the selected face): <code>ctrl</code> + Numpad plus <code>+</code></p>
+<blockquote>
+<p>Shrink selection (opposite to <strong>grow selection</strong>): <code>ctrl</code> + <code>-</code></p>
+</blockquote>
+<p>select random</p>
+<p>select similar: <code>shift</code> + <code>G</code></p>
+<p>checker deselect (间隔选中效果，像足球那样): <code>F</code></p>
+<p><code>H</code> hide selected objects</p>
+<blockquote>
+<p><code>alt</code> + <code>H</code> unhide all</p>
+</blockquote>
+<p><code>ctrl</code> + <code>I</code>: Invert selection (选中所有未被当前选中的东西)</p>
+<hr>
+<p>Loop cut: <code>ctrl</code> + <code>R</code></p>
+<p>Knife tool: <code>K</code></p>
+<blockquote>
+<p><code>ctrl</code>: snap to center with knife tool</p>
+<p><code>C</code>: angle constraint with knife tool</p>
+</blockquote>
+<p><code>ctrl</code> + 1-5: <strong>subdivision modifier</strong> (remember to <strong>apply</strong> this modifier)</p>
+<blockquote>
+<p>if it make the object <strong>not low-poly</strong>, then use <strong>Decimate modifier</strong> to make it back to low-poly.</p>
+<p>(see video around 48:00)</p>
+</blockquote>
+<p><code>,</code>: Orientation</p>
+<p>snap (上方的磁贴icon) (hotkey: <code>ctrl</code> when using <code>G</code>) &mdash;-&gt; 把两个vertices连在一起 (注意：这样snap后，实际上仍然是两个vertices) &mdash;&mdash;&gt; two solutions</p>
+<blockquote>
+<ol>
+<li>use <strong>snap</strong> along with <strong>Auto Merge Vertices</strong></li>
+<li>after <strong>snap</strong>, <code>A</code> to select all, then <code>M</code> to merge <code>merge by distance</code></li>
+</ol>
+</blockquote>
+<blockquote>
+<p>snap along an <strong>axis</strong>, instead of snap two vertices, to <strong>align</strong></p>
+</blockquote>
+<p>after delete some faces, use <code>F</code> to <strong>Fill / Create face(s)</strong> (自动填补holes)</p>
+<blockquote>
+<ol>
+<li>select the whole object and <code>F</code></li>
+<li>select certain edges and <code>F</code></li>
+</ol>
+</blockquote>
+<p>after selecting 2 vertices, press <code>J</code> / <code>F</code> to add an edge between these 2 vertices (<code>J</code> will make the object more low-poly, while <code>F</code> simply add an edge without affecting the original shape)</p>
+<p>Besides <code>J</code>, we can use <code>ctrl</code> + <code>T</code> to <strong>Triangulate selection</strong> to make a round face more low-poly after using <code>F</code> to <strong>Fill a hole</strong></p>
+<p>setting: enable <strong>Backface Culling</strong></p>
+<p><code>F3</code> search <strong>flip normal</strong> (or <code>alt</code> + <code>N</code>)</p>
+<p>some faces are <strong>flipped</strong>, to fix it <code>alt</code> + <code>N</code> &gt; <strong>recalculate outside</strong></p>
+<p><code>X</code> dissolve edges</p>
+<p>To connect two meshes inside one object into one single mesh, select two faces which you want to connect and <code>F3</code> &gt; <strong>Bridge Edge Loops</strong></p>
+<p>tips: <code>shift</code> + <code>D</code> to duplicate a face, <code>right mouse</code> to put the new face exactly the same location as the original one</p>
+<p>Separate selection to new object: <code>P</code></p>
+<p>Merge into a single object: <code>ctrl</code> + <code>J</code></p>
+<h2 id="modifiers">Modifiers</h2>
+<p>Mirror modifier (use <strong>auto mirror</strong> add-on)</p>
+<p>Subdivision surface modifier: <code>ctrl</code> + <code>5 or other</code> (subdivide a plane to create low-poly island)</p>
+<p>Displace modifier (low-poly landscape)</p>
+<p>Skin modifier (use with <strong>extra mesh add-on</strong>, so that we can add <strong>single vertex</strong>, and then build a low-poly tree)</p>
+<blockquote>
+<p><code>A</code> to select all, and then <code>ctrl</code> + <code>A</code> to scale</p>
+</blockquote>
+<hr>
+<h2 id="tips">Tips</h2>
+<p>If we scare the object outside edit mode, <code>ctrl</code> + <code>A</code> &gt; apply scale to make the scare <code>1, 1, 1</code> again!</p>
+<p><code>Numpad .</code>: to make viewport rotate around selection</p>
 
 </section>
 
@@ -274,9 +350,7 @@ make			<span class="c1"># 用make命令编译源码生成可执行程序</span>
     
     <section class="article-tags">
         
-            <a href="/tags/cmake/">CMake</a>
-        
-            <a href="/tags/c&#43;&#43;/">C&#43;&#43;</a>
+            <a href="/tags/blender/">Blender</a>
         
     </section>
 
@@ -307,12 +381,24 @@ make			<span class="c1"># 用make命令编译源码生成可执行程序</span>
                 
                     
 <article class="">
-    <a href="/p/csc3050-tips/">
+    <a href="/p/blender-import-material-and-setup-material-library/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">CSC3050 Tips</h2>
+            <h2 class="article-title">Blender: Import Material and Setup Material Library</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/blender-uv-coloring-method/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Blender: UV Coloring Method</h2>
         </div>
     </a>
 </article>

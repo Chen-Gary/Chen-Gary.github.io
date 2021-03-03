@@ -6,7 +6,27 @@
     <description>Recent content in Blender on Gary&#39;s Tech Station</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 18 Feb 2021 20:57:29 +0800</lastBuildDate><atom:link href="https://chen-gary.github.io/tags/blender/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 03 Mar 2021 16:48:34 +0800</lastBuildDate><atom:link href="https://chen-gary.github.io/tags/blender/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blender Tutorial Notes</title>
+      <link>https://chen-gary.github.io/p/blender-tutorial-notes/</link>
+      <pubDate>Wed, 03 Mar 2021 16:48:34 +0800</pubDate>
+      
+      <guid>https://chen-gary.github.io/p/blender-tutorial-notes/</guid>
+      <description>View: Numpad 1 / 3 / 7, or ctrl + Numpad 1 / 3 / 7
+E to extrude
+ alt + E  face normal
+ I to insert
+ double lick I
+B while doing insert (if B does not work, press I again to disable individual faces) (e.g. car window)
+ G
+S
+R
+O proportional editing (when modeling the tree)
+ctrl + B Bevel
+alt + S shrink / flatten</description>
+    </item>
+    
     <item>
       <title>Blender: Import Material and Setup Material Library</title>
       <link>https://chen-gary.github.io/p/blender-import-material-and-setup-material-library/</link>
