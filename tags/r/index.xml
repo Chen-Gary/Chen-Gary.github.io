@@ -6,7 +6,32 @@
     <description>Recent content in R on Gary&#39;s Tech Station</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 02 Mar 2021 14:11:04 +0800</lastBuildDate><atom:link href="https://chen-gary.github.io/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 12 Mar 2021 12:13:44 +0800</lastBuildDate><atom:link href="https://chen-gary.github.io/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GEB2405 Online Lecture 6 - ggplot2 II (Two variables)</title>
+      <link>https://chen-gary.github.io/p/geb2405-online-lecture-6-ggplot2-ii-two-variables/</link>
+      <pubDate>Fri, 12 Mar 2021 12:13:44 +0800</pubDate>
+      
+      <guid>https://chen-gary.github.io/p/geb2405-online-lecture-6-ggplot2-ii-two-variables/</guid>
+      <description>On-line Lecture 6 Import data from excel
+library(&amp;#34;readxl&amp;#34;) # Specify sheet by its name my_data &amp;lt;- read_excel(&amp;#34;my_file.xlsx&amp;#34;, sheet = &amp;#34;data&amp;#34;) # Specify sheet by its index my_data &amp;lt;- read_excel(&amp;#34;my_file.xlsx&amp;#34;, sheet = 2) Lecture 6 (PPT) + theme(axis.text.x = element_text(angle = 45, size=10)) Axis tick and label can be removed using element_blank() or size=0
+Legend can be removed using legend.position=&amp;quot;none&amp;quot;
+# Add the headcount for each bar in a graph which indicate proportion ggplot(CUHKSZ_employment_survey_1,aes(fct_infreq(Occupation),y=(.</description>
+    </item>
+    
+    <item>
+      <title>GEB2405 Online Lecture 5 - ggplot2 I (One Variable)</title>
+      <link>https://chen-gary.github.io/p/geb2405-online-lecture-5-ggplot2-i-one-variable/</link>
+      <pubDate>Fri, 12 Mar 2021 12:13:27 +0800</pubDate>
+      
+      <guid>https://chen-gary.github.io/p/geb2405-online-lecture-5-ggplot2-i-one-variable/</guid>
+      <description>On-line Lecture 5 - Data visualization - Graphing a continuous or discrete variable Package used
+library(ggplot2) Table of contents:
+(Graph for one variable)
+ For continuous/numeric variables, creating, editing, coloring histogram For discrete/categorical/factor variables, creating, editing, coloring bar plot  Basic ggplot2 grammar 
+ggplot(data, aes(x,y,options)) + geom_typegraph(option) # add labels ggplot(data, aes(x,y,options)) + geom_typegraph(option) + labs(x=..., y=..., title=...) # examples (very ugly) ggplot(mtcars,aes(x=mpg)) + geom_histogram() # mtcars$mpg ggplot(mtcars,aes(x=cyl)) + geom_histogram() # mtcars$cyl ggplot(mtcars,aes(x=mpg)) + geom_dotplot() Graphing ==an== unique continuous data (==histogram==)  binwidth=nbr: change the bar width fill=&amp;quot;name_of_color&amp;quot;: change the color with which the bar is filled colour=&amp;quot;name_of_color&amp;quot;: change the outline of the bar alpha=nbr: change the transparency of the color  ggplot(mtcars,aes(x=mpg))+geom_histogram(fill=&amp;#34;skyblue&amp;#34;, alpha=0.</description>
+    </item>
+    
     <item>
       <title>GEB2405 Online Lecture 4 - Merge data collected by different interviewers</title>
       <link>https://chen-gary.github.io/p/geb2405-online-lecture-4-merge-data-collected-by-different-interviewers/</link>
