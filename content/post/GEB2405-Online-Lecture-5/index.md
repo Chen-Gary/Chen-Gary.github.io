@@ -62,6 +62,7 @@ ggplot(mtcars,aes(x=mpg))+geom_histogram(fill="skyblue",
 
 ```R
 # modifying the aesthetic part using fill=Gender to have different colors
+# see graph in 27:14
 ggplot(SEE_students_data_2,aes(x=BMI,fill=Gender))+geom_density(colour="black",alpha=0.5)
 
 ggplot(SEE_students_data_2,aes(x=BMI, fill=Gender))+
@@ -70,9 +71,9 @@ ggplot(SEE_students_data_2,aes(x=BMI, fill=Gender))+
 
 ```R
 # add a title and change axis names
-ggplot(SEE_students_data_2,aes(x=BMI, fill=Gender))
-+geom_density(colour="black",alpha=0.5)
-+labs(title="Body Mass index per Gender\nSEE Students", y="Frequency",x="Body Mass Index")
+ggplot(SEE_students_data_2,aes(x=BMI, fill=Gender))+
+  geom_density(colour="black",alpha=0.5)+
+  labs(title="Body Mass index per Gender\nSEE Students", y="Frequency",x="Body Mass Index")
 ```
 
 
@@ -84,19 +85,19 @@ ggplot(SEE_students_data_2,aes(x=Gender))+geom_bar()
 
 #adding color to the bar using a set, a given color, manually defined colors
 # example 1
-ggplot(SEE_students_data_2,aes(x=Gender, fill=Gender))
-+geom_bar(alpha=0.5)
-+scale_fill_brewer(palette="Set1") # predefined color set
+ggplot(SEE_students_data_2,aes(x=Gender, fill=Gender))+
+  geom_bar(alpha=0.5)+
+  scale_fill_brewer(palette="Set1") # predefined color set
 
 # example 2
-ggplot(SEE_students_data_2,aes(x=Gender, fill=Gender))
-+geom_bar()
-+scale_fill_brewer(palette = "Blues") # predefined color set
+ggplot(SEE_students_data_2,aes(x=Gender, fill=Gender))+
+  geom_bar()+
+  scale_fill_brewer(palette = "Blues") # predefined color set
 
 # example 3
-ggplot(SEE_students_data_2,aes(x=Gender,fill=Gender))
-+geom_bar(alpha=0.75)
-+scale_fill_manual(values=c("pink","blue")) # manually defined color set
+ggplot(SEE_students_data_2,aes(x=Gender,fill=Gender))+
+  geom_bar(alpha=0.75)+
+  scale_fill_manual(values=c("pink","blue")) # manually defined color set
 ```
 
 
@@ -113,13 +114,13 @@ Two useful options in `forcats`:
 * `fct_reorder(x)`: to arrange the results according to another variable
 
 ```R
-ggplot(CUHKSZ_employment_survey_1, aes(x=fct_infreq(Occupation), fill=Occupation))
-+geom_bar(alpha=0.75)
-+scale_fill_brewer(palette="Blues")
+ggplot(CUHKSZ_employment_survey_1, aes(x=fct_infreq(Occupation), fill=Occupation))+
+  geom_bar(alpha=0.75)+
+  scale_fill_brewer(palette="Blues")
 
 # OR simply
-ggplot(CUHKSZ_employment_survey_1, aes(fct_infreq(Occupation), fill=Occupation))
-+geom_bar(alpha=0.75)
-+scale_fill_brewer(palette="Blues")
+ggplot(CUHKSZ_employment_survey_1, aes(fct_infreq(Occupation), fill=Occupation))+
+  geom_bar(alpha=0.75)+
+  scale_fill_brewer(palette="Blues")
 ```
 

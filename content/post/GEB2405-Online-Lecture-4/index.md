@@ -8,6 +8,8 @@ tags:
 ---
 
 
+# On-line Lecture 4 - Merge data collected by different interviewers
+
 * how to merge answer collected by different coders **(merge rows)**
 * how to add new variables in a dataset by matching the ID **(add/merge columns)**
 * how to manually add observation (one single respondent) in an existing dataframe **(add a row)**

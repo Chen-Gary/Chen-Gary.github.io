@@ -35,11 +35,11 @@ Legend can be removed using `legend.position="none"`
 
 ```R
 # Add the headcount for each bar in a graph which indicate proportion
-ggplot(CUHKSZ_employment_survey_1,aes(fct_infreq(Occupation),y=(..count..)/sum(..count..),fill=Occupation))
-+geom_bar(alpha=0.75)
-+ theme(legend.position="none",axis.text.x = element_text(angle = 45, hjust = 1,size=9))
-+geom_text(stat='count',aes(label=..count..),vjust=+1.5)
-+labs(title="Occupation of CUHK Shenzhen students after graduation",x=NULL, y="Proportion")
+ggplot(CUHKSZ_employment_survey_1,aes(fct_infreq(Occupation),y=(..count..)/sum(..count..),fill=Occupation))+
+  geom_bar(alpha=0.75)+
+  theme(legend.position="none",axis.text.x = element_text(angle = 45, hjust = 1,size=9))+
+  geom_text(stat='count',aes(label=..count..),vjust=+1.5)+
+  labs(title="Occupation of CUHK Shenzhen students after graduation",x=NULL, y="Proportion")
 ```
 
 ![](ppt_1.png)
@@ -56,17 +56,17 @@ ggplot(CUHKSZ_employment_survey_1,aes(fct_infreq(Occupation),y=(..count..)/sum(.
 ![](ppt_2.png)
 
 ```R
-ggplot(CUHKSZ_employment_survey_1,aes(x=Monthly_salary_19,y=..density..))
-+geom_histogram(binwidth = 500, fill="blue",colour="black",alpha=0.5,boundary=8000)
-+geom_density(size=1, color="Blue",kernel="gaussian")
+ggplot(CUHKSZ_employment_survey_1,aes(x=Monthly_salary_19,y=..density..))+
+  geom_histogram(binwidth = 500, fill="blue",colour="black",alpha=0.5,boundary=8000)+
+  geom_density(size=1, color="Blue",kernel="gaussian")
 ```
 
 ![](ppt_3.png)
 
 ```R
-ggplot(SEE_students_data_2,aes(x=BMI))
-+geom_histogram(data=subset(SEE_students_data_2,BMI<25),fill="Blue", alpha=0.5,binwidth = 1,color="Black")
-+geom_histogram(data=subset(SEE_students_data_2,BMI>25),fill="Red", alpha=0.5,binwidth = 1,color="Black")
+ggplot(SEE_students_data_2,aes(x=BMI))+
+  geom_histogram(data=subset(SEE_students_data_2,BMI<25),fill="Blue", alpha=0.5,binwidth = 1,color="Black")+
+  geom_histogram(data=subset(SEE_students_data_2,BMI>25),fill="Red", alpha=0.5,binwidth = 1,color="Black")
 ```
 
 ![](ppt_4.png)
@@ -118,6 +118,10 @@ ggplot(Student_BMI_2,aes(x=Gender,y=BMI,color=Gender))+geom_boxplot()
 
 ![](7.png)
 
+```R
+summary( subset(df$BMI, df$Gender=="male") )
+```
+
 
 
 ### Two categorical variables (Bar Chart)
@@ -147,4 +151,12 @@ ggplot(Student_BMI_2,aes(fill=`place of birth`,x=Dpt))+geom_bar()
 
 ![position="stack"](10.png)
 ![position="fill"](11.png)
+
+---
+
+## Tutorial 6
+
+```R
+summary( subset(hdro$HDI, hdro$Continent_fac == "North-America") )
+```
 
