@@ -259,11 +259,11 @@ Legend can be removed using legend.position=&amp;quot;none&amp;quot;
 </code></pre></div><p>Axis tick and label can be removed using <code>element_blank()</code> or <code>size=0</code></p>
 <p>Legend can be removed using <code>legend.position=&quot;none&quot;</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="c1"># Add the headcount for each bar in a graph which indicate proportion</span>
-<span class="nf">ggplot</span><span class="p">(</span><span class="n">CUHKSZ_employment_survey_1</span><span class="p">,</span><span class="nf">aes</span><span class="p">(</span><span class="nf">fct_infreq</span><span class="p">(</span><span class="n">Occupation</span><span class="p">),</span><span class="n">y</span><span class="o">=</span><span class="p">(</span><span class="n">..count..</span><span class="p">)</span><span class="o">/</span><span class="nf">sum</span><span class="p">(</span><span class="n">..count..</span><span class="p">),</span><span class="n">fill</span><span class="o">=</span><span class="n">Occupation</span><span class="p">))</span>
-<span class="o">+</span><span class="nf">geom_bar</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="m">0.75</span><span class="p">)</span>
-<span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">legend.position</span><span class="o">=</span><span class="s">&#34;none&#34;</span><span class="p">,</span><span class="n">axis.text.x</span> <span class="o">=</span> <span class="nf">element_text</span><span class="p">(</span><span class="n">angle</span> <span class="o">=</span> <span class="m">45</span><span class="p">,</span> <span class="n">hjust</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="m">9</span><span class="p">))</span>
-<span class="o">+</span><span class="nf">geom_text</span><span class="p">(</span><span class="n">stat</span><span class="o">=</span><span class="s">&#39;count&#39;</span><span class="p">,</span><span class="nf">aes</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="n">..count..</span><span class="p">),</span><span class="n">vjust</span><span class="o">=</span><span class="m">+1.5</span><span class="p">)</span>
-<span class="o">+</span><span class="nf">labs</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s">&#34;Occupation of CUHK Shenzhen students after graduation&#34;</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="kc">NULL</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s">&#34;Proportion&#34;</span><span class="p">)</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">CUHKSZ_employment_survey_1</span><span class="p">,</span><span class="nf">aes</span><span class="p">(</span><span class="nf">fct_infreq</span><span class="p">(</span><span class="n">Occupation</span><span class="p">),</span><span class="n">y</span><span class="o">=</span><span class="p">(</span><span class="n">..count..</span><span class="p">)</span><span class="o">/</span><span class="nf">sum</span><span class="p">(</span><span class="n">..count..</span><span class="p">),</span><span class="n">fill</span><span class="o">=</span><span class="n">Occupation</span><span class="p">))</span><span class="o">+</span>
+  <span class="nf">geom_bar</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="m">0.75</span><span class="p">)</span><span class="o">+</span>
+  <span class="nf">theme</span><span class="p">(</span><span class="n">legend.position</span><span class="o">=</span><span class="s">&#34;none&#34;</span><span class="p">,</span><span class="n">axis.text.x</span> <span class="o">=</span> <span class="nf">element_text</span><span class="p">(</span><span class="n">angle</span> <span class="o">=</span> <span class="m">45</span><span class="p">,</span> <span class="n">hjust</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="m">9</span><span class="p">))</span><span class="o">+</span>
+  <span class="nf">geom_text</span><span class="p">(</span><span class="n">stat</span><span class="o">=</span><span class="s">&#39;count&#39;</span><span class="p">,</span><span class="nf">aes</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="n">..count..</span><span class="p">),</span><span class="n">vjust</span><span class="o">=</span><span class="m">+1.5</span><span class="p">)</span><span class="o">+</span>
+  <span class="nf">labs</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s">&#34;Occupation of CUHK Shenzhen students after graduation&#34;</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="kc">NULL</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s">&#34;Proportion&#34;</span><span class="p">)</span>
 </code></pre></div><p><figure style="flex-grow: 102; flex-basis: 247px">
 		<a href="/p/geb2405-online-lecture-6-ggplot2-ii-two-variables/ppt_1.png" data-size="599x582"><img src="/p/geb2405-online-lecture-6-ggplot2-ii-two-variables/ppt_1.png"
 				srcset="/p/geb2405-online-lecture-6-ggplot2-ii-two-variables/ppt_1_hu1c22cc0298a6050817b4861ce033c652_49612_480x0_resize_box_2.png 480w, /p/geb2405-online-lecture-6-ggplot2-ii-two-variables/ppt_1_hu1c22cc0298a6050817b4861ce033c652_49612_1024x0_resize_box_2.png 1024w"
@@ -289,9 +289,9 @@ Legend can be removed using legend.position=&amp;quot;none&amp;quot;
 		</a>
 		
 	</figure></p>
-<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">ggplot</span><span class="p">(</span><span class="n">CUHKSZ_employment_survey_1</span><span class="p">,</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">Monthly_salary_19</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">..density..</span><span class="p">))</span>
-<span class="o">+</span><span class="nf">geom_histogram</span><span class="p">(</span><span class="n">binwidth</span> <span class="o">=</span> <span class="m">500</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s">&#34;blue&#34;</span><span class="p">,</span><span class="n">colour</span><span class="o">=</span><span class="s">&#34;black&#34;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="m">0.5</span><span class="p">,</span><span class="n">boundary</span><span class="o">=</span><span class="m">8000</span><span class="p">)</span>
-<span class="o">+</span><span class="nf">geom_density</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#34;Blue&#34;</span><span class="p">,</span><span class="n">kernel</span><span class="o">=</span><span class="s">&#34;gaussian&#34;</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">ggplot</span><span class="p">(</span><span class="n">CUHKSZ_employment_survey_1</span><span class="p">,</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">Monthly_salary_19</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">..density..</span><span class="p">))</span><span class="o">+</span>
+  <span class="nf">geom_histogram</span><span class="p">(</span><span class="n">binwidth</span> <span class="o">=</span> <span class="m">500</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s">&#34;blue&#34;</span><span class="p">,</span><span class="n">colour</span><span class="o">=</span><span class="s">&#34;black&#34;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="m">0.5</span><span class="p">,</span><span class="n">boundary</span><span class="o">=</span><span class="m">8000</span><span class="p">)</span><span class="o">+</span>
+  <span class="nf">geom_density</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#34;Blue&#34;</span><span class="p">,</span><span class="n">kernel</span><span class="o">=</span><span class="s">&#34;gaussian&#34;</span><span class="p">)</span>
 </code></pre></div><p><figure style="flex-grow: 103; flex-basis: 248px">
 		<a href="/p/geb2405-online-lecture-6-ggplot2-ii-two-variables/ppt_3.png" data-size="493x477"><img src="/p/geb2405-online-lecture-6-ggplot2-ii-two-variables/ppt_3.png"
 				srcset="/p/geb2405-online-lecture-6-ggplot2-ii-two-variables/ppt_3_hu46aa217b898e66a7c47d2c3287579489_36026_480x0_resize_box_2.png 480w, /p/geb2405-online-lecture-6-ggplot2-ii-two-variables/ppt_3_hu46aa217b898e66a7c47d2c3287579489_36026_1024x0_resize_box_2.png 1024w"
@@ -302,9 +302,9 @@ Legend can be removed using legend.position=&amp;quot;none&amp;quot;
 		</a>
 		
 	</figure></p>
-<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">ggplot</span><span class="p">(</span><span class="n">SEE_students_data_2</span><span class="p">,</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">BMI</span><span class="p">))</span>
-<span class="o">+</span><span class="nf">geom_histogram</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="nf">subset</span><span class="p">(</span><span class="n">SEE_students_data_2</span><span class="p">,</span><span class="n">BMI</span><span class="o">&lt;</span><span class="m">25</span><span class="p">),</span><span class="n">fill</span><span class="o">=</span><span class="s">&#34;Blue&#34;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="m">0.5</span><span class="p">,</span><span class="n">binwidth</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s">&#34;Black&#34;</span><span class="p">)</span>
-<span class="o">+</span><span class="nf">geom_histogram</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="nf">subset</span><span class="p">(</span><span class="n">SEE_students_data_2</span><span class="p">,</span><span class="n">BMI</span><span class="o">&gt;</span><span class="m">25</span><span class="p">),</span><span class="n">fill</span><span class="o">=</span><span class="s">&#34;Red&#34;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="m">0.5</span><span class="p">,</span><span class="n">binwidth</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s">&#34;Black&#34;</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">ggplot</span><span class="p">(</span><span class="n">SEE_students_data_2</span><span class="p">,</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">BMI</span><span class="p">))</span><span class="o">+</span>
+  <span class="nf">geom_histogram</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="nf">subset</span><span class="p">(</span><span class="n">SEE_students_data_2</span><span class="p">,</span><span class="n">BMI</span><span class="o">&lt;</span><span class="m">25</span><span class="p">),</span><span class="n">fill</span><span class="o">=</span><span class="s">&#34;Blue&#34;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="m">0.5</span><span class="p">,</span><span class="n">binwidth</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s">&#34;Black&#34;</span><span class="p">)</span><span class="o">+</span>
+  <span class="nf">geom_histogram</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="nf">subset</span><span class="p">(</span><span class="n">SEE_students_data_2</span><span class="p">,</span><span class="n">BMI</span><span class="o">&gt;</span><span class="m">25</span><span class="p">),</span><span class="n">fill</span><span class="o">=</span><span class="s">&#34;Red&#34;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="m">0.5</span><span class="p">,</span><span class="n">binwidth</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s">&#34;Black&#34;</span><span class="p">)</span>
 </code></pre></div><p><figure style="flex-grow: 103; flex-basis: 247px">
 		<a href="/p/geb2405-online-lecture-6-ggplot2-ii-two-variables/ppt_4.png" data-size="500x484"><img src="/p/geb2405-online-lecture-6-ggplot2-ii-two-variables/ppt_4.png"
 				srcset="/p/geb2405-online-lecture-6-ggplot2-ii-two-variables/ppt_4_hu7e47fb35518579b0dea304e78dac75a6_19782_480x0_resize_box_2.png 480w, /p/geb2405-online-lecture-6-ggplot2-ii-two-variables/ppt_4_hu7e47fb35518579b0dea304e78dac75a6_19782_1024x0_resize_box_2.png 1024w"
@@ -407,7 +407,8 @@ Legend can be removed using legend.position=&amp;quot;none&amp;quot;
 		</a>
 		
 	</figure></p>
-<h3 id="two-categorical-variables-bar-chart">Two categorical variables (Bar Chart)</h3>
+<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">summary</span><span class="p">(</span> <span class="nf">subset</span><span class="p">(</span><span class="n">df</span><span class="o">$</span><span class="n">BMI</span><span class="p">,</span> <span class="n">df</span><span class="o">$</span><span class="n">Gender</span><span class="o">==</span><span class="s">&#34;male&#34;</span><span class="p">)</span> <span class="p">)</span>
+</code></pre></div><h3 id="two-categorical-variables-bar-chart">Two categorical variables (Bar Chart)</h3>
 <p>Bar Chart</p>
 <div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="n">Student_BMI_2</span><span class="o">$</span><span class="n">`place of birth`</span><span class="o">&lt;-</span><span class="nf">as.factor</span><span class="p">(</span><span class="n">Student_BMI_2</span><span class="o">$</span><span class="n">`place of birth`</span><span class="p">)</span>
 <span class="nf">ggplot</span><span class="p">(</span><span class="n">Student_BMI_2</span><span class="p">,</span><span class="nf">aes</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="n">`place of birth`</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="n">Dpt</span><span class="p">))</span><span class="o">+</span><span class="nf">geom_bar</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="s">&#34;dodge&#34;</span><span class="p">)</span>
@@ -461,7 +462,10 @@ Legend can be removed using legend.position=&amp;quot;none&amp;quot;
 		<figcaption>position=“fill”</figcaption>
 		
 	</figure></p>
-
+<hr>
+<h2 id="tutorial-6">Tutorial 6</h2>
+<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">summary</span><span class="p">(</span> <span class="nf">subset</span><span class="p">(</span><span class="n">hdro</span><span class="o">$</span><span class="n">HDI</span><span class="p">,</span> <span class="n">hdro</span><span class="o">$</span><span class="n">Continent_fac</span> <span class="o">==</span> <span class="s">&#34;North-America&#34;</span><span class="p">)</span> <span class="p">)</span>
+</code></pre></div>
 </section>
 
 
@@ -500,6 +504,30 @@ Legend can be removed using legend.position=&amp;quot;none&amp;quot;
                 
                     
 <article class="">
+    <a href="/p/geb2405-online-lecture-8-bivariate-analysis-cross-tabulation/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">GEB2405 Online Lecture 8 - Bivariate analysis - cross tabulation</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/geb2405-online-lecture-7/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">GEB2405 Online Lecture 7</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
     <a href="/p/geb2405-online-lecture-5-ggplot2-i-one-variable/">
         
         
@@ -530,30 +558,6 @@ Legend can be removed using legend.position=&amp;quot;none&amp;quot;
 
         <div class="article-details">
             <h2 class="article-title">GEB2405 Online Lecture 3 - Clean the data before analysis</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/geb2405-online-lecture-2/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">GEB2405 Online Lecture 2</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/geb2405-online-lecture-1/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">GEB2405 Online Lecture 1</h2>
         </div>
     </a>
 </article>

@@ -290,32 +290,33 @@ ggplot(data, aes(x,y,options)) &#43; geom_typegraph(option) # add labels ggplot(
                                          <span class="n">colour</span><span class="o">=</span><span class="s">&#34;grey&#34;</span>
                                          <span class="p">)</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="c1"># modifying the aesthetic part using fill=Gender to have different colors</span>
+<span class="c1"># see graph in 27:14</span>
 <span class="nf">ggplot</span><span class="p">(</span><span class="n">SEE_students_data_2</span><span class="p">,</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">BMI</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="n">Gender</span><span class="p">))</span><span class="o">+</span><span class="nf">geom_density</span><span class="p">(</span><span class="n">colour</span><span class="o">=</span><span class="s">&#34;black&#34;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="m">0.5</span><span class="p">)</span>
 
 <span class="nf">ggplot</span><span class="p">(</span><span class="n">SEE_students_data_2</span><span class="p">,</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">BMI</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">Gender</span><span class="p">))</span><span class="o">+</span>
 	<span class="nf">geom_area</span><span class="p">(</span><span class="n">stat</span><span class="o">=</span><span class="s">&#34;bin&#34;</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="s">&#34;black&#34;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="m">0.5</span><span class="p">,</span><span class="n">binwidth</span><span class="o">=</span><span class="m">1</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="c1"># add a title and change axis names</span>
-<span class="nf">ggplot</span><span class="p">(</span><span class="n">SEE_students_data_2</span><span class="p">,</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">BMI</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">Gender</span><span class="p">))</span>
-<span class="o">+</span><span class="nf">geom_density</span><span class="p">(</span><span class="n">colour</span><span class="o">=</span><span class="s">&#34;black&#34;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="m">0.5</span><span class="p">)</span>
-<span class="o">+</span><span class="nf">labs</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s">&#34;Body Mass index per Gender\nSEE Students&#34;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s">&#34;Frequency&#34;</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="s">&#34;Body Mass Index&#34;</span><span class="p">)</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">SEE_students_data_2</span><span class="p">,</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">BMI</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">Gender</span><span class="p">))</span><span class="o">+</span>
+  <span class="nf">geom_density</span><span class="p">(</span><span class="n">colour</span><span class="o">=</span><span class="s">&#34;black&#34;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="m">0.5</span><span class="p">)</span><span class="o">+</span>
+  <span class="nf">labs</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s">&#34;Body Mass index per Gender\nSEE Students&#34;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s">&#34;Frequency&#34;</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="s">&#34;Body Mass Index&#34;</span><span class="p">)</span>
 </code></pre></div><h2 id="graphing-univariate-categoricalfactor-data">Graphing ==univariate== categorical/factor data</h2>
 <div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">ggplot</span><span class="p">(</span><span class="n">SEE_students_data_2</span><span class="p">,</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">Gender</span><span class="p">))</span><span class="o">+</span><span class="nf">geom_bar</span><span class="p">()</span>
 
 <span class="c1">#adding color to the bar using a set, a given color, manually defined colors</span>
 <span class="c1"># example 1</span>
-<span class="nf">ggplot</span><span class="p">(</span><span class="n">SEE_students_data_2</span><span class="p">,</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">Gender</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">Gender</span><span class="p">))</span>
-<span class="o">+</span><span class="nf">geom_bar</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="m">0.5</span><span class="p">)</span>
-<span class="o">+</span><span class="nf">scale_fill_brewer</span><span class="p">(</span><span class="n">palette</span><span class="o">=</span><span class="s">&#34;Set1&#34;</span><span class="p">)</span> <span class="c1"># predefined color set</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">SEE_students_data_2</span><span class="p">,</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">Gender</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">Gender</span><span class="p">))</span><span class="o">+</span>
+  <span class="nf">geom_bar</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="m">0.5</span><span class="p">)</span><span class="o">+</span>
+  <span class="nf">scale_fill_brewer</span><span class="p">(</span><span class="n">palette</span><span class="o">=</span><span class="s">&#34;Set1&#34;</span><span class="p">)</span> <span class="c1"># predefined color set</span>
 
 <span class="c1"># example 2</span>
-<span class="nf">ggplot</span><span class="p">(</span><span class="n">SEE_students_data_2</span><span class="p">,</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">Gender</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">Gender</span><span class="p">))</span>
-<span class="o">+</span><span class="nf">geom_bar</span><span class="p">()</span>
-<span class="o">+</span><span class="nf">scale_fill_brewer</span><span class="p">(</span><span class="n">palette</span> <span class="o">=</span> <span class="s">&#34;Blues&#34;</span><span class="p">)</span> <span class="c1"># predefined color set</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">SEE_students_data_2</span><span class="p">,</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">Gender</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">Gender</span><span class="p">))</span><span class="o">+</span>
+  <span class="nf">geom_bar</span><span class="p">()</span><span class="o">+</span>
+  <span class="nf">scale_fill_brewer</span><span class="p">(</span><span class="n">palette</span> <span class="o">=</span> <span class="s">&#34;Blues&#34;</span><span class="p">)</span> <span class="c1"># predefined color set</span>
 
 <span class="c1"># example 3</span>
-<span class="nf">ggplot</span><span class="p">(</span><span class="n">SEE_students_data_2</span><span class="p">,</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">Gender</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="n">Gender</span><span class="p">))</span>
-<span class="o">+</span><span class="nf">geom_bar</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="m">0.75</span><span class="p">)</span>
-<span class="o">+</span><span class="nf">scale_fill_manual</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;pink&#34;</span><span class="p">,</span><span class="s">&#34;blue&#34;</span><span class="p">))</span> <span class="c1"># manually defined color set</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">SEE_students_data_2</span><span class="p">,</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">Gender</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="n">Gender</span><span class="p">))</span><span class="o">+</span>
+  <span class="nf">geom_bar</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="m">0.75</span><span class="p">)</span><span class="o">+</span>
+  <span class="nf">scale_fill_manual</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;pink&#34;</span><span class="p">,</span><span class="s">&#34;blue&#34;</span><span class="p">))</span> <span class="c1"># manually defined color set</span>
 </code></pre></div><h3 id="organize-the-bar-in-the-right-order">Organize the bar in the right order</h3>
 <div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">library</span><span class="p">(</span><span class="n">forcats</span><span class="p">)</span>
 </code></pre></div><p>Two useful options in <code>forcats</code>:</p>
@@ -323,14 +324,14 @@ ggplot(data, aes(x,y,options)) &#43; geom_typegraph(option) # add labels ggplot(
 <li><code>fct_infreq(x)</code>:  to arrange the results depending on the frequency</li>
 <li><code>fct_reorder(x)</code>: to arrange the results according to another variable</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">ggplot</span><span class="p">(</span><span class="n">CUHKSZ_employment_survey_1</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nf">fct_infreq</span><span class="p">(</span><span class="n">Occupation</span><span class="p">),</span> <span class="n">fill</span><span class="o">=</span><span class="n">Occupation</span><span class="p">))</span>
-<span class="o">+</span><span class="nf">geom_bar</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="m">0.75</span><span class="p">)</span>
-<span class="o">+</span><span class="nf">scale_fill_brewer</span><span class="p">(</span><span class="n">palette</span><span class="o">=</span><span class="s">&#34;Blues&#34;</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">ggplot</span><span class="p">(</span><span class="n">CUHKSZ_employment_survey_1</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nf">fct_infreq</span><span class="p">(</span><span class="n">Occupation</span><span class="p">),</span> <span class="n">fill</span><span class="o">=</span><span class="n">Occupation</span><span class="p">))</span><span class="o">+</span>
+  <span class="nf">geom_bar</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="m">0.75</span><span class="p">)</span><span class="o">+</span>
+  <span class="nf">scale_fill_brewer</span><span class="p">(</span><span class="n">palette</span><span class="o">=</span><span class="s">&#34;Blues&#34;</span><span class="p">)</span>
 
 <span class="c1"># OR simply</span>
-<span class="nf">ggplot</span><span class="p">(</span><span class="n">CUHKSZ_employment_survey_1</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="nf">fct_infreq</span><span class="p">(</span><span class="n">Occupation</span><span class="p">),</span> <span class="n">fill</span><span class="o">=</span><span class="n">Occupation</span><span class="p">))</span>
-<span class="o">+</span><span class="nf">geom_bar</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="m">0.75</span><span class="p">)</span>
-<span class="o">+</span><span class="nf">scale_fill_brewer</span><span class="p">(</span><span class="n">palette</span><span class="o">=</span><span class="s">&#34;Blues&#34;</span><span class="p">)</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">CUHKSZ_employment_survey_1</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="nf">fct_infreq</span><span class="p">(</span><span class="n">Occupation</span><span class="p">),</span> <span class="n">fill</span><span class="o">=</span><span class="n">Occupation</span><span class="p">))</span><span class="o">+</span>
+  <span class="nf">geom_bar</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="m">0.75</span><span class="p">)</span><span class="o">+</span>
+  <span class="nf">scale_fill_brewer</span><span class="p">(</span><span class="n">palette</span><span class="o">=</span><span class="s">&#34;Blues&#34;</span><span class="p">)</span>
 </code></pre></div>
 </section>
 
@@ -370,6 +371,30 @@ ggplot(data, aes(x,y,options)) &#43; geom_typegraph(option) # add labels ggplot(
                 
                     
 <article class="">
+    <a href="/p/geb2405-online-lecture-8-bivariate-analysis-cross-tabulation/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">GEB2405 Online Lecture 8 - Bivariate analysis - cross tabulation</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/geb2405-online-lecture-7/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">GEB2405 Online Lecture 7</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
     <a href="/p/geb2405-online-lecture-6-ggplot2-ii-two-variables/">
         
         
@@ -400,30 +425,6 @@ ggplot(data, aes(x,y,options)) &#43; geom_typegraph(option) # add labels ggplot(
 
         <div class="article-details">
             <h2 class="article-title">GEB2405 Online Lecture 3 - Clean the data before analysis</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/geb2405-online-lecture-2/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">GEB2405 Online Lecture 2</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/geb2405-online-lecture-1/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">GEB2405 Online Lecture 1</h2>
         </div>
     </a>
 </article>

@@ -1,35 +1,26 @@
 <!DOCTYPE html>
 <html lang="en-us">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='On-line Lecture 2 explore some data depositories
-  UK Data Service https://www.ukdataservice.ac.uk/
- I have an account for it.
-  GBCS (Great British Class Survey) CCSE (Cultural Capital and Social Exclusion)    CNSDA 中国国家调查数据库 ~~http://cnsda.edu.cn/index.php~~ / http://cnsda.ruc.edu.cn/
- I have an account for it.
-  CGSS (China General Social Survey) 中国综合社会调查 CRS (The Chinese Religion Survey)    北京大学开放研究数据平台 https://opendata.pku.edu.cn/
-   Tutorial 2 Some definitions:'><title>GEB2405 Online Lecture 2</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Online Lecture 8 - Bivariate analysis - cross tabulation Packages used
+library(gmodels) # for `CrossTable()` library(sjstats) # for cramer&amp;#39;V test - `crosstable_statistics()` library(sjPlot) # for `sjPlot::sjt.xtab()`  CrossTable(data$x, data$y) CrossTable(data$x, data$y, prop.t=FALSE, prop.chisq=FALSE) expected: If TRUE, chisq will be set to TRUE and expected cell counts from the chisq will be included (next lec)
+prop.r: If TRUE, row proportions will be included
+prop.c: If TRUE, column proportions will be included'><title>GEB2405 Online Lecture 8 - Bivariate analysis - cross tabulation</title>
 
-<link rel='canonical' href='https://chen-gary.github.io/p/geb2405-online-lecture-2/'>
+<link rel='canonical' href='https://chen-gary.github.io/p/geb2405-online-lecture-8-bivariate-analysis-cross-tabulation/'>
 
-<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='GEB2405 Online Lecture 2'>
-<meta property='og:description' content='On-line Lecture 2 explore some data depositories
-  UK Data Service https://www.ukdataservice.ac.uk/
- I have an account for it.
-  GBCS (Great British Class Survey) CCSE (Cultural Capital and Social Exclusion)    CNSDA 中国国家调查数据库 ~~http://cnsda.edu.cn/index.php~~ / http://cnsda.ruc.edu.cn/
- I have an account for it.
-  CGSS (China General Social Survey) 中国综合社会调查 CRS (The Chinese Religion Survey)    北京大学开放研究数据平台 https://opendata.pku.edu.cn/
-   Tutorial 2 Some definitions:'>
-<meta property='og:url' content='https://chen-gary.github.io/p/geb2405-online-lecture-2/'>
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='GEB2405 Online Lecture 8 - Bivariate analysis - cross tabulation'>
+<meta property='og:description' content='Online Lecture 8 - Bivariate analysis - cross tabulation Packages used
+library(gmodels) # for `CrossTable()` library(sjstats) # for cramer&amp;#39;V test - `crosstable_statistics()` library(sjPlot) # for `sjPlot::sjt.xtab()`  CrossTable(data$x, data$y) CrossTable(data$x, data$y, prop.t=FALSE, prop.chisq=FALSE) expected: If TRUE, chisq will be set to TRUE and expected cell counts from the chisq will be included (next lec)
+prop.r: If TRUE, row proportions will be included
+prop.c: If TRUE, column proportions will be included'>
+<meta property='og:url' content='https://chen-gary.github.io/p/geb2405-online-lecture-8-bivariate-analysis-cross-tabulation/'>
 <meta property='og:site_name' content='Gary&#39;s Tech Station'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='R' /><meta property='article:published_time' content='2021-02-20T12:08:00&#43;08:00'/><meta property='article:modified_time' content='2021-02-20T12:08:00&#43;08:00'/>
-<meta name="twitter:title" content="GEB2405 Online Lecture 2">
-<meta name="twitter:description" content="On-line Lecture 2 explore some data depositories
-  UK Data Service https://www.ukdataservice.ac.uk/
- I have an account for it.
-  GBCS (Great British Class Survey) CCSE (Cultural Capital and Social Exclusion)    CNSDA 中国国家调查数据库 ~~http://cnsda.edu.cn/index.php~~ / http://cnsda.ruc.edu.cn/
- I have an account for it.
-  CGSS (China General Social Survey) 中国综合社会调查 CRS (The Chinese Religion Survey)    北京大学开放研究数据平台 https://opendata.pku.edu.cn/
-   Tutorial 2 Some definitions:">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='R' /><meta property='article:published_time' content='2021-04-02T12:00:42&#43;08:00'/><meta property='article:modified_time' content='2021-04-02T12:00:42&#43;08:00'/>
+<meta name="twitter:title" content="GEB2405 Online Lecture 8 - Bivariate analysis - cross tabulation">
+<meta name="twitter:description" content="Online Lecture 8 - Bivariate analysis - cross tabulation Packages used
+library(gmodels) # for `CrossTable()` library(sjstats) # for cramer&amp;#39;V test - `crosstable_statistics()` library(sjPlot) # for `sjPlot::sjt.xtab()`  CrossTable(data$x, data$y) CrossTable(data$x, data$y, prop.t=FALSE, prop.chisq=FALSE) expected: If TRUE, chisq will be set to TRUE and expected cell counts from the chisq will be included (next lec)
+prop.r: If TRUE, row proportions will be included
+prop.c: If TRUE, column proportions will be included">
     </head>
     <body class="">
     <script>
@@ -237,7 +228,7 @@
     
 
     <h2 class="article-title">
-        <a href="/p/geb2405-online-lecture-2/">GEB2405 Online Lecture 2</a>
+        <a href="/p/geb2405-online-lecture-8-bivariate-analysis-cross-tabulation/">GEB2405 Online Lecture 8 - Bivariate analysis - cross tabulation</a>
     </h2>
 
     <footer class="article-time">
@@ -249,85 +240,69 @@
 
 
 
-        <time class="article-time--published">Feb 20, 2021</time>
+        <time class="article-time--published">Apr 02, 2021</time>
     </footer></div>
 </header>
 
     <section class="article-content">
-    <h2 id="on-line-lecture-2">On-line Lecture 2</h2>
-<p>explore some data depositories</p>
-<ul>
-<li>
-<p>UK Data Service <a href="https://www.ukdataservice.ac.uk/">https://www.ukdataservice.ac.uk/</a></p>
-<blockquote>
-<p>I have an account for it.</p>
-</blockquote>
-<ul>
-<li>GBCS (Great British Class Survey)</li>
-<li>CCSE (Cultural Capital and Social Exclusion)</li>
-</ul>
-</li>
-<li>
-<p>CNSDA 中国国家调查数据库 ~~<a href="http://cnsda.edu.cn/index.php~~">http://cnsda.edu.cn/index.php~~</a> / <a href="http://cnsda.ruc.edu.cn/">http://cnsda.ruc.edu.cn/</a></p>
-<blockquote>
-<p>I have an account for it.</p>
-</blockquote>
-<ul>
-<li>CGSS (China General Social Survey) 中国综合社会调查</li>
-<li>CRS (The Chinese Religion Survey)</li>
-</ul>
-</li>
-<li>
-<p>北京大学开放研究数据平台 <a href="https://opendata.pku.edu.cn/">https://opendata.pku.edu.cn/</a></p>
-</li>
-</ul>
-<hr>
-<h2 id="tutorial-2">Tutorial 2</h2>
-<p>Some definitions:</p>
-<ul>
-<li><strong>&ldquo;Levels&rdquo;</strong> are the <strong>different attributes</strong> that a <strong>==factor/categorical variable==</strong> ==(only for these two types of data)== can have. For example: The variable <em>gender</em> has usually two levels, <em>male</em> and <em>female</em></li>
-<li><strong>&ldquo;Not well ordered variable&rdquo;</strong> is a variable whose levels <strong>should be rearranged</strong> in increasing order or decreasing order. For example, you have a question: Do you like coffee? The levels are in the following order: Like a lot, dislike a lot, Like, neither, Dislike. This is not very rational and need to be reordered from Dislike a lot to like a lot</li>
-</ul>
-<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">library</span><span class="p">(</span><span class="n">psych</span><span class="p">)</span>
-<span class="nf">describe</span><span class="p">(</span><span class="n">USArrests</span><span class="o">$</span><span class="n">Murder</span><span class="p">)</span>		<span class="c1"># improved version of summary(USArrests$Murder)</span>
-								<span class="c1"># with `sd` (standard dev.) included</span>
-</code></pre></div><p>Other commands to see info of data</p>
-<ul>
-<li><code>summary</code>: knowing <strong>basic information</strong> about the distribution of <strong>continuous variable</strong> which are named <strong>numeric</strong> in R. However this command ==does not work for factor and character variable==. Different command are necessary to explore different type of variable</li>
-<li><code>str(object)</code>: When the variable is <strong>numeric</strong>, <strong>integer</strong>, <strong>factor</strong> or <strong>character</strong> the command <code>str</code> can be use</li>
-<li><code>describe(object)</code>: When you have a <strong>numeric</strong> or <strong>integer</strong> the command <code>describe</code> can be used</li>
-<li><code>levels(object)</code>: When the variable is <strong>factor</strong>, I can know the possible “label” of the answers using the command <code>levels(object)</code></li>
-<li><code>table(object)</code>: When the variable is <strong>factor</strong>, you can use the command <code>table</code> to explore the variable (see example of <code>table</code> and <code>levels</code> in online lec 3 video 26:23)</li>
-</ul>
-<hr>
-<h2 id="tutorial-2---data-type">Tutorial 2 - Data type</h2>
-<p><code>Data Types and Structures-v2.docx</code></p>
-<h3 id="data-types">Data types:</h3>
-<ul>
-<li>character</li>
-<li>numeric (real or decimal)</li>
-<li>integer</li>
-<li>factor (has a certain number of possible answers &mdash;- see details in the <code>docx</code> file)</li>
-<li><del>logical (TRUE, FALSE)</del> (not covered in this course)</li>
-<li><del>complex</del> (not covered in this course)</li>
-</ul>
-<p>see examples in the <code>docx</code> file</p>
-<h3 id="commands-to-check-the-data-type">Commands to check the data type:</h3>
-<ul>
-<li>class (object)</li>
-<li>str(object) &mdash;&mdash;&ndash; covered in tut2</li>
-<li>mode(object)</li>
-</ul>
-<h3 id="data-structures">Data structures</h3>
-<p>During the first tutorial, we create <strong>individual vectors (or variables)</strong>. Those vectors can be combined together into a <strong>data frame</strong>.</p>
-<p>(see more details in the <code>docx</code> file)</p>
-<p>Data structures:</p>
-<ul>
-<li>data frame</li>
-<li>matrix</li>
-<li>list</li>
-<li>&hellip;</li>
-</ul>
+    <h1 id="online-lecture-8---bivariate-analysis---cross-tabulation">Online Lecture 8 - Bivariate analysis - cross tabulation</h1>
+<p>Packages used</p>
+<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">library</span><span class="p">(</span><span class="n">gmodels</span><span class="p">)</span> <span class="c1"># for `CrossTable()`</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">sjstats</span><span class="p">)</span> <span class="c1"># for cramer&#39;V test - `crosstable_statistics()`</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">sjPlot</span><span class="p">)</span> <span class="c1"># for `sjPlot::sjt.xtab()`</span>
+</code></pre></div><hr>
+<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">CrossTable</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">x</span><span class="p">,</span> <span class="n">data</span><span class="o">$</span><span class="n">y</span><span class="p">)</span>
+<span class="nf">CrossTable</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">x</span><span class="p">,</span> <span class="n">data</span><span class="o">$</span><span class="n">y</span><span class="p">,</span> <span class="n">prop.t</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> <span class="n">prop.chisq</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+</code></pre></div><p><strong>expected</strong>: If <code>TRUE</code>, chisq will be set to <code>TRUE</code> and expected cell counts from the chisq will be included <strong>(next lec)</strong></p>
+<p><strong>prop.r</strong>: If <code>TRUE</code>, row proportions will be included</p>
+<p><strong>prop.c</strong>: If <code>TRUE</code>, column proportions will be included</p>
+<p><strong>prop.t</strong>: If <code>TRUE</code>, table proportions will be included</p>
+<p><strong>prop.chisq</strong>: If <code>TRUE</code>, chi-square contribution of each cell will be included <strong>(next lec)</strong></p>
+<p><strong>chi square / pearson X^2 test</strong>: correlation between the two (categorical) variables</p>
+<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">CrossTable</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">x</span><span class="p">,</span> <span class="n">data</span><span class="o">$</span><span class="n">y</span><span class="p">,</span> <span class="n">chisq</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span> <span class="c1"># see p-value</span>
+</code></pre></div><p><figure style="flex-grow: 261; flex-basis: 627px">
+		<a href="/p/geb2405-online-lecture-8-bivariate-analysis-cross-tabulation/1.png" data-size="1827x699"><img src="/p/geb2405-online-lecture-8-bivariate-analysis-cross-tabulation/1.png"
+				srcset="/p/geb2405-online-lecture-8-bivariate-analysis-cross-tabulation/1_hub7542707f7a75ab65927fc6d2dd4f4d2_1154988_480x0_resize_box_2.png 480w, /p/geb2405-online-lecture-8-bivariate-analysis-cross-tabulation/1_hub7542707f7a75ab65927fc6d2dd4f4d2_1154988_1024x0_resize_box_2.png 1024w"
+				width="1827"
+				height="699"
+				loading="lazy"
+				>
+		</a>
+		
+	</figure></p>
+<p>Do we have other test methods to examine the correlation between two variables?</p>
+<p><strong>chisq</strong>: If <code>TRUE</code>, the results of a chi-square test will be included</p>
+<p><strong>fisher</strong>: If <code>TRUE</code>, the results of a Fisher Exact test will be included</p>
+<p><strong>mcnemar</strong>: If <code>TRUE</code>, the results of a McNemar test will be included</p>
+<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">CrossTable</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">x</span><span class="p">,</span> <span class="n">data</span><span class="o">$</span><span class="n">y</span><span class="p">,</span> <span class="n">fisher</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span> <span class="c1"># only apply to 2*2 table</span>
+</code></pre></div><hr>
+<p>cramer&rsquo;V ==&gt; <strong>how strong</strong> the correlation is</p>
+<p><figure style="flex-grow: 154; flex-basis: 371px">
+		<a href="/p/geb2405-online-lecture-8-bivariate-analysis-cross-tabulation/2.png" data-size="1241x801"><img src="/p/geb2405-online-lecture-8-bivariate-analysis-cross-tabulation/2.png"
+				srcset="/p/geb2405-online-lecture-8-bivariate-analysis-cross-tabulation/2_hu19e78c04e0aae2f4e69c6c18f1b50ba0_944413_480x0_resize_box_2.png 480w, /p/geb2405-online-lecture-8-bivariate-analysis-cross-tabulation/2_hu19e78c04e0aae2f4e69c6c18f1b50ba0_944413_1024x0_resize_box_2.png 1024w"
+				width="1241"
+				height="801"
+				loading="lazy"
+				>
+		</a>
+		
+	</figure></p>
+<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">library</span><span class="p">(</span><span class="n">sjstats</span><span class="p">)</span>
+
+<span class="nf">crosstable_statistics</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">x1</span><span class="o">=</span><span class="n">varname1</span><span class="p">,</span> <span class="n">x2</span><span class="o">=</span><span class="n">varname2</span><span class="p">,</span> <span class="n">statistics</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;cramer&#34;</span><span class="p">))</span>
+</code></pre></div><hr>
+<p>The outputs of previous <code>CrossTable()</code> and <code>crosstable_statistics()</code> is not good looking</p>
+<p>===&gt; want beautiful table that is ready to publish</p>
+<div class="highlight"><pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">library</span><span class="p">(</span><span class="n">sjPlot</span><span class="p">)</span>
+
+<span class="n">sjPlot</span><span class="o">::</span><span class="nf">sjt.xtab</span><span class="p">(</span><span class="n">df</span><span class="o">$</span><span class="n">var1</span><span class="p">,</span> <span class="n">df</span><span class="o">$</span><span class="n">var2</span><span class="p">)</span> <span class="c1"># only show frequency</span>
+
+<span class="n">sjPlot</span><span class="o">::</span><span class="nf">sjt.xtab</span><span class="p">(</span><span class="n">df</span><span class="o">$</span><span class="n">var1</span><span class="p">,</span> <span class="n">df</span><span class="o">$</span><span class="n">var2</span><span class="p">,</span> <span class="n">show.row.prc</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span> <span class="n">show.col.prc</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+</code></pre></div><h1 id="tutorial-8">Tutorial 8</h1>
+<p>$H_0$ = null hypothesis (i.e. the two variables are independent?)</p>
+<p>If p-value &lt; 0.05, we can reject $H_0$ with 95% confidence.</p>
+<p>In other words, if p-value &lt; 0.05, the two variables are statistically correlated.</p>
+<p>You may check the <code>.docx</code> file of Week 8 for more info of the above three statistic tests, but that will not help much.</p>
 
 </section>
 
@@ -364,18 +339,6 @@
         <h2 class="section-title">Related contents</h2>
         <div class="related-contents">
             <div class="flex article-list--tile">
-                
-                    
-<article class="">
-    <a href="/p/geb2405-online-lecture-8-bivariate-analysis-cross-tabulation/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">GEB2405 Online Lecture 8 - Bivariate analysis - cross tabulation</h2>
-        </div>
-    </a>
-</article>
                 
                     
 <article class="">
@@ -421,6 +384,18 @@
 
         <div class="article-details">
             <h2 class="article-title">GEB2405 Online Lecture 4 - Merge data collected by different interviewers</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/geb2405-online-lecture-3-clean-the-data-before-analysis/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">GEB2405 Online Lecture 3 - Clean the data before analysis</h2>
         </div>
     </a>
 </article>

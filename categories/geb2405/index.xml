@@ -6,7 +6,32 @@
     <description>Recent content in GEB2405 on Gary&#39;s Tech Station</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 12 Mar 2021 12:13:44 +0800</lastBuildDate><atom:link href="https://chen-gary.github.io/categories/geb2405/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 02 Apr 2021 12:00:42 +0800</lastBuildDate><atom:link href="https://chen-gary.github.io/categories/geb2405/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GEB2405 Online Lecture 8 - Bivariate analysis - cross tabulation</title>
+      <link>https://chen-gary.github.io/p/geb2405-online-lecture-8-bivariate-analysis-cross-tabulation/</link>
+      <pubDate>Fri, 02 Apr 2021 12:00:42 +0800</pubDate>
+      
+      <guid>https://chen-gary.github.io/p/geb2405-online-lecture-8-bivariate-analysis-cross-tabulation/</guid>
+      <description>Online Lecture 8 - Bivariate analysis - cross tabulation Packages used
+library(gmodels) # for `CrossTable()` library(sjstats) # for cramer&amp;#39;V test - `crosstable_statistics()` library(sjPlot) # for `sjPlot::sjt.xtab()`  CrossTable(data$x, data$y) CrossTable(data$x, data$y, prop.t=FALSE, prop.chisq=FALSE) expected: If TRUE, chisq will be set to TRUE and expected cell counts from the chisq will be included (next lec)
+prop.r: If TRUE, row proportions will be included
+prop.c: If TRUE, column proportions will be included</description>
+    </item>
+    
+    <item>
+      <title>GEB2405 Online Lecture 7</title>
+      <link>https://chen-gary.github.io/p/geb2405-online-lecture-7/</link>
+      <pubDate>Tue, 30 Mar 2021 11:59:21 +0800</pubDate>
+      
+      <guid>https://chen-gary.github.io/p/geb2405-online-lecture-7/</guid>
+      <description>Online Lecture 7   Pie chart
+  Faceting (Multiple bars)
+  # packages used library(ggplot2) library(gmodels) # for `CrossTable` Pie Chart Preparatory stage:
+library(gmodels) #Make the CrossTable Crosstable(object,prop.t=TRUE) #Cross table to know the proportion CrossTable(smoking_and_drug_use_amongst_English_pupils$CgStat2,prop.t=TRUE) #create a small dataframe with the key value count.smokers&amp;lt;-data.frame(smoke=c(&amp;#34;NA&amp;#34;,&amp;#34;never smoked&amp;#34;,&amp;#34;smoked and then stopped&amp;#34;,&amp;#34;tried once&amp;#34;,&amp;#34;occasional smoker&amp;#34;,&amp;#34;light smoker&amp;#34;,&amp;#34;regular smoker&amp;#34;), n=c(51,5900,326,779,223,119,191), prop=c(0.007,0.777,0.043,0.103,0.029,0.016,0.025)) &amp;gt; count.smokers # a table will be printed out Visualization stage:
+#create a pie char ggplot(&amp;lt;the_samall_dataframe&amp;gt;,aes(x=&amp;#34;&amp;#34;,y=?</description>
+    </item>
+    
     <item>
       <title>GEB2405 Online Lecture 6 - ggplot2 II (Two variables)</title>
       <link>https://chen-gary.github.io/p/geb2405-online-lecture-6-ggplot2-ii-two-variables/</link>
@@ -38,7 +63,7 @@ ggplot(data, aes(x,y,options)) + geom_typegraph(option) # add labels ggplot(data
       <pubDate>Tue, 02 Mar 2021 14:11:04 +0800</pubDate>
       
       <guid>https://chen-gary.github.io/p/geb2405-online-lecture-4-merge-data-collected-by-different-interviewers/</guid>
-      <description>how to merge answer collected by different coders (merge rows) how to add new variables in a dataset by matching the ID (add/merge columns) how to manually add observation (one single respondent) in an existing dataframe (add a row)  1. merge Before import the excel data files, make sure the name of the variables are exactly the same in all data files, e.g. one var named Rank in file A, while the corresponding var in file B is named Ranking.</description>
+      <description>On-line Lecture 4 - Merge data collected by different interviewers  how to merge answer collected by different coders (merge rows) how to add new variables in a dataset by matching the ID (add/merge columns) how to manually add observation (one single respondent) in an existing dataframe (add a row)  1. merge Before import the excel data files, make sure the name of the variables are exactly the same in all data files, e.</description>
     </item>
     
     <item>
