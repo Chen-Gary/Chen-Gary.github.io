@@ -1,5 +1,5 @@
 ---
-title: "如何使用CMake编译"
+title: "Compile Using CMake"
 date: 2021-03-03T15:54:26+08:00
 categories:
     - CSC3050
