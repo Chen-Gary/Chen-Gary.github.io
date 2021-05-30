@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Tutorial Link: https://www.liaoxuefeng.com/wiki/896043488029600'><title>Git Basic Skills</title>
+
+<link rel='canonical' href='https://chen-gary.github.io/p/git-basic-skills/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Git Basic Skills'>
+<meta property='og:description' content='Tutorial Link: https://www.liaoxuefeng.com/wiki/896043488029600'>
+<meta property='og:url' content='https://chen-gary.github.io/p/git-basic-skills/'>
+<meta property='og:site_name' content='Gary&#39;s Tech Station'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Git' /><meta property='article:published_time' content='2021-05-30T09:11:17&#43;08:00'/><meta property='article:modified_time' content='2021-05-30T09:11:17&#43;08:00'/>
+<meta name="twitter:title" content="Git Basic Skills">
+<meta name="twitter:description" content="Tutorial Link: https://www.liaoxuefeng.com/wiki/896043488029600">
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script><div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_1_hu12df5dfcdf876fd5b13bd9ab3e1d416f_66145_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🌠</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://chen-gary.github.io/">Gary&#39;s Tech Station</a></h1>
+        <h2 class="site-description">Computer language design is just like a stroll in the park. Jurassic Park, that is. --Larry Wall</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/repo'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-git-fork" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <circle cx="12" cy="18" r="2" />
+  <circle cx="7" cy="6" r="2" />
+  <circle cx="17" cy="6" r="2" />
+  <path d="M7 8v2a2 2 0 0 0 2 2h6a2 2 0 0 0 2 -2v-2" />
+  <line x1="12" y1="12" x2="12" y2="16" />
+</svg>
+                
+                <span>Repo</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+
+        
+        
+        
+
+    </ol>
+</aside>
+
+            <main class="main full-width">
+    <div id="article-toolbar">
+        <a href="https://chen-gary.github.io/" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>Back</span>
+        </a>
+    </div>
+
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <h2 class="article-title">
+        <a href="/p/git-basic-skills/">Git Basic Skills</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        Tutorial Link: https://www.liaoxuefeng.com/wiki/896043488029600
+    </h3>
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">May 30, 2021</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <h2 id="配置-configuration">配置 Configuration</h2>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git config --global user.name <span class="s2">&#34;Your Name&#34;</span>
+git config --global user.email <span class="s2">&#34;email@example.com&#34;</span>
+
+git config --list
+</code></pre></div><h2 id="创建版本库">创建版本库</h2>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git init
+
+ls -ah
+</code></pre></div><h2 id="基础命令">基础命令</h2>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git add &lt;file&gt;
+git commit -m &lt;message&gt;
+
+git status
+</code></pre></div><h2 id="版本回退">版本回退</h2>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git log
+git log --pretty<span class="o">=</span>oneline
+</code></pre></div><ul>
+<li><code>HEAD</code> 当前版本</li>
+<li><code>HEAD^</code> 上一个版本</li>
+<li><code>HEAD^^</code> 上上一个版本</li>
+<li><code>HEAD~100</code></li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git reset --hard HEAD^
+
+git log
+</code></pre></div><h3 id="回到未来的某个版本">回到未来的某个版本</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git reset --hard &lt;commit_id&gt;
+git reset --hard 1094a
+
+git reflog    <span class="c1"># find commit id</span>
+</code></pre></div><h2 id="撤销修改">撤销修改</h2>
+<p>注意：以下命令似乎是旧版git命令，虽然不影响使用，但建议参考<code>git status</code>的提示，使用新版命令。</p>
+<h3 id="1-丢弃工作区的修改">1. 丢弃工作区的修改</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git checkout -- file
+git checkout -- README.md
+</code></pre></div><p>两种情况:</p>
+<ul>
+<li>
+<p>一种是<code>README.md</code>自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；</p>
+</li>
+<li>
+<p>一种是<code>README.md</code>已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。</p>
+</li>
+</ul>
+<p>总之，就是让这个文件回到最近一次git commit或git add时的状态。</p>
+<h3 id="2-丢弃暂存区的修改">2. 丢弃暂存区的修改</h3>
+<p>用命令<code>git reset HEAD &lt;file&gt;</code>可以把暂存区的修改撤销掉（unstage），重新放回工作区</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git reset HEAD README.md    <span class="c1"># 把暂存区的修改回退到工作区</span>
+</code></pre></div><p>接着，丢弃工作区的修改&hellip;</p>
+<h3 id="3-丢弃commit">3. 丢弃commit</h3>
+<p>使用版本回退</p>
+<h2 id="远程仓库">远程仓库</h2>
+<h3 id="1-github配置-ssh">1. Github配置 (SSH)</h3>
+<ol>
+<li>
+<p>创建SSH Key。在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有<code>id_rsa</code>和<code>id_rsa.pub</code>这两个文件，如果已经有了，可直接跳到下一步。</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ssh-keygen -t rsa -C <span class="s2">&#34;youremail@example.com&#34;</span>
+</code></pre></div><p>一路回车</p>
+<ul>
+<li><code>id_rsa</code>是私钥</li>
+<li><code>id_rsa.pub</code>是公钥</li>
+</ul>
+</li>
+<li>
+<p>登陆GitHub，打开“Account settings”，“SSH Keys”页面。然后，点“Add SSH Key”，填上任意Title，在Key文本框里粘贴<code>id_rsa.pub</code>文件的内容。</p>
+</li>
+</ol>
+<h3 id="2-将已有的本地仓库添加远程库">2. (将已有的本地仓库)添加远程库</h3>
+<ol>
+<li>
+<p>在GitHub新建repo</p>
+</li>
+<li>
+<p>把一个已有的本地仓库与之关联</p>
+<p>在本地的仓库下运行命令</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git remote add origin git@github.com:XXXXXX/YYYYYY.git
+</code></pre></div><p>添加后，远程库的名字就是<code>origin</code> (这是Git默认的叫法)</p>
+</li>
+<li>
+<p>（首次）把本地库的所有内容推送到远程库上</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git push -u origin main
+</code></pre></div><p>注意：由于远程库是空的，我们第一次推送<code>main</code>分支时，加上了<code>-u</code>参数，Git不但会把本地的<code>main</code>分支内容推送的远程新的<code>main</code>分支，还会把本地的<code>main</code>分支和远程的<code>main</code>分支关联起来，在以后的推送或者拉取时就可以简化命令。</p>
+</li>
+<li>
+<p>（非首次）把本地库推送到远程库</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git push origin main
+</code></pre></div></li>
+</ol>
+<p>注意：SSH连接在第一次验证GitHub服务器的Key时，需要你确认GitHub的Key的指纹信息是否真的来自GitHub的服务器，输入<code>yes</code>回车即可。</p>
+<h3 id="3-删除远程库-解除本地和远程的绑定关系">3. 删除远程库 (解除本地和远程的绑定关系)</h3>
+<p>如果添加的时候地址写错了，或者就是想删除远程库，</p>
+<p>先用<code>git remote -v</code>查看远程库信息 (<code>git remote</code> 可查阅更简单的远程库的信息)</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git remote -v
+</code></pre></div><p>根据名字删除，比如删除<code>origin</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git remote rm origin
+</code></pre></div><h3 id="从远程库克隆">从远程库克隆</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git clone git@github.com:XXXXX/YYYYY.git
+</code></pre></div><h2 id="分支管理">分支管理</h2>
+<ul>
+<li>
+<p><code>HEAD</code>指向当前分支 e.g. <code>main</code></p>
+</li>
+<li>
+<p><code>main</code>指向提交</p>
+</li>
+</ul>
+<h3 id="1-分支基础操作创建与合并分支">1. 分支基础操作（创建与合并分支）</h3>
+<p>实战 (example)</p>
+<ol>
+<li>
+<p>创建<code>dev</code>分支，然后切换到<code>dev</code>分支</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git checkout -b dev
+</code></pre></div><p><code>git checkout</code>命令加上<code>-b</code>参数表示创建并切换，相当于以下两条命令：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git branch dev
+git checkout dev
+</code></pre></div></li>
+<li>
+<p>用<code>git branch</code>命令查看当前分支</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git branch
+</code></pre></div><p><code>git branch</code>命令会列出所有分支，当前分支前面会标一个<code>*</code>号。</p>
+</li>
+<li>
+<p>切换回<code>main</code>分支</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git checkout main
+</code></pre></div></li>
+<li>
+<p><code>dev</code>分支的工作成果合并到<code>main</code>分支上</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git merge dev
+</code></pre></div><p><code>git merge</code>命令用于合并指定分支到当前分支。</p>
+<p>注意到上面的<code>Fast-forward</code>信息，Git告诉我们，这次合并是“快进模式”，也就是直接把<code>master</code>指向<code>dev</code>的当前提交，所以合并速度非常快。</p>
+<p>当然，也不是每次合并都能<code>Fast-forward</code>，我们后面会讲其他方式的合并。</p>
+</li>
+<li>
+<p>删除<code>dev</code>分支</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git branch -d dev
+   
+git branch
+</code></pre></div></li>
+</ol>
+<p>注意：</p>
+<ul>
+<li>
+<p>创建并切换到新的<code>dev</code>分支，可以使用：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git switch -c dev
+</code></pre></div></li>
+<li>
+<p>直接切换到已有的<code>main</code>分支，可以使用：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git switch main
+</code></pre></div></li>
+</ul>
+<p><strong>分支基础操作总结</strong>：</p>
+<p>查看分支：<code>git branch</code></p>
+<p>创建分支：<code>git branch &lt;name&gt;</code></p>
+<p>切换分支：<code>git checkout &lt;name&gt;</code>或者<code>git switch &lt;name&gt;</code></p>
+<p>创建+切换分支：<code>git checkout -b &lt;name&gt;</code>或者<code>git switch -c &lt;name&gt;</code></p>
+<p>合并某分支到当前分支：<code>git merge &lt;name&gt;</code></p>
+<p>删除分支：<code>git branch -d &lt;name&gt;</code></p>
+<h3 id="2-解决冲突">2. 解决冲突</h3>
+<p><code>main</code>分支和<code>feature1</code>分支各自都分别有新的提交</p>
+<p><img src="https://www.liaoxuefeng.com/files/attachments/919023000423040/0" alt=""  /></p>
+<p>这种情况下，Git无法执行“快速合并”，只能试图把各自的修改合并起来，但这种合并就可能会有冲突</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git merge feature1    <span class="c1"># Git告诉我们，readme.txt文件存在冲突，必须手动解决冲突后再提交</span>
+
+git status    <span class="c1"># 也可以告诉我们冲突的文件</span>
+</code></pre></div><p>注意：解决冲突就是把Git合并失败的文件手动编辑为我们希望的内容，再提交。</p>
+<p>直接查看README.md的内容:</p>
+<p>Git用<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>，<code>=======</code>，<code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>标记出不同分支的内容</p>
+<p>手动解决冲突后再<strong>提交</strong> =&gt; 现在，<code>master</code>分支和<code>feature1</code>分支变成了下图所示：</p>
+<p><img src="https://www.liaoxuefeng.com/files/attachments/919023031831104/0" alt=""  /></p>
+<p>查看分支的合并情况：<code>git log --graph --pretty=oneline --abbrev-commit</code></p>
+<p>最后，删除<code>feature1</code>分支：<code>git branch -d feature1</code></p>
+<p>工作完成。</p>
+<h3 id="3-分支管理策略-普通模式合并">3. 分支管理策略 (普通模式合并)</h3>
+<p>通常，合并分支时，如果可能，Git会用<code>Fast forward</code>模式，但这种模式下，删除分支后，会丢掉分支信息。</p>
+<p>如果要强制禁用<code>Fast forward</code>模式，Git就会在merge时生成一个新的<strong>commit</strong>，这样，从分支历史上就可以看出分支信息。</p>
+<p>准备合并<code>dev</code>分支，请注意<code>--no-ff</code>参数，表示禁用<code>Fast forward</code>：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git merge --no-ff -m <span class="s2">&#34;merge with no-ff&#34;</span> dev
+</code></pre></div><p>因为本次合并要创建一个新的commit，所以加上<code>-m</code>参数，把commit描述写进去。</p>
+<h3 id="4-bug分支-stash功能">4. Bug分支 (stash功能)</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git stash
+
+<span class="c1"># 去别的分支修bug</span>
+
+git stash list
+
+<span class="c1"># method 1</span>
+git stash apply    <span class="c1"># 恢复，但是恢复后，stash内容并不删除</span>
+git stash drop     <span class="c1"># 删除stash内容</span>
+
+<span class="c1"># method 2</span>
+git stash pop      <span class="c1"># 恢复的同时把stash内容也删了 (recommended)</span>
+</code></pre></div><p>你可以多次stash，恢复的时候，先用<code>git stash list</code>查看，然后恢复指定的stash，用命令：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git stash apply stash@<span class="o">{</span>0<span class="o">}</span>
+</code></pre></div><p>Q: 如果在两个独立的分支上有同样的bug (e.g. <code>main</code>和<code>dev</code>上有同一bug)，且<code>main</code>上的bug已被修复，如何优雅地/简单地修复<code>dev</code>上的bug？</p>
+<p>A: 使用<code>cherry-pick</code>命令</p>
+<h3 id="5-feature分支-强行删除未合并的分支">5. Feature分支 (强行删除未合并的分支)</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ git branch -d feature-vulcan
+error: The branch <span class="s1">&#39;feature-vulcan&#39;</span> is not fully merged.
+If you are sure you want to delete it, run <span class="s1">&#39;git branch -D feature-vulcan&#39;</span>.
+
+<span class="c1"># Git友情提醒，feature-vulcan分支还没有被合并，如果删除，将丢失掉修改，如果要强行删除，需要使用大写的-D参数</span>
+
+$ git branch -D feature-vulcan
+Deleted branch feature-vulcan <span class="o">(</span>was 287773e<span class="o">)</span>.
+</code></pre></div><p>开发一个新feature，最好新建一个分支；</p>
+<p>如果要丢弃一个没有被合并过的分支，可以通过<code>git branch -D &lt;name&gt;</code>强行删除。</p>
+<h3 id="6-多人协作">6. 多人协作</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 查看远程库的信息</span>
+git remote
+git remote -v
+
+<span class="c1"># 推送分支</span>
+git push origin master
+git push origin dev
+<span class="c1"># 不一定所有分支都要推送到远程，比如bug分支只要留在本地repo就行了</span>
+</code></pre></div><h4 id="抓取分支">抓取分支</h4>
+<p>多人协作时，大家都会往<code>master</code>和<code>dev</code>分支上推送各自的修改。</p>
+<p>当你的小伙伴从远程库clone时，默认情况下，你的小伙伴只能看到本地的<code>master</code>分支。不信可以用<code>git branch</code>命令看看</p>
+<p>现在，你的小伙伴要在<code>dev</code>分支上开发，就必须创建远程<code>origin</code>的<code>dev</code>分支到本地，于是他用这个命令创建本地<code>dev</code>分支：</p>
+<p>(注意：在本地创建和远程分支对应的分支，使用<code>git checkout -b branch-name origin/branch-name</code>，本地和远程分支的名称最好一致)</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git checkout -b dev origin/dev
+<span class="c1"># git pull #???拉取远端dev?</span>
+</code></pre></div><p>你的小伙伴已经向<code>origin/dev</code>分支推送了他的提交，而碰巧你也对同样的文件作了修改，并试图推送。</p>
+<p>推送失败，因为你的小伙伴的最新提交和你试图推送的提交有冲突，解决办法也很简单，Git已经提示我们，先用<code>git pull</code>把最新的提交从<code>origin/dev</code>抓下来，然后，在本地合并，解决冲突，再推送。</p>
+<p><code>git pull</code>也失败了，原因是没有指定本地<code>dev</code>分支与远程<code>origin/dev</code>分支的链接，根据提示，设置<code>dev</code>和<code>origin/dev</code>的链接。</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git branch --set-upstream-to<span class="o">=</span>origin/&lt;branch_remote&gt; &lt;branch_local&gt;
+
+git branch --set-upstream-to<span class="o">=</span>origin/dev dev
+
+git pull
+</code></pre></div><p>这回<code>git pull</code>成功，但是合并有冲突，需要手动解决。</p>
+<h4 id="多人协作小结">多人协作小结</h4>
+<p>多人协作的工作模式通常是这样：</p>
+<ol>
+<li>首先，可以试图用<code>git push origin &lt;branch-name&gt;</code>推送自己的修改；</li>
+<li>如果推送失败，则因为远程分支比你的本地更新，需要先用<code>git pull</code>试图合并；</li>
+<li>如果合并有冲突，则解决冲突，并在本地提交；</li>
+<li>没有冲突或者解决掉冲突后，再用<code>git push origin &lt;branch-name&gt;</code>推送就能成功！</li>
+</ol>
+<p>如果<code>git pull</code>提示<code>no tracking information</code>，则说明本地分支和远程分支的链接关系没有创建，用命令<code>git branch --set-upstream-to &lt;branch-name&gt; origin/&lt;branch-name&gt;</code>。</p>
+<p>注意：可以克隆指定分支</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git clone -b &lt;branch&gt; &lt;remote_repo&gt;
+
+git clone -b BBBBBBB git@github.com:XXXXXX/YYYYYYY.git
+</code></pre></div><h4 id="rebase">Rebase</h4>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git rebase
+</code></pre></div><p>我看不懂。。。</p>
+<h2 id="标签管理">标签管理</h2>
+<p>Git的标签：指向某个commit的指针（跟分支很像对不对？但是分支可以移动，标签不能移动）</p>
+<p>tag就是一个让人容易记住的有意义的名字，它跟某个commit绑在一起</p>
+<h3 id="1-创建标签">1. 创建标签</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git checkout main
+
+<span class="c1"># 默认标签是打在最新提交的commit上的</span>
+<span class="c1"># 1</span>
+git tag &lt;name&gt;
+git tag v1.0
+
+<span class="c1"># 2</span>
+git tag &lt;tag_name&gt; &lt;commit_id&gt;
+git tag v0.9 f52c633
+
+<span class="c1"># 3 创建带有说明的标签</span>
+git tag -a &lt;tag_name&gt; -m <span class="s2">&#34;blablabla...&#34;</span>
+git tag -a v0.1 -m <span class="s2">&#34;version 0.1 released&#34;</span> 1094adb
+
+git tag    <span class="c1"># 查看所有标签</span>
+git show &lt;tagname&gt;    <span class="c1"># 查看标签信息</span>
+</code></pre></div><h3 id="2-操作标签">2. 操作标签</h3>
+<p>删除标签</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git tag -d v0.1
+</code></pre></div><p>创建的标签都只存储在本地，不会自动推送到远程。所以，打错的标签可以在本地安全删除。</p>
+<p>如果要推送某个标签到远程，</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git push origin &lt;tag_name&gt;
+git push origin v1.0
+
+<span class="c1"># 一次性推送全部尚未推送到远程的本地标签</span>
+git push origin --tags
+</code></pre></div><p>如果标签已经推送到远程，要删除远程标签就麻烦一点：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 先从本地删除</span>
+git tag -d v0.9
+<span class="c1"># 然后，从远程删除</span>
+git push origin :refs/tags/v0.9
+</code></pre></div><h2 id="其他命令">其他命令</h2>
+<p>不常用的基础命令</p>
+<ol>
+<li>
+<p>查看修改</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git diff
+git diff README.md
+</code></pre></div></li>
+<li>
+<p>删除文件</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git rm &lt;file&gt;    <span class="c1"># 与`git add&lt;file&gt;`效果一样</span>
+</code></pre></div></li>
+<li>
+<p>强制添加被ignore的文件</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git add -f &lt;file_name&gt;
+</code></pre></div></li>
+<li>
+<p>检查<code>.gitignore</code>对于某个文件的规则</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git check-ignore -v &lt;file_name&gt;
+</code></pre></div><p>Git会告诉我们，<code>.gitignore</code>的第X行规则忽略了该文件，于是我们就可以知道应该修订哪个规则。</p>
+</li>
+<li>
+<p>配置别名</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># e.g. 让st表示status</span>
+git config --global alias.st status
+</code></pre></div><p>或直接在git的全局/某个repo的config文件中配置</p>
+</li>
+</ol>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/git/">Git</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>2021 All Rights Reserved</span>
+    </section>
+    </footer>
+
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+</aside>
+
+
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2021 Gary&#39;s Tech Station
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.0.1">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
