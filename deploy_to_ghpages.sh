@@ -23,8 +23,8 @@ echo "Generating site"
 hugo
 
 echo "Updating gh-pages branch"
-cd public && git add --all && git commit -m "Publishing to gh-pages (publish.sh)" && cd ..
+cd public && git add --all && git commit -m "Publishing to gh-pages (deploy_to_ghpages.sh)" && cd ..
 
-#echo "Pushing to github"
-#git push --all
+echo "Pushing to github"
+#git push --all           # use this command or `git push origin gh-pages` should be both OK
 git push origin gh-pages
