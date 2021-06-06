@@ -364,6 +364,7 @@ hugo server               # local test (optional)
 
 git add . 
 git commit -m "add new post XXXX"
+git push
 
 ./deploy_to_ghpages.sh    # deploy
 ```
