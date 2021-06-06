@@ -6,7 +6,25 @@
     <description>Recent content in Tags on Gary&#39;s Tech Station</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 30 May 2021 09:11:17 +0800</lastBuildDate><atom:link href="https://chen-gary.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 06 Jun 2021 11:48:17 +0800</lastBuildDate><atom:link href="https://chen-gary.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blog</title>
+      <link>https://chen-gary.github.io/tags/blog/</link>
+      <pubDate>Sun, 06 Jun 2021 11:48:17 +0800</pubDate>
+      
+      <guid>https://chen-gary.github.io/tags/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://chen-gary.github.io/tags/hugo/</link>
+      <pubDate>Sun, 06 Jun 2021 11:48:17 +0800</pubDate>
+      
+      <guid>https://chen-gary.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Git</title>
       <link>https://chen-gary.github.io/tags/git/</link>

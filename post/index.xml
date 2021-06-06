@@ -6,7 +6,27 @@
     <description>Recent content in Posts on Gary&#39;s Tech Station</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 30 May 2021 09:11:17 +0800</lastBuildDate><atom:link href="https://chen-gary.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 06 Jun 2021 11:48:17 +0800</lastBuildDate><atom:link href="https://chen-gary.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building Blog Using Hugo</title>
+      <link>https://chen-gary.github.io/p/building-blog-using-hugo/</link>
+      <pubDate>Sun, 06 Jun 2021 11:48:17 +0800</pubDate>
+      
+      <guid>https://chen-gary.github.io/p/building-blog-using-hugo/</guid>
+      <description>摘要 在Windows平台下安装、配置Hugo，并通过Github Pages部署个人博客
+前言 本来打算把这篇文章作为博客的第一篇post，结果拖了将近半年 ╥﹏╥&amp;hellip;
+写这篇文章一是为了给自己的博客留个纪念；二是梳理一下自己大体的博客搭建流程，方便后期debug甚至重构；三或许还能帮助到一些有缘人？
+听说百度的爬虫爬不到github.io域名的内容，再加上这种个人博客本身就做不到很好的SEO。以后的博文大概率也就是一名新手“码农”的“自嗨” ︿(￣︶￣)︿，不过能有一个整理自己笔记和想法的小空间也真是一件很开心的啊！希望能坚持下来！
+不多bb，准备开始！
+先决条件 我使用的工具：
+ Git 2.30.0 Hugo v0.80.0 一个注册好的GitHub账号  前置知识：
+ 了解最最基本的Git操作 对GitHub有一点点了解 会使用markdown编写文章 难度不大，但还是希望你有一颗勇于折腾的心  更新并配置Git git --version	# check the version of git git update-git-for-windows	# update git to the latest version GitHub最近（当你看到这篇文章的时候已经不是最近了）把原先默认的master分支改名成了main，为了紧跟潮流，也为了满足自己的强迫症，这里选择更新git版本
+# 配置 git config --global user.name &amp;#34;&amp;lt;user_name&amp;gt;&amp;#34; git config --global user.email &amp;lt;example&amp;gt;@gmail.com git config --list 更多Git基础操作可以参考我的笔记。
+安装Hugo 相较于Mac和Linux，Hugo在Windows下的安装相对复杂。我们这里选择使用编译好的Windows可执行文件进行安装。安装路径我选择D盘的根目录，你也可以选择其他路径。
+  在D盘根目录下创建新文件夹Hugo，并在D:\Hugo下新建文件夹bin和Sites
+ D:\Hugo\bin将存放Hugo可执行文件 D:\Hugo\Sites将存放以后博客的git仓库    到Hugo的GitHub仓库下载最新的Hugo二进制文件，我下载的是hugo_0.</description>
+    </item>
+    
     <item>
       <title>Git Basic Skills</title>
       <link>https://chen-gary.github.io/p/git-basic-skills/</link>
