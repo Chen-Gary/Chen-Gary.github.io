@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LaTeX on Gary&#39;s Tech Station</title>
+    <link>https://chen-gary.github.io/tags/latex/</link>
+    <description>Recent content in LaTeX on Gary&#39;s Tech Station</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 06 Jun 2021 19:56:34 +0800</lastBuildDate><atom:link href="https://chen-gary.github.io/tags/latex/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LaTeX Basic</title>
+      <link>https://chen-gary.github.io/p/latex-basic/</link>
+      <pubDate>Sun, 06 Jun 2021 19:56:34 +0800</pubDate>
+      
+      <guid>https://chen-gary.github.io/p/latex-basic/</guid>
+      <description>这篇文章是对这份教程的笔记，虽说是笔记，很多地方都直接复制了原文，强烈建议大家进入原教程查看。
+（注：以下文档默认使用XeLaTeX进行编译）
+控制序列：\开头，e.g. \documentclass。以第一个空格或非字母 的字符结束
+注释：%
+\documentclass{article} % 这里是导言区 \begin{document} Hello, world! \end{document} 控制序列begin和end总是成对出现。这两个控制序列以及他们中间的内容被称为「环境」，它们之后的第一个必要参数总是一致的，被称为环境名。
+只有在 document 环境中的内容，才会被正常输出到文档中去或是作为控制序列对文档产生影响。
+从 \documentclass{article} 开始到 \begin{document} 之前的部分被称为导言区。在导言区出现的控制序列，往往会影响整篇文档的格式。
+宏包：一系列控制序列的合集。\usepackage{} 可以用来调用宏包
+中英文混排 \documentclass[UTF8]{ctexart} \begin{document} 你好，world! \end{document} 组织你的文章 作者、标题、日期 \documentclass[UTF8]{ctexart} \title{你好，world!} \author{Liam} \date{\today} \begin{document} \maketitle 你好，world! \end{document} 章节和段落 \documentclass[UTF8]{ctexart} \title{你好，world!} \author{Liam} \date{\today} \begin{document} \maketitle \section{你好中国} 中国在East Asia. \subsection{Hello Beijing} 北京是capital of China. \subsubsection{Hello Dongcheng District} \paragraph{Tian&amp;#39;anmen Square} is in the center of Beijing \subparagraph{Chairman Mao} is in the center of 天安门广场。 \subsection{Hello 山东} \paragraph{山东大学} is one of the best university in 山东。 \end{document} 在文档类 article/ctexart 中，定义了五个控制序列来调整行文组织结构。他们分别是</description>
+    </item>
+    
+  </channel>
+</rss>

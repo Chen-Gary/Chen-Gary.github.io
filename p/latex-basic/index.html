@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Tutorial Link: https://liam.page/2014/09/08/latex-introduction/'><title>LaTeX Basic</title>
+
+<link rel='canonical' href='https://chen-gary.github.io/p/latex-basic/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='LaTeX Basic'>
+<meta property='og:description' content='Tutorial Link: https://liam.page/2014/09/08/latex-introduction/'>
+<meta property='og:url' content='https://chen-gary.github.io/p/latex-basic/'>
+<meta property='og:site_name' content='Gary&#39;s Tech Station'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='LaTeX' /><meta property='article:published_time' content='2021-06-06T19:56:34&#43;08:00'/><meta property='article:modified_time' content='2021-06-06T19:56:34&#43;08:00'/>
+<meta name="twitter:title" content="LaTeX Basic">
+<meta name="twitter:description" content="Tutorial Link: https://liam.page/2014/09/08/latex-introduction/">
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script><div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_1_hu12df5dfcdf876fd5b13bd9ab3e1d416f_66145_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🌠</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://chen-gary.github.io/">Gary&#39;s Tech Station</a></h1>
+        <h2 class="site-description">Computer language design is just like a stroll in the park. Jurassic Park, that is. --Larry Wall</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/repo'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-git-fork" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <circle cx="12" cy="18" r="2" />
+  <circle cx="7" cy="6" r="2" />
+  <circle cx="17" cy="6" r="2" />
+  <path d="M7 8v2a2 2 0 0 0 2 2h6a2 2 0 0 0 2 -2v-2" />
+  <line x1="12" y1="12" x2="12" y2="16" />
+</svg>
+                
+                <span>Repo</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>Dark Mode</span>
+            </li>
+        
+
+        
+        
+        
+
+    </ol>
+</aside>
+
+            <main class="main full-width">
+    <div id="article-toolbar">
+        <a href="https://chen-gary.github.io/" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>Back</span>
+        </a>
+    </div>
+
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <h2 class="article-title">
+        <a href="/p/latex-basic/">LaTeX Basic</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        Tutorial Link: https://liam.page/2014/09/08/latex-introduction/
+    </h3>
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Jun 06, 2021</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <p>这篇文章是对<a class="link" href="https://liam.page/2014/09/08/latex-introduction/"  target="_blank" rel="noopener"
+    >这份教程</a>的笔记，虽说是笔记，很多地方都直接复制了原文，强烈建议大家进入原教程查看。</p>
+<p>（注：以下文档默认使用XeLaTeX进行编译）</p>
+<p><strong>控制序列</strong>：<code>\</code>开头，e.g. <code>\documentclass</code>。以第一个<strong>空格或非字母</strong> 的字符结束</p>
+<p><strong>注释</strong>：<code>%</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+<span class="c">% 这里是导言区
+</span><span class="c"></span><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+Hello, world!
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</code></pre></div><p>控制序列<code>begin</code>和<code>end</code>总是成对出现。这两个控制序列以及他们中间的内容被称为「环境」，它们之后的第一个必要参数总是<strong>一致的</strong>，被称为环境名。</p>
+<p>只有在 <code>document</code> 环境中的内容，才会被正常输出到文档中去或是作为控制序列对文档产生影响。</p>
+<p>从 <code>\documentclass{article}</code> 开始到 <code>\begin{document}</code> 之前的部分被称为导言区。在导言区出现的控制序列，往往会影响整篇文档的格式。</p>
+<p><strong>宏包</strong>：一系列控制序列的合集。<code>\usepackage{}</code> 可以用来调用宏包</p>
+<h2 id="中英文混排">中英文混排</h2>
+<div class="highlight"><pre class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\documentclass</span><span class="na">[UTF8]</span><span class="nb">{</span>ctexart<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+你好，world!
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</code></pre></div><h2 id="组织你的文章">组织你的文章</h2>
+<h3 id="作者标题日期">作者、标题、日期</h3>
+<div class="highlight"><pre class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\documentclass</span><span class="na">[UTF8]</span><span class="nb">{</span>ctexart<span class="nb">}</span>
+<span class="k">\title</span><span class="nb">{</span>你好，world!<span class="nb">}</span>
+<span class="k">\author</span><span class="nb">{</span>Liam<span class="nb">}</span>
+<span class="k">\date</span><span class="nb">{</span><span class="k">\today</span><span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+<span class="k">\maketitle</span>
+你好，world!
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</code></pre></div><h3 id="章节和段落">章节和段落</h3>
+<div class="highlight"><pre class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\documentclass</span><span class="na">[UTF8]</span><span class="nb">{</span>ctexart<span class="nb">}</span>
+<span class="k">\title</span><span class="nb">{</span>你好，world!<span class="nb">}</span>
+<span class="k">\author</span><span class="nb">{</span>Liam<span class="nb">}</span>
+<span class="k">\date</span><span class="nb">{</span><span class="k">\today</span><span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+<span class="k">\maketitle</span>
+<span class="k">\section</span><span class="nb">{</span>你好中国<span class="nb">}</span>
+中国在East Asia.
+<span class="k">\subsection</span><span class="nb">{</span>Hello Beijing<span class="nb">}</span>
+北京是capital of China.
+<span class="k">\subsubsection</span><span class="nb">{</span>Hello Dongcheng District<span class="nb">}</span>
+<span class="k">\paragraph</span><span class="nb">{</span>Tian&#39;anmen Square<span class="nb">}</span>
+is in the center of Beijing
+<span class="k">\subparagraph</span><span class="nb">{</span>Chairman Mao<span class="nb">}</span>
+is in the center of 天安门广场。
+<span class="k">\subsection</span><span class="nb">{</span>Hello 山东<span class="nb">}</span>
+<span class="k">\paragraph</span><span class="nb">{</span>山东大学<span class="nb">}</span> is one of the best university in 山东。
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</code></pre></div><p>在文档类 <code>article</code>/<code>ctexart</code> 中，定义了五个控制序列来调整行文组织结构。他们分别是</p>
+<ul>
+<li><code>\section{·}</code></li>
+<li><code>\subsection{·}</code></li>
+<li><code>\subsubsection{·}</code></li>
+<li><code>\paragraph{·}</code></li>
+<li><code>\subparagraph{·}</code></li>
+</ul>
+<h3 id="插入目录">插入目录</h3>
+<p>在上一节的文档中，找到 <code>\maketitle</code>，在它的下面插入控制序列 <code>\tableofcontents</code>，保存并用 XeLaTeX 编译<strong>两次</strong>。</p>
+<h2 id="插入数学公式">插入数学公式</h2>
+<p>在导言区加载 <code>amsmath</code> 宏包</p>
+<div class="highlight"><pre class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\usepackage</span><span class="nb">{</span>amsmath<span class="nb">}</span>
+</code></pre></div><h3 id="数学模式">数学模式</h3>
+<p>LaTeX 的数学模式有两种：行内模式 (inline) 和行间模式 (display)。</p>
+<p>在行文中，使用 <code>$ ... $</code> 可以插入行内公式，使用 <code>\[ ... \]</code> 可以插入行间公式，如果需要对行间公式进行编号，则可以使用 <code>equation</code> 环境：</p>
+<div class="highlight"><pre class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\begin</span><span class="nb">{</span>equation<span class="nb">}</span>
+...
+<span class="k">\end</span><span class="nb">{</span>equation<span class="nb">}</span>
+</code></pre></div><p>示例：</p>
+<div class="highlight"><pre class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>amsmath<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+Einstein &#39;s <span class="s">$</span><span class="nb">E</span><span class="o">=</span><span class="nb">mc^</span><span class="m">2</span><span class="s">$</span>.
+
+<span class="sb">\[</span><span class="nb"> E</span><span class="o">=</span><span class="nb">mc^</span><span class="m">2</span><span class="nb">. </span><span class="s">\]</span>
+
+<span class="k">\begin</span><span class="nb">{</span>equation<span class="nb">}</span>
+E=mc<span class="nb">^</span>2.
+<span class="k">\end</span><span class="nb">{</span>equation<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</code></pre></div><p>行内公式和行间公式对标点的要求是不同的：行内公式的标点，应该放在数学模式的限定符之外，而行间公式则应该放在数学模式限定符之内。</p>
+<ul>
+<li>上标：<code>^</code> （注意花括号 <code>{}</code>的运用）</li>
+<li>下标： <code>_</code></li>
+<li>根式： <code>\sqrt{·}</code></li>
+<li>分式： <code>\frac{·}{·}</code> （第一个参数为分子，第二个为分母）</li>
+</ul>
+<p>在行间公式和行内公式中，分式的输出效果是有差异的。如果要强制行内模式的分式显示为行间模式的大小，可以使用 <code>\dfrac</code>, 反之可以使用 <code>\tfrac</code></p>
+<h4 id="运算符">运算符</h4>
+<div class="highlight"><pre class="chroma"><code class="language-latex" data-lang="latex"><span class="sb">\[</span><span class="nb"> </span><span class="nv">\pm\;</span><span class="nb"> </span><span class="nv">\times</span><span class="nb"> </span><span class="nv">\;</span><span class="nb"> </span><span class="nv">\div\;</span><span class="nb"> </span><span class="nv">\cdot\;</span><span class="nb"> </span><span class="nv">\cap\;</span><span class="nb"> </span><span class="nv">\cup\;</span><span class="nb">
+</span><span class="nb"></span><span class="nv">\geq\;</span><span class="nb"> </span><span class="nv">\leq\;</span><span class="nb"> </span><span class="nv">\neq\;</span><span class="nb"> </span><span class="nv">\approx</span><span class="nb"> </span><span class="nv">\;</span><span class="nb"> </span><span class="nv">\equiv</span><span class="nb"> </span><span class="s">\]</span>
+</code></pre></div><p>连加、连乘、极限、积分等大型运算符分别用 <code>\sum</code>, <code>\prod</code>, <code>\lim</code>, <code>\int</code> 生成。他们的上下标在行内公式中被压缩，以适应行高。我们可以用 <code>\limits</code> 和 <code>\nolimits</code> 来强制显式地指定是否压缩这些上下标。</p>
+<div class="highlight"><pre class="chroma"><code class="language-latex" data-lang="latex"><span class="s">$</span><span class="nb"> </span><span class="nv">\sum</span><span class="nb">_{i</span><span class="o">=</span><span class="m">1</span><span class="nb">}^n i</span><span class="nv">\quad</span><span class="nb"> </span><span class="nv">\prod</span><span class="nb">_{i</span><span class="o">=</span><span class="m">1</span><span class="nb">}^n </span><span class="s">$</span>
+<span class="s">$</span><span class="nb"> </span><span class="nv">\sum\limits</span><span class="nb"> _{i</span><span class="o">=</span><span class="m">1</span><span class="nb">}^n i</span><span class="nv">\quad</span><span class="nb"> </span><span class="nv">\prod\limits</span><span class="nb"> _{i</span><span class="o">=</span><span class="m">1</span><span class="nb">}^n </span><span class="s">$</span>
+<span class="sb">\[</span><span class="nb"> </span><span class="nv">\lim</span><span class="nb">_{x</span><span class="nv">\to</span><span class="m">0</span><span class="nb">}x^</span><span class="m">2</span><span class="nb"> </span><span class="nv">\quad</span><span class="nb"> </span><span class="nv">\int</span><span class="nb">_a^b x^</span><span class="m">2</span><span class="nb"> dx </span><span class="s">\]</span>
+<span class="sb">\[</span><span class="nb"> </span><span class="nv">\lim\nolimits</span><span class="nb"> _{x</span><span class="nv">\to</span><span class="m">0</span><span class="nb">}x^</span><span class="m">2</span><span class="nv">\quad</span><span class="nb"> </span><span class="nv">\int\nolimits</span><span class="nb">_a^b x^</span><span class="m">2</span><span class="nb"> dx </span><span class="s">\]</span>
+</code></pre></div><p>多重积分可以使用 <code>\iint</code>, <code>\iiint</code>, <code>\iiiint</code>, <code>\idotsint</code> 等命令输入。</p>
+<div class="highlight"><pre class="chroma"><code class="language-latex" data-lang="latex"><span class="sb">\[</span><span class="nb"> </span><span class="nv">\iint\quad</span><span class="nb"> </span><span class="nv">\iiint\quad</span><span class="nb"> </span><span class="nv">\iiiint\quad</span><span class="nb"> </span><span class="nv">\idotsint</span><span class="nb"> </span><span class="s">\]</span>
+</code></pre></div><h4 id="定界符括号等">定界符（括号等）</h4>
+<p>各种括号用 <code>()</code>, <code>[]</code>, <code>\{\}</code>, <code>\langle\rangle</code> 等命令表示；注意花括号通常用来输入命令和环境的参数，所以在数学公式中它们前面要加 <code>\</code>。因为 LaTeX 中 <code>|</code> 和 <code>\|</code> 的应用过于随意，amsmath 宏包推荐用 <code>\lvert\rvert</code> 和 <code>\lVert\rVert</code> 取而代之。</p>
+<p>为了调整这些定界符的大小，amsmath 宏包推荐使用 <code>\big</code>, <code>\Big</code>, <code>\bigg</code>, <code>\Bigg</code> 等一系列命令放在上述括号前面调整大小。</p>
+<div class="highlight"><pre class="chroma"><code class="language-latex" data-lang="latex"><span class="sb">\[</span><span class="nb"> </span><span class="nv">\Biggl</span><span class="o">(</span><span class="nv">\biggl</span><span class="o">(</span><span class="nv">\Bigl</span><span class="o">(</span><span class="nv">\bigl</span><span class="o">((</span><span class="nb">x</span><span class="o">)</span><span class="nv">\bigr</span><span class="o">)</span><span class="nv">\Bigr</span><span class="o">)</span><span class="nv">\biggr</span><span class="o">)</span><span class="nv">\Biggr</span><span class="o">)</span><span class="nb"> </span><span class="s">\]</span>
+<span class="sb">\[</span><span class="nb"> </span><span class="nv">\Biggl</span><span class="o">[</span><span class="nv">\biggl</span><span class="o">[</span><span class="nv">\Bigl</span><span class="o">[</span><span class="nv">\bigl</span><span class="o">[[</span><span class="nb">x</span><span class="o">]</span><span class="nv">\bigr</span><span class="o">]</span><span class="nv">\Bigr</span><span class="o">]</span><span class="nv">\biggr</span><span class="o">]</span><span class="nv">\Biggr</span><span class="o">]</span><span class="nb"> </span><span class="s">\]</span>
+<span class="sb">\[</span><span class="nb"> </span><span class="nv">\Biggl</span><span class="nb"> </span><span class="nv">\{\biggl</span><span class="nb"> </span><span class="nv">\{\Bigl</span><span class="nb"> </span><span class="nv">\{\bigl</span><span class="nb"> </span><span class="nv">\{\{</span><span class="nb">x</span><span class="nv">\}\bigr</span><span class="nb"> </span><span class="nv">\}\Bigr</span><span class="nb"> </span><span class="nv">\}\biggr</span><span class="nb"> </span><span class="nv">\}\Biggr\}</span><span class="nb"> </span><span class="s">\]</span>
+<span class="sb">\[</span><span class="nb"> </span><span class="nv">\Biggl\langle\biggl\langle\Bigl\langle\bigl\langle\langle</span><span class="nb"> x
+</span><span class="nb"></span><span class="nv">\rangle\bigr\rangle\Bigr\rangle\biggr\rangle\Biggr\rangle</span><span class="nb"> </span><span class="s">\]</span>
+<span class="sb">\[</span><span class="nb"> </span><span class="nv">\Biggl\lvert\biggl\lvert\Bigl\lvert\bigl\lvert\lvert</span><span class="nb"> x
+</span><span class="nb"></span><span class="nv">\rvert\bigr\rvert\Bigr\rvert\biggr\rvert\Biggr\rvert</span><span class="nb"> </span><span class="s">\]</span>
+<span class="sb">\[</span><span class="nb"> </span><span class="nv">\Biggl\lVert\biggl\lVert\Bigl\lVert\bigl\lVert\lVert</span><span class="nb"> x
+</span><span class="nb"></span><span class="nv">\rVert\bigr\rVert\Bigr\rVert\biggr\rVert\Biggr\rVert</span><span class="nb"> </span><span class="s">\]</span>
+</code></pre></div><h4 id="省略号">省略号</h4>
+<p>省略号用 <code>\dots</code>, <code>\cdots</code>, <code>\vdots</code>, <code>\ddots</code> 等命令表示。<code>\dots</code> 和 <code>\cdots</code> 的纵向位置不同，前者一般用于有下标的序列。</p>
+<div class="highlight"><pre class="chroma"><code class="language-latex" data-lang="latex"><span class="sb">\[</span><span class="nb"> x_</span><span class="m">1</span><span class="nb">,x_</span><span class="m">2</span><span class="nb">,</span><span class="nv">\dots</span><span class="nb"> ,x_n</span><span class="nv">\quad</span><span class="nb"> </span><span class="m">1</span><span class="nb">,</span><span class="m">2</span><span class="nb">,</span><span class="nv">\cdots</span><span class="nb"> ,n</span><span class="nv">\quad</span><span class="nb">
+</span><span class="nb"></span><span class="nv">\vdots\quad</span><span class="nb"> </span><span class="nv">\ddots</span><span class="nb"> </span><span class="s">\]</span>
+</code></pre></div><h4 id="矩阵">矩阵</h4>
+<p><code>amsmath</code> 的 <code>pmatrix</code>, <code>bmatrix</code>, <code>Bmatrix</code>, <code>vmatrix</code>, <code>Vmatrix</code> 等环境可以在矩阵两边加上各种分隔符。</p>
+<div class="highlight"><pre class="chroma"><code class="language-latex" data-lang="latex"><span class="sb">\[</span><span class="nb"> </span><span class="nv">\begin</span><span class="nb">{pmatrix} a&amp;b</span><span class="nv">\\</span><span class="nb">c&amp;d </span><span class="nv">\end</span><span class="nb">{pmatrix} </span><span class="nv">\quad</span><span class="nb">
+</span><span class="nb"></span><span class="nv">\begin</span><span class="nb">{bmatrix} a&amp;b</span><span class="nv">\\</span><span class="nb">c&amp;d </span><span class="nv">\end</span><span class="nb">{bmatrix} </span><span class="nv">\quad</span><span class="nb">
+</span><span class="nb"></span><span class="nv">\begin</span><span class="nb">{Bmatrix} a&amp;b</span><span class="nv">\\</span><span class="nb">c&amp;d </span><span class="nv">\end</span><span class="nb">{Bmatrix} </span><span class="nv">\quad</span><span class="nb">
+</span><span class="nb"></span><span class="nv">\begin</span><span class="nb">{vmatrix} a&amp;b</span><span class="nv">\\</span><span class="nb">c&amp;d </span><span class="nv">\end</span><span class="nb">{vmatrix} </span><span class="nv">\quad</span><span class="nb">
+</span><span class="nb"></span><span class="nv">\begin</span><span class="nb">{Vmatrix} a&amp;b</span><span class="nv">\\</span><span class="nb">c&amp;d </span><span class="nv">\end</span><span class="nb">{Vmatrix} </span><span class="s">\]</span>
+</code></pre></div><h4 id="多行公式">多行公式</h4>
+<h5 id="长公式">长公式</h5>
+<h6 id="不对齐">不对齐</h6>
+<p>无须对齐的长公式可以使用 <code>multline</code> 环境。</p>
+<div class="highlight"><pre class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\begin</span><span class="nb">{</span>multline<span class="nb">}</span>
+x = a+b+c+<span class="nb">{}</span> <span class="k">\\</span>
+d+e+f+g
+<span class="k">\end</span><span class="nb">{</span>multline<span class="nb">}</span>
+</code></pre></div><p>如果不需要编号，可以使用 <code>multline*</code> 环境代替。</p>
+<h6 id="对齐">对齐</h6>
+<p>需要对齐的公式，可以使用 <code>aligned</code> <em>次环境</em>来实现，它必须包含在数学环境之内。</p>
+<div class="highlight"><pre class="chroma"><code class="language-latex" data-lang="latex"><span class="sb">\[</span><span class="nv">\begin</span><span class="nb">{aligned}
+</span><span class="nb">x </span><span class="o">=</span><span class="nb">{}&amp; a</span><span class="o">+</span><span class="nb">b</span><span class="o">+</span><span class="nb">c</span><span class="o">+</span><span class="nb">{} </span><span class="nv">\\</span><span class="nb">
+</span><span class="nb">&amp;d</span><span class="o">+</span><span class="nb">e</span><span class="o">+</span><span class="nb">f</span><span class="o">+</span><span class="nb">g
+</span><span class="nb"></span><span class="nv">\end</span><span class="nb">{aligned}</span><span class="s">\]</span>
+</code></pre></div><h5 id="公式组">公式组</h5>
+<p>无需对齐的公式组可以使用 <code>gather</code> 环境，需要对齐的公式组可以使用 <code>align</code> 环境。他们都带有编号，如果不需要编号可以使用带星花的版本。</p>
+<h5 id="分段函数">分段函数</h5>
+<p>分段函数可以用<code>cases</code>次环境来实现，它必须包含在数学环境之内。</p>
+<div class="highlight"><pre class="chroma"><code class="language-latex" data-lang="latex"><span class="sb">\[</span><span class="nb"> y</span><span class="o">=</span><span class="nb"> </span><span class="nv">\begin</span><span class="nb">{cases}
+</span><span class="nb"></span><span class="o">-</span><span class="nb">x,</span><span class="nv">\quad</span><span class="nb"> x</span><span class="nv">\leq</span><span class="nb"> </span><span class="m">0</span><span class="nb"> </span><span class="nv">\\</span><span class="nb">
+</span><span class="nb">x,</span><span class="nv">\quad</span><span class="nb"> x&gt;</span><span class="m">0</span><span class="nb">
+</span><span class="nb"></span><span class="nv">\end</span><span class="nb">{cases} </span><span class="s">\]</span>
+</code></pre></div><p>辅助工具：https://www.latexlive.com/</p>
+<h2 id="插入图片和表格">插入图片和表格</h2>
+<h3 id="图片">图片</h3>
+<p>在 LaTeX 中插入图片，利用 <code>graphicx</code> 宏包提供的 <code>\includegraphics</code> 命令。</p>
+<div class="highlight"><pre class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>graphicx<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+<span class="k">\includegraphics</span><span class="nb">{</span>a.jpg<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</code></pre></div><p>用 <code>\includegraphics</code> 控制序列的可选参数来控制图片输出效果：</p>
+<div class="highlight"><pre class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\includegraphics</span><span class="na">[width = .8\textwidth]</span><span class="nb">{</span>a.jpg<span class="nb">}</span>
+</code></pre></div><p>图片的宽度会被缩放至页面宽度的百分之八十，图片的总高度会按比例缩放。</p>
+<h3 id="表格">表格</h3>
+<p><code>tabular</code> 环境提供了最简单的表格功能。它用 <code>\hline</code> 命令表示横线，在列格式中用 <code>|</code> 表示竖线；用 <code>&amp;</code> 来分列，用 <code>\\</code> 来换行；每列可以采用居左、居中、居右等横向对齐方式，分别用 <code>l</code>、<code>c</code>、<code>r</code> 来表示。</p>
+<div class="highlight"><pre class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\begin</span><span class="nb">{</span>tabular<span class="nb">}{</span>|l|c|r|<span class="nb">}</span>
+ <span class="k">\hline</span>
+操作系统<span class="nb">&amp;</span> 发行版<span class="nb">&amp;</span> 编辑器<span class="k">\\</span>
+ <span class="k">\hline</span>
+Windows <span class="nb">&amp;</span> MikTeX <span class="nb">&amp;</span> TexMakerX <span class="k">\\</span>
+ <span class="k">\hline</span>
+Unix/Linux <span class="nb">&amp;</span> teTeX <span class="nb">&amp;</span> Kile <span class="k">\\</span>
+ <span class="k">\hline</span>
+Mac OS <span class="nb">&amp;</span> MacTeX <span class="nb">&amp;</span> TeXShop <span class="k">\\</span>
+ <span class="k">\hline</span>
+通用<span class="nb">&amp;</span> TeX Live <span class="nb">&amp;</span> TeXworks <span class="k">\\</span>
+ <span class="k">\hline</span>
+<span class="k">\end</span><span class="nb">{</span>tabular<span class="nb">}</span>
+</code></pre></div><h3 id="浮动体">浮动体</h3>
+<p>见原文。。。</p>
+<h2 id="版面设置">版面设置</h2>
+<h3 id="页边距">页边距</h3>
+<p>设置页边距，推荐使用 <code>geometry</code> 宏包。</p>
+<p>比如我希望，将纸张的长度设置为 20cm、宽度设置为 15cm、左边距 1cm、右边距 2cm、上边距 3cm、下边距 4cm，可以在导言区加上这样几行：</p>
+<div class="highlight"><pre class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\usepackage</span><span class="nb">{</span>geometry<span class="nb">}</span>
+<span class="k">\geometry</span><span class="nb">{</span>papersize=<span class="nb">{</span>20cm,15cm<span class="nb">}}</span>
+<span class="k">\geometry</span><span class="nb">{</span>left=1cm,right=2cm,top=3cm,bottom=4cm<span class="nb">}</span>
+</code></pre></div><h3 id="页眉页脚">页眉页脚</h3>
+<p>设置页眉页脚，推荐使用 <code>fancyhdr</code> 宏包。</p>
+<p>比如我希望，在页眉左边写上我的名字，中间写上今天的日期，右边写上我的电话；页脚的正中写上页码；页眉和正文之间有一道宽为 0.4pt 的横线分割，可以在导言区加上如下几行：</p>
+<div class="highlight"><pre class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\usepackage</span><span class="nb">{</span>fancyhdr<span class="nb">}</span>
+<span class="k">\pagestyle</span><span class="nb">{</span>fancy<span class="nb">}</span>
+<span class="k">\lhead</span><span class="nb">{</span><span class="k">\author</span><span class="nb">}</span>
+<span class="k">\chead</span><span class="nb">{</span><span class="k">\date</span><span class="nb">}</span>
+<span class="k">\rhead</span><span class="nb">{</span>152xxxxxxxx<span class="nb">}</span>
+<span class="k">\lfoot</span><span class="nb">{}</span>
+<span class="k">\cfoot</span><span class="nb">{</span><span class="k">\thepage</span><span class="nb">}</span>
+<span class="k">\rfoot</span><span class="nb">{}</span>
+<span class="k">\renewcommand</span><span class="nb">{</span><span class="k">\headrulewidth</span><span class="nb">}{</span>0.4pt<span class="nb">}</span>
+<span class="k">\renewcommand</span><span class="nb">{</span><span class="k">\headwidth</span><span class="nb">}{</span><span class="k">\textwidth</span><span class="nb">}</span>
+<span class="k">\renewcommand</span><span class="nb">{</span><span class="k">\footrulewidth</span><span class="nb">}{</span>0pt<span class="nb">}</span>
+</code></pre></div><h3 id="首行缩进">首行缩进</h3>
+<p>CTeX 宏集已经处理好了首行缩进的问题（自然段前空两格汉字宽度）。因此，使用 CTeX 宏集进行中西文混合排版时，我们不需要关注首行缩进的问题。</p>
+<h3 id="行间距">行间距</h3>
+<p>我们可以通过 <code>setspace</code> 宏包提供的命令来调整行间距。比如在导言区添加如下内容，可以将行距设置为<strong>字号的 1.5 倍</strong>：</p>
+<div class="highlight"><pre class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\usepackage</span><span class="nb">{</span>setspace<span class="nb">}</span>
+<span class="k">\onehalfspacing</span>
+</code></pre></div><h3 id="段间距">段间距</h3>
+<p>我们可以通过修改长度 <code>\parskip</code> 的值来调整段间距。例如在导言区添加以下内容</p>
+<div class="highlight"><pre class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\addtolength</span><span class="nb">{</span><span class="k">\parskip</span><span class="nb">}{</span>.4em<span class="nb">}</span>
+</code></pre></div><p>则可以在原有的基础上，增加段间距 0.4em。如果需要减小段间距，只需将该数值改为负值即可。</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/latex/">LaTeX</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>2021 All Rights Reserved</span>
+    </section>
+    </footer>
+
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+</aside>
+
+
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2021 Gary&#39;s Tech Station
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.0.1">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
