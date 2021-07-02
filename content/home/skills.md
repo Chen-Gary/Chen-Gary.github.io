@@ -23,7 +23,7 @@ subtitle = ""
 [[feature]]
   icon = "code-branch"
   icon_pack = "fas"
-  name = "Programming"
+  name = "Python, C++, C#"
   description = ""  
   
 [[feature]]
