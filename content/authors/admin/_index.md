@@ -69,3 +69,5 @@ user_groups:
 ---
 
 Gary Chen is an undergraduate student majored in computer engineering. 
+
+{{< icon name="download" pack="fas" >}} Download my {{< staticref "files/cv.pdf" "newtab" >}}resumé{{< /staticref >}}.
