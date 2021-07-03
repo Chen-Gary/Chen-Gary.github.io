@@ -1,0 +1,1351 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
+
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Gary Chen">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Tutorial Link: https://liam.page/2014/09/08/latex-introduction/">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://chen-gary.github.io/post/latex-basic/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/10.1.2/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/10.1.2/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.loli.net/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+  
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="https://chen-gary.github.io/post/latex-basic/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="Gary Chen">
+  <meta property="og:url" content="https://chen-gary.github.io/post/latex-basic/">
+  <meta property="og:title" content="LaTeX Basic | Gary Chen">
+  <meta property="og:description" content="Tutorial Link: https://liam.page/2014/09/08/latex-introduction/"><meta property="og:image" content="https://chen-gary.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+  <meta property="twitter:image" content="https://chen-gary.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2021-07-03T12:13:12&#43;08:00">
+    
+    <meta property="article:modified_time" content="2021-07-03T12:13:12&#43;08:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://chen-gary.github.io/post/latex-basic/"
+  },
+  "headline": "LaTeX Basic",
+  
+  "datePublished": "2021-07-03T12:13:12+08:00",
+  "dateModified": "2021-07-03T12:13:12+08:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Gary Chen"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Gary Chen",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://chen-gary.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "Tutorial Link: https://liam.page/2014/09/08/latex-introduction/"
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>LaTeX Basic | Gary Chen</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class=" ">
+
+  
+  
+  
+    <script>const isSiteThemeDark = false;</script>
+  
+  
+  <script src="/js/load-theme.js"></script>
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Gary Chen</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Gary Chen</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>About</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/files/cv.pdf"><span>CV</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link js-theme-selector" data-toggle="dropdown" aria-haspopup="true">
+          <i class="fas fa-palette" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+
+  
+        <article class="article">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>LaTeX Basic</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  
+  <span ><a href="/author/gary-chen/">Gary Chen</a></span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Jul 3, 2021
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    3 min read
+  </span>
+  
+
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+            <div class="article-container">
+              <div class="article-style">
+                <p>这篇文章是对
+<a href="https://liam.page/2014/09/08/latex-introduction/" target="_blank" rel="noopener">这份教程</a>的笔记，虽说是笔记，很多地方都直接复制了原文，强烈建议大家进入原教程查看。</p>
+<p>（注：以下文档默认使用XeLaTeX进行编译）</p>
+<p><strong>控制序列</strong>：<code>\</code>开头，e.g. <code>\documentclass</code>。以第一个<strong>空格或非字母</strong> 的字符结束</p>
+<p><strong>注释</strong>：<code>%</code></p>
+<pre><code class="language-latex">\documentclass{article}
+% 这里是导言区
+\begin{document}
+Hello, world!
+\end{document}
+</code></pre>
+<p>控制序列<code>begin</code>和<code>end</code>总是成对出现。这两个控制序列以及他们中间的内容被称为「环境」，它们之后的第一个必要参数总是<strong>一致的</strong>，被称为环境名。</p>
+<p>只有在 <code>document</code> 环境中的内容，才会被正常输出到文档中去或是作为控制序列对文档产生影响。</p>
+<p>从 <code>\documentclass{article}</code> 开始到 <code>\begin{document}</code> 之前的部分被称为导言区。在导言区出现的控制序列，往往会影响整篇文档的格式。</p>
+<p><strong>宏包</strong>：一系列控制序列的合集。<code>\usepackage{}</code> 可以用来调用宏包</p>
+<h2 id="中英文混排">中英文混排</h2>
+<pre><code class="language-latex">\documentclass[UTF8]{ctexart}
+\begin{document}
+你好，world!
+\end{document}
+</code></pre>
+<h2 id="组织你的文章">组织你的文章</h2>
+<h3 id="作者标题日期">作者、标题、日期</h3>
+<pre><code class="language-latex">\documentclass[UTF8]{ctexart}
+\title{你好，world!}
+\author{Liam}
+\date{\today}
+\begin{document}
+\maketitle
+你好，world!
+\end{document}
+</code></pre>
+<h3 id="章节和段落">章节和段落</h3>
+<pre><code class="language-latex">\documentclass[UTF8]{ctexart}
+\title{你好，world!}
+\author{Liam}
+\date{\today}
+\begin{document}
+\maketitle
+\section{你好中国}
+中国在East Asia.
+\subsection{Hello Beijing}
+北京是capital of China.
+\subsubsection{Hello Dongcheng District}
+\paragraph{Tian'anmen Square}
+is in the center of Beijing
+\subparagraph{Chairman Mao}
+is in the center of 天安门广场。
+\subsection{Hello 山东}
+\paragraph{山东大学} is one of the best university in 山东。
+\end{document}
+</code></pre>
+<p>在文档类 <code>article</code>/<code>ctexart</code> 中，定义了五个控制序列来调整行文组织结构。他们分别是</p>
+<ul>
+<li><code>\section{·}</code></li>
+<li><code>\subsection{·}</code></li>
+<li><code>\subsubsection{·}</code></li>
+<li><code>\paragraph{·}</code></li>
+<li><code>\subparagraph{·}</code></li>
+</ul>
+<h3 id="插入目录">插入目录</h3>
+<p>在上一节的文档中，找到 <code>\maketitle</code>，在它的下面插入控制序列 <code>\tableofcontents</code>，保存并用 XeLaTeX 编译<strong>两次</strong>。</p>
+<h2 id="插入数学公式">插入数学公式</h2>
+<p>在导言区加载 <code>amsmath</code> 宏包</p>
+<pre><code class="language-latex">\usepackage{amsmath}
+</code></pre>
+<h3 id="数学模式">数学模式</h3>
+<p>LaTeX 的数学模式有两种：行内模式 (inline) 和行间模式 (display)。</p>
+<p>在行文中，使用 <code>$ ... $</code> 可以插入行内公式，使用 <code>\[ ... \]</code> 可以插入行间公式，如果需要对行间公式进行编号，则可以使用 <code>equation</code> 环境：</p>
+<pre><code class="language-latex">\begin{equation}
+...
+\end{equation}
+</code></pre>
+<p>示例：</p>
+<pre><code class="language-latex">\documentclass{article}
+\usepackage{amsmath}
+\begin{document}
+Einstein 's $E=mc^2$.
+
+\[ E=mc^2. \]
+
+\begin{equation}
+E=mc^2.
+\end{equation}
+\end{document}
+</code></pre>
+<p>行内公式和行间公式对标点的要求是不同的：行内公式的标点，应该放在数学模式的限定符之外，而行间公式则应该放在数学模式限定符之内。</p>
+<ul>
+<li>上标：<code>^</code> （注意花括号 <code>{}</code>的运用）</li>
+<li>下标： <code>_</code></li>
+<li>根式： <code>\sqrt{·}</code></li>
+<li>分式： <code>\frac{·}{·}</code> （第一个参数为分子，第二个为分母）</li>
+</ul>
+<p>在行间公式和行内公式中，分式的输出效果是有差异的。如果要强制行内模式的分式显示为行间模式的大小，可以使用 <code>\dfrac</code>, 反之可以使用 <code>\tfrac</code></p>
+<h4 id="运算符">运算符</h4>
+<pre><code class="language-latex">\[ \pm\; \times \; \div\; \cdot\; \cap\; \cup\;
+\geq\; \leq\; \neq\; \approx \; \equiv \]
+</code></pre>
+<p>连加、连乘、极限、积分等大型运算符分别用 <code>\sum</code>, <code>\prod</code>, <code>\lim</code>, <code>\int</code> 生成。他们的上下标在行内公式中被压缩，以适应行高。我们可以用 <code>\limits</code> 和 <code>\nolimits</code> 来强制显式地指定是否压缩这些上下标。</p>
+<pre><code class="language-latex">$ \sum_{i=1}^n i\quad \prod_{i=1}^n $
+$ \sum\limits _{i=1}^n i\quad \prod\limits _{i=1}^n $
+\[ \lim_{x\to0}x^2 \quad \int_a^b x^2 dx \]
+\[ \lim\nolimits _{x\to0}x^2\quad \int\nolimits_a^b x^2 dx \]
+</code></pre>
+<p>多重积分可以使用 <code>\iint</code>, <code>\iiint</code>, <code>\iiiint</code>, <code>\idotsint</code> 等命令输入。</p>
+<pre><code class="language-latex">\[ \iint\quad \iiint\quad \iiiint\quad \idotsint \]
+</code></pre>
+<h4 id="定界符括号等">定界符（括号等）</h4>
+<p>各种括号用 <code>()</code>, <code>[]</code>, <code>\{\}</code>, <code>\langle\rangle</code> 等命令表示；注意花括号通常用来输入命令和环境的参数，所以在数学公式中它们前面要加 <code>\</code>。因为 LaTeX 中 <code>|</code> 和 <code>\|</code> 的应用过于随意，amsmath 宏包推荐用 <code>\lvert\rvert</code> 和 <code>\lVert\rVert</code> 取而代之。</p>
+<p>为了调整这些定界符的大小，amsmath 宏包推荐使用 <code>\big</code>, <code>\Big</code>, <code>\bigg</code>, <code>\Bigg</code> 等一系列命令放在上述括号前面调整大小。</p>
+<pre><code class="language-latex">\[ \Biggl(\biggl(\Bigl(\bigl((x)\bigr)\Bigr)\biggr)\Biggr) \]
+\[ \Biggl[\biggl[\Bigl[\bigl[[x]\bigr]\Bigr]\biggr]\Biggr] \]
+\[ \Biggl \{\biggl \{\Bigl \{\bigl \{\{x\}\bigr \}\Bigr \}\biggr \}\Biggr\} \]
+\[ \Biggl\langle\biggl\langle\Bigl\langle\bigl\langle\langle x
+\rangle\bigr\rangle\Bigr\rangle\biggr\rangle\Biggr\rangle \]
+\[ \Biggl\lvert\biggl\lvert\Bigl\lvert\bigl\lvert\lvert x
+\rvert\bigr\rvert\Bigr\rvert\biggr\rvert\Biggr\rvert \]
+\[ \Biggl\lVert\biggl\lVert\Bigl\lVert\bigl\lVert\lVert x
+\rVert\bigr\rVert\Bigr\rVert\biggr\rVert\Biggr\rVert \]
+</code></pre>
+<h4 id="省略号">省略号</h4>
+<p>省略号用 <code>\dots</code>, <code>\cdots</code>, <code>\vdots</code>, <code>\ddots</code> 等命令表示。<code>\dots</code> 和 <code>\cdots</code> 的纵向位置不同，前者一般用于有下标的序列。</p>
+<pre><code class="language-latex">\[ x_1,x_2,\dots ,x_n\quad 1,2,\cdots ,n\quad
+\vdots\quad \ddots \]
+</code></pre>
+<h4 id="矩阵">矩阵</h4>
+<p><code>amsmath</code> 的 <code>pmatrix</code>, <code>bmatrix</code>, <code>Bmatrix</code>, <code>vmatrix</code>, <code>Vmatrix</code> 等环境可以在矩阵两边加上各种分隔符。</p>
+<pre><code class="language-latex">\[ \begin{pmatrix} a&amp;b\\c&amp;d \end{pmatrix} \quad
+\begin{bmatrix} a&amp;b\\c&amp;d \end{bmatrix} \quad
+\begin{Bmatrix} a&amp;b\\c&amp;d \end{Bmatrix} \quad
+\begin{vmatrix} a&amp;b\\c&amp;d \end{vmatrix} \quad
+\begin{Vmatrix} a&amp;b\\c&amp;d \end{Vmatrix} \]
+</code></pre>
+<h4 id="多行公式">多行公式</h4>
+<h5 id="长公式">长公式</h5>
+<h6 id="不对齐">不对齐</h6>
+<p>无须对齐的长公式可以使用 <code>multline</code> 环境。</p>
+<pre><code class="language-latex">\begin{multline}
+x = a+b+c+{} \\
+d+e+f+g
+\end{multline}
+</code></pre>
+<p>如果不需要编号，可以使用 <code>multline*</code> 环境代替。</p>
+<h6 id="对齐">对齐</h6>
+<p>需要对齐的公式，可以使用 <code>aligned</code> <em>次环境</em>来实现，它必须包含在数学环境之内。</p>
+<pre><code class="language-latex">\[\begin{aligned}
+x ={}&amp; a+b+c+{} \\
+&amp;d+e+f+g
+\end{aligned}\]
+</code></pre>
+<h5 id="公式组">公式组</h5>
+<p>无需对齐的公式组可以使用 <code>gather</code> 环境，需要对齐的公式组可以使用 <code>align</code> 环境。他们都带有编号，如果不需要编号可以使用带星花的版本。</p>
+<h5 id="分段函数">分段函数</h5>
+<p>分段函数可以用<code>cases</code>次环境来实现，它必须包含在数学环境之内。</p>
+<pre><code class="language-latex">\[ y= \begin{cases}
+-x,\quad x\leq 0 \\
+x,\quad x&gt;0
+\end{cases} \]
+</code></pre>
+<p>辅助工具：https://www.latexlive.com/</p>
+<h2 id="插入图片和表格">插入图片和表格</h2>
+<h3 id="图片">图片</h3>
+<p>在 LaTeX 中插入图片，利用 <code>graphicx</code> 宏包提供的 <code>\includegraphics</code> 命令。</p>
+<pre><code class="language-latex">\documentclass{article}
+\usepackage{graphicx}
+\begin{document}
+\includegraphics{a.jpg}
+\end{document}
+</code></pre>
+<p>用 <code>\includegraphics</code> 控制序列的可选参数来控制图片输出效果：</p>
+<pre><code class="language-latex">\includegraphics[width = .8\textwidth]{a.jpg}
+</code></pre>
+<p>图片的宽度会被缩放至页面宽度的百分之八十，图片的总高度会按比例缩放。</p>
+<h3 id="表格">表格</h3>
+<p><code>tabular</code> 环境提供了最简单的表格功能。它用 <code>\hline</code> 命令表示横线，在列格式中用 <code>|</code> 表示竖线；用 <code>&amp;</code> 来分列，用 <code>\\</code> 来换行；每列可以采用居左、居中、居右等横向对齐方式，分别用 <code>l</code>、<code>c</code>、<code>r</code> 来表示。</p>
+<pre><code class="language-latex">\begin{tabular}{|l|c|r|}
+ \hline
+操作系统&amp; 发行版&amp; 编辑器\\
+ \hline
+Windows &amp; MikTeX &amp; TexMakerX \\
+ \hline
+Unix/Linux &amp; teTeX &amp; Kile \\
+ \hline
+Mac OS &amp; MacTeX &amp; TeXShop \\
+ \hline
+通用&amp; TeX Live &amp; TeXworks \\
+ \hline
+\end{tabular}
+</code></pre>
+<h3 id="浮动体">浮动体</h3>
+<p>见原文。。。</p>
+<h2 id="版面设置">版面设置</h2>
+<h3 id="页边距">页边距</h3>
+<p>设置页边距，推荐使用 <code>geometry</code> 宏包。</p>
+<p>比如我希望，将纸张的长度设置为 20cm、宽度设置为 15cm、左边距 1cm、右边距 2cm、上边距 3cm、下边距 4cm，可以在导言区加上这样几行：</p>
+<pre><code class="language-latex">\usepackage{geometry}
+\geometry{papersize={20cm,15cm}}
+\geometry{left=1cm,right=2cm,top=3cm,bottom=4cm}
+</code></pre>
+<h3 id="页眉页脚">页眉页脚</h3>
+<p>设置页眉页脚，推荐使用 <code>fancyhdr</code> 宏包。</p>
+<p>比如我希望，在页眉左边写上我的名字，中间写上今天的日期，右边写上我的电话；页脚的正中写上页码；页眉和正文之间有一道宽为 0.4pt 的横线分割，可以在导言区加上如下几行：</p>
+<pre><code class="language-latex">\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{\author}
+\chead{\date}
+\rhead{152xxxxxxxx}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headwidth}{\textwidth}
+\renewcommand{\footrulewidth}{0pt}
+</code></pre>
+<h3 id="首行缩进">首行缩进</h3>
+<p>CTeX 宏集已经处理好了首行缩进的问题（自然段前空两格汉字宽度）。因此，使用 CTeX 宏集进行中西文混合排版时，我们不需要关注首行缩进的问题。</p>
+<h3 id="行间距">行间距</h3>
+<p>我们可以通过 <code>setspace</code> 宏包提供的命令来调整行间距。比如在导言区添加如下内容，可以将行距设置为<strong>字号的 1.5 倍</strong>：</p>
+<pre><code class="language-latex">\usepackage{setspace}
+\onehalfspacing
+</code></pre>
+<h3 id="段间距">段间距</h3>
+<p>我们可以通过修改长度 <code>\parskip</code> 的值来调整段间距。例如在导言区添加以下内容</p>
+<pre><code class="language-latex">\addtolength{\parskip}{.4em}
+</code></pre>
+<p>则可以在原有的基础上，增加段间距 0.4em。如果需要减小段间距，只需将该数值改为负值即可。</p>
+
+              </div>
+              
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/latex/">LaTeX</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://chen-gary.github.io/post/latex-basic/&amp;text=LaTeX%20Basic" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://chen-gary.github.io/post/latex-basic/&amp;t=LaTeX%20Basic" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=LaTeX%20Basic&amp;body=https://chen-gary.github.io/post/latex-basic/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://chen-gary.github.io/post/latex-basic/&amp;title=LaTeX%20Basic" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=LaTeX%20Basic%20https://chen-gary.github.io/post/latex-basic/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://chen-gary.github.io/post/latex-basic/&amp;title=LaTeX%20Basic" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+    
+      
+    
+    
+    
+    <div class="media author-card content-widget-hr">
+      
+        
+        <img class="avatar mr-3 avatar-circle" src="/author/gary-chen/avatar_hu1d827532f0efe49b6aad21a24434f5c9_1603201_270x270_fill_q90_lanczos_center.jpg" alt="Gary Chen">
+      
+
+      <div class="media-body">
+        <h5 class="card-title"><a href="https://chen-gary.github.io/">Gary Chen</a></h5>
+        <h6 class="card-subtitle">Undergraduate Majored in CE</h6>
+        <p class="card-text">My research interests include game development, blockchain and digital twin.</p>
+        <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/Chen-Gary" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/honghao-chen" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/files/cv.pdf" >
+        <i class="ai ai-cv"></i>
+      </a>
+    </li>
+  
+</ul>
+
+      </div>
+    </div>
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+            </div>
+        </article>
+  
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.loli.net/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.loli.net/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.loli.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.loli.net/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.loli.net/ajax/libs/highlight.js/10.1.2/highlight.min.js" integrity="sha512-7t8APmYpzEsZP7CYoA7RfMPV9Bb+PJHa9x2WiUnDXZx3XHveuyWUtvNOexhkierl5flZ3tr92dP1mMS+SGlD+A==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.loli.net/ajax/libs/highlight.js/10.1.2/languages/r.min.js"></script>
+        
+        
+      
+
+    
+
+    
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks",
+        'slides' : "Slides"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.loli.net/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.loli.net/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.d4b985b54bd3301c9f0977713cf4cc76.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    © 2021 Gary Chen
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a>
+    for
+    <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>
+    
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Game Development | Gary Chen</title>
+    <link>https://chen-gary.github.io/tag/game-development/</link>
+      <atom:link href="https://chen-gary.github.io/tag/game-development/index.xml" rel="self" type="application/rss+xml" />
+    <description>Game Development</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2021 Gary Chen</copyright><lastBuildDate>Thu, 01 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://chen-gary.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Game Development</title>
+      <link>https://chen-gary.github.io/tag/game-development/</link>
+    </image>
+    
+    <item>
+      <title>Enclosure</title>
+      <link>https://chen-gary.github.io/project/game-enclosure/</link>
+      <pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>https://chen-gary.github.io/project/game-enclosure/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

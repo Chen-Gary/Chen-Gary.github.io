@@ -1,0 +1,1431 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
+
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Gary Chen">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="在Windows平台下安装、配置Hugo，并通过Github Pages部署个人博客">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://chen-gary.github.io/post/building-blog-using-hugo/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/10.1.2/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/10.1.2/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.loli.net/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+  
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="https://chen-gary.github.io/post/building-blog-using-hugo/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="Gary Chen">
+  <meta property="og:url" content="https://chen-gary.github.io/post/building-blog-using-hugo/">
+  <meta property="og:title" content="Building Blog Using Hugo | Gary Chen">
+  <meta property="og:description" content="在Windows平台下安装、配置Hugo，并通过Github Pages部署个人博客"><meta property="og:image" content="https://chen-gary.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+  <meta property="twitter:image" content="https://chen-gary.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2021-06-06T11:48:17&#43;08:00">
+    
+    <meta property="article:modified_time" content="2021-06-06T11:48:17&#43;08:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://chen-gary.github.io/post/building-blog-using-hugo/"
+  },
+  "headline": "Building Blog Using Hugo",
+  
+  "datePublished": "2021-06-06T11:48:17+08:00",
+  "dateModified": "2021-06-06T11:48:17+08:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Gary Chen"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Gary Chen",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://chen-gary.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "在Windows平台下安装、配置Hugo，并通过Github Pages部署个人博客"
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Building Blog Using Hugo | Gary Chen</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class=" ">
+
+  
+  
+  
+    <script>const isSiteThemeDark = false;</script>
+  
+  
+  <script src="/js/load-theme.js"></script>
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Gary Chen</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Gary Chen</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>About</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/files/cv.pdf"><span>CV</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link js-theme-selector" data-toggle="dropdown" aria-haspopup="true">
+          <i class="fas fa-palette" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+
+  
+        <article class="article">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Building Blog Using Hugo</h1>
+
+  
+  <p class="page-subtitle">用Hugo搭建自己的博客吧！</p>
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  
+  <span ><a href="/author/gary-chen/">Gary Chen</a></span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Jun 6, 2021
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    3 min read
+  </span>
+  
+
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+            <div class="article-container">
+              <div class="article-style">
+                <h2 id="摘要">摘要</h2>
+<p>在Windows平台下安装、配置Hugo，并通过Github Pages部署个人博客</p>
+<h2 id="前言">前言</h2>
+<p>本来打算把这篇文章作为博客的第一篇post，结果拖了将近半年 ╥﹏╥&hellip;</p>
+<p>写这篇文章一是为了给自己的博客留个纪念；二是梳理一下自己大体的博客搭建流程，方便后期debug甚至重构；三或许还能帮助到一些有缘人？</p>
+<p>听说百度的爬虫爬不到github.io域名的内容，再加上这种个人博客本身就做不到很好的SEO。以后的博文大概率也就是一名新手“码农”的“自嗨” ︿(￣︶￣)︿，不过能有一个整理自己笔记和想法的小空间也真是一件很开心的啊！希望能坚持下来！</p>
+<p>不多bb，准备开始！</p>
+<h2 id="先决条件">先决条件</h2>
+<p>我使用的工具：</p>
+<ul>
+<li>Git 2.30.0</li>
+<li>Hugo v0.80.0</li>
+<li>一个注册好的GitHub账号</li>
+</ul>
+<p>前置知识：</p>
+<ul>
+<li>了解最最基本的Git操作</li>
+<li>对GitHub有一点点了解</li>
+<li>会使用markdown编写文章</li>
+<li>难度不大，但还是希望你有一颗勇于折腾的心</li>
+</ul>
+<h2 id="更新并配置git">更新并配置Git</h2>
+<pre><code class="language-shell">git --version					# check the version of git
+
+git update-git-for-windows		# update git to the latest version
+</code></pre>
+<p>GitHub最近（当你看到这篇文章的时候已经不是最近了）把原先默认的<code>master</code>分支改名成了<code>main</code>，为了紧跟潮流，也为了满足自己的强迫症，这里选择更新git版本</p>
+<pre><code class="language-shell"># 配置
+git config --global user.name &quot;&lt;user_name&gt;&quot;
+git config --global user.email &lt;example&gt;@gmail.com
+
+git config --list
+</code></pre>
+<p>更多Git基础操作可以参考
+<a href="https://chen-gary.github.io/p/git-basic-skills/" target="_blank" rel="noopener">我的笔记</a>。</p>
+<h2 id="安装hugo">安装Hugo</h2>
+<p>相较于Mac和Linux，Hugo在Windows下的安装相对复杂。我们这里选择使用编译好的Windows可执行文件进行安装。安装路径我选择D盘的根目录，你也可以选择其他路径。</p>
+<ol>
+<li>
+<p>在D盘根目录下创建新文件夹<code>Hugo</code>，并在<code>D:\Hugo</code>下新建文件夹<code>bin</code>和<code>Sites</code></p>
+<ul>
+<li><code>D:\Hugo\bin</code>将存放Hugo可执行文件</li>
+<li><code>D:\Hugo\Sites</code>将存放以后博客的git仓库</li>
+</ul>
+</li>
+<li>
+<p>到
+<a href="https://github.com/gohugoio/hugo/releases" target="_blank" rel="noopener">Hugo的GitHub仓库</a>下载最新的Hugo二进制文件，我下载的是<code>hugo_0.80.0_Windows-64bit.zip</code></p>
+</li>
+<li>
+<p>解压下载好的压缩包至<code>D:\Hugo\bin</code>。现在你应该能看到<code>D:\Hugo\bin</code>中有三个文件<code>hugo.exe</code>, <code>LICENSE</code>及<code>README.md</code>。</p>
+<p>在<code>D:\Hugo\bin</code>下打开cmd，执行<code>hugo version</code>和<code>hugo help</code>应该能得到适当的反馈。但在其他路径下，这两条命令却无法正确执行，所以接下来我们要<strong>配置系统环境变量</strong>，使Hugo命令可以在任意路径下使用</p>
+</li>
+<li>
+<p>为Hugo配置系统环境变量</p>
+<ul>
+<li>
+<p>搜索并打开Edit the system environment variables</p>
+</li>
+<li>
+<p>点击Environment Variables&hellip;</p>
+</li>
+<li>
+<p>在User variables中双击Path</p>
+</li>
+<li>
+<p>点击New，添加<code>D:\Hugo\bin</code></p>
+</li>
+<li>
+<p>验证环境变量是否配置成功</p>
+<pre><code class="language-shell">echo %PATH%						# 确保能找到D:\Hugo\bin
+
+hugo version					# 在任意路径下均可正确执行
+</code></pre>
+<p>（注：配置完环境变量后，可能需要等一段时间才能正常使用Hugo命令）</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>恭喜！现在Hugo已经安装完成，接下来我们用它开始搭建自己的博客吧！</p>
+<h2 id="搭建本地博客">搭建本地博客</h2>
+<h3 id="初始化博客">初始化博客</h3>
+<p>在<code>D:\Hugo\Sites</code>下启动cmd，使用命令</p>
+<pre><code class="language-shell">hugo new site &lt;name&gt;
+</code></pre>
+<p>由于我们将把本地博客部署到GitHub，这里我们把<code>&lt;name&gt;</code>换成<code>&lt;github_user_name&gt;.github.io</code>，比如我使用<code>hugo new site Chen-Gary.github.io</code></p>
+<p>你会发现Hugo在<code>D:\Hugo\Sites</code>下创建了一个新文件夹<code>Chen-Gary.github.io</code>里面已经包含了一些文件</p>
+<h3 id="下载主题">下载主题</h3>
+<p>（如果没有特殊说明，所有命令都默认在博客的根目录下执行，即<code>/d/Hugo/Sites/Chen-Gary.github.io</code>）</p>
+<p>在
+<a href="https://themes.gohugo.io/" target="_blank" rel="noopener">Hugo主题库</a>找到一个你喜欢的主题，下面的步骤将以
+<a href="https://themes.gohugo.io/hugo-theme-stack/" target="_blank" rel="noopener">Stack</a>为例。下载主题本质就是git克隆，通常这些主题都会在README或
+<a href="https://docs.stack.jimmycai.com/" target="_blank" rel="noopener">Documentation</a>中提供克隆命令（也可以下载对应主题GitHub上的release版本，操作类似，请参考对应主题的Documentation）</p>
+<pre><code class="language-shell">git clone https://github.com/CaiJimmy/hugo-theme-stack/themes/hugo-theme-stack
+</code></pre>
+<p>（注：如果采用下载release版本主题的方法，请忽视以下内容）</p>
+<p>克隆完成后，<code>themes/hugo-theme-stack</code>会是一个给git仓库，由于后期我们会将把博客的根目录<code>Chen-Gary.github.io</code>也变为git仓库，为避免仓库套仓库的情况，这里有两种解决策略：</p>
+<ul>
+<li>删除<code>themes/hugo-theme-stack</code>中的，<code>.git</code>文件下把git仓库变成普通文件夹（我采取这个方案，因为后期我们可能大规模“定制”下载的主题，需要对主题内的文件进行版本控制；另外，还因为我不太搞得懂git submodule。。。）</li>
+<li>使用git的submodule feature（不太推荐）</li>
+</ul>
+<h3 id="本地测试">本地测试</h3>
+<p>使用以下命令测试。值得注意的是Stack主题有一些很坑爹的细节，搞了我很久。下一小节我会详说。</p>
+<pre><code class="language-shell">hugo server -t &lt;theme_name&gt; --buildDrafts
+
+# example
+hugo server -t hugo-theme-stack --buildDrafts
+</code></pre>
+<p>根据命令行提示，在浏览器进入http://localhost:1313/预览博客效果。</p>
+<p>测试完成后，使用<code>Ctrl</code> + <code>C</code>结束server。</p>
+<h3 id="修改配置文件">修改配置文件</h3>
+<p>修改博客根目录下的<code>config.toml</code>或<code>config.yaml</code>。注意很多主题是会提供配置文件样板的，如果有请使用主题提供的配置文件。<code>config.toml</code>和<code>config.yaml</code>只需一个（也只能有一个），删除多余的配置文件。</p>
+<p>至少进行以下配置（以<code>config.toml</code>为例）：</p>
+<pre><code class="language-toml">baseURL = &quot;https://&lt;github_user_name&gt;.github.io/&quot;
+languageCode = &quot;en-us&quot;
+title = &quot;Gary's Blog Site&quot;
+
+theme=&quot;theme_name&quot;
+</code></pre>
+<p>由于在配置文件中指定了主题，以后进行本地测试只需：</p>
+<pre><code class="language-shell">hugo server
+</code></pre>
+<p><code>baseURL</code>相当重要，这里提前配置好，后文会进一步解释。</p>
+<h3 id="关于stack主题">*关于Stack主题</h3>
+<p>Stack是个相当好看的主题。事实上，这个主题是吸引我使用Hugo的原因之一，但是有一些小细节相当坑爹（对于新手来说）。</p>
+<p>在进行本地测试<strong>之前</strong>，执行以下操作：</p>
+<ul>
+<li>复制<code>\themes\hugo-theme-stack\exampleSite</code>的内容至博客根目录，部分原有的文件会被覆盖。</li>
+<li>删除Hugo原先自动生成的<code>config.toml</code>，以后的配置我们会直接使用Stack主题提供的<code>config.yaml</code>。</li>
+<li>删除<code>\content\post\rich-content</code>。原因是这篇sample post里使用了推特短代码，这会导致Hugo无法生成网页。</li>
+<li>更多个性化操作请参考Stack主题提供的<code>config.yaml</code>文件及
+<a href="https://docs.stack.jimmycai.com/" target="_blank" rel="noopener">它的官方文档</a>。如果你愿意也可以修改主题的HTML文件等。。</li>
+</ul>
+<p>至此，你已经拥有了自己的本地博客库，并预览了发布后的效果。接下来可以开始写博文了！</p>
+<h2 id="本地发布博文">本地发布博文</h2>
+<p>使用以下命令新建博文</p>
+<pre><code class="language-shell">hugo new post/&lt;article_name&gt;.md              # new blog/article
+
+hugo new post/&lt;article_name&gt;/index.md        # new blog/article (recommended)
+</code></pre>
+<p>空白的博文会被生成在<code>\content\post</code>目录下。</p>
+<p>注意：</p>
+<ul>
+<li>
+<p><code>&lt;article_name&gt;</code>使用连字符隔开单词 e.g. <code>hugo new post/git-basic-skills/index.md</code></p>
+</li>
+<li>
+<p>推荐使用<code>hugo new post/&lt;article_name&gt;/index.md</code>，这样文章中的图片可以放在<code>\content\post\&lt;article_name&gt;</code>中</p>
+</li>
+</ul>
+<p>现在，你可以使用喜欢的markdown编辑器编写博文。完成后用<code>hugo server</code>命令进行本地测试。</p>
+<h2 id="生成网页">生成网页</h2>
+<p>有了前面的铺垫，生成网页相当简单，完整命令如下：</p>
+<pre><code class="language-shell">hugo --theme=&lt;theme_name&gt; --baseUrl=&quot;https://&lt;user_name&gt;.github.io&quot; --buildDrafts
+# a folder `public` will be created
+
+# example
+hugo --theme=m10c --baseUrl=&quot;https://Gary-Hh-Chen.github.io&quot; --buildDrafts
+</code></pre>
+<p>由于<code>theme</code>及<code>baseUrl</code>已在配置文件 (<code>config.yaml</code>) 中设置好了，命名可以被简化为：</p>
+<pre><code class="language-shell">hugo
+</code></pre>
+<p>就是这么简洁，网页会被生成在博客根目录的<code>public</code>文件夹中。</p>
+<h2 id="部署博客至github">部署博客至GitHub</h2>
+<p>以下方法由Hugo官方文档修改得来。不知道为什么，
+<a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/" target="_blank" rel="noopener">这部分的官方文档</a>被简化了很多。之前的文档虽然有bug，但相当详细。好在我们可以在
+<a href="https://github.com/gohugoio/hugoDocs/releases" target="_blank" rel="noopener">官方文档的GitHub仓库</a>下载旧版文档。我参考的是
+<a href="https://github.com/gohugoio/hugoDocs/releases/tag/v0.80.0" target="_blank" rel="noopener">v0.80.0版本的文档</a>。</p>
+<p>我们借助GitHub Pages服务部署博客。</p>
+<p>这里，我们选择从GitHub仓库的gh-pages分支发布网页。除此之外，还可以：</p>
+<ul>
+<li>从<code>main</code>分支直接发布网页</li>
+<li>从<code>main</code>分支的<code>docs</code>文件夹发布网页</li>
+</ul>
+<p>这里我们不讨论三种方法的优劣，具体优劣可以参考
+<a href="https://github.com/gohugoio/hugoDocs/releases/tag/v0.80.0" target="_blank" rel="noopener">旧版官方文档</a>。具体操作如下：</p>
+<p>（注：以下步骤只需操作一次）</p>
+<h3 id="1-建立仓库">1. 建立仓库</h3>
+<p>在GitHub建立新的public repository（空仓库，不添加README等），仓库的名字必须为<code>&lt;github_user_name&gt;.github.io</code>，如<code>Chen-Gary.github.io</code>。</p>
+<h3 id="2-修改gitignore">2. 修改<code>.gitignore</code></h3>
+<p>把<code>public</code>文件夹加入<code>.gitignore</code>，因为我们不需要把生成的网页推送到<code>main</code>分支。</p>
+<pre><code class="language-shell">echo &quot;public&quot; &gt;&gt; .gitignore
+</code></pre>
+<h3 id="3-链接本地仓库">3. 链接本地仓库</h3>
+<p>在博客根目录下，使用以下命令建立git仓库并链接至远端：</p>
+<pre><code class="language-shell">git init
+git remote add origin https://github.com/&lt;user_name&gt;/&lt;user_name&gt;.github.io.git
+git add . 
+git commit -m &quot;first commit for my blog&quot;
+git push -u origin main
+</code></pre>
+<p>此时博客的源文件已被推送到远端仓库。</p>
+<h3 id="4-初始化gh-pages-分支">4. 初始化<code>gh-pages</code> 分支</h3>
+<p>说实话，后面这几个分支操作我是不太懂的。。。不过，能用就行不是吗？</p>
+<blockquote>
+<p>You can now initialize your <code>gh-pages</code> branch as an empty [orphan branch][]:</p>
+</blockquote>
+<pre><code class="language-shell">git checkout --orphan gh-pages
+git reset --hard
+git commit --allow-empty -m &quot;Initializing gh-pages branch&quot;
+git push upstream gh-pages
+git checkout main
+</code></pre>
+<h3 id="5-生成网页并部署">5. 生成网页并部署</h3>
+<blockquote>
+<p>Now check out the <code>gh-pages</code> branch into your <code>public</code> folder using git&rsquo;s [worktree feature][]. Essentially, the worktree allows you to have multiple branches of the same local repository to be checked out in different directories:</p>
+</blockquote>
+<pre><code class="language-shell">rm -rf public
+git worktree add -B gh-pages public upstream/gh-pages
+
+hugo
+cd public &amp;&amp; git add --all &amp;&amp; git commit -m &quot;Publishing to gh-pages&quot; &amp;&amp; cd ..
+
+git push upstream gh-pages
+</code></pre>
+<h3 id="6-设置仓库">6. 设置仓库</h3>
+<p>在刚刚建好的GitHub仓库页面进入 Settings &gt; Pages &gt; Source，进行以下设置：</p>
+<p><img src="1.png" alt=""></p>
+<p>设置为从gh-pages分支发布网页。</p>
+<p>等上一小会，你的博客就部署成功了！你可以在 https://&lt;github_user_name&gt;.github.io/ 访问你的博客！</p>
+<p>但是，等等，每次更新博客都要进行这么多命令行操作吗？这也太麻烦了吧！好在我们可以写一个脚本，把部署需要的命令都写在脚本里，就不需要每次都敲这么多命令了。</p>
+<h2 id="自动化更新博文">自动化更新博文</h2>
+<p>接下来我们将写一个<code>.sh</code> script帮助我们部署网页。</p>
+<p>在博客根目录下新建<code>deploy_to_ghpages.sh</code>，加入以下代码：</p>
+<p>（注：以下代码由Hugo官方文档的代码修改而来）</p>
+<pre><code class="language-sh">#!/bin/sh
+
+if [ &quot;`git status -s`&quot; ]
+then
+    echo &quot;The working directory is dirty. Please commit any pending changes.&quot;
+    exit 1;
+fi
+
+echo &quot;Deleting old publication&quot;
+rm -rf public
+mkdir public
+git worktree prune
+rm -rf .git/worktrees/public/
+
+echo &quot;Checking out gh-pages branch into public&quot;
+git worktree add -B gh-pages public origin/gh-pages
+
+echo &quot;Removing existing files&quot;
+rm -rf public/*
+
+echo &quot;Generating site&quot;
+hugo
+
+echo &quot;Updating gh-pages branch&quot;
+cd public &amp;&amp; git add --all &amp;&amp; git commit -m &quot;Publishing to gh-pages (deploy_to_ghpages.sh)&quot; &amp;&amp; cd ..
+
+echo &quot;Pushing to github&quot;
+#git push --all           # use this command or `git push origin gh-pages` should be both OK
+git push origin gh-pages
+</code></pre>
+<p>这段代码大概做了：</p>
+<ul>
+<li>检查仓库是否有未commit的修改，如有，则终止部署</li>
+<li>如果仓库clean，则自动重新生成新的网页，并推送网页至gh-pages分支</li>
+</ul>
+<p>将<code>deploy_to_ghpages.sh</code> commit 进仓库。</p>
+<p>至此所有准备工作都已就绪，你可以开始在自己的博客中发布文章了！如果你已经忘记了之前提到的一系列命令，没关系，下一节我会整理发布或更新博文所需的全部命令！</p>
+<h2 id="总结---发布博文流程">总结 - 发布博文流程</h2>
+<p>如果你按照以上流程初始化好了你的博客，接下来想要更新文章会非常简单：</p>
+<p>（注：由于<code>.sh</code>文件需要在git bash中执行，以下命令默认都在git bash中执行）</p>
+<pre><code class="language-bash">git status
+
+hugo new post/&lt;article_name&gt;/index.md        # new blog/article (recommended)
+
+# 编写博文...
+
+hugo server               # local test (optional)
+
+git add . 
+git commit -m &quot;add new post XXXX&quot;
+git push
+
+./deploy_to_ghpages.sh    # deploy
+</code></pre>
+<p>同时，我们也梳理一下GitHub仓库的文件结构：</p>
+<ul>
+<li><code>main</code>分支：博客的源文件，可以通过这些源文件生成网页。你需要在这个分支上，对博客源文件进行正常的版本控制。</li>
+<li><code>gh-pages</code>分支：由Hugo基于博客源文件生成的静态博客网页，是GitHub Pages生成网站所需的所有内容。这个分支纯由Hugo生成，无需对该分支的版本进行过多理会。</li>
+</ul>
+<p>至此，借助Hugo和GitHub搭建个人博客的全部流程都结束啦！开始经营这个属于自己的小天地吧！</p>
+<h2 id="附录">附录</h2>
+<h3 id="好看的主题">好看的主题</h3>
+<ol>
+<li>
+<p><a href="https://themes.gohugo.io/hugo-theme-stack/">https://themes.gohugo.io/hugo-theme-stack/</a></p>
+<p><a href="https://docs.stack.jimmycai.com/">https://docs.stack.jimmycai.com/</a></p>
+</li>
+<li>
+<p><a href="https://themes.gohugo.io/loveit/">https://themes.gohugo.io/loveit/</a></p>
+</li>
+</ol>
+<h3 id="多语言支持">多语言支持</h3>
+<p><a href="https://pzhao.org/zh/post/hugo-multilingual/">https://pzhao.org/zh/post/hugo-multilingual/</a></p>
+<p><a href="https://gohugo.io/content-management/multilingual/">https://gohugo.io/content-management/multilingual/</a></p>
+<p><a href="https://regisphilibert.com/blog/2018/08/hugo-multilingual-part-1-managing-content-translation/">https://regisphilibert.com/blog/2018/08/hugo-multilingual-part-1-managing-content-translation/</a></p>
+<h3 id="svg图下载">SVG图下载</h3>
+<p><a href="https://tablericons.com/">https://tablericons.com/</a></p>
+
+              </div>
+              
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/blog/">Blog</a>
+  
+  <a class="badge badge-light" href="/tag/hugo/">Hugo</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://chen-gary.github.io/post/building-blog-using-hugo/&amp;text=Building%20Blog%20Using%20Hugo" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://chen-gary.github.io/post/building-blog-using-hugo/&amp;t=Building%20Blog%20Using%20Hugo" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Building%20Blog%20Using%20Hugo&amp;body=https://chen-gary.github.io/post/building-blog-using-hugo/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://chen-gary.github.io/post/building-blog-using-hugo/&amp;title=Building%20Blog%20Using%20Hugo" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Building%20Blog%20Using%20Hugo%20https://chen-gary.github.io/post/building-blog-using-hugo/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://chen-gary.github.io/post/building-blog-using-hugo/&amp;title=Building%20Blog%20Using%20Hugo" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+    
+      
+    
+    
+    
+    <div class="media author-card content-widget-hr">
+      
+        
+        <img class="avatar mr-3 avatar-circle" src="/author/gary-chen/avatar_hu1d827532f0efe49b6aad21a24434f5c9_1603201_270x270_fill_q90_lanczos_center.jpg" alt="Gary Chen">
+      
+
+      <div class="media-body">
+        <h5 class="card-title"><a href="https://chen-gary.github.io/">Gary Chen</a></h5>
+        <h6 class="card-subtitle">Undergraduate Majored in CE</h6>
+        <p class="card-text">My research interests include game development, blockchain and digital twin.</p>
+        <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/Chen-Gary" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/honghao-chen" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/files/cv.pdf" >
+        <i class="ai ai-cv"></i>
+      </a>
+    </li>
+  
+</ul>
+
+      </div>
+    </div>
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+            </div>
+        </article>
+  
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.loli.net/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.loli.net/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.loli.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.loli.net/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.loli.net/ajax/libs/highlight.js/10.1.2/highlight.min.js" integrity="sha512-7t8APmYpzEsZP7CYoA7RfMPV9Bb+PJHa9x2WiUnDXZx3XHveuyWUtvNOexhkierl5flZ3tr92dP1mMS+SGlD+A==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.loli.net/ajax/libs/highlight.js/10.1.2/languages/r.min.js"></script>
+        
+        
+      
+
+    
+
+    
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks",
+        'slides' : "Slides"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.loli.net/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.loli.net/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.d4b985b54bd3301c9f0977713cf4cc76.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    © 2021 Gary Chen
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a>
+    for
+    <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>
+    
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

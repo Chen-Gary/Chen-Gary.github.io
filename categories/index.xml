@@ -1,29 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Gary&#39;s Tech Station</title>
+    <title>Categories | Gary Chen</title>
     <link>https://chen-gary.github.io/categories/</link>
-    <description>Recent content in Categories on Gary&#39;s Tech Station</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 03 Mar 2021 16:48:34 +0800</lastBuildDate><atom:link href="https://chen-gary.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Blender</title>
-      <link>https://chen-gary.github.io/categories/blender/</link>
-      <pubDate>Wed, 03 Mar 2021 16:48:34 +0800</pubDate>
-      
-      <guid>https://chen-gary.github.io/categories/blender/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>CSC3050</title>
-      <link>https://chen-gary.github.io/categories/csc3050/</link>
-      <pubDate>Wed, 03 Mar 2021 15:54:26 +0800</pubDate>
-      
-      <guid>https://chen-gary.github.io/categories/csc3050/</guid>
-      <description></description>
-    </item>
+      <atom:link href="https://chen-gary.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <description>Categories</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2021 Gary Chen</copyright><lastBuildDate>Wed, 03 Mar 2021 16:48:34 +0800</lastBuildDate>
+    <image>
+      <url>https://chen-gary.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Categories</title>
+      <link>https://chen-gary.github.io/categories/</link>
+    </image>
     
   </channel>
 </rss>

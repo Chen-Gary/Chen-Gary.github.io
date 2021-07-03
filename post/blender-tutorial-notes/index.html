@@ -1,0 +1,1242 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
+
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Gary Chen">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Tutorial Link: https://www.youtube.com/watch?v=1jHUY3qoBu8">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://chen-gary.github.io/post/blender-tutorial-notes/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/10.1.2/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/10.1.2/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.loli.net/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+  
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="https://chen-gary.github.io/post/blender-tutorial-notes/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="Gary Chen">
+  <meta property="og:url" content="https://chen-gary.github.io/post/blender-tutorial-notes/">
+  <meta property="og:title" content="Blender Tutorial Notes | Gary Chen">
+  <meta property="og:description" content="Tutorial Link: https://www.youtube.com/watch?v=1jHUY3qoBu8"><meta property="og:image" content="https://chen-gary.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+  <meta property="twitter:image" content="https://chen-gary.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2021-03-03T16:48:34&#43;08:00">
+    
+    <meta property="article:modified_time" content="2021-03-03T16:48:34&#43;08:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://chen-gary.github.io/post/blender-tutorial-notes/"
+  },
+  "headline": "Blender Tutorial Notes",
+  
+  "datePublished": "2021-03-03T16:48:34+08:00",
+  "dateModified": "2021-03-03T16:48:34+08:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Gary Chen"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Gary Chen",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://chen-gary.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "Tutorial Link: https://www.youtube.com/watch?v=1jHUY3qoBu8"
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Blender Tutorial Notes | Gary Chen</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class=" ">
+
+  
+  
+  
+    <script>const isSiteThemeDark = false;</script>
+  
+  
+  <script src="/js/load-theme.js"></script>
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Gary Chen</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Gary Chen</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>About</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/files/cv.pdf"><span>CV</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link js-theme-selector" data-toggle="dropdown" aria-haspopup="true">
+          <i class="fas fa-palette" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+
+  
+        <article class="article">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Blender Tutorial Notes</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  
+  <span ><a href="/author/gary-chen/">Gary Chen</a></span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Mar 3, 2021
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    3 min read
+  </span>
+  
+
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/category/blender/">Blender</a></span>
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+            <div class="article-container">
+              <div class="article-style">
+                <p>View: Numpad 1 / 3 / 7, or <code>ctrl</code> + Numpad 1 / 3 / 7</p>
+<p><code>E</code> to extrude</p>
+<blockquote>
+<p><code>alt</code> + <code>E </code> face normal</p>
+</blockquote>
+<p><code>I</code> to insert</p>
+<blockquote>
+<p>double lick <code>I</code></p>
+<p><code>B</code> while doing insert (if <code>B</code> does not work, press <code>I</code> again to disable <strong>individual faces</strong>) (e.g. car window)</p>
+</blockquote>
+<p><code>G</code></p>
+<p><code>S</code></p>
+<p><code>R</code></p>
+<p><code>O</code> proportional editing (when modeling the tree)</p>
+<p><code>ctrl</code> + <code>B</code> Bevel</p>
+<p><code>alt</code> + <code>S</code> shrink / flatten</p>
+<p><code>shift</code> + <code>right click</code> place 3D curser</p>
+<blockquote>
+<p><code>shift</code> + <code>S</code> &gt; Cursor to selected</p>
+<p><code>shift</code> + <code>C</code> re-center 3D curser</p>
+</blockquote>
+<p><code>L</code> select linked (in edit mode)</p>
+<blockquote>
+<p><code>shift</code> + <code>L</code> to deselect linked</p>
+</blockquote>
+<h2 id="selection-method">Selection Method</h2>
+<p><code>L</code></p>
+<p>Loop select: <code>alt</code> + click on edge (in <strong>face selection mode</strong>)</p>
+<p>circle select: <code>C</code></p>
+<blockquote>
+<p>deselect: middle mouse</p>
+</blockquote>
+<p>ring select: <code>alt</code> + <code>ctrl</code> (in <strong>edge select mode</strong>)</p>
+<p>Loop select: <code>alt</code> + click on edge (in <strong>edge selection mode</strong>)</p>
+<p>select shortest path: <code>ctrl</code> (in <strong>edge select mode</strong>)</p>
+<p>box select: <code>B</code> (in <strong>vertex select mode</strong>)</p>
+<p><code>alt</code> + <code>Z</code> enable/disable X-ray (to select the back vertices)</p>
+<p>Lasso select (套索): <code>ctrl</code> + right mouse button</p>
+<p>Grow selection (select all faces neighboring to the selected face): <code>ctrl</code> + Numpad plus <code>+</code></p>
+<blockquote>
+<p>Shrink selection (opposite to <strong>grow selection</strong>): <code>ctrl</code> + <code>-</code></p>
+</blockquote>
+<p>select random</p>
+<p>select similar: <code>shift</code> + <code>G</code></p>
+<p>checker deselect (间隔选中效果，像足球那样): <code>F</code></p>
+<p><code>H</code> hide selected objects</p>
+<blockquote>
+<p><code>alt</code> + <code>H</code> unhide all</p>
+</blockquote>
+<p><code>ctrl</code> + <code>I</code>: Invert selection (选中所有未被当前选中的东西)</p>
+<hr>
+<p>Loop cut: <code>ctrl</code> + <code>R</code></p>
+<p>Knife tool: <code>K</code></p>
+<blockquote>
+<p><code>ctrl</code>: snap to center with knife tool</p>
+<p><code>C</code>: angle constraint with knife tool</p>
+</blockquote>
+<p><code>ctrl</code> + 1-5: <strong>subdivision modifier</strong> (remember to <strong>apply</strong> this modifier)</p>
+<blockquote>
+<p>if it make the object <strong>not low-poly</strong>, then use <strong>Decimate modifier</strong> to make it back to low-poly.</p>
+<p>(see video around 48:00)</p>
+</blockquote>
+<p><code>,</code>: Orientation</p>
+<p>snap (上方的磁贴icon) (hotkey: <code>ctrl</code> when using <code>G</code>) &mdash;-&gt; 把两个vertices连在一起 (注意：这样snap后，实际上仍然是两个vertices) &mdash;&mdash;&gt; two solutions</p>
+<blockquote>
+<ol>
+<li>use <strong>snap</strong> along with <strong>Auto Merge Vertices</strong></li>
+<li>after <strong>snap</strong>, <code>A</code> to select all, then <code>M</code> to merge <code>merge by distance</code></li>
+</ol>
+</blockquote>
+<blockquote>
+<p>snap along an <strong>axis</strong>, instead of snap two vertices, to <strong>align</strong></p>
+</blockquote>
+<p>after delete some faces, use <code>F</code> to <strong>Fill / Create face(s)</strong> (自动填补holes)</p>
+<blockquote>
+<ol>
+<li>select the whole object and <code>F</code></li>
+<li>select certain edges and <code>F</code></li>
+</ol>
+</blockquote>
+<p>after selecting 2 vertices, press <code>J</code> / <code>F</code> to add an edge between these 2 vertices (<code>J</code> will make the object more low-poly, while <code>F</code> simply add an edge without affecting the original shape)</p>
+<p>Besides <code>J</code>, we can use <code>ctrl</code> + <code>T</code> to <strong>Triangulate selection</strong> to make a round face more low-poly after using <code>F</code> to <strong>Fill a hole</strong></p>
+<p>setting: enable <strong>Backface Culling</strong></p>
+<p><code>F3</code> search <strong>flip normal</strong> (or <code>alt</code> + <code>N</code>)</p>
+<p>some faces are <strong>flipped</strong>, to fix it <code>alt</code> + <code>N</code> &gt; <strong>recalculate outside</strong></p>
+<p><code>X</code> dissolve edges</p>
+<p>To connect two meshes inside one object into one single mesh, select two faces which you want to connect and <code>F3</code> &gt; <strong>Bridge Edge Loops</strong></p>
+<p>tips: <code>shift</code> + <code>D</code> to duplicate a face, <code>right mouse</code> to put the new face exactly the same location as the original one</p>
+<p>Separate selection to new object: <code>P</code></p>
+<p>Merge into a single object: <code>ctrl</code> + <code>J</code></p>
+<h2 id="modifiers">Modifiers</h2>
+<p>Mirror modifier (use <strong>auto mirror</strong> add-on)</p>
+<p>Subdivision surface modifier: <code>ctrl</code> + <code>5 or other</code> (subdivide a plane to create low-poly island)</p>
+<p>Displace modifier (low-poly landscape)</p>
+<p>Skin modifier (use with <strong>extra mesh add-on</strong>, so that we can add <strong>single vertex</strong>, and then build a low-poly tree)</p>
+<blockquote>
+<p><code>A</code> to select all, and then <code>ctrl</code> + <code>A</code> to scale</p>
+</blockquote>
+<hr>
+<h2 id="tips">Tips</h2>
+<p>If we scare the object outside edit mode, <code>ctrl</code> + <code>A</code> &gt; apply scale to make the scare <code>1, 1, 1</code> again!</p>
+<p><code>Numpad .</code>: to make viewport rotate around selection</p>
+
+              </div>
+              
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/blender/">Blender</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://chen-gary.github.io/post/blender-tutorial-notes/&amp;text=Blender%20Tutorial%20Notes" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://chen-gary.github.io/post/blender-tutorial-notes/&amp;t=Blender%20Tutorial%20Notes" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Blender%20Tutorial%20Notes&amp;body=https://chen-gary.github.io/post/blender-tutorial-notes/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://chen-gary.github.io/post/blender-tutorial-notes/&amp;title=Blender%20Tutorial%20Notes" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Blender%20Tutorial%20Notes%20https://chen-gary.github.io/post/blender-tutorial-notes/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://chen-gary.github.io/post/blender-tutorial-notes/&amp;title=Blender%20Tutorial%20Notes" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+    
+      
+    
+    
+    
+    <div class="media author-card content-widget-hr">
+      
+        
+        <img class="avatar mr-3 avatar-circle" src="/author/gary-chen/avatar_hu1d827532f0efe49b6aad21a24434f5c9_1603201_270x270_fill_q90_lanczos_center.jpg" alt="Gary Chen">
+      
+
+      <div class="media-body">
+        <h5 class="card-title"><a href="https://chen-gary.github.io/">Gary Chen</a></h5>
+        <h6 class="card-subtitle">Undergraduate Majored in CE</h6>
+        <p class="card-text">My research interests include game development, blockchain and digital twin.</p>
+        <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/Chen-Gary" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/honghao-chen" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/files/cv.pdf" >
+        <i class="ai ai-cv"></i>
+      </a>
+    </li>
+  
+</ul>
+
+      </div>
+    </div>
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Related</h3>
+    <ul>
+      
+      <li><a href="/post/blender-import-material-and-setup-material-library/">Blender Import Material and Setup Material Library</a></li>
+      
+      <li><a href="/post/blender-uv-coloring-method/">Blender UV Coloring Method</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+
+            </div>
+        </article>
+  
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.loli.net/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.loli.net/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.loli.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.loli.net/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.loli.net/ajax/libs/highlight.js/10.1.2/highlight.min.js" integrity="sha512-7t8APmYpzEsZP7CYoA7RfMPV9Bb+PJHa9x2WiUnDXZx3XHveuyWUtvNOexhkierl5flZ3tr92dP1mMS+SGlD+A==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.loli.net/ajax/libs/highlight.js/10.1.2/languages/r.min.js"></script>
+        
+        
+      
+
+    
+
+    
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks",
+        'slides' : "Slides"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.loli.net/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.loli.net/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.d4b985b54bd3301c9f0977713cf4cc76.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    © 2021 Gary Chen
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a>
+    for
+    <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>
+    
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

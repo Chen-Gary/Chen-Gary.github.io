@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo | Gary Chen</title>
+    <link>https://chen-gary.github.io/tag/hugo/</link>
+      <atom:link href="https://chen-gary.github.io/tag/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <description>Hugo</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2021 Gary Chen</copyright><lastBuildDate>Sun, 06 Jun 2021 11:48:17 +0800</lastBuildDate>
+    <image>
+      <url>https://chen-gary.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Hugo</title>
+      <link>https://chen-gary.github.io/tag/hugo/</link>
+    </image>
+    
+    <item>
+      <title>Building Blog Using Hugo</title>
+      <link>https://chen-gary.github.io/post/building-blog-using-hugo/</link>
+      <pubDate>Sun, 06 Jun 2021 11:48:17 +0800</pubDate>
+      <guid>https://chen-gary.github.io/post/building-blog-using-hugo/</guid>
+      <description>&lt;h2 id=&#34;摘要&#34;&gt;摘要&lt;/h2&gt;
+&lt;p&gt;在Windows平台下安装、配置Hugo，并通过Github Pages部署个人博客&lt;/p&gt;
+&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;本来打算把这篇文章作为博客的第一篇post，结果拖了将近半年 ╥﹏╥&amp;hellip;&lt;/p&gt;
+&lt;p&gt;写这篇文章一是为了给自己的博客留个纪念；二是梳理一下自己大体的博客搭建流程，方便后期debug甚至重构；三或许还能帮助到一些有缘人？&lt;/p&gt;
+&lt;p&gt;听说百度的爬虫爬不到github.io域名的内容，再加上这种个人博客本身就做不到很好的SEO。以后的博文大概率也就是一名新手“码农”的“自嗨” ︿(￣︶￣)︿，不过能有一个整理自己笔记和想法的小空间也真是一件很开心的啊！希望能坚持下来！&lt;/p&gt;
+&lt;p&gt;不多bb，准备开始！&lt;/p&gt;
+&lt;h2 id=&#34;先决条件&#34;&gt;先决条件&lt;/h2&gt;
+&lt;p&gt;我使用的工具：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Git 2.30.0&lt;/li&gt;
+&lt;li&gt;Hugo v0.80.0&lt;/li&gt;
+&lt;li&gt;一个注册好的GitHub账号&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;前置知识：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;了解最最基本的Git操作&lt;/li&gt;
+&lt;li&gt;对GitHub有一点点了解&lt;/li&gt;
+&lt;li&gt;会使用markdown编写文章&lt;/li&gt;
+&lt;li&gt;难度不大，但还是希望你有一颗勇于折腾的心&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;更新并配置git&#34;&gt;更新并配置Git&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;git --version					# check the version of git
+
+git update-git-for-windows		# update git to the latest version
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;GitHub最近（当你看到这篇文章的时候已经不是最近了）把原先默认的&lt;code&gt;master&lt;/code&gt;分支改名成了&lt;code&gt;main&lt;/code&gt;，为了紧跟潮流，也为了满足自己的强迫症，这里选择更新git版本&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;# 配置
+git config --global user.name &amp;quot;&amp;lt;user_name&amp;gt;&amp;quot;
+git config --global user.email &amp;lt;example&amp;gt;@gmail.com
+
+git config --list
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;更多Git基础操作可以参考
+&lt;a href=&#34;https://chen-gary.github.io/p/git-basic-skills/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;我的笔记&lt;/a&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;安装hugo&#34;&gt;安装Hugo&lt;/h2&gt;
+&lt;p&gt;相较于Mac和Linux，Hugo在Windows下的安装相对复杂。我们这里选择使用编译好的Windows可执行文件进行安装。安装路径我选择D盘的根目录，你也可以选择其他路径。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;在D盘根目录下创建新文件夹&lt;code&gt;Hugo&lt;/code&gt;，并在&lt;code&gt;D:\Hugo&lt;/code&gt;下新建文件夹&lt;code&gt;bin&lt;/code&gt;和&lt;code&gt;Sites&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;D:\Hugo\bin&lt;/code&gt;将存放Hugo可执行文件&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;D:\Hugo\Sites&lt;/code&gt;将存放以后博客的git仓库&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;到
+&lt;a href=&#34;https://github.com/gohugoio/hugo/releases&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo的GitHub仓库&lt;/a&gt;下载最新的Hugo二进制文件，我下载的是&lt;code&gt;hugo_0.80.0_Windows-64bit.zip&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;解压下载好的压缩包至&lt;code&gt;D:\Hugo\bin&lt;/code&gt;。现在你应该能看到&lt;code&gt;D:\Hugo\bin&lt;/code&gt;中有三个文件&lt;code&gt;hugo.exe&lt;/code&gt;, &lt;code&gt;LICENSE&lt;/code&gt;及&lt;code&gt;README.md&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;在&lt;code&gt;D:\Hugo\bin&lt;/code&gt;下打开cmd，执行&lt;code&gt;hugo version&lt;/code&gt;和&lt;code&gt;hugo help&lt;/code&gt;应该能得到适当的反馈。但在其他路径下，这两条命令却无法正确执行，所以接下来我们要&lt;strong&gt;配置系统环境变量&lt;/strong&gt;，使Hugo命令可以在任意路径下使用&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;为Hugo配置系统环境变量&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;搜索并打开Edit the system environment variables&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;点击Environment Variables&amp;hellip;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在User variables中双击Path&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;点击New，添加&lt;code&gt;D:\Hugo\bin&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;验证环境变量是否配置成功&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;echo %PATH%						# 确保能找到D:\Hugo\bin
+
+hugo version					# 在任意路径下均可正确执行
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;（注：配置完环境变量后，可能需要等一段时间才能正常使用Hugo命令）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;恭喜！现在Hugo已经安装完成，接下来我们用它开始搭建自己的博客吧！&lt;/p&gt;
+&lt;h2 id=&#34;搭建本地博客&#34;&gt;搭建本地博客&lt;/h2&gt;
+&lt;h3 id=&#34;初始化博客&#34;&gt;初始化博客&lt;/h3&gt;
+&lt;p&gt;在&lt;code&gt;D:\Hugo\Sites&lt;/code&gt;下启动cmd，使用命令&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;hugo new site &amp;lt;name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;由于我们将把本地博客部署到GitHub，这里我们把&lt;code&gt;&amp;lt;name&amp;gt;&lt;/code&gt;换成&lt;code&gt;&amp;lt;github_user_name&amp;gt;.github.io&lt;/code&gt;，比如我使用&lt;code&gt;hugo new site Chen-Gary.github.io&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;你会发现Hugo在&lt;code&gt;D:\Hugo\Sites&lt;/code&gt;下创建了一个新文件夹&lt;code&gt;Chen-Gary.github.io&lt;/code&gt;里面已经包含了一些文件&lt;/p&gt;
+&lt;h3 id=&#34;下载主题&#34;&gt;下载主题&lt;/h3&gt;
+&lt;p&gt;（如果没有特殊说明，所有命令都默认在博客的根目录下执行，即&lt;code&gt;/d/Hugo/Sites/Chen-Gary.github.io&lt;/code&gt;）&lt;/p&gt;
+&lt;p&gt;在
+&lt;a href=&#34;https://themes.gohugo.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo主题库&lt;/a&gt;找到一个你喜欢的主题，下面的步骤将以
+&lt;a href=&#34;https://themes.gohugo.io/hugo-theme-stack/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Stack&lt;/a&gt;为例。下载主题本质就是git克隆，通常这些主题都会在README或
+&lt;a href=&#34;https://docs.stack.jimmycai.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Documentation&lt;/a&gt;中提供克隆命令（也可以下载对应主题GitHub上的release版本，操作类似，请参考对应主题的Documentation）&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;git clone https://github.com/CaiJimmy/hugo-theme-stack/themes/hugo-theme-stack
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;（注：如果采用下载release版本主题的方法，请忽视以下内容）&lt;/p&gt;
+&lt;p&gt;克隆完成后，&lt;code&gt;themes/hugo-theme-stack&lt;/code&gt;会是一个给git仓库，由于后期我们会将把博客的根目录&lt;code&gt;Chen-Gary.github.io&lt;/code&gt;也变为git仓库，为避免仓库套仓库的情况，这里有两种解决策略：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;删除&lt;code&gt;themes/hugo-theme-stack&lt;/code&gt;中的，&lt;code&gt;.git&lt;/code&gt;文件下把git仓库变成普通文件夹（我采取这个方案，因为后期我们可能大规模“定制”下载的主题，需要对主题内的文件进行版本控制；另外，还因为我不太搞得懂git submodule。。。）&lt;/li&gt;
+&lt;li&gt;使用git的submodule feature（不太推荐）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;本地测试&#34;&gt;本地测试&lt;/h3&gt;
+&lt;p&gt;使用以下命令测试。值得注意的是Stack主题有一些很坑爹的细节，搞了我很久。下一小节我会详说。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;hugo server -t &amp;lt;theme_name&amp;gt; --buildDrafts
+
+# example
+hugo server -t hugo-theme-stack --buildDrafts
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;根据命令行提示，在浏览器进入http://localhost:1313/预览博客效果。&lt;/p&gt;
+&lt;p&gt;测试完成后，使用&lt;code&gt;Ctrl&lt;/code&gt; + &lt;code&gt;C&lt;/code&gt;结束server。&lt;/p&gt;
+&lt;h3 id=&#34;修改配置文件&#34;&gt;修改配置文件&lt;/h3&gt;
+&lt;p&gt;修改博客根目录下的&lt;code&gt;config.toml&lt;/code&gt;或&lt;code&gt;config.yaml&lt;/code&gt;。注意很多主题是会提供配置文件样板的，如果有请使用主题提供的配置文件。&lt;code&gt;config.toml&lt;/code&gt;和&lt;code&gt;config.yaml&lt;/code&gt;只需一个（也只能有一个），删除多余的配置文件。&lt;/p&gt;
+&lt;p&gt;至少进行以下配置（以&lt;code&gt;config.toml&lt;/code&gt;为例）：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;baseURL = &amp;quot;https://&amp;lt;github_user_name&amp;gt;.github.io/&amp;quot;
+languageCode = &amp;quot;en-us&amp;quot;
+title = &amp;quot;Gary&#39;s Blog Site&amp;quot;
+
+theme=&amp;quot;theme_name&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;由于在配置文件中指定了主题，以后进行本地测试只需：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;hugo server
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;baseURL&lt;/code&gt;相当重要，这里提前配置好，后文会进一步解释。&lt;/p&gt;
+&lt;h3 id=&#34;关于stack主题&#34;&gt;*关于Stack主题&lt;/h3&gt;
+&lt;p&gt;Stack是个相当好看的主题。事实上，这个主题是吸引我使用Hugo的原因之一，但是有一些小细节相当坑爹（对于新手来说）。&lt;/p&gt;
+&lt;p&gt;在进行本地测试&lt;strong&gt;之前&lt;/strong&gt;，执行以下操作：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;复制&lt;code&gt;\themes\hugo-theme-stack\exampleSite&lt;/code&gt;的内容至博客根目录，部分原有的文件会被覆盖。&lt;/li&gt;
+&lt;li&gt;删除Hugo原先自动生成的&lt;code&gt;config.toml&lt;/code&gt;，以后的配置我们会直接使用Stack主题提供的&lt;code&gt;config.yaml&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;删除&lt;code&gt;\content\post\rich-content&lt;/code&gt;。原因是这篇sample post里使用了推特短代码，这会导致Hugo无法生成网页。&lt;/li&gt;
+&lt;li&gt;更多个性化操作请参考Stack主题提供的&lt;code&gt;config.yaml&lt;/code&gt;文件及
+&lt;a href=&#34;https://docs.stack.jimmycai.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;它的官方文档&lt;/a&gt;。如果你愿意也可以修改主题的HTML文件等。。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;至此，你已经拥有了自己的本地博客库，并预览了发布后的效果。接下来可以开始写博文了！&lt;/p&gt;
+&lt;h2 id=&#34;本地发布博文&#34;&gt;本地发布博文&lt;/h2&gt;
+&lt;p&gt;使用以下命令新建博文&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;hugo new post/&amp;lt;article_name&amp;gt;.md              # new blog/article
+
+hugo new post/&amp;lt;article_name&amp;gt;/index.md        # new blog/article (recommended)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;空白的博文会被生成在&lt;code&gt;\content\post&lt;/code&gt;目录下。&lt;/p&gt;
+&lt;p&gt;注意：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;article_name&amp;gt;&lt;/code&gt;使用连字符隔开单词 e.g. &lt;code&gt;hugo new post/git-basic-skills/index.md&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;推荐使用&lt;code&gt;hugo new post/&amp;lt;article_name&amp;gt;/index.md&lt;/code&gt;，这样文章中的图片可以放在&lt;code&gt;\content\post\&amp;lt;article_name&amp;gt;&lt;/code&gt;中&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;现在，你可以使用喜欢的markdown编辑器编写博文。完成后用&lt;code&gt;hugo server&lt;/code&gt;命令进行本地测试。&lt;/p&gt;
+&lt;h2 id=&#34;生成网页&#34;&gt;生成网页&lt;/h2&gt;
+&lt;p&gt;有了前面的铺垫，生成网页相当简单，完整命令如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;hugo --theme=&amp;lt;theme_name&amp;gt; --baseUrl=&amp;quot;https://&amp;lt;user_name&amp;gt;.github.io&amp;quot; --buildDrafts
+# a folder `public` will be created
+
+# example
+hugo --theme=m10c --baseUrl=&amp;quot;https://Gary-Hh-Chen.github.io&amp;quot; --buildDrafts
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;由于&lt;code&gt;theme&lt;/code&gt;及&lt;code&gt;baseUrl&lt;/code&gt;已在配置文件 (&lt;code&gt;config.yaml&lt;/code&gt;) 中设置好了，命名可以被简化为：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;hugo
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;就是这么简洁，网页会被生成在博客根目录的&lt;code&gt;public&lt;/code&gt;文件夹中。&lt;/p&gt;
+&lt;h2 id=&#34;部署博客至github&#34;&gt;部署博客至GitHub&lt;/h2&gt;
+&lt;p&gt;以下方法由Hugo官方文档修改得来。不知道为什么，
+&lt;a href=&#34;https://gohugo.io/hosting-and-deployment/hosting-on-github/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;这部分的官方文档&lt;/a&gt;被简化了很多。之前的文档虽然有bug，但相当详细。好在我们可以在
+&lt;a href=&#34;https://github.com/gohugoio/hugoDocs/releases&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;官方文档的GitHub仓库&lt;/a&gt;下载旧版文档。我参考的是
+&lt;a href=&#34;https://github.com/gohugoio/hugoDocs/releases/tag/v0.80.0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;v0.80.0版本的文档&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;我们借助GitHub Pages服务部署博客。&lt;/p&gt;
+&lt;p&gt;这里，我们选择从GitHub仓库的gh-pages分支发布网页。除此之外，还可以：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;从&lt;code&gt;main&lt;/code&gt;分支直接发布网页&lt;/li&gt;
+&lt;li&gt;从&lt;code&gt;main&lt;/code&gt;分支的&lt;code&gt;docs&lt;/code&gt;文件夹发布网页&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这里我们不讨论三种方法的优劣，具体优劣可以参考
+&lt;a href=&#34;https://github.com/gohugoio/hugoDocs/releases/tag/v0.80.0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;旧版官方文档&lt;/a&gt;。具体操作如下：&lt;/p&gt;
+&lt;p&gt;（注：以下步骤只需操作一次）&lt;/p&gt;
+&lt;h3 id=&#34;1-建立仓库&#34;&gt;1. 建立仓库&lt;/h3&gt;
+&lt;p&gt;在GitHub建立新的public repository（空仓库，不添加README等），仓库的名字必须为&lt;code&gt;&amp;lt;github_user_name&amp;gt;.github.io&lt;/code&gt;，如&lt;code&gt;Chen-Gary.github.io&lt;/code&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;2-修改gitignore&#34;&gt;2. 修改&lt;code&gt;.gitignore&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;把&lt;code&gt;public&lt;/code&gt;文件夹加入&lt;code&gt;.gitignore&lt;/code&gt;，因为我们不需要把生成的网页推送到&lt;code&gt;main&lt;/code&gt;分支。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;echo &amp;quot;public&amp;quot; &amp;gt;&amp;gt; .gitignore
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;3-链接本地仓库&#34;&gt;3. 链接本地仓库&lt;/h3&gt;
+&lt;p&gt;在博客根目录下，使用以下命令建立git仓库并链接至远端：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;git init
+git remote add origin https://github.com/&amp;lt;user_name&amp;gt;/&amp;lt;user_name&amp;gt;.github.io.git
+git add . 
+git commit -m &amp;quot;first commit for my blog&amp;quot;
+git push -u origin main
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;此时博客的源文件已被推送到远端仓库。&lt;/p&gt;
+&lt;h3 id=&#34;4-初始化gh-pages-分支&#34;&gt;4. 初始化&lt;code&gt;gh-pages&lt;/code&gt; 分支&lt;/h3&gt;
+&lt;p&gt;说实话，后面这几个分支操作我是不太懂的。。。不过，能用就行不是吗？&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You can now initialize your &lt;code&gt;gh-pages&lt;/code&gt; branch as an empty [orphan branch][]:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;git checkout --orphan gh-pages
+git reset --hard
+git commit --allow-empty -m &amp;quot;Initializing gh-pages branch&amp;quot;
+git push upstream gh-pages
+git checkout main
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;5-生成网页并部署&#34;&gt;5. 生成网页并部署&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Now check out the &lt;code&gt;gh-pages&lt;/code&gt; branch into your &lt;code&gt;public&lt;/code&gt; folder using git&amp;rsquo;s [worktree feature][]. Essentially, the worktree allows you to have multiple branches of the same local repository to be checked out in different directories:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;rm -rf public
+git worktree add -B gh-pages public upstream/gh-pages
+
+hugo
+cd public &amp;amp;&amp;amp; git add --all &amp;amp;&amp;amp; git commit -m &amp;quot;Publishing to gh-pages&amp;quot; &amp;amp;&amp;amp; cd ..
+
+git push upstream gh-pages
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;6-设置仓库&#34;&gt;6. 设置仓库&lt;/h3&gt;
+&lt;p&gt;在刚刚建好的GitHub仓库页面进入 Settings &amp;gt; Pages &amp;gt; Source，进行以下设置：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;设置为从gh-pages分支发布网页。&lt;/p&gt;
+&lt;p&gt;等上一小会，你的博客就部署成功了！你可以在 https://&amp;lt;github_user_name&amp;gt;.github.io/ 访问你的博客！&lt;/p&gt;
+&lt;p&gt;但是，等等，每次更新博客都要进行这么多命令行操作吗？这也太麻烦了吧！好在我们可以写一个脚本，把部署需要的命令都写在脚本里，就不需要每次都敲这么多命令了。&lt;/p&gt;
+&lt;h2 id=&#34;自动化更新博文&#34;&gt;自动化更新博文&lt;/h2&gt;
+&lt;p&gt;接下来我们将写一个&lt;code&gt;.sh&lt;/code&gt; script帮助我们部署网页。&lt;/p&gt;
+&lt;p&gt;在博客根目录下新建&lt;code&gt;deploy_to_ghpages.sh&lt;/code&gt;，加入以下代码：&lt;/p&gt;
+&lt;p&gt;（注：以下代码由Hugo官方文档的代码修改而来）&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;#!/bin/sh
+
+if [ &amp;quot;`git status -s`&amp;quot; ]
+then
+    echo &amp;quot;The working directory is dirty. Please commit any pending changes.&amp;quot;
+    exit 1;
+fi
+
+echo &amp;quot;Deleting old publication&amp;quot;
+rm -rf public
+mkdir public
+git worktree prune
+rm -rf .git/worktrees/public/
+
+echo &amp;quot;Checking out gh-pages branch into public&amp;quot;
+git worktree add -B gh-pages public origin/gh-pages
+
+echo &amp;quot;Removing existing files&amp;quot;
+rm -rf public/*
+
+echo &amp;quot;Generating site&amp;quot;
+hugo
+
+echo &amp;quot;Updating gh-pages branch&amp;quot;
+cd public &amp;amp;&amp;amp; git add --all &amp;amp;&amp;amp; git commit -m &amp;quot;Publishing to gh-pages (deploy_to_ghpages.sh)&amp;quot; &amp;amp;&amp;amp; cd ..
+
+echo &amp;quot;Pushing to github&amp;quot;
+#git push --all           # use this command or `git push origin gh-pages` should be both OK
+git push origin gh-pages
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这段代码大概做了：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;检查仓库是否有未commit的修改，如有，则终止部署&lt;/li&gt;
+&lt;li&gt;如果仓库clean，则自动重新生成新的网页，并推送网页至gh-pages分支&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;将&lt;code&gt;deploy_to_ghpages.sh&lt;/code&gt; commit 进仓库。&lt;/p&gt;
+&lt;p&gt;至此所有准备工作都已就绪，你可以开始在自己的博客中发布文章了！如果你已经忘记了之前提到的一系列命令，没关系，下一节我会整理发布或更新博文所需的全部命令！&lt;/p&gt;
+&lt;h2 id=&#34;总结---发布博文流程&#34;&gt;总结 - 发布博文流程&lt;/h2&gt;
+&lt;p&gt;如果你按照以上流程初始化好了你的博客，接下来想要更新文章会非常简单：&lt;/p&gt;
+&lt;p&gt;（注：由于&lt;code&gt;.sh&lt;/code&gt;文件需要在git bash中执行，以下命令默认都在git bash中执行）&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git status
+
+hugo new post/&amp;lt;article_name&amp;gt;/index.md        # new blog/article (recommended)
+
+# 编写博文...
+
+hugo server               # local test (optional)
+
+git add . 
+git commit -m &amp;quot;add new post XXXX&amp;quot;
+git push
+
+./deploy_to_ghpages.sh    # deploy
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;同时，我们也梳理一下GitHub仓库的文件结构：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;main&lt;/code&gt;分支：博客的源文件，可以通过这些源文件生成网页。你需要在这个分支上，对博客源文件进行正常的版本控制。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;gh-pages&lt;/code&gt;分支：由Hugo基于博客源文件生成的静态博客网页，是GitHub Pages生成网站所需的所有内容。这个分支纯由Hugo生成，无需对该分支的版本进行过多理会。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;至此，借助Hugo和GitHub搭建个人博客的全部流程都结束啦！开始经营这个属于自己的小天地吧！&lt;/p&gt;
+&lt;h2 id=&#34;附录&#34;&gt;附录&lt;/h2&gt;
+&lt;h3 id=&#34;好看的主题&#34;&gt;好看的主题&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://themes.gohugo.io/hugo-theme-stack/&#34;&gt;https://themes.gohugo.io/hugo-theme-stack/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.stack.jimmycai.com/&#34;&gt;https://docs.stack.jimmycai.com/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://themes.gohugo.io/loveit/&#34;&gt;https://themes.gohugo.io/loveit/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;多语言支持&#34;&gt;多语言支持&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://pzhao.org/zh/post/hugo-multilingual/&#34;&gt;https://pzhao.org/zh/post/hugo-multilingual/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://gohugo.io/content-management/multilingual/&#34;&gt;https://gohugo.io/content-management/multilingual/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://regisphilibert.com/blog/2018/08/hugo-multilingual-part-1-managing-content-translation/&#34;&gt;https://regisphilibert.com/blog/2018/08/hugo-multilingual-part-1-managing-content-translation/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;svg图下载&#34;&gt;SVG图下载&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://tablericons.com/&#34;&gt;https://tablericons.com/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

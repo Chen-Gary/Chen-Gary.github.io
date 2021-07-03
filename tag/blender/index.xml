@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blender | Gary Chen</title>
+    <link>https://chen-gary.github.io/tag/blender/</link>
+      <atom:link href="https://chen-gary.github.io/tag/blender/index.xml" rel="self" type="application/rss+xml" />
+    <description>Blender</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2021 Gary Chen</copyright><lastBuildDate>Wed, 03 Mar 2021 16:48:34 +0800</lastBuildDate>
+    <image>
+      <url>https://chen-gary.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Blender</title>
+      <link>https://chen-gary.github.io/tag/blender/</link>
+    </image>
+    
+    <item>
+      <title>Blender Tutorial Notes</title>
+      <link>https://chen-gary.github.io/post/blender-tutorial-notes/</link>
+      <pubDate>Wed, 03 Mar 2021 16:48:34 +0800</pubDate>
+      <guid>https://chen-gary.github.io/post/blender-tutorial-notes/</guid>
+      <description>&lt;p&gt;View: Numpad 1 / 3 / 7, or &lt;code&gt;ctrl&lt;/code&gt; + Numpad 1 / 3 / 7&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;E&lt;/code&gt; to extrude&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;alt&lt;/code&gt; + &lt;code&gt;E &lt;/code&gt; face normal&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;I&lt;/code&gt; to insert&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;double lick &lt;code&gt;I&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;B&lt;/code&gt; while doing insert (if &lt;code&gt;B&lt;/code&gt; does not work, press &lt;code&gt;I&lt;/code&gt; again to disable &lt;strong&gt;individual faces&lt;/strong&gt;) (e.g. car window)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;G&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;S&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;R&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;O&lt;/code&gt; proportional editing (when modeling the tree)&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ctrl&lt;/code&gt; + &lt;code&gt;B&lt;/code&gt; Bevel&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;alt&lt;/code&gt; + &lt;code&gt;S&lt;/code&gt; shrink / flatten&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;shift&lt;/code&gt; + &lt;code&gt;right click&lt;/code&gt; place 3D curser&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;shift&lt;/code&gt; + &lt;code&gt;S&lt;/code&gt; &amp;gt; Cursor to selected&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;shift&lt;/code&gt; + &lt;code&gt;C&lt;/code&gt; re-center 3D curser&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;L&lt;/code&gt; select linked (in edit mode)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;shift&lt;/code&gt; + &lt;code&gt;L&lt;/code&gt; to deselect linked&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;selection-method&#34;&gt;Selection Method&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;L&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Loop select: &lt;code&gt;alt&lt;/code&gt; + click on edge (in &lt;strong&gt;face selection mode&lt;/strong&gt;)&lt;/p&gt;
+&lt;p&gt;circle select: &lt;code&gt;C&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;deselect: middle mouse&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;ring select: &lt;code&gt;alt&lt;/code&gt; + &lt;code&gt;ctrl&lt;/code&gt; (in &lt;strong&gt;edge select mode&lt;/strong&gt;)&lt;/p&gt;
+&lt;p&gt;Loop select: &lt;code&gt;alt&lt;/code&gt; + click on edge (in &lt;strong&gt;edge selection mode&lt;/strong&gt;)&lt;/p&gt;
+&lt;p&gt;select shortest path: &lt;code&gt;ctrl&lt;/code&gt; (in &lt;strong&gt;edge select mode&lt;/strong&gt;)&lt;/p&gt;
+&lt;p&gt;box select: &lt;code&gt;B&lt;/code&gt; (in &lt;strong&gt;vertex select mode&lt;/strong&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;alt&lt;/code&gt; + &lt;code&gt;Z&lt;/code&gt; enable/disable X-ray (to select the back vertices)&lt;/p&gt;
+&lt;p&gt;Lasso select (套索): &lt;code&gt;ctrl&lt;/code&gt; + right mouse button&lt;/p&gt;
+&lt;p&gt;Grow selection (select all faces neighboring to the selected face): &lt;code&gt;ctrl&lt;/code&gt; + Numpad plus &lt;code&gt;+&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Shrink selection (opposite to &lt;strong&gt;grow selection&lt;/strong&gt;): &lt;code&gt;ctrl&lt;/code&gt; + &lt;code&gt;-&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;select random&lt;/p&gt;
+&lt;p&gt;select similar: &lt;code&gt;shift&lt;/code&gt; + &lt;code&gt;G&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;checker deselect (间隔选中效果，像足球那样): &lt;code&gt;F&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;H&lt;/code&gt; hide selected objects&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;alt&lt;/code&gt; + &lt;code&gt;H&lt;/code&gt; unhide all&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;ctrl&lt;/code&gt; + &lt;code&gt;I&lt;/code&gt;: Invert selection (选中所有未被当前选中的东西)&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Loop cut: &lt;code&gt;ctrl&lt;/code&gt; + &lt;code&gt;R&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Knife tool: &lt;code&gt;K&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;ctrl&lt;/code&gt;: snap to center with knife tool&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;C&lt;/code&gt;: angle constraint with knife tool&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;ctrl&lt;/code&gt; + 1-5: &lt;strong&gt;subdivision modifier&lt;/strong&gt; (remember to &lt;strong&gt;apply&lt;/strong&gt; this modifier)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;if it make the object &lt;strong&gt;not low-poly&lt;/strong&gt;, then use &lt;strong&gt;Decimate modifier&lt;/strong&gt; to make it back to low-poly.&lt;/p&gt;
+&lt;p&gt;(see video around 48:00)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;,&lt;/code&gt;: Orientation&lt;/p&gt;
+&lt;p&gt;snap (上方的磁贴icon) (hotkey: &lt;code&gt;ctrl&lt;/code&gt; when using &lt;code&gt;G&lt;/code&gt;) &amp;mdash;-&amp;gt; 把两个vertices连在一起 (注意：这样snap后，实际上仍然是两个vertices) &amp;mdash;&amp;mdash;&amp;gt; two solutions&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;use &lt;strong&gt;snap&lt;/strong&gt; along with &lt;strong&gt;Auto Merge Vertices&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;after &lt;strong&gt;snap&lt;/strong&gt;, &lt;code&gt;A&lt;/code&gt; to select all, then &lt;code&gt;M&lt;/code&gt; to merge &lt;code&gt;merge by distance&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;snap along an &lt;strong&gt;axis&lt;/strong&gt;, instead of snap two vertices, to &lt;strong&gt;align&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;after delete some faces, use &lt;code&gt;F&lt;/code&gt; to &lt;strong&gt;Fill / Create face(s)&lt;/strong&gt; (自动填补holes)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;select the whole object and &lt;code&gt;F&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;select certain edges and &lt;code&gt;F&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;after selecting 2 vertices, press &lt;code&gt;J&lt;/code&gt; / &lt;code&gt;F&lt;/code&gt; to add an edge between these 2 vertices (&lt;code&gt;J&lt;/code&gt; will make the object more low-poly, while &lt;code&gt;F&lt;/code&gt; simply add an edge without affecting the original shape)&lt;/p&gt;
+&lt;p&gt;Besides &lt;code&gt;J&lt;/code&gt;, we can use &lt;code&gt;ctrl&lt;/code&gt; + &lt;code&gt;T&lt;/code&gt; to &lt;strong&gt;Triangulate selection&lt;/strong&gt; to make a round face more low-poly after using &lt;code&gt;F&lt;/code&gt; to &lt;strong&gt;Fill a hole&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;setting: enable &lt;strong&gt;Backface Culling&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;F3&lt;/code&gt; search &lt;strong&gt;flip normal&lt;/strong&gt; (or &lt;code&gt;alt&lt;/code&gt; + &lt;code&gt;N&lt;/code&gt;)&lt;/p&gt;
+&lt;p&gt;some faces are &lt;strong&gt;flipped&lt;/strong&gt;, to fix it &lt;code&gt;alt&lt;/code&gt; + &lt;code&gt;N&lt;/code&gt; &amp;gt; &lt;strong&gt;recalculate outside&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;X&lt;/code&gt; dissolve edges&lt;/p&gt;
+&lt;p&gt;To connect two meshes inside one object into one single mesh, select two faces which you want to connect and &lt;code&gt;F3&lt;/code&gt; &amp;gt; &lt;strong&gt;Bridge Edge Loops&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;tips: &lt;code&gt;shift&lt;/code&gt; + &lt;code&gt;D&lt;/code&gt; to duplicate a face, &lt;code&gt;right mouse&lt;/code&gt; to put the new face exactly the same location as the original one&lt;/p&gt;
+&lt;p&gt;Separate selection to new object: &lt;code&gt;P&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Merge into a single object: &lt;code&gt;ctrl&lt;/code&gt; + &lt;code&gt;J&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;modifiers&#34;&gt;Modifiers&lt;/h2&gt;
+&lt;p&gt;Mirror modifier (use &lt;strong&gt;auto mirror&lt;/strong&gt; add-on)&lt;/p&gt;
+&lt;p&gt;Subdivision surface modifier: &lt;code&gt;ctrl&lt;/code&gt; + &lt;code&gt;5 or other&lt;/code&gt; (subdivide a plane to create low-poly island)&lt;/p&gt;
+&lt;p&gt;Displace modifier (low-poly landscape)&lt;/p&gt;
+&lt;p&gt;Skin modifier (use with &lt;strong&gt;extra mesh add-on&lt;/strong&gt;, so that we can add &lt;strong&gt;single vertex&lt;/strong&gt;, and then build a low-poly tree)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;A&lt;/code&gt; to select all, and then &lt;code&gt;ctrl&lt;/code&gt; + &lt;code&gt;A&lt;/code&gt; to scale&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;tips&#34;&gt;Tips&lt;/h2&gt;
+&lt;p&gt;If we scare the object outside edit mode, &lt;code&gt;ctrl&lt;/code&gt; + &lt;code&gt;A&lt;/code&gt; &amp;gt; apply scale to make the scare &lt;code&gt;1, 1, 1&lt;/code&gt; again!&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Numpad .&lt;/code&gt;: to make viewport rotate around selection&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Blender Import Material and Setup Material Library</title>
+      <link>https://chen-gary.github.io/post/blender-import-material-and-setup-material-library/</link>
+      <pubDate>Thu, 18 Feb 2021 20:57:29 +0800</pubDate>
+      <guid>https://chen-gary.github.io/post/blender-import-material-and-setup-material-library/</guid>
+      <description>&lt;h2 id=&#34;使用material-library的原因&#34;&gt;使用material library的原因&lt;/h2&gt;
+&lt;p&gt;多人合作时，方便颜色统一（尤其针对统一玻璃之类的复杂材质）&lt;/p&gt;
+&lt;h2 id=&#34;如何导入material&#34;&gt;如何导入material&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;打开想要导入material的 blender file&lt;/li&gt;
+&lt;li&gt;导航栏选择 File &amp;gt; Append&lt;/li&gt;
+&lt;li&gt;找到&lt;code&gt;material_template_lib.blend&lt;/code&gt;，并双击进入&lt;/li&gt;
+&lt;li&gt;进入&lt;code&gt;Material&lt;/code&gt;文件夹，并双击选择想导入的material&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://camo.githubusercontent.com/548ea9bd6677b3840b98c2b3ef078787dfec0306e47559ad475b4419735de6bc/68747470733a2f2f692e737461636b2e696d6775722e636f6d2f6141584f772e676966&#34; alt=&#34;gif&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img_1.png&#34; alt=&#34;pic&#34;&gt;&lt;/p&gt;
+&lt;p&gt;这样在Material selector中应该就能找到刚刚导入的material&lt;/p&gt;
+&lt;p&gt;（注意&lt;strong&gt;重命名&lt;/strong&gt;导入的material）&lt;/p&gt;
+&lt;p&gt;（ref &lt;a href=&#34;https://blender.stackexchange.com/questions/63018/how-to-import-downloaded-materials-files/63055&#34;&gt;https://blender.stackexchange.com/questions/63018/how-to-import-downloaded-materials-files/63055&lt;/a&gt;）&lt;/p&gt;
+&lt;h2 id=&#34;合作方式&#34;&gt;*合作方式&lt;/h2&gt;
+&lt;p&gt;比如我负责选定玻璃的材质，那么我就&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;下载最新的&lt;code&gt;material_template_lib.blend&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;新建一个cube，后新建并附上调好的玻璃材质&lt;/li&gt;
+&lt;li&gt;commit回GitHub，更新&lt;code&gt;material_template_lib.blend&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Blender UV Coloring Method</title>
+      <link>https://chen-gary.github.io/post/blender-uv-coloring-method/</link>
+      <pubDate>Thu, 18 Feb 2021 20:28:18 +0800</pubDate>
+      <guid>https://chen-gary.github.io/post/blender-uv-coloring-method/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;The palette style UV coloring method&lt;/strong&gt; 是一个使用&lt;strong&gt;调色板图片(palette)&lt;/strong&gt; 对模型涂色的方法&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;优点：涂色非常简单快速，可以边建模边涂色（辅助建模）&lt;/li&gt;
+&lt;li&gt;缺点：有的时候不好找想要的颜色；多人合作时不方便后期统一颜色；导入unity时需要更改几个默认设置&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;为解决这些问题，我找到了一个快速对 UV coloring 的模型&lt;strong&gt;用标准 material 重新上色&lt;/strong&gt;的方法。总的效率可能比建完整个模型再上色更高。&lt;/p&gt;
+&lt;h2 id=&#34;the-palette-style-uv-coloring-method&#34;&gt;The palette style UV coloring method&lt;/h2&gt;
+&lt;p&gt;这个方法来自于一名油管大佬 
+&lt;a href=&#34;https://www.youtube.com/watch?v=1jHUY3qoBu8&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.youtube.com/watch?v=1jHUY3qoBu8&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;他在这个视频的 02:12 - 4:42 介绍了这个涂色方法&lt;/p&gt;
+&lt;p&gt;这个视频的简介里，他给了两个 palette 的图片：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://www.youtube.com/redirect?v=1jHUY3qoBu8&amp;amp;event=video_description&amp;amp;redir_token=QUFFLUhqblZ6eF9xZ094cFJEaUJXX1VvbHgzVllTdTI5Z3xBQ3Jtc0tseU9hX1phWUtTUl90cWNNREs5elpITkZSUE96RGhwUTNKNFFmZlJSRThIX1JjZHl2eVhrMm05Z1BNcDl0LTl0WW5vUWFvVXdlQzNqb1VuVWRYeUNLSGJ4blI2Rlp4U0FyQlFTWDdSWTlVWkZFZnBVYw%3D%3D&amp;amp;q=https%3A%2F%2Fwww.dropbox.com%2Fs%2Fc5olic38j8fopet%2FImphenziaPalette01.png%3Fdl%3D0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;图一&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://www.youtube.com/redirect?v=1jHUY3qoBu8&amp;amp;event=video_description&amp;amp;redir_token=QUFFLUhqbmtxSGEza1hSYmp6OEk2VTZvOFRtTjR0bWNjd3xBQ3Jtc0tubXVMSGsybFBKR2NwWklHNHRVM1BBM0ZaZXFpS0dEU3k5VU5aR3RVbmY1WXpQbnBPLVdqeEpQWFI4ejVjOVpjcUtFbHJjWnktMk5ma2o2d3hKSU1SVHNtbnd5Q2pTLUxNd3pCRUhxWjF0SDktQkc3Yw%3D%3D&amp;amp;q=https%3A%2F%2Fwww.dropbox.com%2Fs%2F1w98xiksiwaywqx%2FImphenziaPalette01-256-Gradient.png%3Fdl%3D0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;图二&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以及一个我觉得蛮不错的blender setting视频（这个很短的视频里也介绍了 The palette style UV coloring method 的方法）：&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://www.youtube.com/watch?v=BlxiCd0Upg4&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.youtube.com/watch?v=BlxiCd0Upg4&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;用标准-material-重新上色&#34;&gt;用标准 material 重新上色&lt;/h2&gt;
+&lt;p&gt;假设在建模的时候，我把墙面涂成了诡异的蓝色，而右边material栏中的 &lt;code&gt;Material_final&lt;/code&gt; 是最终统一的墙面颜色。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;1.png&#34; alt=&#34;pic1&#34;&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;tab&lt;/code&gt; 进入编辑模式&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;鼠标放在中间的编辑窗口，按 &lt;code&gt;A&lt;/code&gt; 全选&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;点亮左侧 UV editor 窗口的这个icon (红色框框)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;icon.png&#34; alt=&#34;pic2&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;左键框选诡异的蓝色，这样中间窗口中所有使用这种蓝色的面就被选中了&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;2.png&#34; alt=&#34;pic3&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;这时候在右侧material栏更换material，并点击&lt;code&gt;Assign&lt;/code&gt;，墙面就重新上色完成&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;3.png&#34; alt=&#34;pic4&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;同理，我们也可以对其他面重新上色&lt;/p&gt;
+&lt;p&gt;这样直接把&lt;code&gt;.blend&lt;/code&gt; 文件拖入unity 也可以保持所有颜色，无需任何设置。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;4.png&#34; alt=&#34;pic5&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

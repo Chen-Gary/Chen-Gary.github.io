@@ -1,74 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Gary&#39;s Tech Station</title>
+    <title>Tags | Gary Chen</title>
     <link>https://chen-gary.github.io/tags/</link>
-    <description>Recent content in Tags on Gary&#39;s Tech Station</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 06 Jun 2021 19:56:34 +0800</lastBuildDate><atom:link href="https://chen-gary.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>LaTeX</title>
-      <link>https://chen-gary.github.io/tags/latex/</link>
-      <pubDate>Sun, 06 Jun 2021 19:56:34 +0800</pubDate>
-      
-      <guid>https://chen-gary.github.io/tags/latex/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Blog</title>
-      <link>https://chen-gary.github.io/tags/blog/</link>
-      <pubDate>Sun, 06 Jun 2021 11:48:17 +0800</pubDate>
-      
-      <guid>https://chen-gary.github.io/tags/blog/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hugo</title>
-      <link>https://chen-gary.github.io/tags/hugo/</link>
-      <pubDate>Sun, 06 Jun 2021 11:48:17 +0800</pubDate>
-      
-      <guid>https://chen-gary.github.io/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Git</title>
-      <link>https://chen-gary.github.io/tags/git/</link>
-      <pubDate>Sun, 30 May 2021 09:11:17 +0800</pubDate>
-      
-      <guid>https://chen-gary.github.io/tags/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Blender</title>
-      <link>https://chen-gary.github.io/tags/blender/</link>
-      <pubDate>Wed, 03 Mar 2021 16:48:34 +0800</pubDate>
-      
-      <guid>https://chen-gary.github.io/tags/blender/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>C&#43;&#43;</title>
-      <link>https://chen-gary.github.io/tags/c&#43;&#43;/</link>
-      <pubDate>Wed, 03 Mar 2021 15:54:26 +0800</pubDate>
-      
-      <guid>https://chen-gary.github.io/tags/c&#43;&#43;/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>CMake</title>
-      <link>https://chen-gary.github.io/tags/cmake/</link>
-      <pubDate>Wed, 03 Mar 2021 15:54:26 +0800</pubDate>
-      
-      <guid>https://chen-gary.github.io/tags/cmake/</guid>
-      <description></description>
-    </item>
+      <atom:link href="https://chen-gary.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <description>Tags</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2021 Gary Chen</copyright><lastBuildDate>Sat, 03 Jul 2021 12:13:12 +0800</lastBuildDate>
+    <image>
+      <url>https://chen-gary.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Tags</title>
+      <link>https://chen-gary.github.io/tags/</link>
+    </image>
     
   </channel>
 </rss>

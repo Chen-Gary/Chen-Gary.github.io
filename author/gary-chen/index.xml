@@ -1,0 +1,1147 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gary Chen</title>
+    <link>https://chen-gary.github.io/author/gary-chen/</link>
+      <atom:link href="https://chen-gary.github.io/author/gary-chen/index.xml" rel="self" type="application/rss+xml" />
+    <description>Gary Chen</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2021 Gary Chen</copyright><lastBuildDate>Sat, 03 Jul 2021 12:13:12 +0800</lastBuildDate>
+    <image>
+      <url>https://chen-gary.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Gary Chen</title>
+      <link>https://chen-gary.github.io/author/gary-chen/</link>
+    </image>
+    
+    <item>
+      <title>LaTeX Basic</title>
+      <link>https://chen-gary.github.io/post/latex-basic/</link>
+      <pubDate>Sat, 03 Jul 2021 12:13:12 +0800</pubDate>
+      <guid>https://chen-gary.github.io/post/latex-basic/</guid>
+      <description>&lt;p&gt;这篇文章是对
+&lt;a href=&#34;https://liam.page/2014/09/08/latex-introduction/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;这份教程&lt;/a&gt;的笔记，虽说是笔记，很多地方都直接复制了原文，强烈建议大家进入原教程查看。&lt;/p&gt;
+&lt;p&gt;（注：以下文档默认使用XeLaTeX进行编译）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;控制序列&lt;/strong&gt;：&lt;code&gt;\&lt;/code&gt;开头，e.g. &lt;code&gt;\documentclass&lt;/code&gt;。以第一个&lt;strong&gt;空格或非字母&lt;/strong&gt; 的字符结束&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注释&lt;/strong&gt;：&lt;code&gt;%&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;\documentclass{article}
+% 这里是导言区
+\begin{document}
+Hello, world!
+\end{document}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;控制序列&lt;code&gt;begin&lt;/code&gt;和&lt;code&gt;end&lt;/code&gt;总是成对出现。这两个控制序列以及他们中间的内容被称为「环境」，它们之后的第一个必要参数总是&lt;strong&gt;一致的&lt;/strong&gt;，被称为环境名。&lt;/p&gt;
+&lt;p&gt;只有在 &lt;code&gt;document&lt;/code&gt; 环境中的内容，才会被正常输出到文档中去或是作为控制序列对文档产生影响。&lt;/p&gt;
+&lt;p&gt;从 &lt;code&gt;\documentclass{article}&lt;/code&gt; 开始到 &lt;code&gt;\begin{document}&lt;/code&gt; 之前的部分被称为导言区。在导言区出现的控制序列，往往会影响整篇文档的格式。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;宏包&lt;/strong&gt;：一系列控制序列的合集。&lt;code&gt;\usepackage{}&lt;/code&gt; 可以用来调用宏包&lt;/p&gt;
+&lt;h2 id=&#34;中英文混排&#34;&gt;中英文混排&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;\documentclass[UTF8]{ctexart}
+\begin{document}
+你好，world!
+\end{document}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;组织你的文章&#34;&gt;组织你的文章&lt;/h2&gt;
+&lt;h3 id=&#34;作者标题日期&#34;&gt;作者、标题、日期&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;\documentclass[UTF8]{ctexart}
+\title{你好，world!}
+\author{Liam}
+\date{\today}
+\begin{document}
+\maketitle
+你好，world!
+\end{document}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;章节和段落&#34;&gt;章节和段落&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;\documentclass[UTF8]{ctexart}
+\title{你好，world!}
+\author{Liam}
+\date{\today}
+\begin{document}
+\maketitle
+\section{你好中国}
+中国在East Asia.
+\subsection{Hello Beijing}
+北京是capital of China.
+\subsubsection{Hello Dongcheng District}
+\paragraph{Tian&#39;anmen Square}
+is in the center of Beijing
+\subparagraph{Chairman Mao}
+is in the center of 天安门广场。
+\subsection{Hello 山东}
+\paragraph{山东大学} is one of the best university in 山东。
+\end{document}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在文档类 &lt;code&gt;article&lt;/code&gt;/&lt;code&gt;ctexart&lt;/code&gt; 中，定义了五个控制序列来调整行文组织结构。他们分别是&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;\section{·}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\subsection{·}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\subsubsection{·}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\paragraph{·}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\subparagraph{·}&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;插入目录&#34;&gt;插入目录&lt;/h3&gt;
+&lt;p&gt;在上一节的文档中，找到 &lt;code&gt;\maketitle&lt;/code&gt;，在它的下面插入控制序列 &lt;code&gt;\tableofcontents&lt;/code&gt;，保存并用 XeLaTeX 编译&lt;strong&gt;两次&lt;/strong&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;插入数学公式&#34;&gt;插入数学公式&lt;/h2&gt;
+&lt;p&gt;在导言区加载 &lt;code&gt;amsmath&lt;/code&gt; 宏包&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;\usepackage{amsmath}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;数学模式&#34;&gt;数学模式&lt;/h3&gt;
+&lt;p&gt;LaTeX 的数学模式有两种：行内模式 (inline) 和行间模式 (display)。&lt;/p&gt;
+&lt;p&gt;在行文中，使用 &lt;code&gt;$ ... $&lt;/code&gt; 可以插入行内公式，使用 &lt;code&gt;\[ ... \]&lt;/code&gt; 可以插入行间公式，如果需要对行间公式进行编号，则可以使用 &lt;code&gt;equation&lt;/code&gt; 环境：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;\begin{equation}
+...
+\end{equation}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;\documentclass{article}
+\usepackage{amsmath}
+\begin{document}
+Einstein &#39;s $E=mc^2$.
+
+\[ E=mc^2. \]
+
+\begin{equation}
+E=mc^2.
+\end{equation}
+\end{document}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;行内公式和行间公式对标点的要求是不同的：行内公式的标点，应该放在数学模式的限定符之外，而行间公式则应该放在数学模式限定符之内。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;上标：&lt;code&gt;^&lt;/code&gt; （注意花括号 &lt;code&gt;{}&lt;/code&gt;的运用）&lt;/li&gt;
+&lt;li&gt;下标： &lt;code&gt;_&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;根式： &lt;code&gt;\sqrt{·}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;分式： &lt;code&gt;\frac{·}{·}&lt;/code&gt; （第一个参数为分子，第二个为分母）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在行间公式和行内公式中，分式的输出效果是有差异的。如果要强制行内模式的分式显示为行间模式的大小，可以使用 &lt;code&gt;\dfrac&lt;/code&gt;, 反之可以使用 &lt;code&gt;\tfrac&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;运算符&#34;&gt;运算符&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;\[ \pm\; \times \; \div\; \cdot\; \cap\; \cup\;
+\geq\; \leq\; \neq\; \approx \; \equiv \]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;连加、连乘、极限、积分等大型运算符分别用 &lt;code&gt;\sum&lt;/code&gt;, &lt;code&gt;\prod&lt;/code&gt;, &lt;code&gt;\lim&lt;/code&gt;, &lt;code&gt;\int&lt;/code&gt; 生成。他们的上下标在行内公式中被压缩，以适应行高。我们可以用 &lt;code&gt;\limits&lt;/code&gt; 和 &lt;code&gt;\nolimits&lt;/code&gt; 来强制显式地指定是否压缩这些上下标。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;$ \sum_{i=1}^n i\quad \prod_{i=1}^n $
+$ \sum\limits _{i=1}^n i\quad \prod\limits _{i=1}^n $
+\[ \lim_{x\to0}x^2 \quad \int_a^b x^2 dx \]
+\[ \lim\nolimits _{x\to0}x^2\quad \int\nolimits_a^b x^2 dx \]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;多重积分可以使用 &lt;code&gt;\iint&lt;/code&gt;, &lt;code&gt;\iiint&lt;/code&gt;, &lt;code&gt;\iiiint&lt;/code&gt;, &lt;code&gt;\idotsint&lt;/code&gt; 等命令输入。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;\[ \iint\quad \iiint\quad \iiiint\quad \idotsint \]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;定界符括号等&#34;&gt;定界符（括号等）&lt;/h4&gt;
+&lt;p&gt;各种括号用 &lt;code&gt;()&lt;/code&gt;, &lt;code&gt;[]&lt;/code&gt;, &lt;code&gt;\{\}&lt;/code&gt;, &lt;code&gt;\langle\rangle&lt;/code&gt; 等命令表示；注意花括号通常用来输入命令和环境的参数，所以在数学公式中它们前面要加 &lt;code&gt;\&lt;/code&gt;。因为 LaTeX 中 &lt;code&gt;|&lt;/code&gt; 和 &lt;code&gt;\|&lt;/code&gt; 的应用过于随意，amsmath 宏包推荐用 &lt;code&gt;\lvert\rvert&lt;/code&gt; 和 &lt;code&gt;\lVert\rVert&lt;/code&gt; 取而代之。&lt;/p&gt;
+&lt;p&gt;为了调整这些定界符的大小，amsmath 宏包推荐使用 &lt;code&gt;\big&lt;/code&gt;, &lt;code&gt;\Big&lt;/code&gt;, &lt;code&gt;\bigg&lt;/code&gt;, &lt;code&gt;\Bigg&lt;/code&gt; 等一系列命令放在上述括号前面调整大小。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;\[ \Biggl(\biggl(\Bigl(\bigl((x)\bigr)\Bigr)\biggr)\Biggr) \]
+\[ \Biggl[\biggl[\Bigl[\bigl[[x]\bigr]\Bigr]\biggr]\Biggr] \]
+\[ \Biggl \{\biggl \{\Bigl \{\bigl \{\{x\}\bigr \}\Bigr \}\biggr \}\Biggr\} \]
+\[ \Biggl\langle\biggl\langle\Bigl\langle\bigl\langle\langle x
+\rangle\bigr\rangle\Bigr\rangle\biggr\rangle\Biggr\rangle \]
+\[ \Biggl\lvert\biggl\lvert\Bigl\lvert\bigl\lvert\lvert x
+\rvert\bigr\rvert\Bigr\rvert\biggr\rvert\Biggr\rvert \]
+\[ \Biggl\lVert\biggl\lVert\Bigl\lVert\bigl\lVert\lVert x
+\rVert\bigr\rVert\Bigr\rVert\biggr\rVert\Biggr\rVert \]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;省略号&#34;&gt;省略号&lt;/h4&gt;
+&lt;p&gt;省略号用 &lt;code&gt;\dots&lt;/code&gt;, &lt;code&gt;\cdots&lt;/code&gt;, &lt;code&gt;\vdots&lt;/code&gt;, &lt;code&gt;\ddots&lt;/code&gt; 等命令表示。&lt;code&gt;\dots&lt;/code&gt; 和 &lt;code&gt;\cdots&lt;/code&gt; 的纵向位置不同，前者一般用于有下标的序列。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;\[ x_1,x_2,\dots ,x_n\quad 1,2,\cdots ,n\quad
+\vdots\quad \ddots \]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;矩阵&#34;&gt;矩阵&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;amsmath&lt;/code&gt; 的 &lt;code&gt;pmatrix&lt;/code&gt;, &lt;code&gt;bmatrix&lt;/code&gt;, &lt;code&gt;Bmatrix&lt;/code&gt;, &lt;code&gt;vmatrix&lt;/code&gt;, &lt;code&gt;Vmatrix&lt;/code&gt; 等环境可以在矩阵两边加上各种分隔符。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;\[ \begin{pmatrix} a&amp;amp;b\\c&amp;amp;d \end{pmatrix} \quad
+\begin{bmatrix} a&amp;amp;b\\c&amp;amp;d \end{bmatrix} \quad
+\begin{Bmatrix} a&amp;amp;b\\c&amp;amp;d \end{Bmatrix} \quad
+\begin{vmatrix} a&amp;amp;b\\c&amp;amp;d \end{vmatrix} \quad
+\begin{Vmatrix} a&amp;amp;b\\c&amp;amp;d \end{Vmatrix} \]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;多行公式&#34;&gt;多行公式&lt;/h4&gt;
+&lt;h5 id=&#34;长公式&#34;&gt;长公式&lt;/h5&gt;
+&lt;h6 id=&#34;不对齐&#34;&gt;不对齐&lt;/h6&gt;
+&lt;p&gt;无须对齐的长公式可以使用 &lt;code&gt;multline&lt;/code&gt; 环境。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;\begin{multline}
+x = a+b+c+{} \\
+d+e+f+g
+\end{multline}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果不需要编号，可以使用 &lt;code&gt;multline*&lt;/code&gt; 环境代替。&lt;/p&gt;
+&lt;h6 id=&#34;对齐&#34;&gt;对齐&lt;/h6&gt;
+&lt;p&gt;需要对齐的公式，可以使用 &lt;code&gt;aligned&lt;/code&gt; &lt;em&gt;次环境&lt;/em&gt;来实现，它必须包含在数学环境之内。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;\[\begin{aligned}
+x ={}&amp;amp; a+b+c+{} \\
+&amp;amp;d+e+f+g
+\end{aligned}\]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h5 id=&#34;公式组&#34;&gt;公式组&lt;/h5&gt;
+&lt;p&gt;无需对齐的公式组可以使用 &lt;code&gt;gather&lt;/code&gt; 环境，需要对齐的公式组可以使用 &lt;code&gt;align&lt;/code&gt; 环境。他们都带有编号，如果不需要编号可以使用带星花的版本。&lt;/p&gt;
+&lt;h5 id=&#34;分段函数&#34;&gt;分段函数&lt;/h5&gt;
+&lt;p&gt;分段函数可以用&lt;code&gt;cases&lt;/code&gt;次环境来实现，它必须包含在数学环境之内。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;\[ y= \begin{cases}
+-x,\quad x\leq 0 \\
+x,\quad x&amp;gt;0
+\end{cases} \]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;辅助工具：https://www.latexlive.com/&lt;/p&gt;
+&lt;h2 id=&#34;插入图片和表格&#34;&gt;插入图片和表格&lt;/h2&gt;
+&lt;h3 id=&#34;图片&#34;&gt;图片&lt;/h3&gt;
+&lt;p&gt;在 LaTeX 中插入图片，利用 &lt;code&gt;graphicx&lt;/code&gt; 宏包提供的 &lt;code&gt;\includegraphics&lt;/code&gt; 命令。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;\documentclass{article}
+\usepackage{graphicx}
+\begin{document}
+\includegraphics{a.jpg}
+\end{document}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;用 &lt;code&gt;\includegraphics&lt;/code&gt; 控制序列的可选参数来控制图片输出效果：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;\includegraphics[width = .8\textwidth]{a.jpg}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;图片的宽度会被缩放至页面宽度的百分之八十，图片的总高度会按比例缩放。&lt;/p&gt;
+&lt;h3 id=&#34;表格&#34;&gt;表格&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;tabular&lt;/code&gt; 环境提供了最简单的表格功能。它用 &lt;code&gt;\hline&lt;/code&gt; 命令表示横线，在列格式中用 &lt;code&gt;|&lt;/code&gt; 表示竖线；用 &lt;code&gt;&amp;amp;&lt;/code&gt; 来分列，用 &lt;code&gt;\\&lt;/code&gt; 来换行；每列可以采用居左、居中、居右等横向对齐方式，分别用 &lt;code&gt;l&lt;/code&gt;、&lt;code&gt;c&lt;/code&gt;、&lt;code&gt;r&lt;/code&gt; 来表示。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;\begin{tabular}{|l|c|r|}
+ \hline
+操作系统&amp;amp; 发行版&amp;amp; 编辑器\\
+ \hline
+Windows &amp;amp; MikTeX &amp;amp; TexMakerX \\
+ \hline
+Unix/Linux &amp;amp; teTeX &amp;amp; Kile \\
+ \hline
+Mac OS &amp;amp; MacTeX &amp;amp; TeXShop \\
+ \hline
+通用&amp;amp; TeX Live &amp;amp; TeXworks \\
+ \hline
+\end{tabular}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;浮动体&#34;&gt;浮动体&lt;/h3&gt;
+&lt;p&gt;见原文。。。&lt;/p&gt;
+&lt;h2 id=&#34;版面设置&#34;&gt;版面设置&lt;/h2&gt;
+&lt;h3 id=&#34;页边距&#34;&gt;页边距&lt;/h3&gt;
+&lt;p&gt;设置页边距，推荐使用 &lt;code&gt;geometry&lt;/code&gt; 宏包。&lt;/p&gt;
+&lt;p&gt;比如我希望，将纸张的长度设置为 20cm、宽度设置为 15cm、左边距 1cm、右边距 2cm、上边距 3cm、下边距 4cm，可以在导言区加上这样几行：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;\usepackage{geometry}
+\geometry{papersize={20cm,15cm}}
+\geometry{left=1cm,right=2cm,top=3cm,bottom=4cm}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;页眉页脚&#34;&gt;页眉页脚&lt;/h3&gt;
+&lt;p&gt;设置页眉页脚，推荐使用 &lt;code&gt;fancyhdr&lt;/code&gt; 宏包。&lt;/p&gt;
+&lt;p&gt;比如我希望，在页眉左边写上我的名字，中间写上今天的日期，右边写上我的电话；页脚的正中写上页码；页眉和正文之间有一道宽为 0.4pt 的横线分割，可以在导言区加上如下几行：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{\author}
+\chead{\date}
+\rhead{152xxxxxxxx}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headwidth}{\textwidth}
+\renewcommand{\footrulewidth}{0pt}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;首行缩进&#34;&gt;首行缩进&lt;/h3&gt;
+&lt;p&gt;CTeX 宏集已经处理好了首行缩进的问题（自然段前空两格汉字宽度）。因此，使用 CTeX 宏集进行中西文混合排版时，我们不需要关注首行缩进的问题。&lt;/p&gt;
+&lt;h3 id=&#34;行间距&#34;&gt;行间距&lt;/h3&gt;
+&lt;p&gt;我们可以通过 &lt;code&gt;setspace&lt;/code&gt; 宏包提供的命令来调整行间距。比如在导言区添加如下内容，可以将行距设置为&lt;strong&gt;字号的 1.5 倍&lt;/strong&gt;：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;\usepackage{setspace}
+\onehalfspacing
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;段间距&#34;&gt;段间距&lt;/h3&gt;
+&lt;p&gt;我们可以通过修改长度 &lt;code&gt;\parskip&lt;/code&gt; 的值来调整段间距。例如在导言区添加以下内容&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-latex&#34;&gt;\addtolength{\parskip}{.4em}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;则可以在原有的基础上，增加段间距 0.4em。如果需要减小段间距，只需将该数值改为负值即可。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Building Blog Using Hugo</title>
+      <link>https://chen-gary.github.io/post/building-blog-using-hugo/</link>
+      <pubDate>Sun, 06 Jun 2021 11:48:17 +0800</pubDate>
+      <guid>https://chen-gary.github.io/post/building-blog-using-hugo/</guid>
+      <description>&lt;h2 id=&#34;摘要&#34;&gt;摘要&lt;/h2&gt;
+&lt;p&gt;在Windows平台下安装、配置Hugo，并通过Github Pages部署个人博客&lt;/p&gt;
+&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;本来打算把这篇文章作为博客的第一篇post，结果拖了将近半年 ╥﹏╥&amp;hellip;&lt;/p&gt;
+&lt;p&gt;写这篇文章一是为了给自己的博客留个纪念；二是梳理一下自己大体的博客搭建流程，方便后期debug甚至重构；三或许还能帮助到一些有缘人？&lt;/p&gt;
+&lt;p&gt;听说百度的爬虫爬不到github.io域名的内容，再加上这种个人博客本身就做不到很好的SEO。以后的博文大概率也就是一名新手“码农”的“自嗨” ︿(￣︶￣)︿，不过能有一个整理自己笔记和想法的小空间也真是一件很开心的啊！希望能坚持下来！&lt;/p&gt;
+&lt;p&gt;不多bb，准备开始！&lt;/p&gt;
+&lt;h2 id=&#34;先决条件&#34;&gt;先决条件&lt;/h2&gt;
+&lt;p&gt;我使用的工具：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Git 2.30.0&lt;/li&gt;
+&lt;li&gt;Hugo v0.80.0&lt;/li&gt;
+&lt;li&gt;一个注册好的GitHub账号&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;前置知识：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;了解最最基本的Git操作&lt;/li&gt;
+&lt;li&gt;对GitHub有一点点了解&lt;/li&gt;
+&lt;li&gt;会使用markdown编写文章&lt;/li&gt;
+&lt;li&gt;难度不大，但还是希望你有一颗勇于折腾的心&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;更新并配置git&#34;&gt;更新并配置Git&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;git --version					# check the version of git
+
+git update-git-for-windows		# update git to the latest version
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;GitHub最近（当你看到这篇文章的时候已经不是最近了）把原先默认的&lt;code&gt;master&lt;/code&gt;分支改名成了&lt;code&gt;main&lt;/code&gt;，为了紧跟潮流，也为了满足自己的强迫症，这里选择更新git版本&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;# 配置
+git config --global user.name &amp;quot;&amp;lt;user_name&amp;gt;&amp;quot;
+git config --global user.email &amp;lt;example&amp;gt;@gmail.com
+
+git config --list
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;更多Git基础操作可以参考
+&lt;a href=&#34;https://chen-gary.github.io/p/git-basic-skills/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;我的笔记&lt;/a&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;安装hugo&#34;&gt;安装Hugo&lt;/h2&gt;
+&lt;p&gt;相较于Mac和Linux，Hugo在Windows下的安装相对复杂。我们这里选择使用编译好的Windows可执行文件进行安装。安装路径我选择D盘的根目录，你也可以选择其他路径。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;在D盘根目录下创建新文件夹&lt;code&gt;Hugo&lt;/code&gt;，并在&lt;code&gt;D:\Hugo&lt;/code&gt;下新建文件夹&lt;code&gt;bin&lt;/code&gt;和&lt;code&gt;Sites&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;D:\Hugo\bin&lt;/code&gt;将存放Hugo可执行文件&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;D:\Hugo\Sites&lt;/code&gt;将存放以后博客的git仓库&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;到
+&lt;a href=&#34;https://github.com/gohugoio/hugo/releases&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo的GitHub仓库&lt;/a&gt;下载最新的Hugo二进制文件，我下载的是&lt;code&gt;hugo_0.80.0_Windows-64bit.zip&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;解压下载好的压缩包至&lt;code&gt;D:\Hugo\bin&lt;/code&gt;。现在你应该能看到&lt;code&gt;D:\Hugo\bin&lt;/code&gt;中有三个文件&lt;code&gt;hugo.exe&lt;/code&gt;, &lt;code&gt;LICENSE&lt;/code&gt;及&lt;code&gt;README.md&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;在&lt;code&gt;D:\Hugo\bin&lt;/code&gt;下打开cmd，执行&lt;code&gt;hugo version&lt;/code&gt;和&lt;code&gt;hugo help&lt;/code&gt;应该能得到适当的反馈。但在其他路径下，这两条命令却无法正确执行，所以接下来我们要&lt;strong&gt;配置系统环境变量&lt;/strong&gt;，使Hugo命令可以在任意路径下使用&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;为Hugo配置系统环境变量&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;搜索并打开Edit the system environment variables&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;点击Environment Variables&amp;hellip;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在User variables中双击Path&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;点击New，添加&lt;code&gt;D:\Hugo\bin&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;验证环境变量是否配置成功&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;echo %PATH%						# 确保能找到D:\Hugo\bin
+
+hugo version					# 在任意路径下均可正确执行
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;（注：配置完环境变量后，可能需要等一段时间才能正常使用Hugo命令）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;恭喜！现在Hugo已经安装完成，接下来我们用它开始搭建自己的博客吧！&lt;/p&gt;
+&lt;h2 id=&#34;搭建本地博客&#34;&gt;搭建本地博客&lt;/h2&gt;
+&lt;h3 id=&#34;初始化博客&#34;&gt;初始化博客&lt;/h3&gt;
+&lt;p&gt;在&lt;code&gt;D:\Hugo\Sites&lt;/code&gt;下启动cmd，使用命令&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;hugo new site &amp;lt;name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;由于我们将把本地博客部署到GitHub，这里我们把&lt;code&gt;&amp;lt;name&amp;gt;&lt;/code&gt;换成&lt;code&gt;&amp;lt;github_user_name&amp;gt;.github.io&lt;/code&gt;，比如我使用&lt;code&gt;hugo new site Chen-Gary.github.io&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;你会发现Hugo在&lt;code&gt;D:\Hugo\Sites&lt;/code&gt;下创建了一个新文件夹&lt;code&gt;Chen-Gary.github.io&lt;/code&gt;里面已经包含了一些文件&lt;/p&gt;
+&lt;h3 id=&#34;下载主题&#34;&gt;下载主题&lt;/h3&gt;
+&lt;p&gt;（如果没有特殊说明，所有命令都默认在博客的根目录下执行，即&lt;code&gt;/d/Hugo/Sites/Chen-Gary.github.io&lt;/code&gt;）&lt;/p&gt;
+&lt;p&gt;在
+&lt;a href=&#34;https://themes.gohugo.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo主题库&lt;/a&gt;找到一个你喜欢的主题，下面的步骤将以
+&lt;a href=&#34;https://themes.gohugo.io/hugo-theme-stack/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Stack&lt;/a&gt;为例。下载主题本质就是git克隆，通常这些主题都会在README或
+&lt;a href=&#34;https://docs.stack.jimmycai.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Documentation&lt;/a&gt;中提供克隆命令（也可以下载对应主题GitHub上的release版本，操作类似，请参考对应主题的Documentation）&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;git clone https://github.com/CaiJimmy/hugo-theme-stack/themes/hugo-theme-stack
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;（注：如果采用下载release版本主题的方法，请忽视以下内容）&lt;/p&gt;
+&lt;p&gt;克隆完成后，&lt;code&gt;themes/hugo-theme-stack&lt;/code&gt;会是一个给git仓库，由于后期我们会将把博客的根目录&lt;code&gt;Chen-Gary.github.io&lt;/code&gt;也变为git仓库，为避免仓库套仓库的情况，这里有两种解决策略：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;删除&lt;code&gt;themes/hugo-theme-stack&lt;/code&gt;中的，&lt;code&gt;.git&lt;/code&gt;文件下把git仓库变成普通文件夹（我采取这个方案，因为后期我们可能大规模“定制”下载的主题，需要对主题内的文件进行版本控制；另外，还因为我不太搞得懂git submodule。。。）&lt;/li&gt;
+&lt;li&gt;使用git的submodule feature（不太推荐）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;本地测试&#34;&gt;本地测试&lt;/h3&gt;
+&lt;p&gt;使用以下命令测试。值得注意的是Stack主题有一些很坑爹的细节，搞了我很久。下一小节我会详说。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;hugo server -t &amp;lt;theme_name&amp;gt; --buildDrafts
+
+# example
+hugo server -t hugo-theme-stack --buildDrafts
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;根据命令行提示，在浏览器进入http://localhost:1313/预览博客效果。&lt;/p&gt;
+&lt;p&gt;测试完成后，使用&lt;code&gt;Ctrl&lt;/code&gt; + &lt;code&gt;C&lt;/code&gt;结束server。&lt;/p&gt;
+&lt;h3 id=&#34;修改配置文件&#34;&gt;修改配置文件&lt;/h3&gt;
+&lt;p&gt;修改博客根目录下的&lt;code&gt;config.toml&lt;/code&gt;或&lt;code&gt;config.yaml&lt;/code&gt;。注意很多主题是会提供配置文件样板的，如果有请使用主题提供的配置文件。&lt;code&gt;config.toml&lt;/code&gt;和&lt;code&gt;config.yaml&lt;/code&gt;只需一个（也只能有一个），删除多余的配置文件。&lt;/p&gt;
+&lt;p&gt;至少进行以下配置（以&lt;code&gt;config.toml&lt;/code&gt;为例）：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;baseURL = &amp;quot;https://&amp;lt;github_user_name&amp;gt;.github.io/&amp;quot;
+languageCode = &amp;quot;en-us&amp;quot;
+title = &amp;quot;Gary&#39;s Blog Site&amp;quot;
+
+theme=&amp;quot;theme_name&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;由于在配置文件中指定了主题，以后进行本地测试只需：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;hugo server
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;baseURL&lt;/code&gt;相当重要，这里提前配置好，后文会进一步解释。&lt;/p&gt;
+&lt;h3 id=&#34;关于stack主题&#34;&gt;*关于Stack主题&lt;/h3&gt;
+&lt;p&gt;Stack是个相当好看的主题。事实上，这个主题是吸引我使用Hugo的原因之一，但是有一些小细节相当坑爹（对于新手来说）。&lt;/p&gt;
+&lt;p&gt;在进行本地测试&lt;strong&gt;之前&lt;/strong&gt;，执行以下操作：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;复制&lt;code&gt;\themes\hugo-theme-stack\exampleSite&lt;/code&gt;的内容至博客根目录，部分原有的文件会被覆盖。&lt;/li&gt;
+&lt;li&gt;删除Hugo原先自动生成的&lt;code&gt;config.toml&lt;/code&gt;，以后的配置我们会直接使用Stack主题提供的&lt;code&gt;config.yaml&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;删除&lt;code&gt;\content\post\rich-content&lt;/code&gt;。原因是这篇sample post里使用了推特短代码，这会导致Hugo无法生成网页。&lt;/li&gt;
+&lt;li&gt;更多个性化操作请参考Stack主题提供的&lt;code&gt;config.yaml&lt;/code&gt;文件及
+&lt;a href=&#34;https://docs.stack.jimmycai.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;它的官方文档&lt;/a&gt;。如果你愿意也可以修改主题的HTML文件等。。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;至此，你已经拥有了自己的本地博客库，并预览了发布后的效果。接下来可以开始写博文了！&lt;/p&gt;
+&lt;h2 id=&#34;本地发布博文&#34;&gt;本地发布博文&lt;/h2&gt;
+&lt;p&gt;使用以下命令新建博文&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;hugo new post/&amp;lt;article_name&amp;gt;.md              # new blog/article
+
+hugo new post/&amp;lt;article_name&amp;gt;/index.md        # new blog/article (recommended)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;空白的博文会被生成在&lt;code&gt;\content\post&lt;/code&gt;目录下。&lt;/p&gt;
+&lt;p&gt;注意：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;article_name&amp;gt;&lt;/code&gt;使用连字符隔开单词 e.g. &lt;code&gt;hugo new post/git-basic-skills/index.md&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;推荐使用&lt;code&gt;hugo new post/&amp;lt;article_name&amp;gt;/index.md&lt;/code&gt;，这样文章中的图片可以放在&lt;code&gt;\content\post\&amp;lt;article_name&amp;gt;&lt;/code&gt;中&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;现在，你可以使用喜欢的markdown编辑器编写博文。完成后用&lt;code&gt;hugo server&lt;/code&gt;命令进行本地测试。&lt;/p&gt;
+&lt;h2 id=&#34;生成网页&#34;&gt;生成网页&lt;/h2&gt;
+&lt;p&gt;有了前面的铺垫，生成网页相当简单，完整命令如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;hugo --theme=&amp;lt;theme_name&amp;gt; --baseUrl=&amp;quot;https://&amp;lt;user_name&amp;gt;.github.io&amp;quot; --buildDrafts
+# a folder `public` will be created
+
+# example
+hugo --theme=m10c --baseUrl=&amp;quot;https://Gary-Hh-Chen.github.io&amp;quot; --buildDrafts
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;由于&lt;code&gt;theme&lt;/code&gt;及&lt;code&gt;baseUrl&lt;/code&gt;已在配置文件 (&lt;code&gt;config.yaml&lt;/code&gt;) 中设置好了，命名可以被简化为：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;hugo
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;就是这么简洁，网页会被生成在博客根目录的&lt;code&gt;public&lt;/code&gt;文件夹中。&lt;/p&gt;
+&lt;h2 id=&#34;部署博客至github&#34;&gt;部署博客至GitHub&lt;/h2&gt;
+&lt;p&gt;以下方法由Hugo官方文档修改得来。不知道为什么，
+&lt;a href=&#34;https://gohugo.io/hosting-and-deployment/hosting-on-github/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;这部分的官方文档&lt;/a&gt;被简化了很多。之前的文档虽然有bug，但相当详细。好在我们可以在
+&lt;a href=&#34;https://github.com/gohugoio/hugoDocs/releases&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;官方文档的GitHub仓库&lt;/a&gt;下载旧版文档。我参考的是
+&lt;a href=&#34;https://github.com/gohugoio/hugoDocs/releases/tag/v0.80.0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;v0.80.0版本的文档&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;我们借助GitHub Pages服务部署博客。&lt;/p&gt;
+&lt;p&gt;这里，我们选择从GitHub仓库的gh-pages分支发布网页。除此之外，还可以：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;从&lt;code&gt;main&lt;/code&gt;分支直接发布网页&lt;/li&gt;
+&lt;li&gt;从&lt;code&gt;main&lt;/code&gt;分支的&lt;code&gt;docs&lt;/code&gt;文件夹发布网页&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这里我们不讨论三种方法的优劣，具体优劣可以参考
+&lt;a href=&#34;https://github.com/gohugoio/hugoDocs/releases/tag/v0.80.0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;旧版官方文档&lt;/a&gt;。具体操作如下：&lt;/p&gt;
+&lt;p&gt;（注：以下步骤只需操作一次）&lt;/p&gt;
+&lt;h3 id=&#34;1-建立仓库&#34;&gt;1. 建立仓库&lt;/h3&gt;
+&lt;p&gt;在GitHub建立新的public repository（空仓库，不添加README等），仓库的名字必须为&lt;code&gt;&amp;lt;github_user_name&amp;gt;.github.io&lt;/code&gt;，如&lt;code&gt;Chen-Gary.github.io&lt;/code&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;2-修改gitignore&#34;&gt;2. 修改&lt;code&gt;.gitignore&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;把&lt;code&gt;public&lt;/code&gt;文件夹加入&lt;code&gt;.gitignore&lt;/code&gt;，因为我们不需要把生成的网页推送到&lt;code&gt;main&lt;/code&gt;分支。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;echo &amp;quot;public&amp;quot; &amp;gt;&amp;gt; .gitignore
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;3-链接本地仓库&#34;&gt;3. 链接本地仓库&lt;/h3&gt;
+&lt;p&gt;在博客根目录下，使用以下命令建立git仓库并链接至远端：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;git init
+git remote add origin https://github.com/&amp;lt;user_name&amp;gt;/&amp;lt;user_name&amp;gt;.github.io.git
+git add . 
+git commit -m &amp;quot;first commit for my blog&amp;quot;
+git push -u origin main
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;此时博客的源文件已被推送到远端仓库。&lt;/p&gt;
+&lt;h3 id=&#34;4-初始化gh-pages-分支&#34;&gt;4. 初始化&lt;code&gt;gh-pages&lt;/code&gt; 分支&lt;/h3&gt;
+&lt;p&gt;说实话，后面这几个分支操作我是不太懂的。。。不过，能用就行不是吗？&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You can now initialize your &lt;code&gt;gh-pages&lt;/code&gt; branch as an empty [orphan branch][]:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;git checkout --orphan gh-pages
+git reset --hard
+git commit --allow-empty -m &amp;quot;Initializing gh-pages branch&amp;quot;
+git push upstream gh-pages
+git checkout main
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;5-生成网页并部署&#34;&gt;5. 生成网页并部署&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Now check out the &lt;code&gt;gh-pages&lt;/code&gt; branch into your &lt;code&gt;public&lt;/code&gt; folder using git&amp;rsquo;s [worktree feature][]. Essentially, the worktree allows you to have multiple branches of the same local repository to be checked out in different directories:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;rm -rf public
+git worktree add -B gh-pages public upstream/gh-pages
+
+hugo
+cd public &amp;amp;&amp;amp; git add --all &amp;amp;&amp;amp; git commit -m &amp;quot;Publishing to gh-pages&amp;quot; &amp;amp;&amp;amp; cd ..
+
+git push upstream gh-pages
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;6-设置仓库&#34;&gt;6. 设置仓库&lt;/h3&gt;
+&lt;p&gt;在刚刚建好的GitHub仓库页面进入 Settings &amp;gt; Pages &amp;gt; Source，进行以下设置：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;设置为从gh-pages分支发布网页。&lt;/p&gt;
+&lt;p&gt;等上一小会，你的博客就部署成功了！你可以在 https://&amp;lt;github_user_name&amp;gt;.github.io/ 访问你的博客！&lt;/p&gt;
+&lt;p&gt;但是，等等，每次更新博客都要进行这么多命令行操作吗？这也太麻烦了吧！好在我们可以写一个脚本，把部署需要的命令都写在脚本里，就不需要每次都敲这么多命令了。&lt;/p&gt;
+&lt;h2 id=&#34;自动化更新博文&#34;&gt;自动化更新博文&lt;/h2&gt;
+&lt;p&gt;接下来我们将写一个&lt;code&gt;.sh&lt;/code&gt; script帮助我们部署网页。&lt;/p&gt;
+&lt;p&gt;在博客根目录下新建&lt;code&gt;deploy_to_ghpages.sh&lt;/code&gt;，加入以下代码：&lt;/p&gt;
+&lt;p&gt;（注：以下代码由Hugo官方文档的代码修改而来）&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;#!/bin/sh
+
+if [ &amp;quot;`git status -s`&amp;quot; ]
+then
+    echo &amp;quot;The working directory is dirty. Please commit any pending changes.&amp;quot;
+    exit 1;
+fi
+
+echo &amp;quot;Deleting old publication&amp;quot;
+rm -rf public
+mkdir public
+git worktree prune
+rm -rf .git/worktrees/public/
+
+echo &amp;quot;Checking out gh-pages branch into public&amp;quot;
+git worktree add -B gh-pages public origin/gh-pages
+
+echo &amp;quot;Removing existing files&amp;quot;
+rm -rf public/*
+
+echo &amp;quot;Generating site&amp;quot;
+hugo
+
+echo &amp;quot;Updating gh-pages branch&amp;quot;
+cd public &amp;amp;&amp;amp; git add --all &amp;amp;&amp;amp; git commit -m &amp;quot;Publishing to gh-pages (deploy_to_ghpages.sh)&amp;quot; &amp;amp;&amp;amp; cd ..
+
+echo &amp;quot;Pushing to github&amp;quot;
+#git push --all           # use this command or `git push origin gh-pages` should be both OK
+git push origin gh-pages
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这段代码大概做了：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;检查仓库是否有未commit的修改，如有，则终止部署&lt;/li&gt;
+&lt;li&gt;如果仓库clean，则自动重新生成新的网页，并推送网页至gh-pages分支&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;将&lt;code&gt;deploy_to_ghpages.sh&lt;/code&gt; commit 进仓库。&lt;/p&gt;
+&lt;p&gt;至此所有准备工作都已就绪，你可以开始在自己的博客中发布文章了！如果你已经忘记了之前提到的一系列命令，没关系，下一节我会整理发布或更新博文所需的全部命令！&lt;/p&gt;
+&lt;h2 id=&#34;总结---发布博文流程&#34;&gt;总结 - 发布博文流程&lt;/h2&gt;
+&lt;p&gt;如果你按照以上流程初始化好了你的博客，接下来想要更新文章会非常简单：&lt;/p&gt;
+&lt;p&gt;（注：由于&lt;code&gt;.sh&lt;/code&gt;文件需要在git bash中执行，以下命令默认都在git bash中执行）&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git status
+
+hugo new post/&amp;lt;article_name&amp;gt;/index.md        # new blog/article (recommended)
+
+# 编写博文...
+
+hugo server               # local test (optional)
+
+git add . 
+git commit -m &amp;quot;add new post XXXX&amp;quot;
+git push
+
+./deploy_to_ghpages.sh    # deploy
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;同时，我们也梳理一下GitHub仓库的文件结构：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;main&lt;/code&gt;分支：博客的源文件，可以通过这些源文件生成网页。你需要在这个分支上，对博客源文件进行正常的版本控制。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;gh-pages&lt;/code&gt;分支：由Hugo基于博客源文件生成的静态博客网页，是GitHub Pages生成网站所需的所有内容。这个分支纯由Hugo生成，无需对该分支的版本进行过多理会。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;至此，借助Hugo和GitHub搭建个人博客的全部流程都结束啦！开始经营这个属于自己的小天地吧！&lt;/p&gt;
+&lt;h2 id=&#34;附录&#34;&gt;附录&lt;/h2&gt;
+&lt;h3 id=&#34;好看的主题&#34;&gt;好看的主题&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://themes.gohugo.io/hugo-theme-stack/&#34;&gt;https://themes.gohugo.io/hugo-theme-stack/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.stack.jimmycai.com/&#34;&gt;https://docs.stack.jimmycai.com/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://themes.gohugo.io/loveit/&#34;&gt;https://themes.gohugo.io/loveit/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;多语言支持&#34;&gt;多语言支持&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://pzhao.org/zh/post/hugo-multilingual/&#34;&gt;https://pzhao.org/zh/post/hugo-multilingual/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://gohugo.io/content-management/multilingual/&#34;&gt;https://gohugo.io/content-management/multilingual/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://regisphilibert.com/blog/2018/08/hugo-multilingual-part-1-managing-content-translation/&#34;&gt;https://regisphilibert.com/blog/2018/08/hugo-multilingual-part-1-managing-content-translation/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;svg图下载&#34;&gt;SVG图下载&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://tablericons.com/&#34;&gt;https://tablericons.com/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Git Basic Skills</title>
+      <link>https://chen-gary.github.io/post/git-basic-skills/</link>
+      <pubDate>Sun, 30 May 2021 09:11:17 +0800</pubDate>
+      <guid>https://chen-gary.github.io/post/git-basic-skills/</guid>
+      <description>&lt;h2 id=&#34;配置-configuration&#34;&gt;配置 Configuration&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git config --global user.name &amp;quot;Your Name&amp;quot;
+git config --global user.email &amp;quot;email@example.com&amp;quot;
+
+git config --list
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;创建版本库&#34;&gt;创建版本库&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git init
+
+ls -ah
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;基础命令&#34;&gt;基础命令&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git add &amp;lt;file&amp;gt;
+git commit -m &amp;lt;message&amp;gt;
+
+git status
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;版本回退&#34;&gt;版本回退&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git log
+git log --pretty=oneline
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;HEAD&lt;/code&gt; 当前版本&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;HEAD^&lt;/code&gt; 上一个版本&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;HEAD^^&lt;/code&gt; 上上一个版本&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;HEAD~100&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git reset --hard HEAD^
+
+git log
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;回到未来的某个版本&#34;&gt;回到未来的某个版本&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git reset --hard &amp;lt;commit_id&amp;gt;
+git reset --hard 1094a
+
+git reflog    # find commit id
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;撤销修改&#34;&gt;撤销修改&lt;/h2&gt;
+&lt;p&gt;注意：以下命令似乎是旧版git命令，虽然不影响使用，但建议参考&lt;code&gt;git status&lt;/code&gt;的提示，使用新版命令。&lt;/p&gt;
+&lt;h3 id=&#34;1-丢弃工作区的修改&#34;&gt;1. 丢弃工作区的修改&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git checkout -- file
+git checkout -- README.md
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;两种情况:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;一种是&lt;code&gt;README.md&lt;/code&gt;自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;一种是&lt;code&gt;README.md&lt;/code&gt;已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;总之，就是让这个文件回到最近一次git commit或git add时的状态。&lt;/p&gt;
+&lt;h3 id=&#34;2-丢弃暂存区的修改&#34;&gt;2. 丢弃暂存区的修改&lt;/h3&gt;
+&lt;p&gt;用命令&lt;code&gt;git reset HEAD &amp;lt;file&amp;gt;&lt;/code&gt;可以把暂存区的修改撤销掉（unstage），重新放回工作区&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git reset HEAD README.md    # 把暂存区的修改回退到工作区
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;接着，丢弃工作区的修改&amp;hellip;&lt;/p&gt;
+&lt;h3 id=&#34;3-丢弃commit&#34;&gt;3. 丢弃commit&lt;/h3&gt;
+&lt;p&gt;使用版本回退&lt;/p&gt;
+&lt;h2 id=&#34;远程仓库&#34;&gt;远程仓库&lt;/h2&gt;
+&lt;h3 id=&#34;1-github配置-ssh&#34;&gt;1. Github配置 (SSH)&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;创建SSH Key。在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有&lt;code&gt;id_rsa&lt;/code&gt;和&lt;code&gt;id_rsa.pub&lt;/code&gt;这两个文件，如果已经有了，可直接跳到下一步。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ssh-keygen -t rsa -C &amp;quot;youremail@example.com&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;一路回车&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;id_rsa&lt;/code&gt;是私钥&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;id_rsa.pub&lt;/code&gt;是公钥&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;登陆GitHub，打开“Account settings”，“SSH Keys”页面。然后，点“Add SSH Key”，填上任意Title，在Key文本框里粘贴&lt;code&gt;id_rsa.pub&lt;/code&gt;文件的内容。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;2-将已有的本地仓库添加远程库&#34;&gt;2. (将已有的本地仓库)添加远程库&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;在GitHub新建repo&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;把一个已有的本地仓库与之关联&lt;/p&gt;
+&lt;p&gt;在本地的仓库下运行命令&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git remote add origin git@github.com:XXXXXX/YYYYYY.git
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;添加后，远程库的名字就是&lt;code&gt;origin&lt;/code&gt; (这是Git默认的叫法)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;（首次）把本地库的所有内容推送到远程库上&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git push -u origin main
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;注意：由于远程库是空的，我们第一次推送&lt;code&gt;main&lt;/code&gt;分支时，加上了&lt;code&gt;-u&lt;/code&gt;参数，Git不但会把本地的&lt;code&gt;main&lt;/code&gt;分支内容推送的远程新的&lt;code&gt;main&lt;/code&gt;分支，还会把本地的&lt;code&gt;main&lt;/code&gt;分支和远程的&lt;code&gt;main&lt;/code&gt;分支关联起来，在以后的推送或者拉取时就可以简化命令。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;（非首次）把本地库推送到远程库&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git push origin main
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;注意：SSH连接在第一次验证GitHub服务器的Key时，需要你确认GitHub的Key的指纹信息是否真的来自GitHub的服务器，输入&lt;code&gt;yes&lt;/code&gt;回车即可。&lt;/p&gt;
+&lt;h3 id=&#34;3-删除远程库-解除本地和远程的绑定关系&#34;&gt;3. 删除远程库 (解除本地和远程的绑定关系)&lt;/h3&gt;
+&lt;p&gt;如果添加的时候地址写错了，或者就是想删除远程库，&lt;/p&gt;
+&lt;p&gt;先用&lt;code&gt;git remote -v&lt;/code&gt;查看远程库信息 (&lt;code&gt;git remote&lt;/code&gt; 可查阅更简单的远程库的信息)&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git remote -v
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;根据名字删除，比如删除&lt;code&gt;origin&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git remote rm origin
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;从远程库克隆&#34;&gt;从远程库克隆&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git clone git@github.com:XXXXX/YYYYY.git
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;分支管理&#34;&gt;分支管理&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;HEAD&lt;/code&gt;指向当前分支 e.g. &lt;code&gt;main&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;main&lt;/code&gt;指向提交&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;1-分支基础操作创建与合并分支&#34;&gt;1. 分支基础操作（创建与合并分支）&lt;/h3&gt;
+&lt;p&gt;实战 (example)&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;创建&lt;code&gt;dev&lt;/code&gt;分支，然后切换到&lt;code&gt;dev&lt;/code&gt;分支&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git checkout -b dev
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;git checkout&lt;/code&gt;命令加上&lt;code&gt;-b&lt;/code&gt;参数表示创建并切换，相当于以下两条命令：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git branch dev
+git checkout dev
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;用&lt;code&gt;git branch&lt;/code&gt;命令查看当前分支&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git branch
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;git branch&lt;/code&gt;命令会列出所有分支，当前分支前面会标一个&lt;code&gt;*&lt;/code&gt;号。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;切换回&lt;code&gt;main&lt;/code&gt;分支&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git checkout main
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;dev&lt;/code&gt;分支的工作成果合并到&lt;code&gt;main&lt;/code&gt;分支上&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git merge dev
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;git merge&lt;/code&gt;命令用于合并指定分支到当前分支。&lt;/p&gt;
+&lt;p&gt;注意到上面的&lt;code&gt;Fast-forward&lt;/code&gt;信息，Git告诉我们，这次合并是“快进模式”，也就是直接把&lt;code&gt;master&lt;/code&gt;指向&lt;code&gt;dev&lt;/code&gt;的当前提交，所以合并速度非常快。&lt;/p&gt;
+&lt;p&gt;当然，也不是每次合并都能&lt;code&gt;Fast-forward&lt;/code&gt;，我们后面会讲其他方式的合并。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;删除&lt;code&gt;dev&lt;/code&gt;分支&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git branch -d dev
+
+git branch
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;注意：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;创建并切换到新的&lt;code&gt;dev&lt;/code&gt;分支，可以使用：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git switch -c dev
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;直接切换到已有的&lt;code&gt;main&lt;/code&gt;分支，可以使用：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git switch main
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;分支基础操作总结&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;查看分支：&lt;code&gt;git branch&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;创建分支：&lt;code&gt;git branch &amp;lt;name&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;切换分支：&lt;code&gt;git checkout &amp;lt;name&amp;gt;&lt;/code&gt;或者&lt;code&gt;git switch &amp;lt;name&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;创建+切换分支：&lt;code&gt;git checkout -b &amp;lt;name&amp;gt;&lt;/code&gt;或者&lt;code&gt;git switch -c &amp;lt;name&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;合并某分支到当前分支：&lt;code&gt;git merge &amp;lt;name&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;删除分支：&lt;code&gt;git branch -d &amp;lt;name&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;2-解决冲突&#34;&gt;2. 解决冲突&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;main&lt;/code&gt;分支和&lt;code&gt;feature1&lt;/code&gt;分支各自都分别有新的提交&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.liaoxuefeng.com/files/attachments/919023000423040/0&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;这种情况下，Git无法执行“快速合并”，只能试图把各自的修改合并起来，但这种合并就可能会有冲突&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git merge feature1    # Git告诉我们，readme.txt文件存在冲突，必须手动解决冲突后再提交
+
+git status    # 也可以告诉我们冲突的文件
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;注意：解决冲突就是把Git合并失败的文件手动编辑为我们希望的内容，再提交。&lt;/p&gt;
+&lt;p&gt;直接查看README.md的内容:&lt;/p&gt;
+&lt;p&gt;Git用&lt;code&gt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&lt;/code&gt;，&lt;code&gt;=======&lt;/code&gt;，&lt;code&gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&lt;/code&gt;标记出不同分支的内容&lt;/p&gt;
+&lt;p&gt;手动解决冲突后再&lt;strong&gt;提交&lt;/strong&gt; =&amp;gt; 现在，&lt;code&gt;master&lt;/code&gt;分支和&lt;code&gt;feature1&lt;/code&gt;分支变成了下图所示：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.liaoxuefeng.com/files/attachments/919023031831104/0&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;查看分支的合并情况：&lt;code&gt;git log --graph --pretty=oneline --abbrev-commit&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;最后，删除&lt;code&gt;feature1&lt;/code&gt;分支：&lt;code&gt;git branch -d feature1&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;工作完成。&lt;/p&gt;
+&lt;h3 id=&#34;3-分支管理策略-普通模式合并&#34;&gt;3. 分支管理策略 (普通模式合并)&lt;/h3&gt;
+&lt;p&gt;通常，合并分支时，如果可能，Git会用&lt;code&gt;Fast forward&lt;/code&gt;模式，但这种模式下，删除分支后，会丢掉分支信息。&lt;/p&gt;
+&lt;p&gt;如果要强制禁用&lt;code&gt;Fast forward&lt;/code&gt;模式，Git就会在merge时生成一个新的&lt;strong&gt;commit&lt;/strong&gt;，这样，从分支历史上就可以看出分支信息。&lt;/p&gt;
+&lt;p&gt;准备合并&lt;code&gt;dev&lt;/code&gt;分支，请注意&lt;code&gt;--no-ff&lt;/code&gt;参数，表示禁用&lt;code&gt;Fast forward&lt;/code&gt;：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git merge --no-ff -m &amp;quot;merge with no-ff&amp;quot; dev
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;因为本次合并要创建一个新的commit，所以加上&lt;code&gt;-m&lt;/code&gt;参数，把commit描述写进去。&lt;/p&gt;
+&lt;h3 id=&#34;4-bug分支-stash功能&#34;&gt;4. Bug分支 (stash功能)&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git stash
+
+# 去别的分支修bug
+
+git stash list
+
+# method 1
+git stash apply    # 恢复，但是恢复后，stash内容并不删除
+git stash drop     # 删除stash内容
+
+# method 2
+git stash pop      # 恢复的同时把stash内容也删了 (recommended)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;你可以多次stash，恢复的时候，先用&lt;code&gt;git stash list&lt;/code&gt;查看，然后恢复指定的stash，用命令：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git stash apply stash@{0}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Q: 如果在两个独立的分支上有同样的bug (e.g. &lt;code&gt;main&lt;/code&gt;和&lt;code&gt;dev&lt;/code&gt;上有同一bug)，且&lt;code&gt;main&lt;/code&gt;上的bug已被修复，如何优雅地/简单地修复&lt;code&gt;dev&lt;/code&gt;上的bug？&lt;/p&gt;
+&lt;p&gt;A: 使用&lt;code&gt;cherry-pick&lt;/code&gt;命令&lt;/p&gt;
+&lt;h3 id=&#34;5-feature分支-强行删除未合并的分支&#34;&gt;5. Feature分支 (强行删除未合并的分支)&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ git branch -d feature-vulcan
+error: The branch &#39;feature-vulcan&#39; is not fully merged.
+If you are sure you want to delete it, run &#39;git branch -D feature-vulcan&#39;.
+
+# Git友情提醒，feature-vulcan分支还没有被合并，如果删除，将丢失掉修改，如果要强行删除，需要使用大写的-D参数
+
+$ git branch -D feature-vulcan
+Deleted branch feature-vulcan (was 287773e).
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;开发一个新feature，最好新建一个分支；&lt;/p&gt;
+&lt;p&gt;如果要丢弃一个没有被合并过的分支，可以通过&lt;code&gt;git branch -D &amp;lt;name&amp;gt;&lt;/code&gt;强行删除。&lt;/p&gt;
+&lt;h3 id=&#34;6-多人协作&#34;&gt;6. 多人协作&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 查看远程库的信息
+git remote
+git remote -v
+
+# 推送分支
+git push origin master
+git push origin dev
+# 不一定所有分支都要推送到远程，比如bug分支只要留在本地repo就行了
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;抓取分支&#34;&gt;抓取分支&lt;/h4&gt;
+&lt;p&gt;多人协作时，大家都会往&lt;code&gt;master&lt;/code&gt;和&lt;code&gt;dev&lt;/code&gt;分支上推送各自的修改。&lt;/p&gt;
+&lt;p&gt;当你的小伙伴从远程库clone时，默认情况下，你的小伙伴只能看到本地的&lt;code&gt;master&lt;/code&gt;分支。不信可以用&lt;code&gt;git branch&lt;/code&gt;命令看看&lt;/p&gt;
+&lt;p&gt;现在，你的小伙伴要在&lt;code&gt;dev&lt;/code&gt;分支上开发，就必须创建远程&lt;code&gt;origin&lt;/code&gt;的&lt;code&gt;dev&lt;/code&gt;分支到本地，于是他用这个命令创建本地&lt;code&gt;dev&lt;/code&gt;分支：&lt;/p&gt;
+&lt;p&gt;(注意：在本地创建和远程分支对应的分支，使用&lt;code&gt;git checkout -b branch-name origin/branch-name&lt;/code&gt;，本地和远程分支的名称最好一致)&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git checkout -b dev origin/dev
+# git pull #???拉取远端dev?
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;你的小伙伴已经向&lt;code&gt;origin/dev&lt;/code&gt;分支推送了他的提交，而碰巧你也对同样的文件作了修改，并试图推送。&lt;/p&gt;
+&lt;p&gt;推送失败，因为你的小伙伴的最新提交和你试图推送的提交有冲突，解决办法也很简单，Git已经提示我们，先用&lt;code&gt;git pull&lt;/code&gt;把最新的提交从&lt;code&gt;origin/dev&lt;/code&gt;抓下来，然后，在本地合并，解决冲突，再推送。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git pull&lt;/code&gt;也失败了，原因是没有指定本地&lt;code&gt;dev&lt;/code&gt;分支与远程&lt;code&gt;origin/dev&lt;/code&gt;分支的链接，根据提示，设置&lt;code&gt;dev&lt;/code&gt;和&lt;code&gt;origin/dev&lt;/code&gt;的链接。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git branch --set-upstream-to=origin/&amp;lt;branch_remote&amp;gt; &amp;lt;branch_local&amp;gt;
+
+git branch --set-upstream-to=origin/dev dev
+
+git pull
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这回&lt;code&gt;git pull&lt;/code&gt;成功，但是合并有冲突，需要手动解决。&lt;/p&gt;
+&lt;h4 id=&#34;多人协作小结&#34;&gt;多人协作小结&lt;/h4&gt;
+&lt;p&gt;多人协作的工作模式通常是这样：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;首先，可以试图用&lt;code&gt;git push origin &amp;lt;branch-name&amp;gt;&lt;/code&gt;推送自己的修改；&lt;/li&gt;
+&lt;li&gt;如果推送失败，则因为远程分支比你的本地更新，需要先用&lt;code&gt;git pull&lt;/code&gt;试图合并；&lt;/li&gt;
+&lt;li&gt;如果合并有冲突，则解决冲突，并在本地提交；&lt;/li&gt;
+&lt;li&gt;没有冲突或者解决掉冲突后，再用&lt;code&gt;git push origin &amp;lt;branch-name&amp;gt;&lt;/code&gt;推送就能成功！&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;如果&lt;code&gt;git pull&lt;/code&gt;提示&lt;code&gt;no tracking information&lt;/code&gt;，则说明本地分支和远程分支的链接关系没有创建，用命令&lt;code&gt;git branch --set-upstream-to &amp;lt;branch-name&amp;gt; origin/&amp;lt;branch-name&amp;gt;&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;注意：可以克隆指定分支&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git clone -b &amp;lt;branch&amp;gt; &amp;lt;remote_repo&amp;gt;
+
+git clone -b BBBBBBB git@github.com:XXXXXX/YYYYYYY.git
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;rebase&#34;&gt;Rebase&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git rebase
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;我看不懂。。。&lt;/p&gt;
+&lt;h2 id=&#34;标签管理&#34;&gt;标签管理&lt;/h2&gt;
+&lt;p&gt;Git的标签：指向某个commit的指针（跟分支很像对不对？但是分支可以移动，标签不能移动）&lt;/p&gt;
+&lt;p&gt;tag就是一个让人容易记住的有意义的名字，它跟某个commit绑在一起&lt;/p&gt;
+&lt;h3 id=&#34;1-创建标签&#34;&gt;1. 创建标签&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git checkout main
+
+# 默认标签是打在最新提交的commit上的
+# 1
+git tag &amp;lt;name&amp;gt;
+git tag v1.0
+
+# 2
+git tag &amp;lt;tag_name&amp;gt; &amp;lt;commit_id&amp;gt;
+git tag v0.9 f52c633
+
+# 3 创建带有说明的标签
+git tag -a &amp;lt;tag_name&amp;gt; -m &amp;quot;blablabla...&amp;quot;
+git tag -a v0.1 -m &amp;quot;version 0.1 released&amp;quot; 1094adb
+
+git tag    # 查看所有标签
+git show &amp;lt;tagname&amp;gt;    # 查看标签信息
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;2-操作标签&#34;&gt;2. 操作标签&lt;/h3&gt;
+&lt;p&gt;删除标签&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git tag -d v0.1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;创建的标签都只存储在本地，不会自动推送到远程。所以，打错的标签可以在本地安全删除。&lt;/p&gt;
+&lt;p&gt;如果要推送某个标签到远程，&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git push origin &amp;lt;tag_name&amp;gt;
+git push origin v1.0
+
+# 一次性推送全部尚未推送到远程的本地标签
+git push origin --tags
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果标签已经推送到远程，要删除远程标签就麻烦一点：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 先从本地删除
+git tag -d v0.9
+# 然后，从远程删除
+git push origin :refs/tags/v0.9
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;其他命令&#34;&gt;其他命令&lt;/h2&gt;
+&lt;p&gt;不常用的基础命令&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;查看修改&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git diff
+git diff README.md
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;删除文件&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git rm &amp;lt;file&amp;gt;    # 与`git add&amp;lt;file&amp;gt;`效果一样
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;强制添加被ignore的文件&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git add -f &amp;lt;file_name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;检查&lt;code&gt;.gitignore&lt;/code&gt;对于某个文件的规则&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git check-ignore -v &amp;lt;file_name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Git会告诉我们，&lt;code&gt;.gitignore&lt;/code&gt;的第X行规则忽略了该文件，于是我们就可以知道应该修订哪个规则。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;配置别名&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# e.g. 让st表示status
+git config --global alias.st status
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;或直接在git的全局/某个repo的config文件中配置&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Blender Tutorial Notes</title>
+      <link>https://chen-gary.github.io/post/blender-tutorial-notes/</link>
+      <pubDate>Wed, 03 Mar 2021 16:48:34 +0800</pubDate>
+      <guid>https://chen-gary.github.io/post/blender-tutorial-notes/</guid>
+      <description>&lt;p&gt;View: Numpad 1 / 3 / 7, or &lt;code&gt;ctrl&lt;/code&gt; + Numpad 1 / 3 / 7&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;E&lt;/code&gt; to extrude&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;alt&lt;/code&gt; + &lt;code&gt;E &lt;/code&gt; face normal&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;I&lt;/code&gt; to insert&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;double lick &lt;code&gt;I&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;B&lt;/code&gt; while doing insert (if &lt;code&gt;B&lt;/code&gt; does not work, press &lt;code&gt;I&lt;/code&gt; again to disable &lt;strong&gt;individual faces&lt;/strong&gt;) (e.g. car window)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;G&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;S&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;R&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;O&lt;/code&gt; proportional editing (when modeling the tree)&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ctrl&lt;/code&gt; + &lt;code&gt;B&lt;/code&gt; Bevel&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;alt&lt;/code&gt; + &lt;code&gt;S&lt;/code&gt; shrink / flatten&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;shift&lt;/code&gt; + &lt;code&gt;right click&lt;/code&gt; place 3D curser&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;shift&lt;/code&gt; + &lt;code&gt;S&lt;/code&gt; &amp;gt; Cursor to selected&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;shift&lt;/code&gt; + &lt;code&gt;C&lt;/code&gt; re-center 3D curser&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;L&lt;/code&gt; select linked (in edit mode)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;shift&lt;/code&gt; + &lt;code&gt;L&lt;/code&gt; to deselect linked&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;selection-method&#34;&gt;Selection Method&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;L&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Loop select: &lt;code&gt;alt&lt;/code&gt; + click on edge (in &lt;strong&gt;face selection mode&lt;/strong&gt;)&lt;/p&gt;
+&lt;p&gt;circle select: &lt;code&gt;C&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;deselect: middle mouse&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;ring select: &lt;code&gt;alt&lt;/code&gt; + &lt;code&gt;ctrl&lt;/code&gt; (in &lt;strong&gt;edge select mode&lt;/strong&gt;)&lt;/p&gt;
+&lt;p&gt;Loop select: &lt;code&gt;alt&lt;/code&gt; + click on edge (in &lt;strong&gt;edge selection mode&lt;/strong&gt;)&lt;/p&gt;
+&lt;p&gt;select shortest path: &lt;code&gt;ctrl&lt;/code&gt; (in &lt;strong&gt;edge select mode&lt;/strong&gt;)&lt;/p&gt;
+&lt;p&gt;box select: &lt;code&gt;B&lt;/code&gt; (in &lt;strong&gt;vertex select mode&lt;/strong&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;alt&lt;/code&gt; + &lt;code&gt;Z&lt;/code&gt; enable/disable X-ray (to select the back vertices)&lt;/p&gt;
+&lt;p&gt;Lasso select (套索): &lt;code&gt;ctrl&lt;/code&gt; + right mouse button&lt;/p&gt;
+&lt;p&gt;Grow selection (select all faces neighboring to the selected face): &lt;code&gt;ctrl&lt;/code&gt; + Numpad plus &lt;code&gt;+&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Shrink selection (opposite to &lt;strong&gt;grow selection&lt;/strong&gt;): &lt;code&gt;ctrl&lt;/code&gt; + &lt;code&gt;-&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;select random&lt;/p&gt;
+&lt;p&gt;select similar: &lt;code&gt;shift&lt;/code&gt; + &lt;code&gt;G&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;checker deselect (间隔选中效果，像足球那样): &lt;code&gt;F&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;H&lt;/code&gt; hide selected objects&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;alt&lt;/code&gt; + &lt;code&gt;H&lt;/code&gt; unhide all&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;ctrl&lt;/code&gt; + &lt;code&gt;I&lt;/code&gt;: Invert selection (选中所有未被当前选中的东西)&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Loop cut: &lt;code&gt;ctrl&lt;/code&gt; + &lt;code&gt;R&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Knife tool: &lt;code&gt;K&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;ctrl&lt;/code&gt;: snap to center with knife tool&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;C&lt;/code&gt;: angle constraint with knife tool&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;ctrl&lt;/code&gt; + 1-5: &lt;strong&gt;subdivision modifier&lt;/strong&gt; (remember to &lt;strong&gt;apply&lt;/strong&gt; this modifier)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;if it make the object &lt;strong&gt;not low-poly&lt;/strong&gt;, then use &lt;strong&gt;Decimate modifier&lt;/strong&gt; to make it back to low-poly.&lt;/p&gt;
+&lt;p&gt;(see video around 48:00)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;,&lt;/code&gt;: Orientation&lt;/p&gt;
+&lt;p&gt;snap (上方的磁贴icon) (hotkey: &lt;code&gt;ctrl&lt;/code&gt; when using &lt;code&gt;G&lt;/code&gt;) &amp;mdash;-&amp;gt; 把两个vertices连在一起 (注意：这样snap后，实际上仍然是两个vertices) &amp;mdash;&amp;mdash;&amp;gt; two solutions&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;use &lt;strong&gt;snap&lt;/strong&gt; along with &lt;strong&gt;Auto Merge Vertices&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;after &lt;strong&gt;snap&lt;/strong&gt;, &lt;code&gt;A&lt;/code&gt; to select all, then &lt;code&gt;M&lt;/code&gt; to merge &lt;code&gt;merge by distance&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;snap along an &lt;strong&gt;axis&lt;/strong&gt;, instead of snap two vertices, to &lt;strong&gt;align&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;after delete some faces, use &lt;code&gt;F&lt;/code&gt; to &lt;strong&gt;Fill / Create face(s)&lt;/strong&gt; (自动填补holes)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;select the whole object and &lt;code&gt;F&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;select certain edges and &lt;code&gt;F&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;after selecting 2 vertices, press &lt;code&gt;J&lt;/code&gt; / &lt;code&gt;F&lt;/code&gt; to add an edge between these 2 vertices (&lt;code&gt;J&lt;/code&gt; will make the object more low-poly, while &lt;code&gt;F&lt;/code&gt; simply add an edge without affecting the original shape)&lt;/p&gt;
+&lt;p&gt;Besides &lt;code&gt;J&lt;/code&gt;, we can use &lt;code&gt;ctrl&lt;/code&gt; + &lt;code&gt;T&lt;/code&gt; to &lt;strong&gt;Triangulate selection&lt;/strong&gt; to make a round face more low-poly after using &lt;code&gt;F&lt;/code&gt; to &lt;strong&gt;Fill a hole&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;setting: enable &lt;strong&gt;Backface Culling&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;F3&lt;/code&gt; search &lt;strong&gt;flip normal&lt;/strong&gt; (or &lt;code&gt;alt&lt;/code&gt; + &lt;code&gt;N&lt;/code&gt;)&lt;/p&gt;
+&lt;p&gt;some faces are &lt;strong&gt;flipped&lt;/strong&gt;, to fix it &lt;code&gt;alt&lt;/code&gt; + &lt;code&gt;N&lt;/code&gt; &amp;gt; &lt;strong&gt;recalculate outside&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;X&lt;/code&gt; dissolve edges&lt;/p&gt;
+&lt;p&gt;To connect two meshes inside one object into one single mesh, select two faces which you want to connect and &lt;code&gt;F3&lt;/code&gt; &amp;gt; &lt;strong&gt;Bridge Edge Loops&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;tips: &lt;code&gt;shift&lt;/code&gt; + &lt;code&gt;D&lt;/code&gt; to duplicate a face, &lt;code&gt;right mouse&lt;/code&gt; to put the new face exactly the same location as the original one&lt;/p&gt;
+&lt;p&gt;Separate selection to new object: &lt;code&gt;P&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Merge into a single object: &lt;code&gt;ctrl&lt;/code&gt; + &lt;code&gt;J&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;modifiers&#34;&gt;Modifiers&lt;/h2&gt;
+&lt;p&gt;Mirror modifier (use &lt;strong&gt;auto mirror&lt;/strong&gt; add-on)&lt;/p&gt;
+&lt;p&gt;Subdivision surface modifier: &lt;code&gt;ctrl&lt;/code&gt; + &lt;code&gt;5 or other&lt;/code&gt; (subdivide a plane to create low-poly island)&lt;/p&gt;
+&lt;p&gt;Displace modifier (low-poly landscape)&lt;/p&gt;
+&lt;p&gt;Skin modifier (use with &lt;strong&gt;extra mesh add-on&lt;/strong&gt;, so that we can add &lt;strong&gt;single vertex&lt;/strong&gt;, and then build a low-poly tree)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;A&lt;/code&gt; to select all, and then &lt;code&gt;ctrl&lt;/code&gt; + &lt;code&gt;A&lt;/code&gt; to scale&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;tips&#34;&gt;Tips&lt;/h2&gt;
+&lt;p&gt;If we scare the object outside edit mode, &lt;code&gt;ctrl&lt;/code&gt; + &lt;code&gt;A&lt;/code&gt; &amp;gt; apply scale to make the scare &lt;code&gt;1, 1, 1&lt;/code&gt; again!&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Numpad .&lt;/code&gt;: to make viewport rotate around selection&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Compile Using CMake</title>
+      <link>https://chen-gary.github.io/post/compile-using-cmake/</link>
+      <pubDate>Wed, 03 Mar 2021 15:54:26 +0800</pubDate>
+      <guid>https://chen-gary.github.io/post/compile-using-cmake/</guid>
+      <description>&lt;p&gt;在使用CLion编写C++项目后，IDE会自动生成CMakeLists.txt文件。那么如何手动编译我们写的代码呢？&lt;/p&gt;
+&lt;p&gt;步骤如下&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;将项目中的所有源文件 + 自动生成的CMakeLists.txt 传入Linux虚拟机（的同一目录下）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;mkdir build
+cd build
+cmake ..		# 用cmake命令将CMakeLists.txt文件转化为make所需要的makefile文件
+make			# 用make命令编译源码生成可执行程序
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;运行&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;./name_of_executable
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;(ref: &lt;a href=&#34;https://www.cnblogs.com/cv-pr/p/6206921.html&#34;&gt;https://www.cnblogs.com/cv-pr/p/6206921.html&lt;/a&gt;)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Blender Import Material and Setup Material Library</title>
+      <link>https://chen-gary.github.io/post/blender-import-material-and-setup-material-library/</link>
+      <pubDate>Thu, 18 Feb 2021 20:57:29 +0800</pubDate>
+      <guid>https://chen-gary.github.io/post/blender-import-material-and-setup-material-library/</guid>
+      <description>&lt;h2 id=&#34;使用material-library的原因&#34;&gt;使用material library的原因&lt;/h2&gt;
+&lt;p&gt;多人合作时，方便颜色统一（尤其针对统一玻璃之类的复杂材质）&lt;/p&gt;
+&lt;h2 id=&#34;如何导入material&#34;&gt;如何导入material&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;打开想要导入material的 blender file&lt;/li&gt;
+&lt;li&gt;导航栏选择 File &amp;gt; Append&lt;/li&gt;
+&lt;li&gt;找到&lt;code&gt;material_template_lib.blend&lt;/code&gt;，并双击进入&lt;/li&gt;
+&lt;li&gt;进入&lt;code&gt;Material&lt;/code&gt;文件夹，并双击选择想导入的material&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://camo.githubusercontent.com/548ea9bd6677b3840b98c2b3ef078787dfec0306e47559ad475b4419735de6bc/68747470733a2f2f692e737461636b2e696d6775722e636f6d2f6141584f772e676966&#34; alt=&#34;gif&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img_1.png&#34; alt=&#34;pic&#34;&gt;&lt;/p&gt;
+&lt;p&gt;这样在Material selector中应该就能找到刚刚导入的material&lt;/p&gt;
+&lt;p&gt;（注意&lt;strong&gt;重命名&lt;/strong&gt;导入的material）&lt;/p&gt;
+&lt;p&gt;（ref &lt;a href=&#34;https://blender.stackexchange.com/questions/63018/how-to-import-downloaded-materials-files/63055&#34;&gt;https://blender.stackexchange.com/questions/63018/how-to-import-downloaded-materials-files/63055&lt;/a&gt;）&lt;/p&gt;
+&lt;h2 id=&#34;合作方式&#34;&gt;*合作方式&lt;/h2&gt;
+&lt;p&gt;比如我负责选定玻璃的材质，那么我就&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;下载最新的&lt;code&gt;material_template_lib.blend&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;新建一个cube，后新建并附上调好的玻璃材质&lt;/li&gt;
+&lt;li&gt;commit回GitHub，更新&lt;code&gt;material_template_lib.blend&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Blender UV Coloring Method</title>
+      <link>https://chen-gary.github.io/post/blender-uv-coloring-method/</link>
+      <pubDate>Thu, 18 Feb 2021 20:28:18 +0800</pubDate>
+      <guid>https://chen-gary.github.io/post/blender-uv-coloring-method/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;The palette style UV coloring method&lt;/strong&gt; 是一个使用&lt;strong&gt;调色板图片(palette)&lt;/strong&gt; 对模型涂色的方法&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;优点：涂色非常简单快速，可以边建模边涂色（辅助建模）&lt;/li&gt;
+&lt;li&gt;缺点：有的时候不好找想要的颜色；多人合作时不方便后期统一颜色；导入unity时需要更改几个默认设置&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;为解决这些问题，我找到了一个快速对 UV coloring 的模型&lt;strong&gt;用标准 material 重新上色&lt;/strong&gt;的方法。总的效率可能比建完整个模型再上色更高。&lt;/p&gt;
+&lt;h2 id=&#34;the-palette-style-uv-coloring-method&#34;&gt;The palette style UV coloring method&lt;/h2&gt;
+&lt;p&gt;这个方法来自于一名油管大佬 
+&lt;a href=&#34;https://www.youtube.com/watch?v=1jHUY3qoBu8&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.youtube.com/watch?v=1jHUY3qoBu8&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;他在这个视频的 02:12 - 4:42 介绍了这个涂色方法&lt;/p&gt;
+&lt;p&gt;这个视频的简介里，他给了两个 palette 的图片：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://www.youtube.com/redirect?v=1jHUY3qoBu8&amp;amp;event=video_description&amp;amp;redir_token=QUFFLUhqblZ6eF9xZ094cFJEaUJXX1VvbHgzVllTdTI5Z3xBQ3Jtc0tseU9hX1phWUtTUl90cWNNREs5elpITkZSUE96RGhwUTNKNFFmZlJSRThIX1JjZHl2eVhrMm05Z1BNcDl0LTl0WW5vUWFvVXdlQzNqb1VuVWRYeUNLSGJ4blI2Rlp4U0FyQlFTWDdSWTlVWkZFZnBVYw%3D%3D&amp;amp;q=https%3A%2F%2Fwww.dropbox.com%2Fs%2Fc5olic38j8fopet%2FImphenziaPalette01.png%3Fdl%3D0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;图一&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://www.youtube.com/redirect?v=1jHUY3qoBu8&amp;amp;event=video_description&amp;amp;redir_token=QUFFLUhqbmtxSGEza1hSYmp6OEk2VTZvOFRtTjR0bWNjd3xBQ3Jtc0tubXVMSGsybFBKR2NwWklHNHRVM1BBM0ZaZXFpS0dEU3k5VU5aR3RVbmY1WXpQbnBPLVdqeEpQWFI4ejVjOVpjcUtFbHJjWnktMk5ma2o2d3hKSU1SVHNtbnd5Q2pTLUxNd3pCRUhxWjF0SDktQkc3Yw%3D%3D&amp;amp;q=https%3A%2F%2Fwww.dropbox.com%2Fs%2F1w98xiksiwaywqx%2FImphenziaPalette01-256-Gradient.png%3Fdl%3D0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;图二&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以及一个我觉得蛮不错的blender setting视频（这个很短的视频里也介绍了 The palette style UV coloring method 的方法）：&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://www.youtube.com/watch?v=BlxiCd0Upg4&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.youtube.com/watch?v=BlxiCd0Upg4&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;用标准-material-重新上色&#34;&gt;用标准 material 重新上色&lt;/h2&gt;
+&lt;p&gt;假设在建模的时候，我把墙面涂成了诡异的蓝色，而右边material栏中的 &lt;code&gt;Material_final&lt;/code&gt; 是最终统一的墙面颜色。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;1.png&#34; alt=&#34;pic1&#34;&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;tab&lt;/code&gt; 进入编辑模式&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;鼠标放在中间的编辑窗口，按 &lt;code&gt;A&lt;/code&gt; 全选&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;点亮左侧 UV editor 窗口的这个icon (红色框框)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;icon.png&#34; alt=&#34;pic2&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;左键框选诡异的蓝色，这样中间窗口中所有使用这种蓝色的面就被选中了&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;2.png&#34; alt=&#34;pic3&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;这时候在右侧material栏更换material，并点击&lt;code&gt;Assign&lt;/code&gt;，墙面就重新上色完成&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;3.png&#34; alt=&#34;pic4&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;同理，我们也可以对其他面重新上色&lt;/p&gt;
+&lt;p&gt;这样直接把&lt;code&gt;.blend&lt;/code&gt; 文件拖入unity 也可以保持所有颜色，无需任何设置。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;4.png&#34; alt=&#34;pic5&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

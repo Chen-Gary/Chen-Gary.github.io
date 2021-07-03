@@ -1,134 +1,82 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
+    <loc>https://chen-gary.github.io/authors/</loc>
+    <lastmod>2021-07-03T12:13:12+08:00</lastmod>
+  </url><url>
     <loc>https://chen-gary.github.io/</loc>
-    <lastmod>2021-06-06T19:56:34+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chen-gary.github.io/tags/latex/</loc>
-    <lastmod>2021-06-06T19:56:34+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chen-gary.github.io/p/latex-basic/</loc>
-    <lastmod>2021-06-06T19:56:34+08:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2021-07-03T12:13:12+08:00</lastmod>
+  </url><url>
+    <loc>https://chen-gary.github.io/author/gary-chen/</loc>
+    <lastmod>2021-07-03T12:13:12+08:00</lastmod>
+  </url><url>
+    <loc>https://chen-gary.github.io/tag/latex/</loc>
+    <lastmod>2021-07-03T12:13:12+08:00</lastmod>
+  </url><url>
+    <loc>https://chen-gary.github.io/post/latex-basic/</loc>
+    <lastmod>2021-07-03T12:13:12+08:00</lastmod>
+  </url><url>
     <loc>https://chen-gary.github.io/post/</loc>
-    <lastmod>2021-06-06T19:56:34+08:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2021-07-03T12:13:12+08:00</lastmod>
+  </url><url>
     <loc>https://chen-gary.github.io/tags/</loc>
-    <lastmod>2021-06-06T19:56:34+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chen-gary.github.io/tags/blog/</loc>
+    <lastmod>2021-07-03T12:13:12+08:00</lastmod>
+  </url><url>
+    <loc>https://chen-gary.github.io/tag/blog/</loc>
     <lastmod>2021-06-06T11:48:17+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chen-gary.github.io/p/building-blog-using-hugo/</loc>
+  </url><url>
+    <loc>https://chen-gary.github.io/post/building-blog-using-hugo/</loc>
     <lastmod>2021-06-06T11:48:17+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chen-gary.github.io/tags/hugo/</loc>
+  </url><url>
+    <loc>https://chen-gary.github.io/tag/hugo/</loc>
     <lastmod>2021-06-06T11:48:17+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chen-gary.github.io/tags/git/</loc>
+  </url><url>
+    <loc>https://chen-gary.github.io/tag/git/</loc>
     <lastmod>2021-05-30T09:11:17+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chen-gary.github.io/p/git-basic-skills/</loc>
+  </url><url>
+    <loc>https://chen-gary.github.io/post/git-basic-skills/</loc>
     <lastmod>2021-05-30T09:11:17+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chen-gary.github.io/tags/blender/</loc>
+  </url><url>
+    <loc>https://chen-gary.github.io/tag/blender/</loc>
     <lastmod>2021-03-03T16:48:34+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chen-gary.github.io/categories/blender/</loc>
+  </url><url>
+    <loc>https://chen-gary.github.io/category/blender/</loc>
     <lastmod>2021-03-03T16:48:34+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chen-gary.github.io/p/blender-tutorial-notes/</loc>
+  </url><url>
+    <loc>https://chen-gary.github.io/post/blender-tutorial-notes/</loc>
     <lastmod>2021-03-03T16:48:34+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://chen-gary.github.io/categories/</loc>
     <lastmod>2021-03-03T16:48:34+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chen-gary.github.io/tags/c&#43;&#43;/</loc>
+  </url><url>
+    <loc>https://chen-gary.github.io/tag/c-/</loc>
     <lastmod>2021-03-03T15:54:26+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chen-gary.github.io/tags/cmake/</loc>
+  </url><url>
+    <loc>https://chen-gary.github.io/tag/cmake/</loc>
     <lastmod>2021-03-03T15:54:26+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chen-gary.github.io/p/compile-using-cmake/</loc>
+  </url><url>
+    <loc>https://chen-gary.github.io/post/compile-using-cmake/</loc>
     <lastmod>2021-03-03T15:54:26+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chen-gary.github.io/categories/csc3050/</loc>
-    <lastmod>2021-03-03T15:54:26+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chen-gary.github.io/p/csc3050-tips/</loc>
-    <lastmod>2021-02-20T22:59:49+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chen-gary.github.io/p/blender-import-material-and-setup-material-library/</loc>
+  </url><url>
+    <loc>https://chen-gary.github.io/post/blender-import-material-and-setup-material-library/</loc>
     <lastmod>2021-02-18T20:57:29+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chen-gary.github.io/p/blender-uv-coloring-method/</loc>
+  </url><url>
+    <loc>https://chen-gary.github.io/post/blender-uv-coloring-method/</loc>
     <lastmod>2021-02-18T20:28:18+08:00</lastmod>
+  </url><url>
+    <loc>https://chen-gary.github.io/project/game-enclosure/</loc>
+    <lastmod>2020-10-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chen-gary.github.io/tag/game-development/</loc>
+    <lastmod>2020-10-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chen-gary.github.io/project/</loc>
+    <lastmod>2020-10-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chen-gary.github.io/tag/unity/</loc>
+    <lastmod>2020-10-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://chen-gary.github.io/publication_types/</loc>
   </url>
-  
-  <url>
-    <loc>https://chen-gary.github.io/about/</loc>
-    <lastmod>2021-02-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chen-gary.github.io/archives/</loc>
-    <lastmod>2021-02-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chen-gary.github.io/page/</loc>
-    <lastmod>2021-02-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chen-gary.github.io/repo/</loc>
-    <lastmod>2021-02-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chen-gary.github.io/search/</loc>
-  </url>
-  
 </urlset>
