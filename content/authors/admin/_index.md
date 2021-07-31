@@ -10,7 +10,7 @@ authors:
 superuser: true
 
 # Role/position
-role: Undergraduate Majored in CE
+role: Computer Engineering Student
 
 # Organizations/Affiliations
 organizations:
@@ -18,7 +18,7 @@ organizations:
   url: "https://www.cuhk.edu.cn/"
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include game development, blockchain and digital twin.
+bio: Undergraduate majored in computer engineering @CUHK(SZ), interested in game development, blockchain, etc.
 
 interests:
 - Game Development
@@ -68,6 +68,7 @@ user_groups:
 - Visitors
 ---
 
-Gary Chen is an undergraduate student majored in computer engineering. 
+Gary Chen is an undergraduate student at CUHK(SZ), majored in computer engineering. 
+He is currently working in [Human-Cloud Systems Laboratory](https://hcslab.cuhk.edu.cn/) as a research assistant.
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "files/cv.pdf" "newtab" >}}resumé{{< /staticref >}}.
