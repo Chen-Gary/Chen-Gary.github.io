@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo | Gary Chen</title>
-    <link>https://chen-gary.github.io/tag/hugo/</link>
-      <atom:link href="https://chen-gary.github.io/tag/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://garychen.top/tag/hugo/</link>
+      <atom:link href="https://garychen.top/tag/hugo/index.xml" rel="self" type="application/rss+xml" />
     <description>Hugo</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2021 Gary Chen</copyright><lastBuildDate>Sun, 06 Jun 2021 11:48:17 +0800</lastBuildDate>
     <image>
-      <url>https://chen-gary.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>https://garychen.top/images/icon_hua5951e33adff7dd11d5adefef4ae6ab9_17916_512x512_fill_lanczos_center_2.png</url>
       <title>Hugo</title>
-      <link>https://chen-gary.github.io/tag/hugo/</link>
+      <link>https://garychen.top/tag/hugo/</link>
     </image>
     
     <item>
       <title>Building Blog Using Hugo</title>
-      <link>https://chen-gary.github.io/post/building-blog-using-hugo/</link>
+      <link>https://garychen.top/post/building-blog-using-hugo/</link>
       <pubDate>Sun, 06 Jun 2021 11:48:17 +0800</pubDate>
-      <guid>https://chen-gary.github.io/post/building-blog-using-hugo/</guid>
+      <guid>https://garychen.top/post/building-blog-using-hugo/</guid>
       <description>&lt;h2 id=&#34;摘要&#34;&gt;摘要&lt;/h2&gt;
 &lt;p&gt;在Windows平台下安装、配置Hugo，并通过Github Pages部署个人博客&lt;/p&gt;
 &lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;

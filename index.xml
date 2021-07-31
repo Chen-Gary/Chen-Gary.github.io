@@ -2,21 +2,124 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gary Chen</title>
-    <link>https://chen-gary.github.io/</link>
-      <atom:link href="https://chen-gary.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://garychen.top/</link>
+      <atom:link href="https://garychen.top/index.xml" rel="self" type="application/rss+xml" />
     <description>Gary Chen</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2021 Gary Chen</copyright><lastBuildDate>Sat, 03 Jul 2021 12:13:12 +0800</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2021 Gary Chen</copyright><lastBuildDate>Sat, 31 Jul 2021 23:08:49 +0800</lastBuildDate>
     <image>
-      <url>https://chen-gary.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>https://garychen.top/images/icon_hua5951e33adff7dd11d5adefef4ae6ab9_17916_512x512_fill_lanczos_center_2.png</url>
       <title>Gary Chen</title>
-      <link>https://chen-gary.github.io/</link>
+      <link>https://garychen.top/</link>
     </image>
     
     <item>
+      <title>Git Tricks: Set .gitignore for Unity Project &amp; Clear git-ignored files</title>
+      <link>https://garychen.top/post/git-tricks-gitignore-and-unity/</link>
+      <pubDate>Sat, 31 Jul 2021 23:08:49 +0800</pubDate>
+      <guid>https://garychen.top/post/git-tricks-gitignore-and-unity/</guid>
+      <description>&lt;h2 id=&#34;1-gitignore在unity工程中的使用&#34;&gt;1. gitignore在Unity工程中的使用&lt;/h2&gt;
+&lt;p&gt;Unity工程在第一次commit前一定要在工程根目录下放置
+&lt;a href=&#34;https://github.com/github/gitignore/blob/master/Unity.gitignore&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;正确的&lt;code&gt;.gitignore&lt;/code&gt;文件&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;如果第一次commit时没有添加&lt;code&gt;.gitignore&lt;/code&gt;或&lt;code&gt;.gitignore&lt;/code&gt;放置位置不对，会导致project中许多不必要的中间文件也被版本控制，比如Library文件夹&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;As a user, you should never have to alter the Library folder manually and attempting to do so may affect the functioning of the project in the Unity editor.&lt;/strong&gt; However, it is always safe to delete the Library folder (while the project is not open in Unity) as all its data is generated from what is stored in the Assets and ProjectSettings folders. &lt;strong&gt;This also means that the Library folder should not be included in version control .&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;(ref: &lt;a href=&#34;https://stackoverflow.com/questions/59742994/should-i-push-the-unity-library-folder-to-github&#34;&gt;https://stackoverflow.com/questions/59742994/should-i-push-the-unity-library-folder-to-github&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;进而导致以下可能的后果：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在拉下仓库最新提交后，部分文件无法被unity识别，图标变成空白&lt;/li&gt;
+&lt;li&gt;单纯用unity打开project，即使没有做任何修改，git status也会提示有改动&lt;/li&gt;
+&lt;li&gt;Git会记录很多奇怪的修改。比如，git显示我们删掉了一个文件，并原封不动地加了回来。同时，这些奇怪而不必要的修改大多发生在Library文件夹。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2-清除已被git追踪但现在处于gitignore中的文件&#34;&gt;2. 清除已被Git追踪，但现在处于.gitignore中的文件&lt;/h2&gt;
+&lt;p&gt;How to make Git “forget” about a file that was tracked but is now in .gitignore?&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git rm -r --cached .
+git add .
+git commit -am &amp;quot;Remove ignored files&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;(ref: &lt;a href=&#34;https://stackoverflow.com/questions/1274057/how-to-make-git-forget-about-a-file-that-was-tracked-but-is-now-in-gitignore&#34;&gt;https://stackoverflow.com/questions/1274057/how-to-make-git-forget-about-a-file-that-was-tracked-but-is-now-in-gitignore&lt;/a&gt;)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Unity: Debug With adb</title>
+      <link>https://garychen.top/post/unity-debug-with-adb/</link>
+      <pubDate>Sun, 25 Jul 2021 22:22:37 +0800</pubDate>
+      <guid>https://garychen.top/post/unity-debug-with-adb/</guid>
+      <description>&lt;h2 id=&#34;先决条件&#34;&gt;先决条件&lt;/h2&gt;
+&lt;h3 id=&#34;1-电脑上&#34;&gt;1. 电脑上&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;下载adb（建议直接下Android Studio）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;配置adb系统环境变量
+默认路径：&lt;code&gt;C:\Users\&amp;lt;user_name&amp;gt;\AppData\Local\Android\Sdk\platform-tools&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://www.jianshu.com/p/494216e613eb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Reference Link&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-手机上&#34;&gt;2. 手机上&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;安卓手机进入开发者模式
+进入开发者模式：settings =&amp;gt; about phone =&amp;gt; build number (tap seven times)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;使用&#34;&gt;使用&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;数据线连接手机（如果之前没连过需要安装驱动）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;允许“USB调试”（应该有指引）&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://www.embarcadero.com/starthere/xe5/mobdevsetup/android/en/enabling_usb_debugging_on_an_android_device.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Reference Link&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;电脑终端输入以下命令开始adb调试
+&lt;code&gt;adb logcat -s Unity ActivityManager PackageManager dalvikvm DEBUG&lt;/code&gt;
+上一种指令在我(hyy)的电脑上不能过滤信息，导致有很多无用的信息，以下的指令可以只显示Unity debug消息
+&lt;code&gt;adb logcat -s Unity&lt;/code&gt; （-s后加入想要过滤的filter log）&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://answers.unity.com/questions/492681/how-to-use-adb-logcat.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Reference Link&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;另一种直观的方式&#34;&gt;另一种直观的方式&lt;/h2&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://www.youtube.com/watch?v=eI2GOuEMGfQ&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Reference Link&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;打开monitor.bat文件：路径: &amp;lsquo;C:\Users&amp;lt;user_name&amp;gt;\AppData\Local\Android\Sdk\tools&amp;rsquo;&lt;/li&gt;
+&lt;li&gt;手机连接电脑(手机进入开发者模式)&lt;/li&gt;
+&lt;li&gt;点击图中的绿色加号，在log处设置filter为Unity，在filter name处设置所需的filter的名字，点击确定&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;1.png&#34; alt=&#34;&#34;&gt;
+4. 点击刚刚设置的filter space，就能看见被过滤过的log消息（若filter log设置为Unity，则看到的log为Unity debug消息）&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Git Tricks: Filename Too Long Error</title>
+      <link>https://garychen.top/post/git-tricks-filename-too-long-error/</link>
+      <pubDate>Tue, 20 Jul 2021 22:05:22 +0800</pubDate>
+      <guid>https://garychen.top/post/git-tricks-filename-too-long-error/</guid>
+      <description>&lt;p&gt;在使用Git时，如果远程仓库中含有名字很长的文件，或是某个文件在多层文件夹中，间接导致其“文件名”太长：&lt;/p&gt;
+&lt;p&gt;Windows下，克隆时会出现 &lt;code&gt;warning: Clone succeeded, but checkout failed.&lt;/code&gt; 报错&lt;/p&gt;
+&lt;p&gt;阅读克隆/版本退回的报错信息可以看到类似 &lt;code&gt;error: unable to create file XXXXXXXXXXXXXXXXXXXX: Filename too long&lt;/code&gt;的信息&lt;/p&gt;
+&lt;p&gt;解决方法：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Start Git Bash &lt;strong&gt;as Administrator&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Run command &lt;code&gt;git config --system core.longpaths true&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Another way (only for this clone):
+&lt;code&gt;git clone -c core.longpaths=true &amp;lt;repo-url&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;(ref: &lt;a href=&#34;https://stackoverflow.com/questions/52699177/how-to-fix-filename-too-long-error-during-git-clone/52699496&#34;&gt;https://stackoverflow.com/questions/52699177/how-to-fix-filename-too-long-error-during-git-clone/52699496&lt;/a&gt;)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>LaTeX Basic</title>
-      <link>https://chen-gary.github.io/post/latex-basic/</link>
+      <link>https://garychen.top/post/latex-basic/</link>
       <pubDate>Sat, 03 Jul 2021 12:13:12 +0800</pubDate>
-      <guid>https://chen-gary.github.io/post/latex-basic/</guid>
+      <guid>https://garychen.top/post/latex-basic/</guid>
       <description>&lt;p&gt;这篇文章是对
 &lt;a href=&#34;https://liam.page/2014/09/08/latex-introduction/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;这份教程&lt;/a&gt;的笔记，虽说是笔记，很多地方都直接复制了原文，强烈建议大家进入原教程查看。&lt;/p&gt;
 &lt;p&gt;（注：以下文档默认使用XeLaTeX进行编译）&lt;/p&gt;
@@ -248,9 +351,9 @@ Mac OS &amp;amp; MacTeX &amp;amp; TeXShop \\
     
     <item>
       <title>Building Blog Using Hugo</title>
-      <link>https://chen-gary.github.io/post/building-blog-using-hugo/</link>
+      <link>https://garychen.top/post/building-blog-using-hugo/</link>
       <pubDate>Sun, 06 Jun 2021 11:48:17 +0800</pubDate>
-      <guid>https://chen-gary.github.io/post/building-blog-using-hugo/</guid>
+      <guid>https://garychen.top/post/building-blog-using-hugo/</guid>
       <description>&lt;h2 id=&#34;摘要&#34;&gt;摘要&lt;/h2&gt;
 &lt;p&gt;在Windows平台下安装、配置Hugo，并通过Github Pages部署个人博客&lt;/p&gt;
 &lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
@@ -558,9 +661,9 @@ git push
     
     <item>
       <title>Git Basic Skills</title>
-      <link>https://chen-gary.github.io/post/git-basic-skills/</link>
+      <link>https://garychen.top/post/git-basic-skills/</link>
       <pubDate>Sun, 30 May 2021 09:11:17 +0800</pubDate>
-      <guid>https://chen-gary.github.io/post/git-basic-skills/</guid>
+      <guid>https://garychen.top/post/git-basic-skills/</guid>
       <description>&lt;h2 id=&#34;配置-configuration&#34;&gt;配置 Configuration&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git config --global user.name &amp;quot;Your Name&amp;quot;
 git config --global user.email &amp;quot;email@example.com&amp;quot;
@@ -920,9 +1023,9 @@ git config --global alias.st status
     
     <item>
       <title>Blender Tutorial Notes</title>
-      <link>https://chen-gary.github.io/post/blender-tutorial-notes/</link>
+      <link>https://garychen.top/post/blender-tutorial-notes/</link>
       <pubDate>Wed, 03 Mar 2021 16:48:34 +0800</pubDate>
-      <guid>https://chen-gary.github.io/post/blender-tutorial-notes/</guid>
+      <guid>https://garychen.top/post/blender-tutorial-notes/</guid>
       <description>&lt;p&gt;View: Numpad 1 / 3 / 7, or &lt;code&gt;ctrl&lt;/code&gt; + Numpad 1 / 3 / 7&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;E&lt;/code&gt; to extrude&lt;/p&gt;
 &lt;blockquote&gt;
@@ -1030,9 +1133,9 @@ git config --global alias.st status
     
     <item>
       <title>Compile Using CMake</title>
-      <link>https://chen-gary.github.io/post/compile-using-cmake/</link>
+      <link>https://garychen.top/post/compile-using-cmake/</link>
       <pubDate>Wed, 03 Mar 2021 15:54:26 +0800</pubDate>
-      <guid>https://chen-gary.github.io/post/compile-using-cmake/</guid>
+      <guid>https://garychen.top/post/compile-using-cmake/</guid>
       <description>&lt;p&gt;在使用CLion编写C++项目后，IDE会自动生成CMakeLists.txt文件。那么如何手动编译我们写的代码呢？&lt;/p&gt;
 &lt;p&gt;步骤如下&lt;/p&gt;
 &lt;ul&gt;
@@ -1058,9 +1161,9 @@ make			# 用make命令编译源码生成可执行程序
     
     <item>
       <title>Blender Import Material and Setup Material Library</title>
-      <link>https://chen-gary.github.io/post/blender-import-material-and-setup-material-library/</link>
+      <link>https://garychen.top/post/blender-import-material-and-setup-material-library/</link>
       <pubDate>Thu, 18 Feb 2021 20:57:29 +0800</pubDate>
-      <guid>https://chen-gary.github.io/post/blender-import-material-and-setup-material-library/</guid>
+      <guid>https://garychen.top/post/blender-import-material-and-setup-material-library/</guid>
       <description>&lt;h2 id=&#34;使用material-library的原因&#34;&gt;使用material library的原因&lt;/h2&gt;
 &lt;p&gt;多人合作时，方便颜色统一（尤其针对统一玻璃之类的复杂材质）&lt;/p&gt;
 &lt;h2 id=&#34;如何导入material&#34;&gt;如何导入material&lt;/h2&gt;
@@ -1087,9 +1190,9 @@ make			# 用make命令编译源码生成可执行程序
     
     <item>
       <title>Blender UV Coloring Method</title>
-      <link>https://chen-gary.github.io/post/blender-uv-coloring-method/</link>
+      <link>https://garychen.top/post/blender-uv-coloring-method/</link>
       <pubDate>Thu, 18 Feb 2021 20:28:18 +0800</pubDate>
-      <guid>https://chen-gary.github.io/post/blender-uv-coloring-method/</guid>
+      <guid>https://garychen.top/post/blender-uv-coloring-method/</guid>
       <description>&lt;p&gt;&lt;strong&gt;The palette style UV coloring method&lt;/strong&gt; 是一个使用&lt;strong&gt;调色板图片(palette)&lt;/strong&gt; 对模型涂色的方法&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;优点：涂色非常简单快速，可以边建模边涂色（辅助建模）&lt;/li&gt;
@@ -1145,9 +1248,9 @@ make			# 用make命令编译源码生成可执行程序
     
     <item>
       <title>Enclosure</title>
-      <link>https://chen-gary.github.io/project/game-enclosure/</link>
+      <link>https://garychen.top/project/game-enclosure/</link>
       <pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate>
-      <guid>https://chen-gary.github.io/project/game-enclosure/</guid>
+      <guid>https://garychen.top/project/game-enclosure/</guid>
       <description></description>
     </item>
     

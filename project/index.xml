@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects | Gary Chen</title>
-    <link>https://chen-gary.github.io/project/</link>
-      <atom:link href="https://chen-gary.github.io/project/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://garychen.top/project/</link>
+      <atom:link href="https://garychen.top/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Projects</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2021 Gary Chen</copyright><lastBuildDate>Thu, 01 Oct 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://chen-gary.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>https://garychen.top/images/icon_hua5951e33adff7dd11d5adefef4ae6ab9_17916_512x512_fill_lanczos_center_2.png</url>
       <title>Projects</title>
-      <link>https://chen-gary.github.io/project/</link>
+      <link>https://garychen.top/project/</link>
     </image>
     
     <item>
       <title>Enclosure</title>
-      <link>https://chen-gary.github.io/project/game-enclosure/</link>
+      <link>https://garychen.top/project/game-enclosure/</link>
       <pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate>
-      <guid>https://chen-gary.github.io/project/game-enclosure/</guid>
+      <guid>https://garychen.top/project/game-enclosure/</guid>
       <description></description>
     </item>
     

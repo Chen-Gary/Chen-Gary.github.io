@@ -33,7 +33,7 @@
   <meta name="description" content="在Windows平台下安装、配置Hugo，并通过Github Pages部署个人博客">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://chen-gary.github.io/post/building-blog-using-hugo/">
+  <link rel="alternate" hreflang="en-us" href="https://garychen.top/post/building-blog-using-hugo/">
 
   
 
@@ -220,10 +220,10 @@
   
 
   <link rel="manifest" href="/index.webmanifest">
-  <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
-  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
+  <link rel="icon" type="image/png" href="/images/icon_hua5951e33adff7dd11d5adefef4ae6ab9_17916_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hua5951e33adff7dd11d5adefef4ae6ab9_17916_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="https://chen-gary.github.io/post/building-blog-using-hugo/">
+  <link rel="canonical" href="https://garychen.top/post/building-blog-using-hugo/">
 
   
   
@@ -239,10 +239,10 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Gary Chen">
-  <meta property="og:url" content="https://chen-gary.github.io/post/building-blog-using-hugo/">
+  <meta property="og:url" content="https://garychen.top/post/building-blog-using-hugo/">
   <meta property="og:title" content="Building Blog Using Hugo | Gary Chen">
-  <meta property="og:description" content="在Windows平台下安装、配置Hugo，并通过Github Pages部署个人博客"><meta property="og:image" content="https://chen-gary.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
-  <meta property="twitter:image" content="https://chen-gary.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
+  <meta property="og:description" content="在Windows平台下安装、配置Hugo，并通过Github Pages部署个人博客"><meta property="og:image" content="https://garychen.top/images/icon_hua5951e33adff7dd11d5adefef4ae6ab9_17916_512x512_fill_lanczos_center_2.png">
+  <meta property="twitter:image" content="https://garychen.top/images/icon_hua5951e33adff7dd11d5adefef4ae6ab9_17916_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     
       <meta property="article:published_time" content="2021-06-06T11:48:17&#43;08:00">
@@ -271,7 +271,7 @@
   "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://chen-gary.github.io/post/building-blog-using-hugo/"
+    "@id": "https://garychen.top/post/building-blog-using-hugo/"
   },
   "headline": "Building Blog Using Hugo",
   
@@ -288,7 +288,7 @@
     "name": "Gary Chen",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://chen-gary.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
+      "url": "https://garychen.top/images/icon_hua5951e33adff7dd11d5adefef4ae6ab9_17916_192x192_fill_lanczos_center_2.png"
     }
   },
   "description": "在Windows平台下安装、配置Hugo，并通过Github Pages部署个人博客"
@@ -619,6 +619,55 @@
 
 
   
+<div class="container-fluid docs">
+    <div class="row flex-xl-nowrap">
+      <div class="d-none d-xl-block col-xl-2 docs-toc">
+        <ul class="nav toc-top">
+          <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
+        </ul>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#摘要">摘要</a></li>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#先决条件">先决条件</a></li>
+    <li><a href="#更新并配置git">更新并配置Git</a></li>
+    <li><a href="#安装hugo">安装Hugo</a></li>
+    <li><a href="#搭建本地博客">搭建本地博客</a>
+      <ul>
+        <li><a href="#初始化博客">初始化博客</a></li>
+        <li><a href="#下载主题">下载主题</a></li>
+        <li><a href="#本地测试">本地测试</a></li>
+        <li><a href="#修改配置文件">修改配置文件</a></li>
+        <li><a href="#关于stack主题">*关于Stack主题</a></li>
+      </ul>
+    </li>
+    <li><a href="#本地发布博文">本地发布博文</a></li>
+    <li><a href="#生成网页">生成网页</a></li>
+    <li><a href="#部署博客至github">部署博客至GitHub</a>
+      <ul>
+        <li><a href="#1-建立仓库">1. 建立仓库</a></li>
+        <li><a href="#2-修改gitignore">2. 修改<code>.gitignore</code></a></li>
+        <li><a href="#3-链接本地仓库">3. 链接本地仓库</a></li>
+        <li><a href="#4-初始化gh-pages-分支">4. 初始化<code>gh-pages</code> 分支</a></li>
+        <li><a href="#5-生成网页并部署">5. 生成网页并部署</a></li>
+        <li><a href="#6-设置仓库">6. 设置仓库</a></li>
+      </ul>
+    </li>
+    <li><a href="#自动化更新博文">自动化更新博文</a></li>
+    <li><a href="#总结---发布博文流程">总结 - 发布博文流程</a></li>
+    <li><a href="#附录">附录</a>
+      <ul>
+        <li><a href="#好看的主题">好看的主题</a></li>
+        <li><a href="#多语言支持">多语言支持</a></li>
+        <li><a href="#svg图下载">SVG图下载</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        
+      </div>
+      <main class="col-12 col-md-0 col-xl-10 py-md-3 pl-md-5 docs-content" role="main">
+
         <article class="article">
             
 
@@ -1045,7 +1094,7 @@ git push
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=https://chen-gary.github.io/post/building-blog-using-hugo/&amp;text=Building%20Blog%20Using%20Hugo" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=https://garychen.top/post/building-blog-using-hugo/&amp;text=Building%20Blog%20Using%20Hugo" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -1058,7 +1107,7 @@ git push
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=https://chen-gary.github.io/post/building-blog-using-hugo/&amp;t=Building%20Blog%20Using%20Hugo" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https://garychen.top/post/building-blog-using-hugo/&amp;t=Building%20Blog%20Using%20Hugo" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -1071,7 +1120,7 @@ git push
       
       
       <li>
-        <a href="mailto:?subject=Building%20Blog%20Using%20Hugo&amp;body=https://chen-gary.github.io/post/building-blog-using-hugo/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=Building%20Blog%20Using%20Hugo&amp;body=https://garychen.top/post/building-blog-using-hugo/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -1084,7 +1133,7 @@ git push
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https://chen-gary.github.io/post/building-blog-using-hugo/&amp;title=Building%20Blog%20Using%20Hugo" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=https://garychen.top/post/building-blog-using-hugo/&amp;title=Building%20Blog%20Using%20Hugo" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -1097,7 +1146,7 @@ git push
       
       
       <li>
-        <a href="whatsapp://send?text=Building%20Blog%20Using%20Hugo%20https://chen-gary.github.io/post/building-blog-using-hugo/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="whatsapp://send?text=Building%20Blog%20Using%20Hugo%20https://garychen.top/post/building-blog-using-hugo/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -1110,7 +1159,7 @@ git push
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=https://chen-gary.github.io/post/building-blog-using-hugo/&amp;title=Building%20Blog%20Using%20Hugo" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https://garychen.top/post/building-blog-using-hugo/&amp;title=Building%20Blog%20Using%20Hugo" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -1152,9 +1201,9 @@ git push
       
 
       <div class="media-body">
-        <h5 class="card-title"><a href="https://chen-gary.github.io/">Gary Chen</a></h5>
-        <h6 class="card-subtitle">Undergraduate Majored in CE</h6>
-        <p class="card-text">My research interests include game development, blockchain and digital twin.</p>
+        <h5 class="card-title"><a href="https://garychen.top/">Gary Chen</a></h5>
+        <h6 class="card-subtitle">Computer Engineering Student</h6>
+        <p class="card-text">Undergraduate majored in computer engineering @CUHK(SZ), interested in game development, blockchain, etc.</p>
         <ul class="network-icon" aria-hidden="true">
   
     
@@ -1251,6 +1300,10 @@ git push
 
             </div>
         </article>
+  
+      </main>
+    </div>
+  </div>
   
 
       
@@ -1380,6 +1433,8 @@ git push
 
   <p class="powered-by">
     
+    <a href="https://beian.miit.gov.cn" target="_blank" rel="noopener">粤ICP备2021079786号</a>
+    |
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a>
     for

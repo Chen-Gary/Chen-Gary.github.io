@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CMake | Gary Chen</title>
-    <link>https://chen-gary.github.io/tag/cmake/</link>
-      <atom:link href="https://chen-gary.github.io/tag/cmake/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://garychen.top/tag/cmake/</link>
+      <atom:link href="https://garychen.top/tag/cmake/index.xml" rel="self" type="application/rss+xml" />
     <description>CMake</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2021 Gary Chen</copyright><lastBuildDate>Wed, 03 Mar 2021 15:54:26 +0800</lastBuildDate>
     <image>
-      <url>https://chen-gary.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>https://garychen.top/images/icon_hua5951e33adff7dd11d5adefef4ae6ab9_17916_512x512_fill_lanczos_center_2.png</url>
       <title>CMake</title>
-      <link>https://chen-gary.github.io/tag/cmake/</link>
+      <link>https://garychen.top/tag/cmake/</link>
     </image>
     
     <item>
       <title>Compile Using CMake</title>
-      <link>https://chen-gary.github.io/post/compile-using-cmake/</link>
+      <link>https://garychen.top/post/compile-using-cmake/</link>
       <pubDate>Wed, 03 Mar 2021 15:54:26 +0800</pubDate>
-      <guid>https://chen-gary.github.io/post/compile-using-cmake/</guid>
+      <guid>https://garychen.top/post/compile-using-cmake/</guid>
       <description>&lt;p&gt;在使用CLion编写C++项目后，IDE会自动生成CMakeLists.txt文件。那么如何手动编译我们写的代码呢？&lt;/p&gt;
 &lt;p&gt;步骤如下&lt;/p&gt;
 &lt;ul&gt;

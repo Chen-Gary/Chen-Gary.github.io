@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>LaTeX | Gary Chen</title>
-    <link>https://chen-gary.github.io/tag/latex/</link>
-      <atom:link href="https://chen-gary.github.io/tag/latex/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://garychen.top/tag/latex/</link>
+      <atom:link href="https://garychen.top/tag/latex/index.xml" rel="self" type="application/rss+xml" />
     <description>LaTeX</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2021 Gary Chen</copyright><lastBuildDate>Sat, 03 Jul 2021 12:13:12 +0800</lastBuildDate>
     <image>
-      <url>https://chen-gary.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>https://garychen.top/images/icon_hua5951e33adff7dd11d5adefef4ae6ab9_17916_512x512_fill_lanczos_center_2.png</url>
       <title>LaTeX</title>
-      <link>https://chen-gary.github.io/tag/latex/</link>
+      <link>https://garychen.top/tag/latex/</link>
     </image>
     
     <item>
       <title>LaTeX Basic</title>
-      <link>https://chen-gary.github.io/post/latex-basic/</link>
+      <link>https://garychen.top/post/latex-basic/</link>
       <pubDate>Sat, 03 Jul 2021 12:13:12 +0800</pubDate>
-      <guid>https://chen-gary.github.io/post/latex-basic/</guid>
+      <guid>https://garychen.top/post/latex-basic/</guid>
       <description>&lt;p&gt;这篇文章是对
 &lt;a href=&#34;https://liam.page/2014/09/08/latex-introduction/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;这份教程&lt;/a&gt;的笔记，虽说是笔记，很多地方都直接复制了原文，强烈建议大家进入原教程查看。&lt;/p&gt;
 &lt;p&gt;（注：以下文档默认使用XeLaTeX进行编译）&lt;/p&gt;

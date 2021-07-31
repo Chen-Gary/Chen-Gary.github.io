@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blender | Gary Chen</title>
-    <link>https://chen-gary.github.io/category/blender/</link>
-      <atom:link href="https://chen-gary.github.io/category/blender/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://garychen.top/category/blender/</link>
+      <atom:link href="https://garychen.top/category/blender/index.xml" rel="self" type="application/rss+xml" />
     <description>Blender</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2021 Gary Chen</copyright><lastBuildDate>Wed, 03 Mar 2021 16:48:34 +0800</lastBuildDate>
     <image>
-      <url>https://chen-gary.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>https://garychen.top/images/icon_hua5951e33adff7dd11d5adefef4ae6ab9_17916_512x512_fill_lanczos_center_2.png</url>
       <title>Blender</title>
-      <link>https://chen-gary.github.io/category/blender/</link>
+      <link>https://garychen.top/category/blender/</link>
     </image>
     
     <item>
       <title>Blender Tutorial Notes</title>
-      <link>https://chen-gary.github.io/post/blender-tutorial-notes/</link>
+      <link>https://garychen.top/post/blender-tutorial-notes/</link>
       <pubDate>Wed, 03 Mar 2021 16:48:34 +0800</pubDate>
-      <guid>https://chen-gary.github.io/post/blender-tutorial-notes/</guid>
+      <guid>https://garychen.top/post/blender-tutorial-notes/</guid>
       <description>&lt;p&gt;View: Numpad 1 / 3 / 7, or &lt;code&gt;ctrl&lt;/code&gt; + Numpad 1 / 3 / 7&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;E&lt;/code&gt; to extrude&lt;/p&gt;
 &lt;blockquote&gt;
@@ -124,9 +124,9 @@
     
     <item>
       <title>Blender Import Material and Setup Material Library</title>
-      <link>https://chen-gary.github.io/post/blender-import-material-and-setup-material-library/</link>
+      <link>https://garychen.top/post/blender-import-material-and-setup-material-library/</link>
       <pubDate>Thu, 18 Feb 2021 20:57:29 +0800</pubDate>
-      <guid>https://chen-gary.github.io/post/blender-import-material-and-setup-material-library/</guid>
+      <guid>https://garychen.top/post/blender-import-material-and-setup-material-library/</guid>
       <description>&lt;h2 id=&#34;使用material-library的原因&#34;&gt;使用material library的原因&lt;/h2&gt;
 &lt;p&gt;多人合作时，方便颜色统一（尤其针对统一玻璃之类的复杂材质）&lt;/p&gt;
 &lt;h2 id=&#34;如何导入material&#34;&gt;如何导入material&lt;/h2&gt;
@@ -153,9 +153,9 @@
     
     <item>
       <title>Blender UV Coloring Method</title>
-      <link>https://chen-gary.github.io/post/blender-uv-coloring-method/</link>
+      <link>https://garychen.top/post/blender-uv-coloring-method/</link>
       <pubDate>Thu, 18 Feb 2021 20:28:18 +0800</pubDate>
-      <guid>https://chen-gary.github.io/post/blender-uv-coloring-method/</guid>
+      <guid>https://garychen.top/post/blender-uv-coloring-method/</guid>
       <description>&lt;p&gt;&lt;strong&gt;The palette style UV coloring method&lt;/strong&gt; 是一个使用&lt;strong&gt;调色板图片(palette)&lt;/strong&gt; 对模型涂色的方法&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;优点：涂色非常简单快速，可以边建模边涂色（辅助建模）&lt;/li&gt;

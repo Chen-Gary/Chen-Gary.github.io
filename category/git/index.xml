@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git | Gary Chen</title>
+    <link>https://garychen.top/category/git/</link>
+      <atom:link href="https://garychen.top/category/git/index.xml" rel="self" type="application/rss+xml" />
+    <description>Git</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2021 Gary Chen</copyright><lastBuildDate>Sat, 31 Jul 2021 23:08:49 +0800</lastBuildDate>
+    <image>
+      <url>https://garychen.top/images/icon_hua5951e33adff7dd11d5adefef4ae6ab9_17916_512x512_fill_lanczos_center_2.png</url>
+      <title>Git</title>
+      <link>https://garychen.top/category/git/</link>
+    </image>
+    
+    <item>
+      <title>Git Tricks: Set .gitignore for Unity Project &amp; Clear git-ignored files</title>
+      <link>https://garychen.top/post/git-tricks-gitignore-and-unity/</link>
+      <pubDate>Sat, 31 Jul 2021 23:08:49 +0800</pubDate>
+      <guid>https://garychen.top/post/git-tricks-gitignore-and-unity/</guid>
+      <description>&lt;h2 id=&#34;1-gitignore在unity工程中的使用&#34;&gt;1. gitignore在Unity工程中的使用&lt;/h2&gt;
+&lt;p&gt;Unity工程在第一次commit前一定要在工程根目录下放置
+&lt;a href=&#34;https://github.com/github/gitignore/blob/master/Unity.gitignore&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;正确的&lt;code&gt;.gitignore&lt;/code&gt;文件&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;如果第一次commit时没有添加&lt;code&gt;.gitignore&lt;/code&gt;或&lt;code&gt;.gitignore&lt;/code&gt;放置位置不对，会导致project中许多不必要的中间文件也被版本控制，比如Library文件夹&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;As a user, you should never have to alter the Library folder manually and attempting to do so may affect the functioning of the project in the Unity editor.&lt;/strong&gt; However, it is always safe to delete the Library folder (while the project is not open in Unity) as all its data is generated from what is stored in the Assets and ProjectSettings folders. &lt;strong&gt;This also means that the Library folder should not be included in version control .&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;(ref: &lt;a href=&#34;https://stackoverflow.com/questions/59742994/should-i-push-the-unity-library-folder-to-github&#34;&gt;https://stackoverflow.com/questions/59742994/should-i-push-the-unity-library-folder-to-github&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;进而导致以下可能的后果：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在拉下仓库最新提交后，部分文件无法被unity识别，图标变成空白&lt;/li&gt;
+&lt;li&gt;单纯用unity打开project，即使没有做任何修改，git status也会提示有改动&lt;/li&gt;
+&lt;li&gt;Git会记录很多奇怪的修改。比如，git显示我们删掉了一个文件，并原封不动地加了回来。同时，这些奇怪而不必要的修改大多发生在Library文件夹。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2-清除已被git追踪但现在处于gitignore中的文件&#34;&gt;2. 清除已被Git追踪，但现在处于.gitignore中的文件&lt;/h2&gt;
+&lt;p&gt;How to make Git “forget” about a file that was tracked but is now in .gitignore?&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git rm -r --cached .
+git add .
+git commit -am &amp;quot;Remove ignored files&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;(ref: &lt;a href=&#34;https://stackoverflow.com/questions/1274057/how-to-make-git-forget-about-a-file-that-was-tracked-but-is-now-in-gitignore&#34;&gt;https://stackoverflow.com/questions/1274057/how-to-make-git-forget-about-a-file-that-was-tracked-but-is-now-in-gitignore&lt;/a&gt;)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Git Tricks: Filename Too Long Error</title>
+      <link>https://garychen.top/post/git-tricks-filename-too-long-error/</link>
+      <pubDate>Tue, 20 Jul 2021 22:05:22 +0800</pubDate>
+      <guid>https://garychen.top/post/git-tricks-filename-too-long-error/</guid>
+      <description>&lt;p&gt;在使用Git时，如果远程仓库中含有名字很长的文件，或是某个文件在多层文件夹中，间接导致其“文件名”太长：&lt;/p&gt;
+&lt;p&gt;Windows下，克隆时会出现 &lt;code&gt;warning: Clone succeeded, but checkout failed.&lt;/code&gt; 报错&lt;/p&gt;
+&lt;p&gt;阅读克隆/版本退回的报错信息可以看到类似 &lt;code&gt;error: unable to create file XXXXXXXXXXXXXXXXXXXX: Filename too long&lt;/code&gt;的信息&lt;/p&gt;
+&lt;p&gt;解决方法：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Start Git Bash &lt;strong&gt;as Administrator&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Run command &lt;code&gt;git config --system core.longpaths true&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Another way (only for this clone):
+&lt;code&gt;git clone -c core.longpaths=true &amp;lt;repo-url&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;(ref: &lt;a href=&#34;https://stackoverflow.com/questions/52699177/how-to-fix-filename-too-long-error-during-git-clone/52699496&#34;&gt;https://stackoverflow.com/questions/52699177/how-to-fix-filename-too-long-error-during-git-clone/52699496&lt;/a&gt;)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Git Basic Skills</title>
+      <link>https://garychen.top/post/git-basic-skills/</link>
+      <pubDate>Sun, 30 May 2021 09:11:17 +0800</pubDate>
+      <guid>https://garychen.top/post/git-basic-skills/</guid>
+      <description>&lt;h2 id=&#34;配置-configuration&#34;&gt;配置 Configuration&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git config --global user.name &amp;quot;Your Name&amp;quot;
+git config --global user.email &amp;quot;email@example.com&amp;quot;
+
+git config --list
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;创建版本库&#34;&gt;创建版本库&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git init
+
+ls -ah
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;基础命令&#34;&gt;基础命令&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git add &amp;lt;file&amp;gt;
+git commit -m &amp;lt;message&amp;gt;
+
+git status
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;版本回退&#34;&gt;版本回退&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git log
+git log --pretty=oneline
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;HEAD&lt;/code&gt; 当前版本&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;HEAD^&lt;/code&gt; 上一个版本&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;HEAD^^&lt;/code&gt; 上上一个版本&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;HEAD~100&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git reset --hard HEAD^
+
+git log
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;回到未来的某个版本&#34;&gt;回到未来的某个版本&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git reset --hard &amp;lt;commit_id&amp;gt;
+git reset --hard 1094a
+
+git reflog    # find commit id
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;撤销修改&#34;&gt;撤销修改&lt;/h2&gt;
+&lt;p&gt;注意：以下命令似乎是旧版git命令，虽然不影响使用，但建议参考&lt;code&gt;git status&lt;/code&gt;的提示，使用新版命令。&lt;/p&gt;
+&lt;h3 id=&#34;1-丢弃工作区的修改&#34;&gt;1. 丢弃工作区的修改&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git checkout -- file
+git checkout -- README.md
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;两种情况:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;一种是&lt;code&gt;README.md&lt;/code&gt;自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;一种是&lt;code&gt;README.md&lt;/code&gt;已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;总之，就是让这个文件回到最近一次git commit或git add时的状态。&lt;/p&gt;
+&lt;h3 id=&#34;2-丢弃暂存区的修改&#34;&gt;2. 丢弃暂存区的修改&lt;/h3&gt;
+&lt;p&gt;用命令&lt;code&gt;git reset HEAD &amp;lt;file&amp;gt;&lt;/code&gt;可以把暂存区的修改撤销掉（unstage），重新放回工作区&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git reset HEAD README.md    # 把暂存区的修改回退到工作区
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;接着，丢弃工作区的修改&amp;hellip;&lt;/p&gt;
+&lt;h3 id=&#34;3-丢弃commit&#34;&gt;3. 丢弃commit&lt;/h3&gt;
+&lt;p&gt;使用版本回退&lt;/p&gt;
+&lt;h2 id=&#34;远程仓库&#34;&gt;远程仓库&lt;/h2&gt;
+&lt;h3 id=&#34;1-github配置-ssh&#34;&gt;1. Github配置 (SSH)&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;创建SSH Key。在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有&lt;code&gt;id_rsa&lt;/code&gt;和&lt;code&gt;id_rsa.pub&lt;/code&gt;这两个文件，如果已经有了，可直接跳到下一步。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ssh-keygen -t rsa -C &amp;quot;youremail@example.com&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;一路回车&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;id_rsa&lt;/code&gt;是私钥&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;id_rsa.pub&lt;/code&gt;是公钥&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;登陆GitHub，打开“Account settings”，“SSH Keys”页面。然后，点“Add SSH Key”，填上任意Title，在Key文本框里粘贴&lt;code&gt;id_rsa.pub&lt;/code&gt;文件的内容。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;2-将已有的本地仓库添加远程库&#34;&gt;2. (将已有的本地仓库)添加远程库&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;在GitHub新建repo&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;把一个已有的本地仓库与之关联&lt;/p&gt;
+&lt;p&gt;在本地的仓库下运行命令&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git remote add origin git@github.com:XXXXXX/YYYYYY.git
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;添加后，远程库的名字就是&lt;code&gt;origin&lt;/code&gt; (这是Git默认的叫法)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;（首次）把本地库的所有内容推送到远程库上&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git push -u origin main
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;注意：由于远程库是空的，我们第一次推送&lt;code&gt;main&lt;/code&gt;分支时，加上了&lt;code&gt;-u&lt;/code&gt;参数，Git不但会把本地的&lt;code&gt;main&lt;/code&gt;分支内容推送的远程新的&lt;code&gt;main&lt;/code&gt;分支，还会把本地的&lt;code&gt;main&lt;/code&gt;分支和远程的&lt;code&gt;main&lt;/code&gt;分支关联起来，在以后的推送或者拉取时就可以简化命令。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;（非首次）把本地库推送到远程库&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git push origin main
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;注意：SSH连接在第一次验证GitHub服务器的Key时，需要你确认GitHub的Key的指纹信息是否真的来自GitHub的服务器，输入&lt;code&gt;yes&lt;/code&gt;回车即可。&lt;/p&gt;
+&lt;h3 id=&#34;3-删除远程库-解除本地和远程的绑定关系&#34;&gt;3. 删除远程库 (解除本地和远程的绑定关系)&lt;/h3&gt;
+&lt;p&gt;如果添加的时候地址写错了，或者就是想删除远程库，&lt;/p&gt;
+&lt;p&gt;先用&lt;code&gt;git remote -v&lt;/code&gt;查看远程库信息 (&lt;code&gt;git remote&lt;/code&gt; 可查阅更简单的远程库的信息)&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git remote -v
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;根据名字删除，比如删除&lt;code&gt;origin&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git remote rm origin
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;从远程库克隆&#34;&gt;从远程库克隆&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git clone git@github.com:XXXXX/YYYYY.git
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;分支管理&#34;&gt;分支管理&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;HEAD&lt;/code&gt;指向当前分支 e.g. &lt;code&gt;main&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;main&lt;/code&gt;指向提交&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;1-分支基础操作创建与合并分支&#34;&gt;1. 分支基础操作（创建与合并分支）&lt;/h3&gt;
+&lt;p&gt;实战 (example)&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;创建&lt;code&gt;dev&lt;/code&gt;分支，然后切换到&lt;code&gt;dev&lt;/code&gt;分支&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git checkout -b dev
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;git checkout&lt;/code&gt;命令加上&lt;code&gt;-b&lt;/code&gt;参数表示创建并切换，相当于以下两条命令：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git branch dev
+git checkout dev
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;用&lt;code&gt;git branch&lt;/code&gt;命令查看当前分支&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git branch
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;git branch&lt;/code&gt;命令会列出所有分支，当前分支前面会标一个&lt;code&gt;*&lt;/code&gt;号。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;切换回&lt;code&gt;main&lt;/code&gt;分支&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git checkout main
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;dev&lt;/code&gt;分支的工作成果合并到&lt;code&gt;main&lt;/code&gt;分支上&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git merge dev
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;git merge&lt;/code&gt;命令用于合并指定分支到当前分支。&lt;/p&gt;
+&lt;p&gt;注意到上面的&lt;code&gt;Fast-forward&lt;/code&gt;信息，Git告诉我们，这次合并是“快进模式”，也就是直接把&lt;code&gt;master&lt;/code&gt;指向&lt;code&gt;dev&lt;/code&gt;的当前提交，所以合并速度非常快。&lt;/p&gt;
+&lt;p&gt;当然，也不是每次合并都能&lt;code&gt;Fast-forward&lt;/code&gt;，我们后面会讲其他方式的合并。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;删除&lt;code&gt;dev&lt;/code&gt;分支&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git branch -d dev
+
+git branch
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;注意：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;创建并切换到新的&lt;code&gt;dev&lt;/code&gt;分支，可以使用：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git switch -c dev
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;直接切换到已有的&lt;code&gt;main&lt;/code&gt;分支，可以使用：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git switch main
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;分支基础操作总结&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;查看分支：&lt;code&gt;git branch&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;创建分支：&lt;code&gt;git branch &amp;lt;name&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;切换分支：&lt;code&gt;git checkout &amp;lt;name&amp;gt;&lt;/code&gt;或者&lt;code&gt;git switch &amp;lt;name&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;创建+切换分支：&lt;code&gt;git checkout -b &amp;lt;name&amp;gt;&lt;/code&gt;或者&lt;code&gt;git switch -c &amp;lt;name&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;合并某分支到当前分支：&lt;code&gt;git merge &amp;lt;name&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;删除分支：&lt;code&gt;git branch -d &amp;lt;name&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;2-解决冲突&#34;&gt;2. 解决冲突&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;main&lt;/code&gt;分支和&lt;code&gt;feature1&lt;/code&gt;分支各自都分别有新的提交&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.liaoxuefeng.com/files/attachments/919023000423040/0&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;这种情况下，Git无法执行“快速合并”，只能试图把各自的修改合并起来，但这种合并就可能会有冲突&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git merge feature1    # Git告诉我们，readme.txt文件存在冲突，必须手动解决冲突后再提交
+
+git status    # 也可以告诉我们冲突的文件
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;注意：解决冲突就是把Git合并失败的文件手动编辑为我们希望的内容，再提交。&lt;/p&gt;
+&lt;p&gt;直接查看README.md的内容:&lt;/p&gt;
+&lt;p&gt;Git用&lt;code&gt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&lt;/code&gt;，&lt;code&gt;=======&lt;/code&gt;，&lt;code&gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&lt;/code&gt;标记出不同分支的内容&lt;/p&gt;
+&lt;p&gt;手动解决冲突后再&lt;strong&gt;提交&lt;/strong&gt; =&amp;gt; 现在，&lt;code&gt;master&lt;/code&gt;分支和&lt;code&gt;feature1&lt;/code&gt;分支变成了下图所示：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.liaoxuefeng.com/files/attachments/919023031831104/0&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;查看分支的合并情况：&lt;code&gt;git log --graph --pretty=oneline --abbrev-commit&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;最后，删除&lt;code&gt;feature1&lt;/code&gt;分支：&lt;code&gt;git branch -d feature1&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;工作完成。&lt;/p&gt;
+&lt;h3 id=&#34;3-分支管理策略-普通模式合并&#34;&gt;3. 分支管理策略 (普通模式合并)&lt;/h3&gt;
+&lt;p&gt;通常，合并分支时，如果可能，Git会用&lt;code&gt;Fast forward&lt;/code&gt;模式，但这种模式下，删除分支后，会丢掉分支信息。&lt;/p&gt;
+&lt;p&gt;如果要强制禁用&lt;code&gt;Fast forward&lt;/code&gt;模式，Git就会在merge时生成一个新的&lt;strong&gt;commit&lt;/strong&gt;，这样，从分支历史上就可以看出分支信息。&lt;/p&gt;
+&lt;p&gt;准备合并&lt;code&gt;dev&lt;/code&gt;分支，请注意&lt;code&gt;--no-ff&lt;/code&gt;参数，表示禁用&lt;code&gt;Fast forward&lt;/code&gt;：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git merge --no-ff -m &amp;quot;merge with no-ff&amp;quot; dev
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;因为本次合并要创建一个新的commit，所以加上&lt;code&gt;-m&lt;/code&gt;参数，把commit描述写进去。&lt;/p&gt;
+&lt;h3 id=&#34;4-bug分支-stash功能&#34;&gt;4. Bug分支 (stash功能)&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git stash
+
+# 去别的分支修bug
+
+git stash list
+
+# method 1
+git stash apply    # 恢复，但是恢复后，stash内容并不删除
+git stash drop     # 删除stash内容
+
+# method 2
+git stash pop      # 恢复的同时把stash内容也删了 (recommended)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;你可以多次stash，恢复的时候，先用&lt;code&gt;git stash list&lt;/code&gt;查看，然后恢复指定的stash，用命令：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git stash apply stash@{0}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Q: 如果在两个独立的分支上有同样的bug (e.g. &lt;code&gt;main&lt;/code&gt;和&lt;code&gt;dev&lt;/code&gt;上有同一bug)，且&lt;code&gt;main&lt;/code&gt;上的bug已被修复，如何优雅地/简单地修复&lt;code&gt;dev&lt;/code&gt;上的bug？&lt;/p&gt;
+&lt;p&gt;A: 使用&lt;code&gt;cherry-pick&lt;/code&gt;命令&lt;/p&gt;
+&lt;h3 id=&#34;5-feature分支-强行删除未合并的分支&#34;&gt;5. Feature分支 (强行删除未合并的分支)&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ git branch -d feature-vulcan
+error: The branch &#39;feature-vulcan&#39; is not fully merged.
+If you are sure you want to delete it, run &#39;git branch -D feature-vulcan&#39;.
+
+# Git友情提醒，feature-vulcan分支还没有被合并，如果删除，将丢失掉修改，如果要强行删除，需要使用大写的-D参数
+
+$ git branch -D feature-vulcan
+Deleted branch feature-vulcan (was 287773e).
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;开发一个新feature，最好新建一个分支；&lt;/p&gt;
+&lt;p&gt;如果要丢弃一个没有被合并过的分支，可以通过&lt;code&gt;git branch -D &amp;lt;name&amp;gt;&lt;/code&gt;强行删除。&lt;/p&gt;
+&lt;h3 id=&#34;6-多人协作&#34;&gt;6. 多人协作&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 查看远程库的信息
+git remote
+git remote -v
+
+# 推送分支
+git push origin master
+git push origin dev
+# 不一定所有分支都要推送到远程，比如bug分支只要留在本地repo就行了
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;抓取分支&#34;&gt;抓取分支&lt;/h4&gt;
+&lt;p&gt;多人协作时，大家都会往&lt;code&gt;master&lt;/code&gt;和&lt;code&gt;dev&lt;/code&gt;分支上推送各自的修改。&lt;/p&gt;
+&lt;p&gt;当你的小伙伴从远程库clone时，默认情况下，你的小伙伴只能看到本地的&lt;code&gt;master&lt;/code&gt;分支。不信可以用&lt;code&gt;git branch&lt;/code&gt;命令看看&lt;/p&gt;
+&lt;p&gt;现在，你的小伙伴要在&lt;code&gt;dev&lt;/code&gt;分支上开发，就必须创建远程&lt;code&gt;origin&lt;/code&gt;的&lt;code&gt;dev&lt;/code&gt;分支到本地，于是他用这个命令创建本地&lt;code&gt;dev&lt;/code&gt;分支：&lt;/p&gt;
+&lt;p&gt;(注意：在本地创建和远程分支对应的分支，使用&lt;code&gt;git checkout -b branch-name origin/branch-name&lt;/code&gt;，本地和远程分支的名称最好一致)&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git checkout -b dev origin/dev
+# git pull #???拉取远端dev?
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;你的小伙伴已经向&lt;code&gt;origin/dev&lt;/code&gt;分支推送了他的提交，而碰巧你也对同样的文件作了修改，并试图推送。&lt;/p&gt;
+&lt;p&gt;推送失败，因为你的小伙伴的最新提交和你试图推送的提交有冲突，解决办法也很简单，Git已经提示我们，先用&lt;code&gt;git pull&lt;/code&gt;把最新的提交从&lt;code&gt;origin/dev&lt;/code&gt;抓下来，然后，在本地合并，解决冲突，再推送。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git pull&lt;/code&gt;也失败了，原因是没有指定本地&lt;code&gt;dev&lt;/code&gt;分支与远程&lt;code&gt;origin/dev&lt;/code&gt;分支的链接，根据提示，设置&lt;code&gt;dev&lt;/code&gt;和&lt;code&gt;origin/dev&lt;/code&gt;的链接。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git branch --set-upstream-to=origin/&amp;lt;branch_remote&amp;gt; &amp;lt;branch_local&amp;gt;
+
+git branch --set-upstream-to=origin/dev dev
+
+git pull
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这回&lt;code&gt;git pull&lt;/code&gt;成功，但是合并有冲突，需要手动解决。&lt;/p&gt;
+&lt;h4 id=&#34;多人协作小结&#34;&gt;多人协作小结&lt;/h4&gt;
+&lt;p&gt;多人协作的工作模式通常是这样：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;首先，可以试图用&lt;code&gt;git push origin &amp;lt;branch-name&amp;gt;&lt;/code&gt;推送自己的修改；&lt;/li&gt;
+&lt;li&gt;如果推送失败，则因为远程分支比你的本地更新，需要先用&lt;code&gt;git pull&lt;/code&gt;试图合并；&lt;/li&gt;
+&lt;li&gt;如果合并有冲突，则解决冲突，并在本地提交；&lt;/li&gt;
+&lt;li&gt;没有冲突或者解决掉冲突后，再用&lt;code&gt;git push origin &amp;lt;branch-name&amp;gt;&lt;/code&gt;推送就能成功！&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;如果&lt;code&gt;git pull&lt;/code&gt;提示&lt;code&gt;no tracking information&lt;/code&gt;，则说明本地分支和远程分支的链接关系没有创建，用命令&lt;code&gt;git branch --set-upstream-to &amp;lt;branch-name&amp;gt; origin/&amp;lt;branch-name&amp;gt;&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;注意：可以克隆指定分支&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git clone -b &amp;lt;branch&amp;gt; &amp;lt;remote_repo&amp;gt;
+
+git clone -b BBBBBBB git@github.com:XXXXXX/YYYYYYY.git
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;rebase&#34;&gt;Rebase&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git rebase
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;我看不懂。。。&lt;/p&gt;
+&lt;h2 id=&#34;标签管理&#34;&gt;标签管理&lt;/h2&gt;
+&lt;p&gt;Git的标签：指向某个commit的指针（跟分支很像对不对？但是分支可以移动，标签不能移动）&lt;/p&gt;
+&lt;p&gt;tag就是一个让人容易记住的有意义的名字，它跟某个commit绑在一起&lt;/p&gt;
+&lt;h3 id=&#34;1-创建标签&#34;&gt;1. 创建标签&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git checkout main
+
+# 默认标签是打在最新提交的commit上的
+# 1
+git tag &amp;lt;name&amp;gt;
+git tag v1.0
+
+# 2
+git tag &amp;lt;tag_name&amp;gt; &amp;lt;commit_id&amp;gt;
+git tag v0.9 f52c633
+
+# 3 创建带有说明的标签
+git tag -a &amp;lt;tag_name&amp;gt; -m &amp;quot;blablabla...&amp;quot;
+git tag -a v0.1 -m &amp;quot;version 0.1 released&amp;quot; 1094adb
+
+git tag    # 查看所有标签
+git show &amp;lt;tagname&amp;gt;    # 查看标签信息
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;2-操作标签&#34;&gt;2. 操作标签&lt;/h3&gt;
+&lt;p&gt;删除标签&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git tag -d v0.1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;创建的标签都只存储在本地，不会自动推送到远程。所以，打错的标签可以在本地安全删除。&lt;/p&gt;
+&lt;p&gt;如果要推送某个标签到远程，&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git push origin &amp;lt;tag_name&amp;gt;
+git push origin v1.0
+
+# 一次性推送全部尚未推送到远程的本地标签
+git push origin --tags
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果标签已经推送到远程，要删除远程标签就麻烦一点：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 先从本地删除
+git tag -d v0.9
+# 然后，从远程删除
+git push origin :refs/tags/v0.9
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;其他命令&#34;&gt;其他命令&lt;/h2&gt;
+&lt;p&gt;不常用的基础命令&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;查看修改&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git diff
+git diff README.md
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;删除文件&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git rm &amp;lt;file&amp;gt;    # 与`git add&amp;lt;file&amp;gt;`效果一样
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;强制添加被ignore的文件&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git add -f &amp;lt;file_name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;检查&lt;code&gt;.gitignore&lt;/code&gt;对于某个文件的规则&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git check-ignore -v &amp;lt;file_name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Git会告诉我们，&lt;code&gt;.gitignore&lt;/code&gt;的第X行规则忽略了该文件，于是我们就可以知道应该修订哪个规则。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;配置别名&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# e.g. 让st表示status
+git config --global alias.st status
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;或直接在git的全局/某个repo的config文件中配置&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
