@@ -7,6 +7,7 @@ authors:
 tags:
 - Git
 categories:
+- Git
 date: 2021-05-30T09:11:17+08:00
 featured: false
 draft: false
