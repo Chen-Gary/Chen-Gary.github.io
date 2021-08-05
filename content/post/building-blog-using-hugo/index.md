@@ -295,12 +295,14 @@ git checkout main
 
 ```shell
 rm -rf public
-git worktree add -B gh-pages public upstream/gh-pages
+#git worktree add -B gh-pages public upstream/gh-pages
+git worktree add -B gh-pages public origin/gh-pages
 
 hugo
 cd public && git add --all && git commit -m "Publishing to gh-pages" && cd ..
 
-git push upstream gh-pages
+#git push upstream gh-pages
+git push origin gh-pages
 ```
 
 ### 6. 设置仓库
