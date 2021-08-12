@@ -962,7 +962,8 @@ git push -u origin main
 <pre><code class="language-shell">git checkout --orphan gh-pages
 git reset --hard
 git commit --allow-empty -m &quot;Initializing gh-pages branch&quot;
-git push upstream gh-pages
+#git push upstream gh-pages
+git push origin gh-pages
 git checkout main
 </code></pre>
 <h3 id="5-生成网页并部署">5. 生成网页并部署</h3>
@@ -970,12 +971,14 @@ git checkout main
 <p>Now check out the <code>gh-pages</code> branch into your <code>public</code> folder using git&rsquo;s [worktree feature][]. Essentially, the worktree allows you to have multiple branches of the same local repository to be checked out in different directories:</p>
 </blockquote>
 <pre><code class="language-shell">rm -rf public
-git worktree add -B gh-pages public upstream/gh-pages
+#git worktree add -B gh-pages public upstream/gh-pages
+git worktree add -B gh-pages public origin/gh-pages
 
 hugo
 cd public &amp;&amp; git add --all &amp;&amp; git commit -m &quot;Publishing to gh-pages&quot; &amp;&amp; cd ..
 
-git push upstream gh-pages
+#git push upstream gh-pages
+git push origin gh-pages
 </code></pre>
 <h3 id="6-设置仓库">6. 设置仓库</h3>
 <p>在刚刚建好的GitHub仓库页面进入 Settings &gt; Pages &gt; Source，进行以下设置：</p>
