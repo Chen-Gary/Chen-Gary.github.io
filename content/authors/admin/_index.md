@@ -23,7 +23,7 @@ bio: Undergraduate majored in computer engineering @CUHK(SZ), interested in game
 interests:
 - Game Development
 - Blockchain
-- Digital Twin
+- Metaverse
 
 education:
   courses:

@@ -23,9 +23,15 @@ subtitle = ""
 [[feature]]
   icon = "code-branch"
   icon_pack = "fas"
-  name = "Python, C++, C#"
+  name = "Python, C++, C#, Solidity"
   description = ""  
   
+# [[feature]]
+#   icon = "ethereum"
+#   icon_pack = "fab"
+#   name = "Solidity"
+#   description = ""
+
 [[feature]]
   icon = "cubes"
   icon_pack = "fas"
