@@ -71,4 +71,4 @@ user_groups:
 Gary Chen is an undergraduate student at CUHK(SZ), majored in computer engineering. 
 He is currently working in [Human-Cloud Systems Laboratory](https://hcslab.cuhk.edu.cn/) as a research assistant.
 
-{{< icon name="download" pack="fas" >}} Download my {{< staticref "files/Resume-Honghao-Chen-website-20210105.pdf" "newtab" >}}resumé{{< /staticref >}}.
+{{< icon name="download" pack="fas" >}} Download my {{< staticref "files/Resume-Honghao-Chen-website-20220105.pdf" "newtab" >}}resumé{{< /staticref >}}.
