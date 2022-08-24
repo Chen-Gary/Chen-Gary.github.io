@@ -24,7 +24,7 @@ subtitle = ""
 [[feature]]
   icon = "code-branch"
   icon_pack = "fas"
-  name = "Python, C++, C#"
+  name = "C++, C#, Python"
   description = ""  
 
 [[feature]]

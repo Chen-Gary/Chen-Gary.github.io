@@ -28,6 +28,10 @@ subtitle = ""
   [[content.filter_button]]
     name = "Game Development"
     tag = "Game Development"
+
+  [[content.filter_button]]
+    name = "Blockchain"
+    tag = "Blockchain"
   
   [[content.filter_button]]
     name = "Other"
