@@ -25,11 +25,22 @@ date_format: Jan 2006
 #   Leave `date_end` empty if it's your current employer.
 #   You can begin a multiline `description` using YAML's `|-`.
 
-# 1. CUHKSZ Metaverse
 experience:
+# 0. 鹰角网络-Unity客户端开发（实习）
+- company: HyperGryph (鹰角网络)
+  company_url: https://www.hypergryph.com/
+  date_end: "2022-09-01"
+  date_start: "2022-06-20"
+  description: |-
+    * Served as a game engineer for the popular mobile game project, [*Arknights (明日方舟)*](https://www.arknights.global/)
+    * Implemented part of the game UI using Unity Engine
+  location: Shanghai, China
+  title: Game Client Engineer Intern
+
+# 1. CUHKSZ Metaverse
 - company: Human-Cloud Systems Laboratory, CUHK-Shenzhen
   company_url: "https://hcslab.cuhk.edu.cn/"
-  date_end: ""    #Present
+  date_end: "2022-02-01"
   date_start: "2020-10-01"
   description: |-
     * Working as a developer and research assistant at Human-Cloud Systems Lab, CUHK-Shenzhen

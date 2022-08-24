@@ -13,6 +13,7 @@ subtitle = ""
 # Add/remove as many `[[feature]]` blocks below as you like.
 # 
 # For available icons, see: https://sourcethemes.com/academic/docs/page-builder/#icons
+#   Added by Gary, new link: https://wowchemy.com/docs/getting-started/page-builder/#icons
 
 [[feature]]
   icon = "unity"
@@ -23,20 +24,39 @@ subtitle = ""
 [[feature]]
   icon = "code-branch"
   icon_pack = "fas"
-  name = "Python, C++, C#, Solidity"
+  name = "Python, C++, C#"
   description = ""  
-  
-# [[feature]]
-#   icon = "ethereum"
-#   icon_pack = "fab"
-#   name = "Solidity"
-#   description = ""
 
 [[feature]]
-  icon = "cubes"
+  icon = "database"
   icon_pack = "fas"
-  name = "Blender"
+  name = "SQL"
   description = ""
+
+[[feature]]
+  icon = "server"
+  icon_pack = "fas"
+  name = "Node.js"
+  description = ""
+
+[[feature]]
+  icon = "chart-line"
+  icon_pack = "fas"
+  name = "Machine Learning"
+  description = ""
+
+[[feature]]
+  icon = "ethereum"
+  icon_pack = "fab"
+  name = "Solidity"
+  description = ""
+
+# [[feature]]
+#   icon = "cubes"
+#   icon_pack = "fas"
+#   name = "Blender"
+#   description = ""
+
 
 # Uncomment to use emoji icons.
 # [[feature]]
