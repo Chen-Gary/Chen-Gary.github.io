@@ -32,24 +32,33 @@ experience:
   date_end: "2022-09-01"
   date_start: "2022-06-20"
   description: |-
-    * Served as a game engineer for the popular mobile game project, [*Arknights (明日方舟)*](https://www.arknights.global/)
-    * Implemented part of the game UI using Unity Engine
+    * Served as a game engineer for the popular mobile game project, [*Arknights (明日方舟)*](https://www.arknights.global/).
+    
+    * Accomplished several elementary production tasks, including gacha page implementation, check-in activity UI implementation, UI optimization for side mission page, art asset importing, etc.
+    
+    * Refactored and implemented a new “Mid-Autumn Festival” check-in activity page, which required complex design under MVVM architecture to ensure backward compatibility, reusability, and maintainability.
   location: Shanghai, China
   title: Game Client Engineer Intern
 
 # 1. CUHKSZ Metaverse
-- company: Human-Cloud Systems Laboratory, CUHK-Shenzhen
+- company: Human-Crypto Society Laboratory, CUHK-Shenzhen
   company_url: "https://hcslab.cuhk.edu.cn/"
   date_end: "2022-02-01"
   date_start: "2020-10-01"
   description: |-
-    * Working as a developer and research assistant at Human-Cloud Systems Lab, CUHK-Shenzhen
-    * Taking part in *CUHKSZ Metaverse* project, which is mainly developed with Unity (This project is still in progress)
-    * Developed an in-game model editor, with which user can build their own 3D model in our metaverse system
-    * Responsible for the blockchain related work of this project, including deploying the [FISCO-BCOS blockchain platform](http://www.fisco-bcos.org/) to Linux server, designing and implementing smart contracts, as well as coordinating the interfaces between servers and smart contracts
-    * Implemented the in-game chatting system of this project
-    * Taking part in the 3D modeling work for the university campus using Blender
-    * Cooperating with a development team of over ten members
+    * **Topic:** [CUHKSZ Metaverse](https://hcslab.cuhk.edu.cn/cuhkszmetaverse-eng/) is a platform for delivering an integrated network of a 3D virtual world to our students. In this system, students can roam in a virtual CUHK-SZ campus scene, chat in real-time with other participants, create customized properties (e.g., furniture and pets), and trade properties using our blockchain-based economic system.
+    
+    * CUHKSZ Metaverse project adopts a client-server-blockchain architecture, where Unity, Python, and Solidity are used as main development tools for the three parts, respectively. My contributions include:
+    
+    * Developed an in-game model editor, allowing users to create their own user-generated content (UGC) and import the customized models into our metaverse system as NFTs.
+
+    * Responsible for the blockchain-related work of this project, including deploying the [FISCO-BCOS blockchain platform](http://www.fisco-bcos.org/) to Linux servers; designing and implementing smart contracts for tokens, NFTs, and NFT market; as well as establishing interfaces between servers and smart contracts.
+
+    * Implemented the in-game chatting module of this project.
+
+    * Performed 3D modeling of the university campus using Blender.
+
+    * Cooperated with a development team of over ten members.
   location: Shenzhen, China
   title: CUHKSZ Metaverse    #Game Developer & Research Assistant
 
@@ -59,9 +68,11 @@ experience:
   date_end: "2021-12-01"
   date_start: "2021-11-01"
   description: |-
-    * Developed a 2D puzzle game, *One Door Away*, using Unity, with other two members
-    * Responsible for the implementation of portal mechanism (one of the core mechanisms of this game), part of the props, part of the levels, game UI, progress saving, etc.
-    * This project is open source and can be found in GitHub follow [this link](https://github.com/Timothy-197/OneDoorAway)
+    * **Topic:** [One Door Away](https://github.com/Timothy-197/OneDoorAway) is a 2D puzzle game in which players act as a person who lost her memory. Players can use “portals” to transport the character's position, collect her memory fragments and finally find out the truth. My contributions include:
+
+    * Developed this puzzle game using Unity with two other members.
+
+    * Responsible for implementing portal mechanism (a core mechanism of this game), main UI, progress saving, storytelling features, and part of the props and level layouts.
   location: Shenzhen, China
   title: Game Development - *One Door Away*    #Game Developer
 
@@ -71,9 +82,11 @@ experience:
   date_end: "2020-10-07"
   date_start: "2020-08-01"
   description: |-
-    * Accomplished a multiplayer strategy game demo, *Enclosure*, using Unity, with other three members
-    * Responsible for the player networking part of this project
-    * This project is open source and the project homepage can be found follow [this link](https://enclosure-developer.github.io/)
+    * **Topic:** [Enclosure](https://enclosure-developer.github.io/) is a 3D multiplayer strategy game where two players will control their characters to occupy slots in the game world. Once the path of one player’s movement forms a circle, this player can occupy all the slots within this circle. Players can cut through the other’s path to prevent the circle formation. When the time is up, the player with more slots occupied wins the game. My contributions include:
+
+    * Accomplished this multiplayer game using Unity with three other members.
+
+    * Responsible for the player networking part of this project, based on Mirror Networking API.
   location: Shenzhen, China
   title: Game Development - *Enclosure*    #Game Developer
 

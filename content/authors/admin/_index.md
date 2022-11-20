@@ -18,7 +18,7 @@ organizations:
   url: "https://www.cuhk.edu.cn/"
 
 # Short bio (displayed in user profile at end of posts)
-bio: Undergraduate majored in computer engineering @CUHK(SZ), interested in game development, blockchain, etc.
+bio: Undergraduate majored in computer engineering @CUHK(SZ), interested in game development, blockchain, metaverse, etc.
 
 interests:
 - Game Development
@@ -70,8 +70,8 @@ user_groups:
 ---
 
 Honghao Chen (陈泓昊) is an undergraduate student at CUHK(SZ), majored in computer engineering. 
-He is currently working in [Human-Cloud Systems Laboratory](https://hcslab.cuhk.edu.cn/) as a research assistant.
+He is currently working in [Human-Crypto Society Laboratory](https://hcslab.cuhk.edu.cn/) (originally *Human-Cloud Systems Laboratory*) as a research assistant.
 
 He used to intern at a game company, [HyperGryph (鹰角网络)](https://www.hypergryph.com/) and worked as a game developer for their popular mobile game project, [*Arknights (明日方舟)*](https://www.arknights.global/).
 
-{{< icon name="download" pack="fas" >}} Download my {{< staticref "files/Resume-Honghao-Chen-website-20220105.pdf" "newtab" >}}resumé{{< /staticref >}}.
+{{< icon name="download" pack="fas" >}} Download my {{< staticref "files/Resume-Honghao-Chen-website-20221120.pdf" "newtab" >}}resumé{{< /staticref >}}.
