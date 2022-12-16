@@ -5,12 +5,20 @@
     <link>https://garychen.top/</link>
       <atom:link href="https://garychen.top/index.xml" rel="self" type="application/rss+xml" />
     <description>Honghao Chen</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2022 Gary Chen</copyright><lastBuildDate>Tue, 01 Feb 2022 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2022 Gary Chen</copyright><lastBuildDate>Thu, 01 Dec 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://garychen.top/images/icon_hua5951e33adff7dd11d5adefef4ae6ab9_17916_512x512_fill_lanczos_center_2.png</url>
       <title>Honghao Chen</title>
       <link>https://garychen.top/</link>
     </image>
+    
+    <item>
+      <title>Layered MAPF Algorithm</title>
+      <link>https://garychen.top/project/layered-mapf/</link>
+      <pubDate>Thu, 01 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://garychen.top/project/layered-mapf/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>CUHKSZ Metaverse</title>

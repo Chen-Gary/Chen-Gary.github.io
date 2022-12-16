@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://garychen.top/</loc>
+    <lastmod>2022-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://garychen.top/project/layered-mapf/</loc>
+    <lastmod>2022-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://garychen.top/tag/mapf/</loc>
+    <lastmod>2022-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://garychen.top/tag/other/</loc>
+    <lastmod>2022-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://garychen.top/project/</loc>
+    <lastmod>2022-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://garychen.top/tags/</loc>
+    <lastmod>2022-12-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://garychen.top/tag/blockchain/</loc>
     <lastmod>2022-02-01T00:00:00+00:00</lastmod>
   </url><url>
@@ -9,15 +27,6 @@
     <lastmod>2022-02-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://garychen.top/tag/game-development/</loc>
-    <lastmod>2022-02-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://garychen.top/</loc>
-    <lastmod>2022-02-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://garychen.top/project/</loc>
-    <lastmod>2022-02-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://garychen.top/tags/</loc>
     <lastmod>2022-02-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://garychen.top/tag/unity/</loc>
