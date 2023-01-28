@@ -222,7 +222,7 @@ hugo --theme=<theme_name> --baseUrl="https://<user_name>.github.io" --buildDraft
 hugo --theme=m10c --baseUrl="https://Gary-Hh-Chen.github.io" --buildDrafts
 ```
 
-由于`theme`及`baseUrl`已在配置文件 (`config.yaml`) 中设置好了，命名可以被简化为：
+由于`theme`及`baseUrl`已在配置文件 (`config.yaml`) 中设置好了，命令可以被简化为：
 
 ```shell
 hugo
