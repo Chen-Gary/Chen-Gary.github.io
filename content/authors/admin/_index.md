@@ -18,19 +18,20 @@ organizations:
   url: "https://www.cuhk.edu.cn/"
 
 # Short bio (displayed in user profile at end of posts)
-bio: Undergraduate majoring in computer engineering @CUHK(SZ), interested in game development, blockchain, metaverse, etc.
+bio: Undergraduate majoring in computer engineering @CUHK(SZ), interested in game development, computer graphics, blockchain, metaverse, etc.
 
 interests:
 - Game Development
+- Computer Graphics
 - Blockchain
-- Metaverse
+#- Metaverse
 - Machine Learning
 
 education:
   courses:
   - course: BEng in Computer Engineering
     institution: The Chinese University of Hong Kong, Shenzhen
-    year: 2023 (Expected)
+    year: 2023
 
 
 # Social/Academic Networking
