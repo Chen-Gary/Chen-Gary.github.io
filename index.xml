@@ -5,7 +5,7 @@
     <link>https://garychen.top/</link>
       <atom:link href="https://garychen.top/index.xml" rel="self" type="application/rss+xml" />
     <description>Honghao Chen</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2022 Gary Chen</copyright><lastBuildDate>Thu, 01 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2023 Gary Chen</copyright><lastBuildDate>Thu, 01 Dec 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://garychen.top/images/icon_hua5951e33adff7dd11d5adefef4ae6ab9_17916_512x512_fill_lanczos_center_2.png</url>
       <title>Honghao Chen</title>
@@ -537,7 +537,7 @@ hugo new post/&amp;lt;article_name&amp;gt;/index.md        # new blog/article (r
 # example
 hugo --theme=m10c --baseUrl=&amp;quot;https://Gary-Hh-Chen.github.io&amp;quot; --buildDrafts
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;由于&lt;code&gt;theme&lt;/code&gt;及&lt;code&gt;baseUrl&lt;/code&gt;已在配置文件 (&lt;code&gt;config.yaml&lt;/code&gt;) 中设置好了，命名可以被简化为：&lt;/p&gt;
+&lt;p&gt;由于&lt;code&gt;theme&lt;/code&gt;及&lt;code&gt;baseUrl&lt;/code&gt;已在配置文件 (&lt;code&gt;config.yaml&lt;/code&gt;) 中设置好了，命令可以被简化为：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;hugo
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;就是这么简洁，网页会被生成在博客根目录的&lt;code&gt;public&lt;/code&gt;文件夹中。&lt;/p&gt;
