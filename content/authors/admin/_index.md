@@ -10,7 +10,7 @@ authors:
 superuser: true
 
 # Role/position
-role: Computer Engineering Student
+role: Software Engineering Student
 
 # Organizations/Affiliations
 organizations:
@@ -18,7 +18,7 @@ organizations:
   url: "https://www.cuhk.edu.cn/"
 
 # Short bio (displayed in user profile at end of posts)
-bio: Undergraduate majoring in computer engineering @CUHK(SZ), interested in game development, computer graphics, blockchain, metaverse, etc.
+bio: Software Engineer Intern @ NetEase Games | M.S. in Software Engineering @ CMU | B.E. in Computer Engineering @ CUHK(SZ)
 
 interests:
 - Game Development
@@ -29,7 +29,10 @@ interests:
 
 education:
   courses:
-  - course: BEng in Computer Engineering
+  - course: M.S. in Software Engineering
+    institution: Carnegie Mellon University-Silicon Valley
+    year: 2025 (Expected)
+  - course: B.E. in Computer Engineering
     institution: The Chinese University of Hong Kong, Shenzhen
     year: 2023
 
@@ -70,9 +73,8 @@ user_groups:
 - Visitors
 ---
 
-Honghao Chen (陈泓昊) is an undergraduate student at CUHK(SZ), majoring in computer engineering. 
-He is currently working in [Human-Crypto Society Laboratory](https://hcslab.cuhk.edu.cn/) (originally *Human-Cloud Systems Laboratory*) as a research assistant.
+I recently graduated from CUHK(SZ) and obtained my Bachelor's degree in Computer Engineering in 2023. I am going to pursue a Master's degree in Software Engineering at CMU-Silicon Valley.
 
-He used to intern at a game company, [HyperGryph (鹰角网络)](https://www.hypergryph.com/) and worked as a game developer for their popular mobile game project, [*Arknights (明日方舟)*](https://www.arknights.global/).
+I am interested in video game-related fields and currently work as Game AI Development Engineer (Intern) for AI Lab @ NetEase Games. Last summer (2022), I interned at [HyperGryph (鹰角网络)](https://www.hypergryph.com/) and worked as Game Client Engineer for their popular mobile game project, [*Arknights (明日方舟)*](https://ak.hypergryph.com/). During my undergraduate, I worked in [Human-Crypto Society Laboratory](https://hcslab.cuhk.edu.cn/) (originally *Human-Cloud Systems Laboratory*) as a research assistant for around two years, where I focused on Video Games, Web3 & Blockchain and developed the [*CUHKSZ Metaverse*](https://hcslab.cuhk.edu.cn/cuhkszmetaverse-eng/) system with other members.
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "files/Resume-Honghao-Chen-website-20221120.pdf" "newtab" >}}resumé{{< /staticref >}}.
