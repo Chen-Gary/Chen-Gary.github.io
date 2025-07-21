@@ -30,10 +30,10 @@
   
     
   
-  <meta name="description" content="Software Engineering Student">
+  <meta name="description" content="Nginx 基础教程">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://garychen.top/categories/">
+  <link rel="alternate" hreflang="en-us" href="https://garychen.top/post/nginx-crash-course/">
 
   
 
@@ -218,14 +218,12 @@
   
 
   
-  <link rel="alternate" href="/categories/index.xml" type="application/rss+xml" title="Honghao Chen">
-  
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/images/icon_hua5951e33adff7dd11d5adefef4ae6ab9_17916_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hua5951e33adff7dd11d5adefef4ae6ab9_17916_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="https://garychen.top/categories/">
+  <link rel="canonical" href="https://garychen.top/post/nginx-crash-course/">
 
   
   
@@ -241,18 +239,63 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Honghao Chen">
-  <meta property="og:url" content="https://garychen.top/categories/">
-  <meta property="og:title" content="Categories | Honghao Chen">
-  <meta property="og:description" content="Software Engineering Student"><meta property="og:image" content="https://garychen.top/images/icon_hua5951e33adff7dd11d5adefef4ae6ab9_17916_512x512_fill_lanczos_center_2.png">
+  <meta property="og:url" content="https://garychen.top/post/nginx-crash-course/">
+  <meta property="og:title" content="Nginx Crash Course | Honghao Chen">
+  <meta property="og:description" content="Nginx 基础教程"><meta property="og:image" content="https://garychen.top/images/icon_hua5951e33adff7dd11d5adefef4ae6ab9_17916_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="https://garychen.top/images/icon_hua5951e33adff7dd11d5adefef4ae6ab9_17916_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2021-07-31T23:08:49&#43;08:00">
+    
+      <meta property="article:published_time" content="2023-08-20T11:07:31&#43;08:00">
+    
+    <meta property="article:modified_time" content="2023-08-20T11:07:31&#43;08:00">
   
 
   
 
 
+    
 
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://garychen.top/post/nginx-crash-course/"
+  },
+  "headline": "Nginx Crash Course",
+  
+  "datePublished": "2023-08-20T11:07:31+08:00",
+  "dateModified": "2023-08-20T11:07:31+08:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Honghao Chen"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Honghao Chen",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://garychen.top/images/icon_hua5951e33adff7dd11d5adefef4ae6ab9_17916_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "Nginx 基础教程"
+}
+</script>
+
+  
 
   
 
@@ -260,10 +303,13 @@
   
 
 
+  
 
 
 
-  <title>Categories | Honghao Chen</title>
+
+
+  <title>Nginx Crash Course | Honghao Chen</title>
 
 </head>
 
@@ -573,6 +619,19 @@
 
 
   
+<div class="container-fluid docs">
+    <div class="row flex-xl-nowrap">
+      <div class="d-none d-xl-block col-xl-2 docs-toc">
+        <ul class="nav toc-top">
+          <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
+        </ul>
+        <nav id="TableOfContents"></nav>
+        
+      </div>
+      <main class="col-12 col-md-0 col-xl-10 py-md-3 pl-md-5 docs-content" role="main">
+
+        <article class="article">
+            
 
 
 
@@ -589,58 +648,378 @@
 
   
   
+  
+<div class="article-container pt-3">
+  <h1>Nginx Crash Course</h1>
+
+  
+  <p class="page-subtitle">Nginx 基础教程</p>
+  
+
   
     
-  
-<div class="universal-wrapper pt-3">
-  <h1>Categories</h1>
+
+
+<div class="article-metadata">
 
   
+  
+  
+  
+  <div>
+    
+
+  
+  <span ><a href="/author/honghao-chen/">Honghao Chen</a></span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Aug 20, 2023
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    1 min read
+  </span>
+  
+
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i></span>
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   
 </div>
 
 
+            <div class="article-container">
+              <div class="article-style">
+                <p>安装</p>
+<ul>
+<li>
+<p>Linux</p>
+<pre><code>sudo apt install nginx
+</code></pre>
+</li>
+<li>
+<p>Windows: 官网下载压缩包，直接解压即可 <a href="http://nginx.org/en/download.html">http://nginx.org/en/download.html</a></p>
+</li>
+</ul>
+<p>服务启停</p>
+<ul>
+<li>
+<p>Windows: 双击 <code>nginx.exe</code> 打开即可，可在任务管理器查看到 Nginx 的进程</p>
+</li>
+<li>
+<p>Linux:</p>
+<pre><code class="language-shell">nginx
 
-<div class="universal-wrapper">
-  
+ps -ef|grep nginx    # 查看 Nginx 进程
+lsof -i:80           # 查看 80 端口占用
+</code></pre>
+<pre><code class="language-shell">nginx -s quit    # 优雅停止
+nginx -s stop    # 立即停止
+nginx -s reload  # 重载配置文件
+nginx -s reopen  # 重新打开日志文件
+</code></pre>
+</li>
+</ul>
+<pre><code class="language-shell">nginx -V    # 查看 Nginx 安装目录/配置文件位置等
+nginx -t    # 查看 Nginx 配置文件位置
+</code></pre>
+<ul>
+<li>配置文件位置: <code>--conf-path=/etc/nginx/nginx.conf</code></li>
+<li>安装目录: <code>--prefix=/usr/share/nginx</code></li>
+</ul>
+<pre><code>#gzip  on;
+</code></pre>
+<pre><code>/etc/nginx/sites-enabled
+/etc/nginx/conf.d
+/usr/share/nginx
+/var/www/
+</code></pre>
+<p>References:</p>
+<ul>
+<li>
+<a href="https://www.bilibili.com/video/BV1mz4y1n7PQ/" target="_blank" rel="noopener">30分钟Nginx入门教程</a></li>
+<li>
+<a href="https://blog.csdn.net/shaobing32/article/details/129089513" target="_blank" rel="noopener">Unity导出WebGL工程，并部署本地web服务器</a></li>
+<li>
+<a href="http://www.manongjc.com/detail/60-mcvitakuxlvylyj.html" target="_blank" rel="noopener">Nginx一个server配置多个location</a></li>
+</ul>
 
-  
-  
-    
-    
-    
-    <div>
-      <h2><a href="/category/git/" >Git</a></h2>
-      <div class="article-style">
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/category/unity/" >Unity</a></h2>
-      <div class="article-style">
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/category/blender/" >Blender</a></h2>
-      <div class="article-style">
-        
-      </div>
-    </div>
-  
+              </div>
+              
 
-  
 
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/web/">Web</a>
+  
 </div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://garychen.top/post/nginx-crash-course/&amp;text=Nginx%20Crash%20Course" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://garychen.top/post/nginx-crash-course/&amp;t=Nginx%20Crash%20Course" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Nginx%20Crash%20Course&amp;body=https://garychen.top/post/nginx-crash-course/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://garychen.top/post/nginx-crash-course/&amp;title=Nginx%20Crash%20Course" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Nginx%20Crash%20Course%20https://garychen.top/post/nginx-crash-course/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://garychen.top/post/nginx-crash-course/&amp;title=Nginx%20Crash%20Course" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+    
+      
+    
+    
+    
+    <div class="media author-card content-widget-hr">
+      
+        
+        <img class="avatar mr-3 avatar-circle" src="/author/honghao-chen/avatar_hu49c03114a9ce8ad2bc0bd62c0ddb3f2a_510231_270x270_fill_q90_lanczos_center.jpg" alt="Honghao Chen">
+      
+
+      <div class="media-body">
+        <h5 class="card-title"><a href="https://garychen.top/">Honghao Chen</a></h5>
+        <h6 class="card-subtitle">Software Engineering Student</h6>
+        <p class="card-text">Software Engineer Intern @ NetEase Games | M.S. in Software Engineering @ CMU | B.E. in Computer Engineering @ CUHK(SZ)</p>
+        <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/Chen-Gary" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/honghao-chen" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/files/cv.pdf" >
+        <i class="ai ai-cv"></i>
+      </a>
+    </li>
+  
+</ul>
+
+      </div>
+    </div>
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+            </div>
+        </article>
+  
+      </main>
+    </div>
+  </div>
+  
 
       
 

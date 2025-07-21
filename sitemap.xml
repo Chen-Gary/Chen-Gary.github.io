@@ -2,8 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://garychen.top/authors/</loc>
+    <lastmod>2023-08-20T11:07:31+08:00</lastmod>
+  </url><url>
     <loc>https://garychen.top/</loc>
-    <lastmod>2022-12-01T00:00:00+00:00</lastmod>
+    <lastmod>2023-08-20T11:07:31+08:00</lastmod>
+  </url><url>
+    <loc>https://garychen.top/author/honghao-chen/</loc>
+    <lastmod>2023-08-20T11:07:31+08:00</lastmod>
+  </url><url>
+    <loc>https://garychen.top/post/nginx-crash-course/</loc>
+    <lastmod>2023-08-20T11:07:31+08:00</lastmod>
+  </url><url>
+    <loc>https://garychen.top/post/</loc>
+    <lastmod>2023-08-20T11:07:31+08:00</lastmod>
+  </url><url>
+    <loc>https://garychen.top/tags/</loc>
+    <lastmod>2023-08-20T11:07:31+08:00</lastmod>
+  </url><url>
+    <loc>https://garychen.top/tag/web/</loc>
+    <lastmod>2023-08-20T11:07:31+08:00</lastmod>
   </url><url>
     <loc>https://garychen.top/project/layered-mapf/</loc>
     <lastmod>2022-12-01T00:00:00+00:00</lastmod>
@@ -15,9 +33,6 @@
     <lastmod>2022-12-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://garychen.top/project/</loc>
-    <lastmod>2022-12-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://garychen.top/tags/</loc>
     <lastmod>2022-12-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://garychen.top/tag/blockchain/</loc>
@@ -35,9 +50,6 @@
     <loc>https://garychen.top/project/game-onedooraway/</loc>
     <lastmod>2021-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://garychen.top/authors/</loc>
-    <lastmod>2021-07-31T23:08:49+08:00</lastmod>
-  </url><url>
     <loc>https://garychen.top/categories/</loc>
     <lastmod>2021-07-31T23:08:49+08:00</lastmod>
   </url><url>
@@ -48,12 +60,6 @@
     <lastmod>2021-07-31T23:08:49+08:00</lastmod>
   </url><url>
     <loc>https://garychen.top/post/git-tricks-gitignore-and-unity/</loc>
-    <lastmod>2021-07-31T23:08:49+08:00</lastmod>
-  </url><url>
-    <loc>https://garychen.top/author/honghao-chen/</loc>
-    <lastmod>2021-07-31T23:08:49+08:00</lastmod>
-  </url><url>
-    <loc>https://garychen.top/post/</loc>
     <lastmod>2021-07-31T23:08:49+08:00</lastmod>
   </url><url>
     <loc>https://garychen.top/category/unity/</loc>
