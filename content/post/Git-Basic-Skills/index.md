@@ -136,6 +136,15 @@ git reset HEAD README.md    # 把暂存区的修改回退到工作区
 
 2. 登陆GitHub，打开“Account settings”，“SSH Keys”页面。然后，点“Add SSH Key”，填上任意Title，在Key文本框里粘贴`id_rsa.pub`文件的内容。
 
+3. 测试 ssh 是否能够连接成功 (Reference: [Git报错ssh timeout问题解决](https://blog.csdn.net/yunxiaobaobei/article/details/123474599))
+
+   ```bash
+   ssh -T git@github.com
+   # Hi Xxxxx! You've successfully authenticated, but GitHub does not provide shell access.
+   ```
+
+   
+
 ### 2. (将已有的本地仓库)添加远程库
 
 1. 在GitHub新建repo
@@ -182,7 +191,7 @@ git remote -v
 git remote rm origin
 ```
 
-### 从远程库克隆
+### 4. 从远程库克隆
 
 ```bash
 git clone git@github.com:XXXXX/YYYYY.git

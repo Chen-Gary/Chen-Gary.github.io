@@ -1,0 +1,45 @@
+# Check connectivity
+#   ssh -T git@github.com
+#   ssh -T git@github.com-honghao2S2024
+
+# CSC4005 cluster
+Host CSC4005-cluster
+   HostName 127.00.200.00
+   User 118000000
+   IdentityFile ~/.ssh/id_rsa_csc4005_cluster
+
+# GitHub Account: Chen-Gary
+Host github.com
+   User yyyyyy@gmail.com
+   HostName ssh.github.com
+   PreferredAuthentications publickey
+   IdentityFile ~/.ssh/id_rsa
+   Port 443
+
+# GitHub Account: honghao2S2024
+Host github.com-honghao2S2024
+   User xxxxxx@andrew.cmu.edu
+   HostName ssh.github.com
+   PreferredAuthentications publickey
+   IdentityFile ~/.ssh/id_rsa_honghao2S2024
+   Port 443
+   
+# GitHub Account: iGaryCC
+Host github.com-igarycc
+   User git
+   HostName ssh.github.com
+   IdentityFile ~/.ssh/id_rsa_igarycc
+   Port 443
+   
+# CSC3150 vm
+Host CSC3150-vm
+   HostName 192.00.200.00
+   User gary
+   Port 22
+   IdentityFile ~/.ssh/id_rsa_csc3150
+   
+# Gitee Account: Chen-Gary
+Host gitee.com
+   HostName gitee.com
+   PreferredAuthentications publickey
+   IdentityFile ~/.ssh/id_rsa_gitee_Chen-Gary
