@@ -804,6 +804,13 @@ git checkout -- README.md
 &lt;li&gt;
 &lt;p&gt;登陆GitHub，打开“Account settings”，“SSH Keys”页面。然后，点“Add SSH Key”，填上任意Title，在Key文本框里粘贴&lt;code&gt;id_rsa.pub&lt;/code&gt;文件的内容。&lt;/p&gt;
 &lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;测试 ssh 是否能够连接成功 (Reference: 
+&lt;a href=&#34;https://blog.csdn.net/yunxiaobaobei/article/details/123474599&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Git报错ssh timeout问题解决&lt;/a&gt;)&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ssh -T git@github.com
+# Hi Xxxxx! You&#39;ve successfully authenticated, but GitHub does not provide shell access.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;2-将已有的本地仓库添加远程库&#34;&gt;2. (将已有的本地仓库)添加远程库&lt;/h3&gt;
 &lt;ol&gt;
@@ -838,7 +845,7 @@ git checkout -- README.md
 &lt;p&gt;根据名字删除，比如删除&lt;code&gt;origin&lt;/code&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git remote rm origin
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;从远程库克隆&#34;&gt;从远程库克隆&lt;/h3&gt;
+&lt;h3 id=&#34;4-从远程库克隆&#34;&gt;4. 从远程库克隆&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git clone git@github.com:XXXXX/YYYYY.git
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;分支管理&#34;&gt;分支管理&lt;/h2&gt;
